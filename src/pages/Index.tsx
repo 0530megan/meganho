@@ -646,6 +646,8 @@ const Sippy = () => (
     </div>
   </section>
 );
+
+const Skills = () => {
   const groups = [
     {
       title: "Marketing & Strategy",
