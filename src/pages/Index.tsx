@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Mail, MapPin, ArrowUpRight, Sparkles, Phone } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
+import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -234,22 +235,16 @@ const Veramante = () => (
         </p>
       </div>
       <div className="col-span-12 md:col-span-5">
-        <div className="aspect-[4/5] relative bg-gradient-to-br from-paper-deep to-paper border border-ink/20 overflow-hidden">
-          {/* Stylised SPF stick illustration */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-3 h-8 rounded-full bg-ink/80" />
-              <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-2 border-ink/80" />
-              <div className="w-24 h-56 bg-accent-red rounded-lg shadow-[8px_8px_0_hsl(var(--ink))] flex flex-col items-center justify-between py-6 text-paper">
-                <span className="font-display italic text-xs">veramante</span>
-                <span className="font-mono text-[9px] small-caps">SPF 50+</span>
-                <span className="w-12 h-12 rounded-full bg-paper/95" />
-              </div>
-            </div>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 px-4 py-3 border-t border-ink/30 bg-paper/80 backdrop-blur">
+        <div className="aspect-[4/5] relative border border-ink/20 overflow-hidden">
+          <img
+            src={veramenteBrandBoard}
+            alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute bottom-0 left-0 right-0 px-4 py-3 border-t border-ink/30 bg-paper/85 backdrop-blur">
             <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Plate II Product mockup
+              Plate II Brand identity board
             </p>
           </div>
         </div>
