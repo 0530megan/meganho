@@ -147,7 +147,7 @@ const About = () => (
           <img
             src={meganPortrait}
             alt="Portrait of Megan Ho"
-            className="absolute inset-0 h-full w-full object-cover grayscale contrast-110"
+            className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-ink/30 bg-paper/85 backdrop-blur">
