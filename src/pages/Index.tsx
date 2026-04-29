@@ -239,16 +239,14 @@ const Veramante = () => (
         </p>
       </div>
 
-      {/* Brand board — tall left plate */}
+      {/* Brand board — tall left plate, fills column edge to edge */}
       <figure className="col-span-12 md:col-span-6 relative border border-ink/20 bg-paper-deep flex flex-col">
-        <div className="flex-1 flex items-center justify-center">
-          <img
-            src={veramenteBrandBoard}
-            alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
-            className="w-full h-full object-contain"
-            loading="lazy"
-          />
-        </div>
+        <img
+          src={veramenteBrandBoard}
+          alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
         <figcaption className="px-4 py-3 border-t border-ink/30 bg-paper/85">
           <p className="font-mono text-[10px] small-caps text-ink-mute">
             Plate II — Brand Identity Board
