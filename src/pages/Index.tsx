@@ -22,7 +22,7 @@ const Masthead = () => (
   <header className="border-b-4 border-ink">
     <div className="border-b border-ink/30">
       <div className="container flex items-center justify-between py-2 text-[11px] small-caps text-ink-soft font-mono">
-        <span>Vol. I — No. 01</span>
+        <span>Vol. I No. 01</span>
         <span className="hidden md:inline">{TODAY}</span>
         <span>Melbourne · Edition</span>
       </div>
@@ -87,7 +87,7 @@ const Hero = () => (
       </h2>
       <div className="mt-8 grid md:grid-cols-2 gap-8 max-w-3xl">
         <p className="font-display text-lg leading-relaxed text-ink-soft drop-cap">
-          A Master of Marketing folio exploring how consumer insight, design, and storytelling collapse into a single object — where the product itself becomes the primary driver of engagement and visibility.
+          A Master of Marketing folio exploring how consumer insight, design, and storytelling collapse into a single object where the product itself becomes the primary driver of engagement and visibility.
         </p>
         <p className="font-display italic text-base leading-relaxed text-ink-mute">
           Brand identities, product mockups, and campaign architecture for a generation that no longer separates what they buy from what they wear, post, and signal.
@@ -100,7 +100,7 @@ const Hero = () => (
         {[
           "About the author",
           "Method & approach",
-          "VERAMANTE — Carry Your SPF",
+          "VERAMANTE Carry Your SPF",
           "Skills & instruments",
           "Education & experience",
           "Correspondence",
@@ -164,7 +164,7 @@ const About = () => (
           I have developed multiple brand concepts using tools such as Figma and Canva, where I translate ideas into visual identities, product designs, and campaign assets. Through these projects, I focus on creating work that is not only visually compelling, but also grounded in strategic thinking and consumer behaviour.
         </p>
         <p className="break-inside-avoid italic text-ink">
-          I am particularly interested in the intersection of beauty, lifestyle, and luxury branding — developing concepts that align functionality with identity and everyday behaviour.
+          I am particularly interested in the intersection of beauty, lifestyle, and luxury branding developing concepts that align functionality with identity and everyday behaviour.
         </p>
       </div>
     </div>
@@ -176,12 +176,12 @@ const Approach = () => {
     {
       no: "01",
       title: "Strategy & Design, fused",
-      body: "I create ideas where the product itself becomes the marketing channel — driving organic visibility, engagement, and repeat behaviour.",
+      body: "I create ideas where the product itself becomes the marketing channel driving organic visibility, engagement, and repeat behaviour.",
     },
     {
       no: "02",
       title: "End-to-end concepting",
-      body: "From brand identity and product design to campaign execution — every idea is creatively strong and commercially grounded.",
+      body: "From brand identity and product design to campaign execution every idea is creatively strong and commercially grounded.",
     },
     {
       no: "03",
@@ -230,7 +230,7 @@ const Veramante = () => (
           </span>
         </h3>
         <p className="font-display text-xl text-ink-soft mt-6 max-w-xl leading-relaxed">
-          Sunscreen reimagined as a lifestyle accessory — addressing low reapplication behaviour and increasing brand visibility among Gen Z consumers.
+          Sunscreen reimagined as a lifestyle accessory addressing low reapplication behaviour and increasing brand visibility among Gen Z consumers.
         </p>
       </div>
       <div className="col-span-12 md:col-span-5">
@@ -249,7 +249,7 @@ const Veramante = () => (
           </div>
           <div className="absolute bottom-0 left-0 right-0 px-4 py-3 border-t border-ink/30 bg-paper/80 backdrop-blur">
             <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Plate II — Product mockup
+              Plate II Product mockup
             </p>
           </div>
         </div>
@@ -268,13 +268,13 @@ const Veramante = () => (
       <div className="col-span-12 md:col-span-4">
         <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Concept</p>
         <p className="font-display text-lg leading-relaxed">
-          A portable sunscreen stick designed with a keychain attachment — carried and displayed as part of the daily outfit. The product transforms SPF from a hidden routine into a visible, aesthetic object integrated into everyday life.
+          A portable sunscreen stick designed with a keychain attachment carried and displayed as part of the daily outfit. The product transforms SPF from a hidden routine into a visible, aesthetic object integrated into everyday life.
         </p>
       </div>
       <div className="col-span-12 md:col-span-4">
         <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Execution</p>
         <p className="font-display text-lg leading-relaxed">
-          Designed in Figma — brand identity, product visuals, and campaign layouts. The case demonstrates branding a product from concept to execution, combining visual design with marketing strategy.
+          Designed in Figma brand identity, product visuals, and campaign layouts. The case demonstrates branding a product from concept to execution, combining visual design with marketing strategy.
         </p>
       </div>
     </div>
@@ -322,7 +322,7 @@ const Veramante = () => (
             Editor's note
           </p>
           <p className="font-display italic text-sm text-ink-soft leading-relaxed">
-            "The keychain charm system turns each unit into a wearable advertisement — the wearer becomes media."
+            "The keychain charm system turns each unit into a wearable advertisement the wearer becomes media."
           </p>
         </div>
       </div>
@@ -355,15 +355,15 @@ const Skills = () => {
     {
       title: "Design & Tools",
       items: [
-        "Figma — branding, layout, product mockups",
-        "Canva — campaign visuals & social content",
+        "Figma branding, layout, product mockups",
+        "Canva campaign visuals & social content",
         "Visual Identity Development",
       ],
     },
     {
       title: "Digital & Content",
       items: [
-        "Social Media Strategy — TikTok & Instagram",
+        "Social Media Strategy TikTok & Instagram",
         "Content Ideation & Creative Direction",
         "User-Generated Content Strategy",
       ],
@@ -379,10 +379,10 @@ const Skills = () => {
     {
       title: "Languages",
       items: [
-        "English — Professional",
-        "Chinese (Mandarin) — Professional",
-        "Cantonese — Professional",
-        "Malay — Professional",
+        "English Professional",
+        "Chinese (Mandarin) Professional",
+        "Cantonese Professional",
+        "Malay Professional",
       ],
     },
   ];
@@ -482,14 +482,14 @@ const Statement = () => (
         Personal Statement
       </p>
       <p className="font-display italic font-light text-3xl md:text-5xl leading-[1.15] tracking-tight max-w-5xl">
-        "I am interested in creating marketing that goes beyond communication —
+        "I am interested in creating marketing that goes beyond communication 
         where products themselves become platforms for engagement. I focus on
         understanding how consumer behaviour, aesthetics, and everyday habits
         can be translated into ideas that are both creatively compelling and
         commercially viable."
       </p>
       <p className="font-mono text-xs small-caps text-paper/60 mt-8">
-        — Megan Ho, Melbourne
+        Megan Ho, Melbourne
       </p>
     </div>
   </section>
@@ -508,7 +508,7 @@ const Contact = () => (
           opportunities.
         </h3>
         <p className="font-display text-xl text-ink-soft mt-6 max-w-xl leading-relaxed">
-          Open to opportunities across digital, social, and brand marketing —
+          Open to opportunities across digital, social, and brand marketing 
           including full-time roles, internships, and collaborative projects,
           particularly within design-led and experience-focused industries.
         </p>
