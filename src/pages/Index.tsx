@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Mail, MapPin, ArrowUpRight, Sparkles } from "lucide-react";
+import meganPortrait from "@/assets/megan-portrait.jpg";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -143,12 +144,13 @@ const About = () => (
     <div className="grid grid-cols-12 gap-x-6 gap-y-10">
       <div className="col-span-12 md:col-span-4">
         <div className="aspect-[3/4] bg-paper-deep border border-ink/20 relative overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-display text-[10rem] leading-none text-ink/15 select-none">
-              MH
-            </span>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-ink/30 bg-paper/80 backdrop-blur">
+          <img
+            src={meganPortrait}
+            alt="Portrait of Megan Ho"
+            className="absolute inset-0 h-full w-full object-cover grayscale contrast-110"
+            loading="lazy"
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-ink/30 bg-paper/85 backdrop-blur">
             <p className="font-mono text-[10px] small-caps text-ink-mute">Plate I</p>
             <p className="font-display italic text-sm">Megan Ho, the author</p>
           </div>
