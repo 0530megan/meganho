@@ -413,7 +413,7 @@ const Experience = () => {
     },
     {
       year: "Prior",
-      org: "Universiti · Malaysia",
+      org: "University · Malaysia",
       role: "Bachelor of Entrepreneurship",
       body: "Foundation in venture-building, commercial thinking, and business strategy.",
     },
