@@ -139,7 +139,7 @@ const SectionHeader = ({
 
 const About = () => (
   <section id="about" className="container py-16 md:py-24">
-    <SectionHeader kicker="Profile" title="About the Author" no="II" />
+    <SectionHeader kicker="Profile" title="Who I Am & What I Bring" no="II" />
     <div className="grid grid-cols-12 gap-x-6 gap-y-10">
       <div className="col-span-12 md:col-span-4">
         <div className="aspect-[3/4] bg-paper-deep border border-ink/20 relative overflow-hidden">
