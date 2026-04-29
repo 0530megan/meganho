@@ -721,6 +721,238 @@ const Sippy = () => (
   </section>
 );
 
+const MegsCreami = () => (
+  <section id="megs-creami" className="border-t-4 border-ink relative overflow-hidden">
+    <div
+      aria-hidden
+      className="absolute inset-0 -z-0 opacity-[0.08]"
+      style={{
+        background:
+          "radial-gradient(55% 55% at 18% 22%, #EBC4C2 0%, transparent 60%), radial-gradient(50% 50% at 82% 78%, #CA2200 0%, transparent 65%)",
+      }}
+    />
+    <div className="container py-16 md:py-24 relative">
+      <SectionHeader kicker="Selected Work" title="Case Studies (cont.)" no="IV·C" />
+
+      <article className="grid grid-cols-12 gap-x-6 gap-y-8 items-stretch">
+        <div className="col-span-12 md:col-span-7">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
+            Case Study 03 · Dessert · Concept Brand
+          </p>
+          <h3 className="font-display font-light text-5xl md:text-7xl leading-[0.9] tracking-tight">
+            Meg's Creami
+            <span className="font-display italic text-accent-red">.</span>
+            <span className="block font-display italic text-2xl md:text-3xl text-ink-soft mt-3">
+              A spoonful of nostalgia.
+            </span>
+          </h3>
+          <p className="font-display text-xl text-ink-soft mt-6 max-w-2xl leading-relaxed">
+            A small-batch ice cream concept built in Figma — a retro script wordmark, a sprinkle-dusted seal, and a soft pink pint designed to feel like a homemade scoop you'd photograph before opening.
+          </p>
+        </div>
+
+        <aside className="col-span-12 md:col-span-5 md:border-l md:border-ink/30 md:pl-6">
+          <p className="font-mono text-[11px] small-caps text-ink-mute mb-4">At a glance</p>
+          <dl className="space-y-3">
+            {[
+              ["Format", "473 ml (1 Pint) tub"],
+              ["Category", "Small-batch artisan ice cream"],
+              ["Tools", "Figma · Canva · AI Mockups"],
+              ["Type", "Vintage King · Baloo Bhai"],
+              ["Role", "Brand identity, packaging, art direction"],
+            ].map(([k, v]) => (
+              <div key={k} className="flex justify-between gap-4 border-b border-rule pb-2">
+                <dt className="font-mono text-[11px] small-caps text-ink-mute pt-1">{k}</dt>
+                <dd className="font-display text-lg text-right">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
+
+        <figure className="col-span-12 mt-4">
+          <div className="border border-ink/20 bg-paper-deep p-2 md:p-3">
+            <img
+              src={megsCreamiBrandBoard}
+              alt="Meg's Creami brand identity board featuring the primary scalloped logo seal, the Meg's script wordmark, the burnt red and dusty pink color palette, Vintage King and Baloo Bhai typography, and pint packaging mockups"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+          <figcaption className="pt-3 mt-3 border-t border-ink/20 flex items-baseline justify-between gap-4 flex-wrap">
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Plate VII — Meg's Creami Brand Identity Board
+            </p>
+            <p className="font-display italic text-sm text-ink-mute">
+              Logo · Wordmark · Palette · Typography · Packaging
+            </p>
+          </figcaption>
+        </figure>
+      </article>
+
+      <div className="editorial-rule my-12" />
+
+      <div className="grid grid-cols-12 gap-x-6 gap-y-12">
+        {[
+          {
+            icon: Lightbulb,
+            label: "Concept",
+            body: "Meg's Creami treats ice cream as a small ritual — a soft, scallop-edged seal and a hand-drawn script wordmark that hint at a family-run scoop shop rather than a freezer-aisle SKU.",
+            pull: "Packaging that feels like it was scooped, not manufactured.",
+          },
+          {
+            icon: Eye,
+            label: "Insight",
+            body: "Premium pints fight for shelf attention with shouty graphics. The opportunity is the opposite — quiet warmth, retro typography, and a pastel tub that signals craft, intimacy, and indulgence at a glance.",
+            pull: "Soft beats loud when the category is comfort.",
+          },
+          {
+            icon: IceCream,
+            label: "Solution",
+            body: "A burnt-red script lockup sitting inside a creamy, sprinkle-dotted seal, wrapped onto a pastel pink pint with a matching red lid — a tactile, photo-ready system designed to live in hand, on shelf, and on a feed.",
+            pull: "Character-led packaging that becomes the marketing.",
+          },
+        ].map(({ icon: Icon, label, body, pull }) => (
+          <div key={label} className="col-span-12 md:col-span-4">
+            <div className="flex items-center gap-2 mb-3">
+              <Icon className="size-4 text-accent-red" />
+              <p className="font-mono text-[11px] small-caps text-ink-mute">{label}</p>
+            </div>
+            <p className="font-display text-lg leading-relaxed mb-4">{body}</p>
+            <p className="font-display italic text-base text-accent-red leading-snug border-l-2 border-accent-red pl-3">
+              {pull}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="editorial-rule my-12" />
+
+      <div className="grid grid-cols-12 gap-x-6 gap-y-8">
+        <div className="col-span-12 md:col-span-4">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">Palette</p>
+          <h4 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+            A scoop-shop palette in four tones.
+          </h4>
+          <p className="font-display italic text-lg text-ink-soft mt-4 leading-relaxed">
+            One confident burnt red anchors three soft pinks and a creamy nude — the colour of strawberry ribboned through vanilla.
+          </p>
+        </div>
+        <div className="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {[
+            { name: "Burnt Red", hex: "#CA2200", ink: "text-paper" },
+            { name: "Dusty Peach", hex: "#EFA99B", ink: "text-ink" },
+            { name: "Creamy Nude", hex: "#F7E0D1", ink: "text-ink" },
+            { name: "Muted Blush Pink", hex: "#EBC4C2", ink: "text-ink" },
+          ].map((c) => (
+            <div key={c.name} className="border border-ink/30">
+              <div
+                className={`aspect-square flex items-end p-3 ${c.ink}`}
+                style={{ background: c.hex }}
+              >
+                <span className="font-mono text-[10px] small-caps">{c.hex}</span>
+              </div>
+              <p className="font-display text-sm px-3 py-2 border-t border-ink/30">
+                {c.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="editorial-rule my-12" />
+
+      <div className="grid grid-cols-12 gap-x-6 gap-y-8">
+        <div className="col-span-12 md:col-span-4">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">Typography</p>
+          <h4 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+            Retro script meets a friendly sans.
+          </h4>
+          <p className="font-display italic text-lg text-ink-soft mt-4 leading-relaxed">
+            Vintage King carries the personality and nostalgia, while Baloo Bhai keeps everything else round, readable, and warm.
+          </p>
+        </div>
+        <div className="col-span-12 md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="border border-ink/30 p-6 bg-paper-deep">
+            <p className="font-mono text-[10px] small-caps text-ink-mute mb-3">Display · Vintage King</p>
+            <p
+              className="text-7xl leading-none mb-2"
+              style={{ fontFamily: "'Pacifico', 'Brush Script MT', cursive", color: "#CA2200" }}
+            >
+              Aa
+            </p>
+            <p className="font-mono text-xs text-ink-mute">Headlines · Logo · Flavour names</p>
+          </div>
+          <div className="border border-ink/30 p-6 bg-paper-deep">
+            <p className="font-mono text-[10px] small-caps text-ink-mute mb-3">Body · Baloo Bhai</p>
+            <p className="text-7xl leading-none mb-2 font-bold" style={{ color: "#CA2200" }}>
+              Aa
+            </p>
+            <p className="font-mono text-xs text-ink-mute">Pack copy · Web · Supporting text</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="editorial-rule my-12" />
+
+      <div className="grid grid-cols-12 gap-x-6 gap-y-10">
+        <div className="col-span-12 md:col-span-7">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-4">Brand Voice</p>
+          <ol className="space-y-5">
+            {[
+              "Warm and homemade — like a recipe scribbled on a card.",
+              "Nostalgic without being kitsch — vintage script, modern grid.",
+              "Soft, tactile pinks that read as comfort, not candy.",
+              "Copy that talks about scoops and afternoons, not 'product'.",
+            ].map((s, i) => (
+              <li key={i} className="flex gap-5 border-b border-rule pb-5">
+                <span className="font-display text-4xl text-accent-red leading-none w-12 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-display text-xl leading-snug">{s}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="col-span-12 md:col-span-5 md:border-l md:border-ink/30 md:pl-6">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-4">Product Story</p>
+          <div className="space-y-6">
+            {[
+              { Icon: IceCream, v: "Small-batch pints churned slow, finished by hand." },
+              { Icon: Snowflake, v: "Ribbons of fruit and crumb visible through every scoop." },
+              { Icon: Palette, v: "Pastel pint, burnt-red lid, sprinkle-dusted seal — instantly recognisable." },
+              { Icon: Camera, v: "Designed to look as good on the spoon as it does on the shelf." },
+            ].map(({ Icon, v }) => (
+              <div key={v} className="flex gap-4 items-start">
+                <Icon className="size-5 text-ink/70 mt-1 shrink-0" />
+                <p className="font-display text-lg italic text-ink-soft leading-snug">{v}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 p-5 border border-ink/30 bg-paper-deep">
+            <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">Key Takeaway</p>
+            <p className="font-display italic text-sm text-ink-soft leading-relaxed">
+              "Meg's Creami leads with feeling — a script, a seal, and a pastel pint that turn a freezer staple into a small daily ritual worth photographing."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="mt-20 -mx-6 overflow-hidden border-y-2 border-ink py-4"
+        style={{ background: "#CA2200", color: "#F7E0D1" }}
+      >
+        <div className="marquee whitespace-nowrap font-display italic text-3xl md:text-5xl">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <span key={i} className="mx-8">
+              Meg's Creami · a spoonful of nostalgia · small-batch · 473ml · Meg's Creami ·{" "}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 const Skills = () => {
   const groups = [
     {
