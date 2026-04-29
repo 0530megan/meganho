@@ -508,8 +508,9 @@ const Contact = () => (
           opportunities.
         </h3>
         <p className="font-display text-xl text-ink-soft mt-6 max-w-xl leading-relaxed">
-          Particularly within beauty, lifestyle, and luxury branding —
-          full-time, internship, or collaborative briefs welcome.
+          Open to opportunities across digital, social, and brand marketing —
+          including full-time roles, internships, and collaborative projects,
+          particularly within design-led and experience-focused industries.
         </p>
       </div>
       <div className="col-span-12 md:col-span-5 md:border-l md:border-ink/30 md:pl-6 space-y-6">
