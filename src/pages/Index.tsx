@@ -222,7 +222,7 @@ const Veramante = () => (
   <section id="work" className="container py-16 md:py-24">
     <SectionHeader kicker="Selected Work" title="Case Studies" no="IV" />
 
-    <article className="grid grid-cols-12 gap-x-6 gap-y-8">
+    <article className="grid grid-cols-12 gap-x-6 gap-y-8 items-stretch">
       {/* Intro copy */}
       <div className="col-span-12">
         <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
@@ -239,21 +239,70 @@ const Veramante = () => (
         </p>
       </div>
 
-      {/* Brand board — tall left plate, fills column edge to edge */}
-      <figure className="col-span-12 md:col-span-6 relative border border-ink/20 bg-paper-deep flex flex-col">
+      {/* Brand board — large left plate, full image visible, fills column */}
+      <figure className="col-span-12 md:col-span-7 relative border border-ink/20 bg-paper-deep flex flex-col">
         <img
           src={veramenteBrandBoard}
           alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
-          className="w-full h-full object-cover"
+          className="w-full h-auto block"
           loading="lazy"
         />
-        <figcaption className="px-4 py-3 border-t border-ink/30 bg-paper/85">
+        <figcaption className="px-4 py-3 border-t border-ink/30 bg-paper/85 mt-auto">
           <p className="font-mono text-[10px] small-caps text-ink-mute">
             Plate II — Brand Identity Board
           </p>
         </figcaption>
       </figure>
 
+      {/* Right column — 3 product photos stretch to match left height with no gaps */}
+      <div className="col-span-12 md:col-span-5 flex flex-col gap-4 md:gap-6">
+        <figure className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col flex-1 min-h-0">
+          <div className="flex-1 min-h-0 overflow-hidden">
+            <img
+              src={veramenteTinyBites}
+              alt="Veramente Tiny Bites blind box keychain collection display with affirmation cards"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <figcaption className="px-4 py-2 border-t border-ink/30 bg-paper/85">
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Plate III — Tiny Bites Collection
+            </p>
+          </figcaption>
+        </figure>
+        <figure className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col flex-1 min-h-0">
+          <div className="flex-1 min-h-0 overflow-hidden">
+            <img
+              src={veramenteBagCharm}
+              alt="Veramente SPF stick clipped to a cream shoulder bag as a wearable charm"
+              className="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+          <figcaption className="px-4 py-2 border-t border-ink/30 bg-paper/85">
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Plate IV — Wear It Daily
+            </p>
+          </figcaption>
+        </figure>
+        <figure className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col flex-1 min-h-0">
+          <div className="flex-1 min-h-0 overflow-hidden">
+            <img
+              src={veramenteCafe}
+              alt="Model carrying the Veramente SPF charm at an outdoor café in sunlight"
+              className="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+          <figcaption className="px-4 py-2 border-t border-ink/30 bg-paper/85">
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Plate V — In The Wild
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </article>
       {/* Right column — 3 product photos stacked to match brand board height */}
       <div className="col-span-12 md:col-span-6 grid grid-rows-3 gap-4 md:gap-6">
         <figure className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col">
