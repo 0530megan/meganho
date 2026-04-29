@@ -237,7 +237,7 @@ const Veramante = () => (
           </span>
         </h3>
         <p className="font-display text-xl text-ink-soft mt-6 max-w-2xl leading-relaxed">
-          Sunscreen reimagined as a lifestyle accessory addressing low reapplication behaviour and increasing brand visibility among Gen Z consumers.
+          Sunscreen reimagined as a lifestyle accessory addressing low reapplication behaviour and increasing everyday brand visibility among modern consumers.
         </p>
       </div>
 
@@ -321,7 +321,7 @@ const Veramante = () => (
         {
           icon: Eye,
           label: "Insight",
-          body: "Gen Z consumers often neglect sunscreen reapplication due to inconvenience, but actively engage with products that are aesthetic, portable, and expressive.",
+          body: "Most consumers neglect sunscreen reapplication due to inconvenience, but actively engage with products that are aesthetic, portable, and expressive.",
           pull: "When skincare becomes an accessory, it shifts from obligation to identity.",
         },
         {
@@ -464,7 +464,7 @@ const Sippy = () => (
             </span>
           </h3>
           <p className="font-display text-xl text-ink-soft mt-6 max-w-2xl leading-relaxed">
-            A sparkling blood orange drink in a 440ml can — a Figma-built brand identity exploring how playful character design and a pastel-meets-vermilion palette can carve out a space for low-calorie sparkling beverages aimed at Gen Z.
+            A sparkling blood orange drink in a 440ml can — a Figma-built brand identity exploring how playful character design and a pastel-meets-vermilion palette can carve out a space in the crowded low-calorie sparkling beverage category.
           </p>
         </div>
 
@@ -522,7 +522,7 @@ const Sippy = () => (
           {
             icon: Eye,
             label: "Insight",
-            body: "Gen Z drinkers want low-cal, low-sugar sparkling alternatives, but reach for whichever can looks most shareable. Function alone is not enough — the can has to perform on camera.",
+            body: "Today's drinkers want low-cal, low-sugar sparkling alternatives, but reach for whichever can looks most shareable. Function alone is not enough — the can has to perform on the shelf and on camera.",
             pull: "If it doesn't photograph, it doesn't sell.",
           },
           {
