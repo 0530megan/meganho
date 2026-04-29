@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users, Droplets, Palette, Citrus, Heart, IceCream, Snowflake, Camera } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
@@ -71,12 +72,20 @@ const Masthead = () => (
             </li>
           ))}
         </ul>
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center gap-1 font-mono text-[11px] small-caps text-ink hover:text-accent-red"
-        >
-          Hire <ArrowUpRight className="size-3" />
-        </a>
+        <div className="hidden md:flex items-center gap-4">
+          <Link
+            to="/work"
+            className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity"
+          >
+            Figma Studio <ArrowUpRight className="size-3" />
+          </Link>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-ink hover:text-accent-red"
+          >
+            Hire <ArrowUpRight className="size-3" />
+          </a>
+        </div>
       </div>
     </nav>
   </header>

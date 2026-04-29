@@ -27,6 +27,7 @@ export default {
         rule: "hsl(var(--rule))",
         "accent-red": "hsl(var(--accent-red))",
         "accent-ochre": "hsl(var(--accent-ochre))",
+        "accent-burnt": "hsl(var(--accent-burnt))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
