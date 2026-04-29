@@ -374,12 +374,21 @@ const Skills = () => {
         "Competitor Analysis",
       ],
     },
+    {
+      title: "Languages",
+      items: [
+        "English — Professional",
+        "Chinese (Mandarin) — Professional",
+        "Cantonese — Professional",
+        "Malay — Professional",
+      ],
+    },
   ];
   return (
     <section id="skills" className="bg-paper-deep border-y border-ink/20">
       <div className="container py-16 md:py-24">
         <SectionHeader kicker="Index" title="Skills & Instruments" no="V" />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/20 border border-ink/20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-ink/20 border border-ink/20">
           {groups.map((g) => (
             <div key={g.title} className="bg-paper-deep p-7">
               <p className="font-mono text-[11px] small-caps text-accent-red mb-4">
