@@ -74,6 +74,12 @@ const Masthead = () => (
         </ul>
         <div className="hidden md:flex items-center gap-4">
           <Link
+            to="/studio"
+            className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-ink hover:text-[hsl(var(--accent-burnt))] transition-colors"
+          >
+            Build-a-Brand <ArrowUpRight className="size-3" />
+          </Link>
+          <Link
             to="/work"
             className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity"
           >
