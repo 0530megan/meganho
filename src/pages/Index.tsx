@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, MapPin, ArrowUpRight, Sparkles, Phone } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 
