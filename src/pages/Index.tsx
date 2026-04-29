@@ -249,7 +249,7 @@ const Veramante = () => (
             />
             <figcaption className="px-4 py-3 border-t border-ink/30 bg-paper/85">
               <p className="font-mono text-[10px] small-caps text-ink-mute">
-                Plate II · Brand identity board
+                Plate II — Brand Identity Board
               </p>
             </figcaption>
           </figure>
@@ -264,8 +264,8 @@ const Veramante = () => (
                 loading="lazy"
               />
               <figcaption className="px-3 py-2 border-t border-ink/30 bg-paper/85">
-                <p className="font-mono text-[9px] small-caps text-ink-mute">
-                  Plate III · Tiny Bites collection
+                <p className="font-mono text-[10px] small-caps text-ink-mute">
+                  Plate III — Tiny Bites Collection
                 </p>
               </figcaption>
             </figure>
@@ -277,8 +277,8 @@ const Veramante = () => (
                 loading="lazy"
               />
               <figcaption className="px-3 py-2 border-t border-ink/30 bg-paper/85">
-                <p className="font-mono text-[9px] small-caps text-ink-mute">
-                  Plate IV · Wear it daily
+                <p className="font-mono text-[10px] small-caps text-ink-mute">
+                  Plate IV — Wear It Daily
                 </p>
               </figcaption>
             </figure>
@@ -290,8 +290,8 @@ const Veramante = () => (
                 loading="lazy"
               />
               <figcaption className="px-3 py-2 border-t border-ink/30 bg-paper/85">
-                <p className="font-mono text-[9px] small-caps text-ink-mute">
-                  Plate V · In the wild
+                <p className="font-mono text-[10px] small-caps text-ink-mute">
+                  Plate V — In The Wild
                 </p>
               </figcaption>
             </figure>
