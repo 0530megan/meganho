@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users, Droplets, Palette, Citrus, Heart } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users, Droplets, Palette, Citrus, Heart, IceCream, Snowflake, Camera } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
 import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
+import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.jpg";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -107,6 +108,7 @@ const Hero = () => (
           "Method & approach",
           "VERAMENTE Carry Your SPF",
           "SIPPY Sparkling Blood Orange",
+          "MEG'S CREAMI Small-Batch Ice Cream",
           "Skills & instruments",
           "Education & experience",
           "Correspondence",
@@ -975,6 +977,7 @@ const Index = () => {
         <Approach />
         <Veramante />
         <Sippy />
+        <MegsCreami />
         <Skills />
         <Experience />
         <Statement />
