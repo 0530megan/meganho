@@ -234,7 +234,7 @@ const Veramante = () => (
       }}
     />
     <div className="container py-16 md:py-24 relative">
-      <SectionHeader kicker="Selected Work" title="Case Studies" no="IV" />
+      <SectionHeader kicker="Selected Work" title="Case Study I" no="IV" />
 
       <article className="grid grid-cols-12 gap-x-6 gap-y-8 items-stretch">
         {/* Intro copy */}
@@ -522,7 +522,7 @@ const Sippy = () => (
       }}
     />
     <div className="container py-16 md:py-24 relative">
-      <SectionHeader kicker="Selected Work" title="Case Studies (cont.)" no="IV·B" />
+      <SectionHeader kicker="Selected Work" title="Case Study II" no="IV·B" />
 
       <article className="grid grid-cols-12 gap-x-6 gap-y-8 items-stretch">
         {/* Intro */}
@@ -732,7 +732,7 @@ const MegsCreami = () => (
       }}
     />
     <div className="container py-16 md:py-24 relative">
-      <SectionHeader kicker="Selected Work" title="Case Studies (cont.)" no="IV·C" />
+      <SectionHeader kicker="Selected Work" title="Case Study III" no="IV·C" />
 
       <article className="grid grid-cols-12 gap-x-6 gap-y-8 items-stretch">
         <div className="col-span-12 md:col-span-7">
