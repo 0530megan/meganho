@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
+import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
+import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
+import veramenteCafe from "@/assets/veramente-cafe.png";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -235,17 +238,63 @@ const Veramante = () => (
         </p>
       </div>
       <div className="col-span-12 md:col-span-7">
-        <div className="relative border border-ink/20 bg-paper-deep">
-          <img
-            src={veramenteBrandBoard}
-            alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
-            className="w-full h-auto object-contain"
-            loading="lazy"
-          />
-          <div className="px-4 py-3 border-t border-ink/30 bg-paper/85">
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Plate II Brand identity board
-            </p>
+        <div className="grid grid-cols-12 gap-4">
+          {/* Brand board — primary plate */}
+          <figure className="col-span-12 sm:col-span-8 relative border border-ink/20 bg-paper-deep">
+            <img
+              src={veramenteBrandBoard}
+              alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+            <figcaption className="px-4 py-3 border-t border-ink/30 bg-paper/85">
+              <p className="font-mono text-[10px] small-caps text-ink-mute">
+                Plate II · Brand identity board
+              </p>
+            </figcaption>
+          </figure>
+
+          {/* Supporting product photography — stacked column */}
+          <div className="col-span-12 sm:col-span-4 grid grid-cols-2 sm:grid-cols-1 gap-4">
+            <figure className="relative border border-ink/20 bg-paper-deep">
+              <img
+                src={veramenteTinyBites}
+                alt="Veramente Tiny Bites blind box keychain collection display with affirmation cards"
+                className="w-full h-auto aspect-[4/5] object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-3 py-2 border-t border-ink/30 bg-paper/85">
+                <p className="font-mono text-[9px] small-caps text-ink-mute">
+                  Plate III · Tiny Bites collection
+                </p>
+              </figcaption>
+            </figure>
+            <figure className="relative border border-ink/20 bg-paper-deep">
+              <img
+                src={veramenteBagCharm}
+                alt="Veramente SPF stick clipped to a cream shoulder bag as a wearable charm"
+                className="w-full h-auto aspect-[4/5] object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-3 py-2 border-t border-ink/30 bg-paper/85">
+                <p className="font-mono text-[9px] small-caps text-ink-mute">
+                  Plate IV · Wear it daily
+                </p>
+              </figcaption>
+            </figure>
+            <figure className="relative border border-ink/20 bg-paper-deep col-span-2 sm:col-span-1">
+              <img
+                src={veramenteCafe}
+                alt="Model carrying the Veramente SPF charm at an outdoor café in sunlight"
+                className="w-full h-auto aspect-[4/5] object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-3 py-2 border-t border-ink/30 bg-paper/85">
+                <p className="font-mono text-[9px] small-caps text-ink-mute">
+                  Plate V · In the wild
+                </p>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
