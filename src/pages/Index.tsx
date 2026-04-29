@@ -239,9 +239,9 @@ const Veramante = () => (
         </p>
       </div>
 
-      {/* Brand board — large left plate, image vertically centred, no empty box below */}
-      <figure className="col-span-12 md:col-span-7 relative border border-ink/20 bg-paper-deep flex flex-col">
-        <div className="flex-1 min-h-0 flex items-center justify-center p-2 md:p-4">
+      {/* Brand board — large left plate, no frame, image centred with caption below */}
+      <figure className="col-span-12 md:col-span-7 flex flex-col">
+        <div className="flex-1 min-h-0 flex items-center justify-center">
           <img
             src={veramenteBrandBoard}
             alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
@@ -249,7 +249,7 @@ const Veramante = () => (
             loading="lazy"
           />
         </div>
-        <figcaption className="px-4 py-3 border-t border-ink/30 bg-paper/85">
+        <figcaption className="pt-3 mt-3 border-t border-ink/20">
           <p className="font-mono text-[10px] small-caps text-ink-mute">
             Plate II — Brand Identity Board
           </p>
