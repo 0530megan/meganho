@@ -105,7 +105,7 @@ const Hero = () => (
         {[
           "About the author",
           "Method & approach",
-          "VERAMANTE Carry Your SPF",
+          "VERAMENTE Carry Your SPF",
           "SIPPY Sparkling Blood Orange",
           "Skills & instruments",
           "Education & experience",
