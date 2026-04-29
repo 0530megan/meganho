@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, MapPin, ArrowUpRight, Sparkles, Phone } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 
@@ -254,34 +254,78 @@ const Veramante = () => (
     <div className="editorial-rule my-12" />
 
     <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-      <div className="col-span-12 md:col-span-4">
-        <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Brief</p>
-        <p className="font-display text-lg leading-relaxed">
-          Reimagine sunscreen as a lifestyle accessory to address low reapplication behaviour and increase brand visibility among Gen Z consumers.
+      {[
+        {
+          icon: Lightbulb,
+          label: "Concept",
+          body: "VERAMANTE reimagines sunscreen as a wearable lifestyle accessory, transforming it from a routine necessity into a visible, aesthetic object integrated into everyday styling.",
+          pull: "Sunscreen you don't forget because you want to show it.",
+        },
+        {
+          icon: Eye,
+          label: "Insight",
+          body: "Gen Z consumers often neglect sunscreen reapplication due to inconvenience, but actively engage with products that are aesthetic, portable, and expressive.",
+          pull: "When skincare becomes an accessory, it shifts from obligation to identity.",
+        },
+        {
+          icon: Package,
+          label: "Solution",
+          body: "A portable SPF50+ sunscreen stick designed with a built-in keychain loop, allowing users to carry and display it as part of their daily outfit.",
+          pull: "The product functions as both skincare and a mobile brand touchpoint.",
+        },
+      ].map(({ icon: Icon, label, body, pull }) => (
+        <div key={label} className="col-span-12 md:col-span-4">
+          <div className="flex items-center gap-2 mb-3">
+            <Icon className="size-4 text-accent-red" />
+            <p className="font-mono text-[11px] small-caps text-ink-mute">{label}</p>
+          </div>
+          <p className="font-display text-lg leading-relaxed mb-4">{body}</p>
+          <p className="font-display italic text-base text-accent-red leading-snug border-l-2 border-accent-red pl-3">
+            {pull}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div className="editorial-rule my-12" />
+
+    {/* Campaign */}
+    <div className="grid grid-cols-12 gap-x-6 gap-y-8">
+      <div className="col-span-12 md:col-span-5">
+        <p className="font-mono text-[11px] small-caps text-accent-red mb-3">Campaign</p>
+        <h4 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+          Clip. Protect. Collect.
+        </h4>
+        <p className="font-display italic text-lg text-ink-soft mt-4 leading-relaxed">
+          Sunscreen repositioned as part of a collectible accessory culture.
         </p>
       </div>
-      <div className="col-span-12 md:col-span-4">
-        <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Concept</p>
-        <p className="font-display text-lg leading-relaxed">
-          A portable sunscreen stick designed with a keychain attachment carried and displayed as part of the daily outfit. The product transforms SPF from a hidden routine into a visible, aesthetic object integrated into everyday life.
-        </p>
-      </div>
-      <div className="col-span-12 md:col-span-4">
-        <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Execution</p>
-        <p className="font-display text-lg leading-relaxed">
-          Designed in Figma brand identity, product visuals, and campaign layouts. The case demonstrates branding a product from concept to execution, combining visual design with marketing strategy.
-        </p>
+      <div className="col-span-12 md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { icon: Tag, t: "Selectable Charm", d: "Choose your base charm with each purchase." },
+          { icon: Gift, t: "Blind Box +$10", d: "Optional mystery upgrade for the collector." },
+          { icon: Share2, t: "Buy 3, Get 1", d: "Bundle incentive that rewards repeat buys." },
+        ].map(({ icon: Icon, t, d }) => (
+          <div key={t} className="border border-ink/30 p-5 bg-paper-deep">
+            <Icon className="size-5 text-accent-red mb-3" />
+            <p className="font-display text-xl mb-2 leading-tight">{t}</p>
+            <p className="font-mono text-xs text-ink-mute leading-relaxed">{d}</p>
+          </div>
+        ))}
       </div>
     </div>
 
-    <div className="mt-16 grid grid-cols-12 gap-x-6 gap-y-10">
+    <div className="editorial-rule my-12" />
+
+    <div className="mt-4 grid grid-cols-12 gap-x-6 gap-y-10">
       <div className="col-span-12 md:col-span-7">
-        <p className="font-mono text-[11px] small-caps text-accent-red mb-4">Strategy</p>
+        <p className="font-mono text-[11px] small-caps text-accent-red mb-4">Strategy · Why It Works</p>
         <ol className="space-y-5">
           {[
-            "Positioned the product itself as a marketing channel through visible, wearable design.",
-            "Introduced a collectible charm system to drive repeat purchase behaviour.",
-            "Built a social-first campaign centred on lifestyle integration and user-generated content.",
+            "Product-led marketing visibility drives awareness through everyday wear.",
+            "Collectability and gamification encourage repeat purchase and retention.",
+            "Social-first content on TikTok & Instagram fuels UGC, unboxing, and styling.",
+            "Community shifts users from consumers to collectors, building organic reach.",
           ].map((s, i) => (
             <li key={i} className="flex gap-5 border-b border-rule pb-5">
               <span className="font-display text-4xl text-accent-red leading-none w-12 shrink-0">
@@ -294,30 +338,29 @@ const Veramante = () => (
       </div>
       <div className="col-span-12 md:col-span-5 md:border-l md:border-ink/30 md:pl-6">
         <p className="font-mono text-[11px] small-caps text-accent-red mb-4">
-          Results · Projected
+          Impact · Projected
         </p>
         <div className="space-y-6">
           {[
-            { k: "↑", v: "Increased product visibility through everyday use" },
-            { k: "↻", v: "Higher repeat purchase driven by collectability" },
-            { k: "✦", v: "Strong potential for organic reach & UGC" },
-          ].map((r) => (
-            <div key={r.v} className="flex gap-5 items-start">
-              <span className="font-display text-5xl leading-none text-ink/80 w-10">
-                {r.k}
-              </span>
-              <p className="font-display text-lg italic text-ink-soft leading-snug pt-2">
-                {r.v}
+            { Icon: TrendingUp, v: "Increased brand visibility through everyday use" },
+            { Icon: Repeat, v: "Higher repeat purchase behaviour" },
+            { Icon: Sparkles, v: "Strong user-generated content potential" },
+            { Icon: Users, v: "Community of collectors, not just consumers" },
+          ].map(({ Icon, v }) => (
+            <div key={v} className="flex gap-4 items-start">
+              <Icon className="size-5 text-ink/70 mt-1 shrink-0" />
+              <p className="font-display text-lg italic text-ink-soft leading-snug">
+                {v}
               </p>
             </div>
           ))}
         </div>
         <div className="mt-10 p-5 border border-ink/30 bg-paper-deep">
           <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">
-            Editor's note
+            Key Takeaway
           </p>
           <p className="font-display italic text-sm text-ink-soft leading-relaxed">
-            "The keychain charm system turns each unit into a wearable advertisement the wearer becomes media."
+            "Product design acts as marketing turning a functional item into a shareable, identity-driven experience that naturally drives visibility and engagement."
           </p>
         </div>
       </div>
