@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, MapPin, ArrowUpRight, Sparkles } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Sparkles, Phone } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 
 const NAV = [
@@ -523,6 +523,17 @@ const Contact = () => (
           </div>
           <p className="font-mono text-[11px] small-caps mb-1 opacity-70">Email</p>
           <p className="font-display text-2xl break-all">megan123ho@icloud.com</p>
+        </a>
+        <a
+          href="tel:+61412176909"
+          className="block group border border-ink p-6 hover:bg-ink hover:text-paper transition-colors"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <Phone className="size-5" />
+            <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </div>
+          <p className="font-mono text-[11px] small-caps mb-1 opacity-70">Phone</p>
+          <p className="font-display text-2xl">0412 176 909</p>
         </a>
         <div className="border border-ink/30 p-6">
           <div className="flex items-center justify-between mb-3">
