@@ -234,15 +234,15 @@ const Veramante = () => (
           Sunscreen reimagined as a lifestyle accessory addressing low reapplication behaviour and increasing brand visibility among Gen Z consumers.
         </p>
       </div>
-      <div className="col-span-12 md:col-span-5">
-        <div className="aspect-[4/5] relative border border-ink/20 overflow-hidden">
+      <div className="col-span-12 md:col-span-7">
+        <div className="relative border border-ink/20 bg-paper-deep">
           <img
             src={veramenteBrandBoard}
             alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-auto object-contain"
             loading="lazy"
           />
-          <div className="absolute bottom-0 left-0 right-0 px-4 py-3 border-t border-ink/30 bg-paper/85 backdrop-blur">
+          <div className="px-4 py-3 border-t border-ink/30 bg-paper/85">
             <p className="font-mono text-[10px] small-caps text-ink-mute">
               Plate II Brand identity board
             </p>
