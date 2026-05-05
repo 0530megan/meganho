@@ -209,7 +209,7 @@ const AboutMe = () => {
             <div>
               <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">A field guide</p>
               <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
-                Ten little
+                A few little
                 <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> personalities</span>
               </h2>
               <p className="font-display italic text-lg text-ink-soft mt-4 max-w-xl">
