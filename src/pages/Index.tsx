@@ -89,8 +89,25 @@ const Hero = () => (
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-2">
           Hello, I&rsquo;m
         </p>
-        <h2 className="font-display font-medium leading-[0.82] tracking-[-0.03em] text-[clamp(4rem,16vw,13rem)]">
-          Megan <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>Ho.</span>
+        <h2 className="font-display font-medium leading-[0.82] tracking-[-0.03em] text-[clamp(4rem,15vw,12rem)]">
+          <span className="block">Megan</span>
+          <span className="relative inline-block italic" style={{ color: "hsl(var(--accent-burnt))" }}>
+            Ho.
+            <svg
+              aria-hidden
+              viewBox="0 0 220 22"
+              preserveAspectRatio="none"
+              className="absolute left-0 right-0 -bottom-3 w-full h-[0.18em]"
+            >
+              <path
+                d="M2 14 C 50 4, 110 22, 218 8"
+                fill="none"
+                stroke="hsl(var(--ink))"
+                strokeWidth="6"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
         </h2>
         <div className="mt-10 flex items-end gap-6 flex-wrap">
           <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
