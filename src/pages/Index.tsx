@@ -237,7 +237,7 @@ const SelectedWork = () => {
         <div className="marquee flex whitespace-nowrap py-2 font-mono text-[11px] small-caps">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
-              {["Hot off the press", "★", "Concept brands", "★", "Beauty / Bev / Dessert", "★", "Scroll on", "★", "Pick a flavor", "★", "Made with love", "★"].map((t, j) => (
+              {["Big ideas, small batches", "✺", "Brands with bite", "✺", "Strategy meets craft", "✺", "Concepts in colour", "✺", "Made to be remembered", "✺", "Now showing ↓", "✺"].map((t, j) => (
                 <span key={j} className="px-2">{t}</span>
               ))}
             </div>
