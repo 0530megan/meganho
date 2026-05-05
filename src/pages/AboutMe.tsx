@@ -10,7 +10,7 @@ import picReading from "@/assets/about/reading.jpg";
 import picOutfit from "@/assets/about/outfit.jpg";
 import picFeast from "@/assets/about/feast.jpg";
 import picWindow from "@/assets/about/window.jpg";
-import picMirror from "@/assets/about/mirror.jpg";
+
 import picLatte from "@/assets/about/latte.jpg";
 import picBay from "@/assets/about/bay.jpg";
 import picFlowers from "@/assets/about/flowers.jpg";
@@ -27,7 +27,7 @@ const PERSONALITIES = [
   { src: picBay, trait: "Sea-staring type", note: "Big water, small thoughts. Reset button.", tag: "09 · calm", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
   { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "10 · gather", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
   { src: picFlowers, trait: "Sentimental", note: "Keeps every flower, even the felt ones.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
-  { src: picMirror, trait: "Mirror-selfie historian", note: "Documenting the fits, for the archives.", tag: "12 · ego", tilt: "rotate-[-3deg]", span: "md:col-span-4", tape: "left", accent: "red" },
+  
   { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
 ];
 
