@@ -89,21 +89,35 @@ const Hero = () => (
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-2">
           Hello, I&rsquo;m
         </p>
-        <h2 className="font-display font-medium leading-[0.82] tracking-[-0.03em] text-[clamp(4rem,15vw,12rem)]">
-          <span className="block">Megan</span>
-          <span className="relative inline-block italic" style={{ color: "hsl(var(--accent-burnt))" }}>
+        <h2
+          className="leading-[0.78] tracking-[-0.05em] text-[clamp(5rem,19vw,16rem)] uppercase"
+          style={{
+            fontFamily: "'Fraunces', 'Newsreader', serif",
+            fontWeight: 900,
+            fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+          }}
+        >
+          <span className="block text-ink">MEGAN</span>
+          <span
+            className="relative inline-block italic"
+            style={{
+              color: "hsl(var(--accent-burnt))",
+              fontStyle: "italic",
+              transform: "translateX(-0.04em)",
+            }}
+          >
             Ho.
             <svg
               aria-hidden
               viewBox="0 0 220 22"
               preserveAspectRatio="none"
-              className="absolute left-0 right-0 -bottom-3 w-full h-[0.18em]"
+              className="absolute left-0 right-0 -bottom-2 w-full h-[0.16em]"
             >
               <path
                 d="M2 14 C 50 4, 110 22, 218 8"
                 fill="none"
                 stroke="hsl(var(--ink))"
-                strokeWidth="6"
+                strokeWidth="7"
                 strokeLinecap="round"
               />
             </svg>
