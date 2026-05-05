@@ -165,8 +165,6 @@ const AboutMe = () => {
       </div>
 
       {/* Personalities — pick a layout */}
-
-      {/* Personalities — pick a layout */}
       <PersonalitiesSection />
 
       {/* Values */}
