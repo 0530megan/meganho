@@ -68,10 +68,10 @@ const Hero = () => (
         </ul>
         <div className="hidden md:flex items-center gap-4">
           <Link
-            to="/work"
+            to="/about-me"
             className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity"
           >
-            Figma Studio <ArrowUpRight className="size-3" />
+            About Me <ArrowUpRight className="size-3" />
           </Link>
           <a
             href="#contact"
