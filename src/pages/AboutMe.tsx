@@ -360,100 +360,154 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* The spreads */}
-        <div className="container relative py-16 md:py-20 space-y-24 md:space-y-32">
+        {/* The cover stack */}
+        <div className="container relative py-12 md:py-16 space-y-16 md:space-y-24">
           {PERSONALITIES.map((p, i) => {
             const accentVar =
               p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
-            const isOdd = i % 2 === 1;
             const num = String(i + 1).padStart(2, "0");
+            const issueNo = `№ ${String(i + 1).padStart(3, "0")}`;
+            const alignLeft = p.align === "left";
+            // Build a fake barcode pattern (deterministic per index)
+            const bars = Array.from({ length: 28 }).map((_, j) => ((i * 7 + j * 3) % 5) + 1);
 
             return (
               <article
                 key={i}
-                className={`relative grid grid-cols-12 gap-x-6 gap-y-6 items-center ${
-                  isOdd ? "md:[&>figure]:order-2" : ""
-                }`}
+                className="relative mx-auto w-full max-w-5xl"
+                style={{ transform: `rotate(${i % 2 === 0 ? -0.6 : 0.6}deg)` }}
               >
-                {/* Photo */}
-                <figure
-                  className={`group relative col-span-12 md:col-span-7 ${p.tilt} hover:rotate-0 transition-transform duration-700`}
-                >
-                  <span
-                    aria-hidden
-                    className={`absolute -top-3 ${
-                      p.tape === "left" ? "left-8 -rotate-6" : "right-8 rotate-6"
-                    } h-6 w-20 border border-ink/20 z-20 shadow-sm`}
-                    style={{ background: `hsl(var(${accentVar}) / 0.6)` }}
-                  />
-                  <div
-                    className="relative border border-ink bg-paper p-3 transition-all duration-500 group-hover:shadow-[14px_16px_0_0_hsl(var(--ink))]"
-                    style={{ boxShadow: `8px 10px 0 0 hsl(var(${accentVar}))` }}
-                  >
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
-                      <img
-                        src={p.src}
-                        alt={p.trait}
-                        loading="lazy"
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
-                      />
-                      {/* Floating trait sticker */}
-                      <span
-                        className="absolute top-4 left-4 bg-paper border border-ink px-3 py-1 font-mono text-[10px] small-caps font-bold shadow-[3px_3px_0_0_hsl(var(--ink))] -rotate-2"
-                      >
-                        {p.tag}
-                      </span>
-                    </div>
-                    <figcaption className="pt-3 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
-                      <p className="font-display italic text-sm">"{p.note}"</p>
-                      <p className="font-mono text-[10px] small-caps text-ink-mute shrink-0">Plate {num}</p>
-                    </figcaption>
-                  </div>
-                </figure>
-
-                {/* Text spread */}
-                <div className={`col-span-12 md:col-span-5 ${isOdd ? "md:pr-8" : "md:pl-8"} relative`}>
-                  <div className="flex items-baseline gap-4 mb-2">
-                    <span
-                      className="font-display font-light text-[clamp(5rem,12vw,9rem)] leading-none italic"
-                      style={{ color: `hsl(var(${accentVar}))` }}
-                    >
-                      {num}
-                    </span>
-                    <div className="flex-1 h-px bg-ink/30 mb-4" />
-                    <span className="font-mono text-[10px] small-caps text-ink-mute mb-4">trait</span>
-                  </div>
-                  <h3 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-5">
-                    {p.trait}.
-                  </h3>
-                  <p className="font-display italic text-xl text-ink-soft leading-relaxed mb-6">
-                    {p.note}
-                  </p>
-                  <div className="flex items-center gap-3 font-mono text-[10px] small-caps">
-                    <span
-                      className="inline-block size-2.5 rounded-full border border-ink"
-                      style={{ background: `hsl(var(${accentVar}))` }}
-                    />
-                    <span className="text-ink-mute">filed under · {p.accent}</span>
-                    <span className="text-ink-mute">·</span>
-                    <span className="text-ink-mute">{p.tag}</span>
-                  </div>
-
-                  {/* Decorative squiggle every few entries */}
-                  {i % 3 === 2 && (
-                    <svg aria-hidden className="mt-8 w-32 h-8 text-[hsl(var(--accent-red))]" viewBox="0 0 120 30" fill="none">
-                      <path d="M2 15 Q 15 2, 28 15 T 54 15 T 80 15 T 106 15 T 132 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  )}
-                </div>
-
-                {/* Hairline number watermark */}
-                <span
+                {/* Spine shadow */}
+                <div
                   aria-hidden
-                  className="hidden md:block absolute -top-10 right-0 font-mono text-[10px] small-caps text-ink-mute tracking-widest"
+                  className="absolute -inset-x-2 -inset-y-2 -z-10"
+                  style={{ background: `hsl(var(${accentVar}) / 0.18)` }}
+                />
+
+                <div
+                  className="relative border-2 border-ink bg-paper overflow-hidden shadow-[14px_18px_0_0_hsl(var(--ink))]"
                 >
-                  Entry {num} / {String(PERSONALITIES.length).padStart(2, "0")}
-                </span>
+                  {/* Image — full bleed */}
+                  <div className="relative aspect-[3/4] md:aspect-[4/5] w-full overflow-hidden bg-ink">
+                    <img
+                      src={p.src}
+                      alt={p.trait}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    {/* Tone wash */}
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 mix-blend-multiply opacity-40"
+                      style={{
+                        background: `linear-gradient(${alignLeft ? "135deg" : "225deg"}, hsl(var(${accentVar}) / 0.6), transparent 55%)`,
+                      }}
+                    />
+                    {/* Vignette for type legibility */}
+                    <div
+                      aria-hidden
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, hsl(0 0% 0% / 0.35) 0%, transparent 22%, transparent 60%, hsl(0 0% 0% / 0.55) 100%)",
+                      }}
+                    />
+
+                    {/* TOP BAR — masthead row */}
+                    <div className="absolute top-0 left-0 right-0 px-5 md:px-8 pt-5 md:pt-7 flex items-start justify-between gap-4 text-paper">
+                      <div className="font-mono text-[10px] small-caps tracking-[0.18em] opacity-90">
+                        Issue {issueNo} · Vol. {num}
+                      </div>
+                      <div className="font-mono text-[10px] small-caps tracking-[0.18em] opacity-90 text-right">
+                        {p.price} <br />
+                        <span className="opacity-70">printed in megan-land</span>
+                      </div>
+                    </div>
+
+                    {/* MASTHEAD */}
+                    <div
+                      className={`absolute left-0 right-0 px-5 md:px-10 top-14 md:top-20 ${alignLeft ? "text-left" : "text-right"} text-paper`}
+                    >
+                      <h3
+                        className="font-display font-light leading-[0.78] tracking-tight"
+                        style={{
+                          fontSize: "clamp(3rem, 12vw, 8.5rem)",
+                          textShadow: "0 2px 24px hsl(0 0% 0% / 0.35)",
+                        }}
+                      >
+                        {p.masthead.split("").map((ch, k) => (
+                          <span key={k} className={k === 1 ? "italic" : ""} style={k === 1 ? { color: `hsl(var(${accentVar}))` } : undefined}>
+                            {ch}
+                          </span>
+                        ))}
+                      </h3>
+                      <p className="font-display italic text-base md:text-lg mt-2 opacity-90 max-w-md ml-auto" style={alignLeft ? { marginLeft: 0 } : undefined}>
+                        {p.tagline}
+                      </p>
+                    </div>
+
+                    {/* COVER LINES */}
+                    <div
+                      className={`absolute bottom-24 md:bottom-28 ${alignLeft ? "left-5 md:left-10 text-left" : "right-5 md:right-10 text-right"} text-paper max-w-[78%] md:max-w-[55%] space-y-2`}
+                    >
+                      {p.coverLines.slice(0, 4).map((line, k) => (
+                        <p
+                          key={k}
+                          className={`font-display leading-tight ${k === 0 ? "text-2xl md:text-3xl" : "text-base md:text-lg italic opacity-90"}`}
+                        >
+                          {k === 0 && (
+                            <span
+                              className="inline-block align-middle mr-2 font-mono text-[10px] small-caps not-italic px-1.5 py-0.5 border border-paper/70"
+                            >
+                              feature
+                            </span>
+                          )}
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+
+                    {/* BOTTOM BAR — barcode + issue number */}
+                    <div className="absolute bottom-0 left-0 right-0 px-5 md:px-8 pb-5 md:pb-7 flex items-end justify-between gap-4 text-paper">
+                      <div className="bg-paper text-ink px-2 py-1.5 inline-flex items-end gap-[2px]" aria-hidden>
+                        {bars.map((h, k) => (
+                          <span
+                            key={k}
+                            className="block bg-ink"
+                            style={{ width: h % 2 === 0 ? 1 : 2, height: 28 + h * 2 }}
+                          />
+                        ))}
+                        <span className="ml-2 font-mono text-[9px] small-caps">9 770{(1000 + i * 137).toString().slice(0, 3)} 4{i}2</span>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-display italic text-lg md:text-xl">"{p.note}"</p>
+                        <p className="font-mono text-[10px] small-caps opacity-80 mt-1">— Plate {num} · filed under {p.accent}</p>
+                      </div>
+                    </div>
+
+                    {/* Corner stamp */}
+                    <div
+                      className={`absolute ${alignLeft ? "right-5 md:right-8" : "left-5 md:left-8"} top-20 md:top-28`}
+                    >
+                      <div
+                        className="size-20 md:size-24 rounded-full border-2 border-paper flex flex-col items-center justify-center text-paper text-center -rotate-12"
+                        style={{ background: `hsl(var(${accentVar}) / 0.85)` }}
+                      >
+                        <span className="font-mono text-[9px] small-caps tracking-widest">trait no.</span>
+                        <span className="font-display text-3xl leading-none italic">{num}</span>
+                        <span className="font-mono text-[8px] small-caps tracking-widest mt-0.5">of {String(PERSONALITIES.length).padStart(2, "0")}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Footer strip outside the cover */}
+                  <div className="flex items-center justify-between gap-4 px-5 md:px-8 py-3 border-t-2 border-ink bg-paper-deep">
+                    <p className="font-mono text-[10px] small-caps text-ink-mute">
+                      The Megan Quarterly · {p.masthead.toLowerCase()} edition
+                    </p>
+                    <p className="font-display italic text-base">{p.trait}.</p>
+                  </div>
+                </div>
               </article>
             );
           })}
