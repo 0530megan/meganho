@@ -350,14 +350,14 @@ const LayoutStack = () => {
   const prev = () => setOrder((o) => [o[o.length - 1], ...o.slice(0, -1)]);
   const top = order[0];
   const p = PERSONALITIES[top];
-  const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+  const cream = "hsl(42 38% 92%)";
+  const ochre = "hsl(35 55% 42%)";
 
   return (
     <div className="container py-12 md:py-20 grid grid-cols-12 gap-10 items-center">
       <div className="col-span-12 md:col-span-7 relative h-[460px] md:h-[560px]">
         {order.slice(0, 4).map((idx, stackPos) => {
           const item = PERSONALITIES[idx];
-          const av = item.accent === "red" ? "--accent-red" : item.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
           const isTop = stackPos === 0;
           return (
             <button
@@ -371,10 +371,13 @@ const LayoutStack = () => {
                 pointerEvents: isTop ? "auto" : "none",
               }}
             >
-              <div className="h-full w-full border border-ink bg-paper p-3" style={{ boxShadow: `10px 12px 0 0 hsl(var(${av}))` }}>
+              <div
+                className="h-full w-full border border-ink p-3"
+                style={{ background: cream, boxShadow: `10px 12px 0 0 ${ochre}` }}
+              >
                 <div className="relative h-full w-full overflow-hidden">
                   <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" />
-                  <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-paper border border-ink px-2 py-1">{item.tag}</span>
+                  <span className="absolute top-3 left-3 font-mono text-[10px] small-caps border border-ink px-2 py-1" style={{ background: cream }}>{item.tag}</span>
                   {isTop && (
                     <span className="absolute bottom-3 right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">tap for next →</span>
                   )}
@@ -385,14 +388,14 @@ const LayoutStack = () => {
         })}
       </div>
       <div className="col-span-12 md:col-span-5">
-        <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
-        <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: `hsl(var(${accentVar}))` }}>
+        <p className="font-mono text-[11px] small-caps text-ink-soft mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
+        <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: ochre }}>
           {p.trait}.
         </h3>
         <p className="font-display italic text-xl text-ink-soft leading-relaxed mt-5">"{p.note}"</p>
         <div className="mt-8 flex gap-2">
           <button onClick={prev} className="font-mono text-[11px] small-caps border border-ink px-4 py-2 hover:bg-ink hover:text-paper transition-colors">← prev</button>
-          <button onClick={next} className="font-mono text-[11px] small-caps border border-ink bg-ink text-paper px-4 py-2 hover:bg-[hsl(var(--accent-burnt))] hover:border-[hsl(var(--accent-burnt))] transition-colors">next card →</button>
+          <button onClick={next} className="font-mono text-[11px] small-caps border border-ink bg-ink text-paper px-4 py-2 transition-colors" style={{}}>next card →</button>
         </div>
       </div>
     </div>
