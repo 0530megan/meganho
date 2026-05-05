@@ -316,7 +316,7 @@ const AboutMe = () => {
 export default AboutMe;
 
 /* ============================================================
-   PERSONALITIES — Archive slips
+   PERSONALITIES — Card stack
    ============================================================ */
 
 const PersonalitiesSection = () => {
@@ -331,56 +331,66 @@ const PersonalitiesSection = () => {
               <br />really?
             </h2>
           </div>
-          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · click a row</p>
+          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · tap a card</p>
         </div>
       </div>
 
-      <LayoutArchive />
+      <LayoutStack />
     </section>
   );
 };
 
-/* ---------- ARCHIVE SLIPS ---------- */
-const LayoutArchive = () => {
-  const [open, setOpen] = useState<number | null>(0);
+/* ---------- CARD STACK ---------- */
+const LayoutStack = () => {
+  const [order, setOrder] = useState(() => PERSONALITIES.map((_, i) => i));
+  const next = () => setOrder((o) => [...o.slice(1), o[0]]);
+  const prev = () => setOrder((o) => [o[o.length - 1], ...o.slice(0, -1)]);
+  const top = order[0];
+  const p = PERSONALITIES[top];
+  const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+
   return (
-    <div className="container py-12 md:py-16 max-w-4xl">
-      <div className="border-t-2 border-ink">
-        {PERSONALITIES.map((p, i) => {
-          const isOpen = open === i;
-          const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+    <div className="container py-12 md:py-20 grid grid-cols-12 gap-10 items-center">
+      <div className="col-span-12 md:col-span-7 relative h-[460px] md:h-[560px]">
+        {order.slice(0, 4).map((idx, stackPos) => {
+          const item = PERSONALITIES[idx];
+          const av = item.accent === "red" ? "--accent-red" : item.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+          const isTop = stackPos === 0;
           return (
-            <div key={i} className="border-b border-ink/40">
-              <button
-                onClick={() => setOpen(isOpen ? null : i)}
-                className="w-full grid grid-cols-12 gap-4 items-center py-4 text-left group"
-              >
-                <span className="col-span-2 md:col-span-1 font-mono text-[11px] small-caps tabular-nums text-ink-mute">№ {String(i+1).padStart(3,"0")}</span>
-                <span className="col-span-7 md:col-span-7 font-display text-xl md:text-2xl group-hover:italic transition-all">{p.trait}</span>
-                <span className="col-span-2 md:col-span-3 font-mono text-[10px] small-caps text-ink-mute hidden md:inline">{p.tag}</span>
-                <span className="col-span-1 font-mono text-lg text-right" style={{ color: `hsl(var(${accentVar}))` }}>{isOpen ? "−" : "+"}</span>
-              </button>
-              <div className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                <div className="overflow-hidden">
-                  <div className="pb-6 grid grid-cols-12 gap-6">
-                    <div className="col-span-12 md:col-span-5">
-                      <div className="aspect-[4/3] overflow-hidden border border-ink" style={{ boxShadow: `6px 8px 0 0 hsl(var(${accentVar}))` }}>
-                        <img src={p.src} alt={p.trait} className="h-full w-full object-cover" />
-                      </div>
-                    </div>
-                    <div className="col-span-12 md:col-span-7 md:pt-2">
-                      <p className="font-display italic text-xl text-ink-soft leading-relaxed">"{p.note}"</p>
-                      <div className="mt-5 flex items-center gap-3 font-mono text-[10px] small-caps text-ink-mute">
-                        <span className="size-2 rounded-full" style={{ background: `hsl(var(${accentVar}))` }} />
-                        filed under · {p.accent} · {p.tag}
-                      </div>
-                    </div>
-                  </div>
+            <button
+              key={idx}
+              onClick={isTop ? next : undefined}
+              className="absolute inset-0 transition-all duration-500 ease-out"
+              style={{
+                transform: `translate(${stackPos * 14}px, ${stackPos * 12}px) rotate(${(stackPos % 2 === 0 ? -1 : 1) * stackPos * 1.5}deg)`,
+                zIndex: 10 - stackPos,
+                opacity: stackPos === 3 ? 0.3 : 1 - stackPos * 0.12,
+                pointerEvents: isTop ? "auto" : "none",
+              }}
+            >
+              <div className="h-full w-full border border-ink bg-paper p-3" style={{ boxShadow: `10px 12px 0 0 hsl(var(${av}))` }}>
+                <div className="relative h-full w-full overflow-hidden">
+                  <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" />
+                  <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-paper border border-ink px-2 py-1">{item.tag}</span>
+                  {isTop && (
+                    <span className="absolute bottom-3 right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">tap for next →</span>
+                  )}
                 </div>
               </div>
-            </div>
+            </button>
           );
         })}
+      </div>
+      <div className="col-span-12 md:col-span-5">
+        <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
+        <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: `hsl(var(${accentVar}))` }}>
+          {p.trait}.
+        </h3>
+        <p className="font-display italic text-xl text-ink-soft leading-relaxed mt-5">"{p.note}"</p>
+        <div className="mt-8 flex gap-2">
+          <button onClick={prev} className="font-mono text-[11px] small-caps border border-ink px-4 py-2 hover:bg-ink hover:text-paper transition-colors">← prev</button>
+          <button onClick={next} className="font-mono text-[11px] small-caps border border-ink bg-ink text-paper px-4 py-2 hover:bg-[hsl(var(--accent-burnt))] hover:border-[hsl(var(--accent-burnt))] transition-colors">next card →</button>
+        </div>
       </div>
     </div>
   );
