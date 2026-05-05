@@ -204,11 +204,14 @@ const SelectedWork = () => {
             href={s.href}
             className="group block border border-ink bg-paper hover:bg-paper-deep transition-colors"
           >
-            <div className="relative overflow-hidden aspect-video border-b border-ink bg-paper-deep">
+            <div
+              className="relative overflow-hidden aspect-video border-b border-ink flex items-center justify-center p-6"
+              style={{ background: s.tint }}
+            >
               <img
                 src={s.cover}
-                alt={`${s.name} case study cover`}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt={`${s.name} logo`}
+                className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
               <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
