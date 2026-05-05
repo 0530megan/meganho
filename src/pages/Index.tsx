@@ -198,6 +198,10 @@ const SelectedWork = () => {
       cover: veramenteLogo,
       tint: "hsl(28 60% 92%)",
       href: "#work",
+      tags: ["Beauty", "Concept", "Identity"],
+      stamp: "SPF · 50",
+      tilt: "-rotate-2",
+      shadow: "hsl(var(--accent-ochre))",
     },
     {
       no: "II",
@@ -206,6 +210,10 @@ const SelectedWork = () => {
       cover: sippyLogo,
       tint: "hsl(10 90% 55%)",
       href: "#sippy",
+      tags: ["Beverage", "Packaging", "Campaign"],
+      stamp: "Pop · Fizz",
+      tilt: "rotate-1",
+      shadow: "hsl(var(--accent-red))",
     },
     {
       no: "III",
@@ -214,18 +222,49 @@ const SelectedWork = () => {
       cover: megsCreamiLogo,
       tint: "hsl(350 70% 92%)",
       href: "#megs-creami",
+      tags: ["Dessert", "Brand", "World"],
+      stamp: "Scoop · 02",
+      tilt: "-rotate-1",
+      shadow: "hsl(var(--accent-burnt))",
     },
   ];
   return (
-    <section id="about" className="container py-16 md:py-24">
+    <section id="about" className="container py-16 md:py-24 relative">
       <SectionHeader kicker="Some of my work" title="Selected Case Studies" no="II" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {studies.map((s) => (
+
+      {/* Marquee ribbon */}
+      <div className="relative overflow-hidden border-y border-ink bg-ink text-paper mb-10">
+        <div className="marquee flex whitespace-nowrap py-2 font-mono text-[11px] small-caps">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
+              {["Hot off the press", "★", "Concept brands", "★", "Beauty / Bev / Dessert", "★", "Scroll on", "★", "Pick a flavor", "★", "Made with love", "★"].map((t, j) => (
+                <span key={j} className="px-2">{t}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 pt-4">
+        {studies.map((s, i) => (
           <a
             key={s.no}
             href={s.href}
-            className="group block border border-ink bg-paper hover:bg-paper-deep transition-colors"
+            className={`group relative block border border-ink bg-paper transition-all duration-300 hover:-translate-y-2 hover:rotate-0 ${s.tilt}`}
+            style={{ boxShadow: `8px 10px 0 0 ${s.shadow}` }}
           >
+            {/* washi tape */}
+            <span
+              aria-hidden
+              className="absolute -top-3 left-6 h-5 w-16 rotate-[-6deg] border border-ink/30 opacity-80 z-10"
+              style={{ background: "hsl(var(--accent-ochre) / 0.55)" }}
+            />
+            <span
+              aria-hidden
+              className="absolute -top-2 right-8 h-4 w-12 rotate-[8deg] border border-ink/30 opacity-80 z-10"
+              style={{ background: "hsl(var(--accent-red) / 0.45)" }}
+            />
+
             <div
               className="relative overflow-hidden aspect-video border-b border-ink flex items-center justify-center p-6"
               style={{ background: s.tint }}
@@ -233,11 +272,17 @@ const SelectedWork = () => {
               <img
                 src={s.cover}
                 alt={`${s.name} logo`}
-                className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[-2deg]"
                 loading="lazy"
               />
               <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
                 Case · {s.no}
+              </span>
+              {/* circular stamp */}
+              <span
+                className="absolute bottom-3 right-3 size-16 rounded-full border-2 border-ink/70 flex items-center justify-center text-center font-mono text-[9px] small-caps leading-tight rotate-[-12deg] bg-paper/80 backdrop-blur-sm"
+              >
+                {s.stamp}
               </span>
               <div
                 aria-hidden
@@ -248,14 +293,33 @@ const SelectedWork = () => {
             <div className="p-5">
               <div className="flex items-baseline justify-between gap-3 mb-2">
                 <h3 className="font-display text-2xl tracking-tight">{s.name}</h3>
-                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-[hsl(var(--accent-burnt))]" />
+                <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-[hsl(var(--accent-burnt))]" />
               </div>
-              <p className="font-display italic text-sm text-ink-soft">
+              <p className="font-display italic text-sm text-ink-soft mb-4">
                 {s.subtitle}
               </p>
+              <div className="flex flex-wrap gap-1.5">
+                {s.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="font-mono text-[10px] small-caps border border-ink/40 px-2 py-0.5 group-hover:bg-ink group-hover:text-paper transition-colors"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
           </a>
         ))}
+      </div>
+
+      {/* Footer note */}
+      <div className="mt-10 flex items-center gap-4">
+        <div className="h-px flex-1 bg-ink/30" />
+        <p className="font-display italic text-ink-soft text-sm">
+          psst — hover the cards
+        </p>
+        <div className="h-px flex-1 bg-ink/30" />
       </div>
     </section>
   );
