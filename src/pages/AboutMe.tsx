@@ -316,24 +316,13 @@ const AboutMe = () => {
 export default AboutMe;
 
 /* ============================================================
-   PERSONALITIES — 4 LOW-KEY INTERACTIVE LAYOUT OPTIONS
+   PERSONALITIES — Tabbed contact sheet
    ============================================================ */
 
-type Layout = "filmstrip" | "tabs" | "archive" | "stack";
-
-const LAYOUTS: { id: Layout; label: string; blurb: string }[] = [
-  { id: "filmstrip", label: "Filmstrip", blurb: "35mm horizontal scroller" },
-  { id: "tabs",      label: "Contact sheet", blurb: "Numbered tabs, one hero" },
-  { id: "archive",   label: "Archive slips", blurb: "Library-card list" },
-  { id: "stack",     label: "Card stack",    blurb: "Drag through one by one" },
-];
-
 const PersonalitiesSection = () => {
-  const [layout, setLayout] = useState<Layout>("filmstrip");
-
   return (
     <section className="bg-paper-deep border-y-2 border-ink overflow-hidden relative">
-      <div className="container relative pt-16 md:pt-20 pb-8">
+      <div className="container relative pt-16 md:pt-20 pb-4">
         <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
           <div>
             <p className="font-mono text-[11px] small-caps text-ink-mute mb-2">Issue №02 · The Personality Index</p>
@@ -342,40 +331,11 @@ const PersonalitiesSection = () => {
               <br />really?
             </h2>
           </div>
-          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries</p>
-        </div>
-
-        {/* Layout switcher */}
-        <div className="mt-6 border-t border-b border-ink/30 py-3 flex items-center gap-2 flex-wrap">
-          <span className="font-mono text-[10px] small-caps text-ink-mute mr-2">View ⟶</span>
-          {LAYOUTS.map((l) => {
-            const active = layout === l.id;
-            return (
-              <button
-                key={l.id}
-                onClick={() => setLayout(l.id)}
-                className={`font-mono text-[11px] small-caps px-3 py-1.5 border transition-colors ${
-                  active
-                    ? "bg-ink text-paper border-ink"
-                    : "border-ink/30 text-ink-soft hover:border-ink hover:text-ink"
-                }`}
-              >
-                {l.label}
-              </button>
-            );
-          })}
-          <span className="font-display italic text-sm text-ink-mute ml-auto hidden md:inline">
-            {LAYOUTS.find((l) => l.id === layout)?.blurb}
-          </span>
+          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · click a number</p>
         </div>
       </div>
 
-      <div className="relative">
-        {layout === "filmstrip" && <LayoutFilmstrip />}
-        {layout === "tabs"      && <LayoutTabs />}
-        {layout === "archive"   && <LayoutArchive />}
-        {layout === "stack"     && <LayoutStack />}
-      </div>
+      <LayoutTabs />
     </section>
   );
 };
