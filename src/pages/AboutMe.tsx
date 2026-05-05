@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
-import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import picSunset from "@/assets/about/sunset.jpg";
 import picSandwich from "@/assets/about/sandwich.jpg";
@@ -316,24 +316,13 @@ const AboutMe = () => {
 export default AboutMe;
 
 /* ============================================================
-   PERSONALITIES — 4 LOW-KEY INTERACTIVE LAYOUT OPTIONS
+   PERSONALITIES — Tabbed contact sheet
    ============================================================ */
 
-type Layout = "filmstrip" | "tabs" | "archive" | "stack";
-
-const LAYOUTS: { id: Layout; label: string; blurb: string }[] = [
-  { id: "filmstrip", label: "Filmstrip", blurb: "35mm horizontal scroller" },
-  { id: "tabs",      label: "Contact sheet", blurb: "Numbered tabs, one hero" },
-  { id: "archive",   label: "Archive slips", blurb: "Library-card list" },
-  { id: "stack",     label: "Card stack",    blurb: "Drag through one by one" },
-];
-
 const PersonalitiesSection = () => {
-  const [layout, setLayout] = useState<Layout>("filmstrip");
-
   return (
     <section className="bg-paper-deep border-y-2 border-ink overflow-hidden relative">
-      <div className="container relative pt-16 md:pt-20 pb-8">
+      <div className="container relative pt-16 md:pt-20 pb-4">
         <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
           <div>
             <p className="font-mono text-[11px] small-caps text-ink-mute mb-2">Issue №02 · The Personality Index</p>
@@ -342,96 +331,22 @@ const PersonalitiesSection = () => {
               <br />really?
             </h2>
           </div>
-          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries</p>
-        </div>
-
-        {/* Layout switcher */}
-        <div className="mt-6 border-t border-b border-ink/30 py-3 flex items-center gap-2 flex-wrap">
-          <span className="font-mono text-[10px] small-caps text-ink-mute mr-2">View ⟶</span>
-          {LAYOUTS.map((l) => {
-            const active = layout === l.id;
-            return (
-              <button
-                key={l.id}
-                onClick={() => setLayout(l.id)}
-                className={`font-mono text-[11px] small-caps px-3 py-1.5 border transition-colors ${
-                  active
-                    ? "bg-ink text-paper border-ink"
-                    : "border-ink/30 text-ink-soft hover:border-ink hover:text-ink"
-                }`}
-              >
-                {l.label}
-              </button>
-            );
-          })}
-          <span className="font-display italic text-sm text-ink-mute ml-auto hidden md:inline">
-            {LAYOUTS.find((l) => l.id === layout)?.blurb}
-          </span>
+          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · click a number</p>
         </div>
       </div>
 
-      <div className="relative">
-        {layout === "filmstrip" && <LayoutFilmstrip />}
-        {layout === "tabs"      && <LayoutTabs />}
-        {layout === "archive"   && <LayoutArchive />}
-        {layout === "stack"     && <LayoutStack />}
-      </div>
+      <LayoutTabs />
     </section>
   );
 };
 
-/* ---------- 1. FILMSTRIP ---------- */
-const LayoutFilmstrip = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const scroll = (dir: 1 | -1) => {
-    ref.current?.scrollBy({ left: dir * 480, behavior: "smooth" });
-  };
-  return (
-    <div className="relative pb-20">
-      <div className="container flex items-center justify-between mb-4 font-mono text-[10px] small-caps text-ink-mute">
-        <span>35mm · drag or scroll →</span>
-        <div className="flex gap-2">
-          <button onClick={() => scroll(-1)} className="border border-ink p-1.5 hover:bg-ink hover:text-paper transition-colors"><ChevronLeft className="size-3.5" /></button>
-          <button onClick={() => scroll(1)}  className="border border-ink p-1.5 hover:bg-ink hover:text-paper transition-colors"><ChevronRight className="size-3.5" /></button>
-        </div>
-      </div>
-      <div className="bg-ink border-y-2 border-ink relative">
-        {/* sprocket holes */}
-        <div aria-hidden className="absolute inset-x-0 top-1.5 flex gap-3 px-4 overflow-hidden">
-          {Array.from({ length: 80 }).map((_, i) => <span key={i} className="size-3 bg-paper-deep shrink-0" />)}
-        </div>
-        <div aria-hidden className="absolute inset-x-0 bottom-1.5 flex gap-3 px-4 overflow-hidden">
-          {Array.from({ length: 80 }).map((_, i) => <span key={i} className="size-3 bg-paper-deep shrink-0" />)}
-        </div>
-        <div ref={ref} className="overflow-x-auto py-8 scrollbar-hide">
-          <div className="flex gap-2 px-6 w-max">
-            {PERSONALITIES.map((p, i) => (
-              <figure key={i} className="group relative w-[280px] md:w-[340px] shrink-0 border-x border-paper-deep/40">
-                <div className="relative aspect-[3/4] overflow-hidden bg-paper">
-                  <img src={p.src} alt={p.trait} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <span className="absolute top-2 left-2 font-mono text-[9px] small-caps text-paper bg-ink/70 px-1.5 py-0.5">FRAME {String(i+1).padStart(2,"0")}</span>
-                </div>
-                <figcaption className="bg-paper-deep px-3 py-3 border-t border-ink/20">
-                  <p className="font-display text-lg leading-tight">{p.trait}</p>
-                  <p className="font-display italic text-sm text-ink-mute mt-1">"{p.note}"</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-/* ---------- 2. TABBED CONTACT SHEET ---------- */
+/* ---------- TABBED CONTACT SHEET ---------- */
 const LayoutTabs = () => {
   const [active, setActive] = useState(0);
   const p = PERSONALITIES[active];
   const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
   return (
     <div className="container py-12 md:py-16 grid grid-cols-12 gap-6 md:gap-10">
-      {/* Numbered list */}
       <ol className="col-span-12 md:col-span-4 lg:col-span-3 border-t border-ink/30">
         {PERSONALITIES.map((it, i) => {
           const on = i === active;
@@ -450,7 +365,6 @@ const LayoutTabs = () => {
         })}
       </ol>
 
-      {/* Hero */}
       <div className="col-span-12 md:col-span-8 lg:col-span-9">
         <figure key={active} className="animate-fade-in">
           <div className="relative aspect-[16/10] overflow-hidden border border-ink" style={{ boxShadow: `10px 12px 0 0 hsl(var(${accentVar}))` }}>
@@ -465,108 +379,6 @@ const LayoutTabs = () => {
             <p className="font-mono text-[10px] small-caps text-ink-mute shrink-0">{String(active+1).padStart(2,"0")} / {String(PERSONALITIES.length).padStart(2,"0")}</p>
           </figcaption>
         </figure>
-      </div>
-    </div>
-  );
-};
-
-/* ---------- 3. ARCHIVE SLIPS ---------- */
-const LayoutArchive = () => {
-  const [open, setOpen] = useState<number | null>(0);
-  return (
-    <div className="container py-12 md:py-16 max-w-4xl">
-      <div className="border-t-2 border-ink">
-        {PERSONALITIES.map((p, i) => {
-          const isOpen = open === i;
-          const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
-          return (
-            <div key={i} className="border-b border-ink/40">
-              <button
-                onClick={() => setOpen(isOpen ? null : i)}
-                className="w-full grid grid-cols-12 gap-4 items-center py-4 text-left group"
-              >
-                <span className="col-span-2 md:col-span-1 font-mono text-[11px] small-caps tabular-nums text-ink-mute">№ {String(i+1).padStart(3,"0")}</span>
-                <span className="col-span-7 md:col-span-7 font-display text-xl md:text-2xl group-hover:italic transition-all">{p.trait}</span>
-                <span className="col-span-2 md:col-span-3 font-mono text-[10px] small-caps text-ink-mute hidden md:inline">{p.tag}</span>
-                <span className="col-span-1 font-mono text-lg text-right" style={{ color: `hsl(var(${accentVar}))` }}>{isOpen ? "−" : "+"}</span>
-              </button>
-              <div className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                <div className="overflow-hidden">
-                  <div className="pb-6 grid grid-cols-12 gap-6">
-                    <div className="col-span-12 md:col-span-5">
-                      <div className="aspect-[4/3] overflow-hidden border border-ink" style={{ boxShadow: `6px 8px 0 0 hsl(var(${accentVar}))` }}>
-                        <img src={p.src} alt={p.trait} className="h-full w-full object-cover" />
-                      </div>
-                    </div>
-                    <div className="col-span-12 md:col-span-7 md:pt-2">
-                      <p className="font-display italic text-xl text-ink-soft leading-relaxed">"{p.note}"</p>
-                      <div className="mt-5 flex items-center gap-3 font-mono text-[10px] small-caps text-ink-mute">
-                        <span className="size-2 rounded-full" style={{ background: `hsl(var(${accentVar}))` }} />
-                        filed under · {p.accent} · {p.tag}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-/* ---------- 4. STACK ---------- */
-const LayoutStack = () => {
-  const [order, setOrder] = useState(() => PERSONALITIES.map((_, i) => i));
-  const next = () => setOrder((o) => [...o.slice(1), o[0]]);
-  const prev = () => setOrder((o) => [o[o.length - 1], ...o.slice(0, -1)]);
-  const top = order[0];
-  const p = PERSONALITIES[top];
-  const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
-
-  return (
-    <div className="container py-12 md:py-16 grid grid-cols-12 gap-8 items-center">
-      <div className="col-span-12 md:col-span-7 relative h-[440px] md:h-[520px]">
-        {order.slice(0, 4).map((idx, stackPos) => {
-          const item = PERSONALITIES[idx];
-          const av = item.accent === "red" ? "--accent-red" : item.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
-          const isTop = stackPos === 0;
-          return (
-            <button
-              key={idx}
-              onClick={isTop ? next : undefined}
-              className="absolute inset-0 transition-all duration-500 ease-out"
-              style={{
-                transform: `translate(${stackPos * 14}px, ${stackPos * 12}px) rotate(${(stackPos % 2 === 0 ? -1 : 1) * stackPos * 1.5}deg)`,
-                zIndex: 10 - stackPos,
-                opacity: stackPos === 3 ? 0.3 : 1 - stackPos * 0.12,
-                pointerEvents: isTop ? "auto" : "none",
-              }}
-            >
-              <div className="h-full w-full border border-ink bg-paper p-3" style={{ boxShadow: `10px 12px 0 0 hsl(var(${av}))` }}>
-                <div className="relative h-full w-full overflow-hidden">
-                  <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" />
-                  <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-paper border border-ink px-2 py-1">{item.tag}</span>
-                  {isTop && (
-                    <span className="absolute bottom-3 right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">tap for next →</span>
-                  )}
-                </div>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-      <div className="col-span-12 md:col-span-5">
-        <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
-        <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: `hsl(var(${accentVar}))` }}>
-          {p.trait}.
-        </h3>
-        <p className="font-display italic text-xl text-ink-soft leading-relaxed mt-5">"{p.note}"</p>
-        <div className="mt-8 flex gap-2">
-          <button onClick={prev} className="font-mono text-[11px] small-caps border border-ink px-4 py-2 hover:bg-ink hover:text-paper transition-colors">← prev</button>
-          <button onClick={next} className="font-mono text-[11px] small-caps border border-ink bg-ink text-paper px-4 py-2 hover:bg-[hsl(var(--accent-burnt))] hover:border-[hsl(var(--accent-burnt))] transition-colors">next card →</button>
-        </div>
       </div>
     </div>
   );
