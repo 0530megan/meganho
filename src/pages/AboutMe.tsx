@@ -316,7 +316,7 @@ const AboutMe = () => {
 export default AboutMe;
 
 /* ============================================================
-   PERSONALITIES — Tabbed contact sheet
+   PERSONALITIES — Archive slips
    ============================================================ */
 
 const PersonalitiesSection = () => {
@@ -331,54 +331,56 @@ const PersonalitiesSection = () => {
               <br />really?
             </h2>
           </div>
-          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · click a number</p>
+          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · click a row</p>
         </div>
       </div>
 
-      <LayoutTabs />
+      <LayoutArchive />
     </section>
   );
 };
 
-/* ---------- TABBED CONTACT SHEET ---------- */
-const LayoutTabs = () => {
-  const [active, setActive] = useState(0);
-  const p = PERSONALITIES[active];
-  const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+/* ---------- ARCHIVE SLIPS ---------- */
+const LayoutArchive = () => {
+  const [open, setOpen] = useState<number | null>(0);
   return (
-    <div className="container py-12 md:py-16 grid grid-cols-12 gap-6 md:gap-10">
-      <ol className="col-span-12 md:col-span-4 lg:col-span-3 border-t border-ink/30">
-        {PERSONALITIES.map((it, i) => {
-          const on = i === active;
+    <div className="container py-12 md:py-16 max-w-4xl">
+      <div className="border-t-2 border-ink">
+        {PERSONALITIES.map((p, i) => {
+          const isOpen = open === i;
+          const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
           return (
-            <li key={i} className="border-b border-ink/30">
+            <div key={i} className="border-b border-ink/40">
               <button
-                onClick={() => setActive(i)}
-                className={`w-full text-left flex items-baseline gap-4 py-3 transition-colors ${on ? "text-ink" : "text-ink-mute hover:text-ink"}`}
+                onClick={() => setOpen(isOpen ? null : i)}
+                className="w-full grid grid-cols-12 gap-4 items-center py-4 text-left group"
               >
-                <span className="font-mono text-[11px] small-caps tabular-nums w-7">{String(i+1).padStart(2,"0")}</span>
-                <span className={`font-display text-lg leading-tight ${on ? "italic" : ""}`}>{it.trait}</span>
-                {on && <span className="ml-auto text-[hsl(var(--accent-burnt))]">●</span>}
+                <span className="col-span-2 md:col-span-1 font-mono text-[11px] small-caps tabular-nums text-ink-mute">№ {String(i+1).padStart(3,"0")}</span>
+                <span className="col-span-7 md:col-span-7 font-display text-xl md:text-2xl group-hover:italic transition-all">{p.trait}</span>
+                <span className="col-span-2 md:col-span-3 font-mono text-[10px] small-caps text-ink-mute hidden md:inline">{p.tag}</span>
+                <span className="col-span-1 font-mono text-lg text-right" style={{ color: `hsl(var(${accentVar}))` }}>{isOpen ? "−" : "+"}</span>
               </button>
-            </li>
+              <div className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div className="overflow-hidden">
+                  <div className="pb-6 grid grid-cols-12 gap-6">
+                    <div className="col-span-12 md:col-span-5">
+                      <div className="aspect-[4/3] overflow-hidden border border-ink" style={{ boxShadow: `6px 8px 0 0 hsl(var(${accentVar}))` }}>
+                        <img src={p.src} alt={p.trait} className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <div className="col-span-12 md:col-span-7 md:pt-2">
+                      <p className="font-display italic text-xl text-ink-soft leading-relaxed">"{p.note}"</p>
+                      <div className="mt-5 flex items-center gap-3 font-mono text-[10px] small-caps text-ink-mute">
+                        <span className="size-2 rounded-full" style={{ background: `hsl(var(${accentVar}))` }} />
+                        filed under · {p.accent} · {p.tag}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           );
         })}
-      </ol>
-
-      <div className="col-span-12 md:col-span-8 lg:col-span-9">
-        <figure key={active} className="animate-fade-in">
-          <div className="relative aspect-[16/10] overflow-hidden border border-ink" style={{ boxShadow: `10px 12px 0 0 hsl(var(${accentVar}))` }}>
-            <img src={p.src} alt={p.trait} className="absolute inset-0 h-full w-full object-cover" />
-            <span className="absolute top-4 left-4 font-mono text-[10px] small-caps bg-paper border border-ink px-2 py-1">{p.tag}</span>
-          </div>
-          <figcaption className="mt-5 flex items-baseline justify-between gap-6 border-t border-ink pt-3">
-            <div>
-              <p className="font-display text-3xl md:text-4xl leading-tight">{p.trait}.</p>
-              <p className="font-display italic text-lg text-ink-soft mt-2 max-w-xl">"{p.note}"</p>
-            </div>
-            <p className="font-mono text-[10px] small-caps text-ink-mute shrink-0">{String(active+1).padStart(2,"0")} / {String(PERSONALITIES.length).padStart(2,"0")}</p>
-          </figcaption>
-        </figure>
       </div>
     </div>
   );
