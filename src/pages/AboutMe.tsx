@@ -17,7 +17,7 @@ import picBay from "@/assets/about/bay.jpg";
 import picFlowers from "@/assets/about/flowers.jpg";
 
 const PERSONALITIES = [
-  { src: picSunset, trait: "Romantic", note: "Always stop for a good sky.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
+  { src: picSunset, trait: "Sentimental", note: "Always stop for a good sky.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
   { src: picSandwich, trait: "Greedy (in the best way)", note: "Will plan a whole day around one sandwich.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
   { src: picReading, trait: "Slow living", note: "Books, breeze, no notifications.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
   { src: picDog, trait: "Soft for animals", note: "Every dog is my new best friend.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
@@ -27,7 +27,7 @@ const PERSONALITIES = [
   { src: picOutfit, trait: "Quiet vanity", note: "An outfit is half the personality.", tag: "08 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
   { src: picBay, trait: "Sea-staring type", note: "Big water, small thoughts. Reset button.", tag: "09 · calm", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
   { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "10 · gather", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
-  { src: picFlowers, trait: "Sentimental", note: "Keeps every flower, even the felt ones.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picFlowers, trait: "Keeper", note: "Keeps every flower, even the felt ones.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
   
   { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
 ];
