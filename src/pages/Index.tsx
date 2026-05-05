@@ -1242,7 +1242,7 @@ const Index = () => {
         className="fixed top-0 left-0 h-[2px] bg-accent-red z-50 transition-[width]"
         style={{ width: `${progress}%` }}
       />
-      <Masthead />
+      <Hero />
       <main>
         <Hero />
         <SelectedWork />
