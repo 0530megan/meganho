@@ -11,18 +11,24 @@ import picOutfit from "@/assets/about/outfit.jpg";
 import picFeast from "@/assets/about/feast.jpg";
 import picWindow from "@/assets/about/window.jpg";
 import picMirror from "@/assets/about/mirror.jpg";
+import picLatte from "@/assets/about/latte.jpg";
+import picBay from "@/assets/about/bay.jpg";
+import picFlowers from "@/assets/about/flowers.jpg";
 
 const PERSONALITIES = [
   { src: picSunset, trait: "Romantic", note: "Chasing pink skies & golden hours.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
   { src: picSandwich, trait: "Greedy (in the best way)", note: "Will plan a whole day around one sandwich.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
   { src: picReading, trait: "Slow living", note: "Books, breeze, no notifications.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
   { src: picDog, trait: "Soft for animals", note: "Every dog is my new best friend.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
-  { src: picForest, trait: "Outdoorsy daydreamer", note: "Sunlight through gum trees, always.", tag: "05 · wander", tilt: "rotate-[-4deg]", span: "md:col-span-5", tape: "left", accent: "ochre" },
-  { src: picStreet, trait: "Iced coffee girlie", note: "Sydney terraces, oat latte, no agenda.", tag: "06 · routine", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
-  { src: picOutfit, trait: "Quiet vanity", note: "An outfit is half the personality.", tag: "07 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
-  { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "08 · gather", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
-  { src: picMirror, trait: "Mirror-selfie historian", note: "Documenting the fits, for the archives.", tag: "09 · ego", tilt: "rotate-[-3deg]", span: "md:col-span-4", tape: "left", accent: "red" },
-  { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "10 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
+  { src: picLatte, trait: "Latte art apprentice", note: "One day the rosetta will be perfect.", tag: "05 · craft", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "left", accent: "red" },
+  { src: picForest, trait: "Outdoorsy daydreamer", note: "Sunlight through gum trees, always.", tag: "06 · wander", tilt: "rotate-[-4deg]", span: "md:col-span-5", tape: "left", accent: "ochre" },
+  { src: picStreet, trait: "Iced coffee girlie", note: "Sydney terraces, oat latte, no agenda.", tag: "07 · routine", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picOutfit, trait: "Quiet vanity", note: "An outfit is half the personality.", tag: "08 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picBay, trait: "Sea-staring type", note: "Big water, small thoughts. Reset button.", tag: "09 · calm", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
+  { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "10 · gather", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
+  { src: picFlowers, trait: "Sentimental", note: "Keeps every flower, even the felt ones.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picMirror, trait: "Mirror-selfie historian", note: "Documenting the fits, for the archives.", tag: "12 · ego", tilt: "rotate-[-3deg]", span: "md:col-span-4", tape: "left", accent: "red" },
+  { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
 ];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
@@ -203,7 +209,7 @@ const AboutMe = () => {
             <div>
               <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">A field guide</p>
               <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
-                Ten little
+                A few little
                 <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> personalities</span>
               </h2>
               <p className="font-display italic text-lg text-ink-soft mt-4 max-w-xl">
