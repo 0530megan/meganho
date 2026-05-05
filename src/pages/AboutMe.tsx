@@ -119,13 +119,32 @@ const AboutMe = () => {
         </div>
       </section>
 
+      {/* Marquee strip */}
+      <div className="relative overflow-hidden border-y-2 border-ink bg-[hsl(var(--accent-burnt))] text-paper">
+        <div className="marquee flex whitespace-nowrap py-2.5 font-mono text-[12px] small-caps font-bold">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
+              {["Designer ✺ Marketer ✺ Snack enthusiast", "✿", "Currently in Melbourne", "✿", "Open to fun briefs", "✿", "Probably drinking coffee", "✿", "Loves a good colour palette", "✿"].map((t, j) => (
+                <span key={j} className="px-2">{t}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* The long story */}
-      <section className="container py-16 md:py-24 grid grid-cols-12 gap-x-6 gap-y-10">
+      <section className="container py-16 md:py-24 grid grid-cols-12 gap-x-6 gap-y-10 relative">
+        <svg aria-hidden className="absolute top-8 right-6 w-32 h-16 text-[hsl(var(--accent-red))] opacity-70 hidden md:block" viewBox="0 0 120 60" fill="none">
+          <path d="M4 30 Q 20 4, 36 30 T 68 30 T 100 30 T 132 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        </svg>
         <aside className="col-span-12 md:col-span-3">
           <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">Chapter 01</p>
           <h2 className="font-display text-3xl md:text-4xl tracking-tight leading-none">
             The long story, kept short.
           </h2>
+          <span className="inline-block mt-6 font-mono text-[10px] small-caps font-bold bg-ink text-paper px-3 py-1.5 rotate-[-4deg]">
+            ★ Behind the scenes
+          </span>
         </aside>
         <div className="col-span-12 md:col-span-9 md:columns-2 md:gap-8">
           <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed mb-4 drop-cap">
@@ -143,6 +162,51 @@ const AboutMe = () => {
             and the cheapest available plane tickets. I think the best ideas come
             from being a little bit nosy and a little bit well-rested.
           </p>
+        </div>
+      </section>
+
+      {/* Polaroid scrapbook */}
+      <section className="bg-paper-deep border-y border-ink/20 overflow-hidden">
+        <div className="container py-16 md:py-24">
+          <div className="border-t-4 border-ink pt-4 mb-12 flex items-end justify-between gap-6 flex-wrap">
+            <div>
+              <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">A peek</p>
+              <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
+                The scrapbook
+              </h2>
+            </div>
+            <span className="font-mono text-xs small-caps text-ink-mute">Photos · Bits · Pieces</span>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { label: "Studio days", caption: "Workspace · I", tilt: "rotate-[-5deg]", tape: "left", bg: "hsl(28 60% 88%)" },
+              { label: "Coffee #2", caption: "Fuel · II", tilt: "rotate-[3deg]", tape: "right", bg: "hsl(18 78% 80%)" },
+              { label: "Out & about", caption: "Melbourne · III", tilt: "rotate-[-2deg]", tape: "left", bg: "hsl(350 60% 88%)" },
+              { label: "Sketchbook", caption: "Process · IV", tilt: "rotate-[4deg]", tape: "right", bg: "hsl(45 50% 85%)" },
+            ].map((p, i) => (
+              <figure key={i} className={`relative ${p.tilt} hover:rotate-0 transition-transform duration-500`}>
+                <span
+                  aria-hidden
+                  className={`absolute -top-3 ${p.tape === "left" ? "left-4 rotate-[-6deg]" : "right-4 rotate-[6deg]"} h-5 w-14 border border-ink/30 opacity-80 z-10`}
+                  style={{ background: i % 2 === 0 ? "hsl(var(--accent-ochre) / 0.6)" : "hsl(var(--accent-red) / 0.5)" }}
+                />
+                <div className="border border-ink bg-paper p-2 shadow-[6px_8px_0_0_hsl(var(--ink))]">
+                  <div className="aspect-square w-full flex items-center justify-center text-center" style={{ background: p.bg }}>
+                    <div className="px-3">
+                      <Camera className="size-8 mx-auto mb-2 text-ink/60" />
+                      <p className="font-display italic text-base text-ink-soft">{p.label}</p>
+                      <p className="font-mono text-[9px] small-caps text-ink-mute mt-1">photo slot</p>
+                    </div>
+                  </div>
+                  <figcaption className="pt-2 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-2">
+                    <p className="font-display italic text-xs">{p.label}</p>
+                    <p className="font-mono text-[9px] small-caps text-ink-mute">{p.caption}</p>
+                  </figcaption>
+                </div>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -194,6 +258,25 @@ const AboutMe = () => {
             </div>
           ))}
         </dl>
+
+        {/* Personal palette */}
+        <div className="mt-16">
+          <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-3">My personal palette</p>
+          <div className="grid grid-cols-5 border border-ink">
+            {[
+              { hex: "#F4F3EE", name: "Paper" },
+              { hex: "#C56B3E", name: "Burnt" },
+              { hex: "#B33A1F", name: "Vermilion" },
+              { hex: "#C49A4A", name: "Ochre" },
+              { hex: "#1C1B1A", name: "Ink" },
+            ].map((c, i) => (
+              <div key={c.hex} className={`aspect-square flex flex-col justify-end p-3 ${i < 4 ? "border-r border-ink" : ""}`} style={{ background: c.hex }}>
+                <p className="font-mono text-[10px] small-caps font-bold" style={{ color: i === 0 || i === 3 ? "#1C1B1A" : "#F4F3EE" }}>{c.name}</p>
+                <p className="font-mono text-[9px]" style={{ color: i === 0 || i === 3 ? "#1C1B1A" : "#F4F3EE" }}>{c.hex}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Timeline */}
