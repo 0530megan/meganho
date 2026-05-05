@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Coffee, Music, Sparkles, Heart, Camera, Palette } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
+import picSunset from "@/assets/about/sunset.jpg";
+import picSandwich from "@/assets/about/sandwich.jpg";
+import picForest from "@/assets/about/forest.jpg";
+import picDog from "@/assets/about/dog.jpg";
+import picStreet from "@/assets/about/street.jpg";
+import picReading from "@/assets/about/reading.jpg";
+import picOutfit from "@/assets/about/outfit.jpg";
+import picFeast from "@/assets/about/feast.jpg";
+import picWindow from "@/assets/about/window.jpg";
+import picMirror from "@/assets/about/mirror.jpg";
+
+const PERSONALITIES = [
+  { src: picSunset, trait: "Romantic", note: "Chasing pink skies & golden hours.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
+  { src: picSandwich, trait: "Greedy (in the best way)", note: "Will plan a whole day around one sandwich.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picReading, trait: "Slow living", note: "Books, breeze, no notifications.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
+  { src: picDog, trait: "Soft for animals", note: "Every dog is my new best friend.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
+  { src: picForest, trait: "Outdoorsy daydreamer", note: "Sunlight through gum trees, always.", tag: "05 · wander", tilt: "rotate-[-4deg]", span: "md:col-span-5", tape: "left", accent: "ochre" },
+  { src: picStreet, trait: "Iced coffee girlie", note: "Sydney terraces, oat latte, no agenda.", tag: "06 · routine", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picOutfit, trait: "Quiet vanity", note: "An outfit is half the personality.", tag: "07 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "08 · gather", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
+  { src: picMirror, trait: "Mirror-selfie historian", note: "Documenting the fits, for the archives.", tag: "09 · ego", tilt: "rotate-[-3deg]", span: "md:col-span-4", tape: "left", accent: "red" },
+  { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "10 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
+];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
   weekday: "long",
