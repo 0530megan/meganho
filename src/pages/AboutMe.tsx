@@ -17,7 +17,7 @@ import picBay from "@/assets/about/bay.jpg";
 import picFlowers from "@/assets/about/flowers.jpg";
 
 const PERSONALITIES = [
-  { src: picSunset, trait: "Romantic", note: "Chasing pink skies & golden hours.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
+  { src: picSunset, trait: "Romantic", note: "Always stop for a good sky.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
   { src: picSandwich, trait: "Greedy (in the best way)", note: "Will plan a whole day around one sandwich.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
   { src: picReading, trait: "Slow living", note: "Books, breeze, no notifications.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
   { src: picDog, trait: "Soft for animals", note: "Every dog is my new best friend.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
