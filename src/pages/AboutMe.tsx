@@ -18,7 +18,7 @@ import picFlowers from "@/assets/about/flowers.jpg";
 import picColoring from "@/assets/about/coloring.jpg";
 
 const PERSONALITIES = [
-  { src: picSunset, trait: "Sentimental", note: "For the sky, always.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
+  { src: picSunset, trait: "Sentimental", note: "For the sky, always.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt", pos: "center 35%" },
   { src: picSandwich, trait: "Greedy (in a good way)", note: "Built around one perfect bite.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
   { src: picReading, trait: "Slow living", note: "Pages, air, offline.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
   { src: picDog, trait: "Soft for animals", note: "Stops for every dog.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
@@ -378,7 +378,7 @@ const LayoutStack = () => {
                 style={{ background: cream, boxShadow: `10px 12px 0 0 ${ochre}` }}
               >
                 <div className="relative h-full w-full overflow-hidden">
-                  <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" />
+                  <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition: (item as any).pos ?? "center" }} />
                   <span className="absolute top-3 left-3 font-mono text-[10px] small-caps border border-ink px-2 py-1" style={{ background: cream }}>{item.tag}</span>
                   {isTop && (
                     <span className="absolute bottom-3 right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">tap for next →</span>
