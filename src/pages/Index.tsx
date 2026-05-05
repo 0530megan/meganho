@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users, Droplets, Palette, Citrus, Heart, IceCream, Snowflake, Camera } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
+import veramenteLogo from "@/assets/veramente-logo.jpg";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
 import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
+import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.jpg";
+import megsCreamiLogo from "@/assets/megs-creami-logo.jpg";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -170,21 +173,24 @@ const SelectedWork = () => {
       no: "I",
       name: "Veramente",
       subtitle: "Carry Your SPF — wearable sunscreen as accessory.",
-      cover: veramenteBrandBoard,
+      cover: veramenteLogo,
+      tint: "hsl(28 60% 92%)",
       href: "#work",
     },
     {
       no: "II",
       name: "Sippy",
       subtitle: "Sparkling blood orange — keep it cute, keep it sippy.",
-      cover: sippyBrandBoard,
+      cover: sippyLogo,
+      tint: "hsl(10 90% 55%)",
       href: "#sippy",
     },
     {
       no: "III",
       name: "Meg's Creami",
       subtitle: "Small-batch ice cream — a spoonful of nostalgia.",
-      cover: megsCreamiBrandBoard,
+      cover: megsCreamiLogo,
+      tint: "hsl(350 70% 92%)",
       href: "#megs-creami",
     },
   ];
@@ -198,11 +204,14 @@ const SelectedWork = () => {
             href={s.href}
             className="group block border border-ink bg-paper hover:bg-paper-deep transition-colors"
           >
-            <div className="relative overflow-hidden aspect-video border-b border-ink bg-paper-deep">
+            <div
+              className="relative overflow-hidden aspect-video border-b border-ink flex items-center justify-center p-6"
+              style={{ background: s.tint }}
+            >
               <img
                 src={s.cover}
-                alt={`${s.name} case study cover`}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt={`${s.name} logo`}
+                className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
               <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
