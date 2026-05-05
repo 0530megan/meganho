@@ -92,46 +92,55 @@ const Masthead = () => (
 );
 
 const Hero = () => (
-  <section className="container py-14 md:py-20 grid grid-cols-12 gap-x-6 gap-y-10">
-    <div className="col-span-12 md:col-span-8">
-      <p className="font-mono text-[11px] small-caps text-accent-red mb-6">
-        Lead Essay · 01
-      </p>
-      <h2 className="font-display font-light leading-[0.95] tracking-tight text-[clamp(2.5rem,6vw,5.5rem)]">
-        Designing products that <em className="font-display italic">function</em> as marketing.
-      </h2>
-      <div className="mt-8 grid md:grid-cols-2 gap-8 max-w-3xl">
-        <p className="font-display text-lg leading-relaxed text-ink-soft drop-cap">
-          A Master of Marketing folio exploring how consumer insight, design, and storytelling collapse into a single object where the product itself becomes the primary driver of engagement and visibility.
+  <section className="relative overflow-hidden border-b-2 border-ink">
+    <div
+      aria-hidden
+      className="absolute inset-0 -z-0"
+      style={{
+        background:
+          "radial-gradient(55% 65% at 18% 35%, hsl(var(--accent-burnt) / 0.16) 0%, transparent 60%), radial-gradient(45% 55% at 85% 75%, hsl(var(--accent-red) / 0.10) 0%, transparent 65%)",
+      }}
+    />
+    <div className="container relative py-16 md:py-24 grid grid-cols-12 gap-x-6 gap-y-10 items-center">
+      <div className="col-span-12 md:col-span-8">
+        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-2">
+          Hello, I&rsquo;m
         </p>
-        <p className="font-display italic text-base leading-relaxed text-ink-mute">
-          Brand identities, product mockups, and campaign architecture for a generation that no longer separates what they buy from what they wear, post, and signal.
+        <h2 className="font-display font-medium leading-[0.82] tracking-[-0.03em] text-[clamp(4rem,16vw,13rem)]">
+          Megan <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>Ho.</span>
+        </h2>
+        <div className="mt-10 flex items-end gap-6 flex-wrap">
+          <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
+          <p className="font-mono text-[11px] small-caps text-ink-mute">
+            Lead Essay · 01
+          </p>
+        </div>
+        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft mt-6 max-w-xl">
+          I&rsquo;m passionate about marketing that turns heads and leaves an impression.
         </p>
       </div>
+      <div className="col-span-12 md:col-span-4">
+        <figure className="relative">
+          <div className="border border-ink bg-paper p-2 shadow-[10px_12px_0_0_hsl(var(--ink))] rotate-[2deg] hover:rotate-0 transition-transform duration-500">
+            <img
+              src={meganPortrait}
+              alt="Megan Ho"
+              className="w-full h-auto block"
+              loading="eager"
+            />
+            <figcaption className="pt-2 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
+              <p className="font-display italic text-sm">The author</p>
+              <p className="font-mono text-[10px] small-caps text-ink-mute">Plate I</p>
+            </figcaption>
+          </div>
+          <span
+            className="absolute -top-3 -left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[-4deg]"
+          >
+            Est. 2026
+          </span>
+        </figure>
+      </div>
     </div>
-    <aside className="col-span-12 md:col-span-4 md:border-l md:border-ink/30 md:pl-6">
-      <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">In this issue</p>
-      <ol className="space-y-3 font-display text-lg">
-        {[
-          "About the author",
-          "Method & approach",
-          "VERAMENTE Carry Your SPF",
-          "SIPPY Sparkling Blood Orange",
-          "MEG'S CREAMI Small-Batch Ice Cream",
-          "Skills & instruments",
-          "Education & experience",
-          "Correspondence",
-        ].map((item, i) => (
-          <li key={item} className="flex gap-4 border-b border-rule pb-2">
-            <span className="font-mono text-xs text-ink-mute pt-1 w-6">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span className="flex-1">{item}</span>
-            <span className="font-mono text-xs text-ink-mute pt-1">P.{i + 1}</span>
-          </li>
-        ))}
-      </ol>
-    </aside>
   </section>
 );
 
