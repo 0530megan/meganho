@@ -164,39 +164,6 @@ const AboutMe = () => {
         </div>
       </div>
 
-      {/* The long story */}
-      <section className="container py-16 md:py-24 grid grid-cols-12 gap-x-6 gap-y-10 relative">
-        <svg aria-hidden className="absolute top-8 right-6 w-32 h-16 text-[hsl(var(--accent-red))] opacity-70 hidden md:block" viewBox="0 0 120 60" fill="none">
-          <path d="M4 30 Q 20 4, 36 30 T 68 30 T 100 30 T 132 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-        </svg>
-        <aside className="col-span-12 md:col-span-3">
-          <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">Chapter 01</p>
-          <h2 className="font-display text-3xl md:text-4xl tracking-tight leading-none">
-            The long story, kept short.
-          </h2>
-          <span className="inline-block mt-6 font-mono text-[10px] small-caps font-bold bg-ink text-paper px-3 py-1.5 rotate-[-4deg]">
-            ★ Behind the scenes
-          </span>
-        </aside>
-        <div className="col-span-12 md:col-span-9 md:columns-2 md:gap-8">
-          <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed mb-4 drop-cap">
-            I grew up in love with the bits of brands most people scroll past — the
-            tiny print on a perfume bottle, the way a coffee shop folds its napkins,
-            the colour of a takeaway bag. They&rsquo;re never accidents.
-          </p>
-          <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed mb-4">
-            That obsession turned into a career somewhere between marketing and
-            design. I sit happily in the middle: building the strategy <em>and</em>
-            the swatches, the headline <em>and</em> the hand-drawn arrow next to it.
-          </p>
-          <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed mb-4">
-            Outside of work I&rsquo;m collecting playlists, half-finished sketchbooks,
-            and the cheapest available plane tickets. I think the best ideas come
-            from being a little bit nosy and a little bit well-rested.
-          </p>
-        </div>
-      </section>
-
       {/* Personalities — pick a layout */}
       <PersonalitiesSection />
 
