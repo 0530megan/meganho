@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Coffee, Music, Sparkles, Heart, Camera, Palette } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
+import picSunset from "@/assets/about/sunset.jpg";
+import picSandwich from "@/assets/about/sandwich.jpg";
+import picForest from "@/assets/about/forest.jpg";
+import picDog from "@/assets/about/dog.jpg";
+import picStreet from "@/assets/about/street.jpg";
+import picReading from "@/assets/about/reading.jpg";
+import picOutfit from "@/assets/about/outfit.jpg";
+import picFeast from "@/assets/about/feast.jpg";
+import picWindow from "@/assets/about/window.jpg";
+import picMirror from "@/assets/about/mirror.jpg";
+
+const PERSONALITIES = [
+  { src: picSunset, trait: "Romantic", note: "Chasing pink skies & golden hours.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
+  { src: picSandwich, trait: "Greedy (in the best way)", note: "Will plan a whole day around one sandwich.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picReading, trait: "Slow living", note: "Books, breeze, no notifications.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
+  { src: picDog, trait: "Soft for animals", note: "Every dog is my new best friend.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
+  { src: picForest, trait: "Outdoorsy daydreamer", note: "Sunlight through gum trees, always.", tag: "05 · wander", tilt: "rotate-[-4deg]", span: "md:col-span-5", tape: "left", accent: "ochre" },
+  { src: picStreet, trait: "Iced coffee girlie", note: "Sydney terraces, oat latte, no agenda.", tag: "06 · routine", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picOutfit, trait: "Quiet vanity", note: "An outfit is half the personality.", tag: "07 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "08 · gather", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
+  { src: picMirror, trait: "Mirror-selfie historian", note: "Documenting the fits, for the archives.", tag: "09 · ego", tilt: "rotate-[-3deg]", span: "md:col-span-4", tape: "left", accent: "red" },
+  { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "10 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
+];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
   weekday: "long",
@@ -165,48 +188,75 @@ const AboutMe = () => {
         </div>
       </section>
 
-      {/* Polaroid scrapbook */}
-      <section className="bg-paper-deep border-y border-ink/20 overflow-hidden">
-        <div className="container py-16 md:py-24">
+      {/* Personalities — photo gallery */}
+      <section className="bg-paper-deep border-y border-ink/20 overflow-hidden relative">
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-0 opacity-60"
+          style={{
+            background:
+              "radial-gradient(40% 50% at 12% 18%, hsl(var(--accent-burnt) / 0.18) 0%, transparent 60%), radial-gradient(40% 50% at 88% 82%, hsl(var(--accent-red) / 0.14) 0%, transparent 65%)",
+          }}
+        />
+        <div className="container py-16 md:py-24 relative">
           <div className="border-t-4 border-ink pt-4 mb-12 flex items-end justify-between gap-6 flex-wrap">
             <div>
-              <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">A peek</p>
+              <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">A field guide</p>
               <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
-                The scrapbook
+                Ten little
+                <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> personalities</span>
               </h2>
+              <p className="font-display italic text-lg text-ink-soft mt-4 max-w-xl">
+                Photos pinned to a wall. Each one is a small confession.
+              </p>
             </div>
-            <span className="font-mono text-xs small-caps text-ink-mute">Photos · Bits · Pieces</span>
+            <span className="font-mono text-xs small-caps text-ink-mute hidden md:block">Hover · Tilt · Read</span>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {[
-              { label: "Studio days", caption: "Workspace · I", tilt: "rotate-[-5deg]", tape: "left", bg: "hsl(28 60% 88%)" },
-              { label: "Coffee #2", caption: "Fuel · II", tilt: "rotate-[3deg]", tape: "right", bg: "hsl(18 78% 80%)" },
-              { label: "Out & about", caption: "Melbourne · III", tilt: "rotate-[-2deg]", tape: "left", bg: "hsl(350 60% 88%)" },
-              { label: "Sketchbook", caption: "Process · IV", tilt: "rotate-[4deg]", tape: "right", bg: "hsl(45 50% 85%)" },
-            ].map((p, i) => (
-              <figure key={i} className={`relative ${p.tilt} hover:rotate-0 transition-transform duration-500`}>
-                <span
-                  aria-hidden
-                  className={`absolute -top-3 ${p.tape === "left" ? "left-4 rotate-[-6deg]" : "right-4 rotate-[6deg]"} h-5 w-14 border border-ink/30 opacity-80 z-10`}
-                  style={{ background: i % 2 === 0 ? "hsl(var(--accent-ochre) / 0.6)" : "hsl(var(--accent-red) / 0.5)" }}
-                />
-                <div className="border border-ink bg-paper p-2 shadow-[6px_8px_0_0_hsl(var(--ink))]">
-                  <div className="aspect-square w-full flex items-center justify-center text-center" style={{ background: p.bg }}>
-                    <div className="px-3">
-                      <Camera className="size-8 mx-auto mb-2 text-ink/60" />
-                      <p className="font-display italic text-base text-ink-soft">{p.label}</p>
-                      <p className="font-mono text-[9px] small-caps text-ink-mute mt-1">photo slot</p>
+          <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[180px] md:auto-rows-[220px] gap-5 md:gap-7">
+            {PERSONALITIES.map((p, i) => {
+              const accentVar =
+                p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+              return (
+                <figure
+                  key={i}
+                  className={`group relative ${p.span} ${p.tilt} hover:rotate-0 hover:z-10 transition-all duration-500`}
+                >
+                  {/* washi tape */}
+                  <span
+                    aria-hidden
+                    className={`absolute -top-2 ${p.tape === "left" ? "left-6 -rotate-6" : "right-6 rotate-6"} h-5 w-16 border border-ink/20 z-20 shadow-sm`}
+                    style={{ background: `hsl(var(${accentVar}) / 0.55)` }}
+                  />
+                  <div
+                    className="relative h-full w-full border border-ink bg-paper p-2 transition-shadow duration-500 group-hover:shadow-[10px_12px_0_0_hsl(var(--ink))]"
+                    style={{ boxShadow: `5px 6px 0 0 hsl(var(${accentVar}))` }}
+                  >
+                    <div className="relative h-[calc(100%-2.25rem)] w-full overflow-hidden bg-ink/5">
+                      <img
+                        src={p.src}
+                        alt={p.trait}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      {/* trait label that floats up on hover */}
+                      <div className="absolute inset-x-0 bottom-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent">
+                        <p className="font-display italic text-paper text-lg leading-tight">{p.note}</p>
+                      </div>
                     </div>
+                    <figcaption className="h-9 pt-2 mt-0.5 border-t border-ink/30 flex items-baseline justify-between gap-2">
+                      <p className="font-display italic text-sm md:text-base truncate">{p.trait}</p>
+                      <p className="font-mono text-[9px] small-caps text-ink-mute shrink-0">{p.tag}</p>
+                    </figcaption>
                   </div>
-                  <figcaption className="pt-2 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-2">
-                    <p className="font-display italic text-xs">{p.label}</p>
-                    <p className="font-mono text-[9px] small-caps text-ink-mute">{p.caption}</p>
-                  </figcaption>
-                </div>
-              </figure>
-            ))}
+                </figure>
+              );
+            })}
           </div>
+
+          <p className="font-display italic text-center text-ink-mute mt-12 text-base">
+            ✺ &nbsp; that&rsquo;s me, more or less &nbsp; ✺
+          </p>
         </div>
       </section>
 
