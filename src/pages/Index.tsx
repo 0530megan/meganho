@@ -28,37 +28,28 @@ const TODAY = new Date().toLocaleDateString("en-GB", {
   year: "numeric",
 });
 
-const Masthead = () => (
-  <header className="border-b-4 border-ink">
-    <div className="border-b border-ink/30">
+const Hero = () => (
+  <header id="top" className="relative overflow-hidden border-b-2 border-ink">
+    <div
+      aria-hidden
+      className="absolute inset-0 -z-0"
+      style={{
+        background:
+          "radial-gradient(55% 65% at 18% 35%, hsl(var(--accent-burnt) / 0.16) 0%, transparent 60%), radial-gradient(45% 55% at 85% 75%, hsl(var(--accent-red) / 0.10) 0%, transparent 65%)",
+      }}
+    />
+
+    {/* Top meta bar */}
+    <div className="relative border-b border-ink/30">
       <div className="container flex items-center justify-between py-2 text-[11px] small-caps text-ink-soft font-mono">
         <span>Vol. I No. 01</span>
         <span className="hidden md:inline">{TODAY}</span>
         <span>Melbourne · Edition</span>
       </div>
     </div>
-    <div className="container py-8 md:py-12">
-      <div className="flex items-end justify-between gap-6 flex-wrap">
-        <p className="font-mono text-[11px] small-caps text-ink-mute">
-          The Marketing Quarterly
-        </p>
-        <p className="font-mono text-[11px] small-caps text-ink-mute hidden md:block">
-          Issue · Graduate Folio 2026
-        </p>
-      </div>
-      <h1 className="font-display font-medium tracking-tight leading-[0.85] mt-3 text-[clamp(3.5rem,12vw,11rem)]">
-        Megan Ho
-      </h1>
-      <div className="mt-6 flex items-end justify-between gap-6 flex-wrap">
-        <p className="font-display italic text-xl md:text-2xl text-ink-soft max-w-2xl leading-snug">
-          Product-Led Marketing · Brand Strategy · Consumer Experience Design
-        </p>
-        <p className="font-mono text-[11px] small-caps text-ink-mute">
-          A folio in one volume
-        </p>
-      </div>
-    </div>
-    <nav className="border-t border-ink/40 border-b border-ink/40 bg-paper/60 backdrop-blur sticky top-0 z-30">
+
+    {/* Nav */}
+    <nav className="relative border-b border-ink/40 bg-paper/60 backdrop-blur sticky top-0 z-30">
       <div className="container flex items-center justify-between gap-6 overflow-x-auto">
         <a href="#top" className="font-display text-lg py-3 shrink-0">
           M.H.
@@ -91,19 +82,8 @@ const Masthead = () => (
         </div>
       </div>
     </nav>
-  </header>
-);
 
-const Hero = () => (
-  <section className="relative overflow-hidden border-b-2 border-ink">
-    <div
-      aria-hidden
-      className="absolute inset-0 -z-0"
-      style={{
-        background:
-          "radial-gradient(55% 65% at 18% 35%, hsl(var(--accent-burnt) / 0.16) 0%, transparent 60%), radial-gradient(45% 55% at 85% 75%, hsl(var(--accent-red) / 0.10) 0%, transparent 65%)",
-      }}
-    />
+    {/* Hero content */}
     <div className="container relative py-16 md:py-24 grid grid-cols-12 gap-x-6 gap-y-10 items-center">
       <div className="col-span-12 md:col-span-8">
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-2">
@@ -144,7 +124,7 @@ const Hero = () => (
         </figure>
       </div>
     </div>
-  </section>
+  </header>
 );
 
 const SectionHeader = ({
@@ -1262,9 +1242,8 @@ const Index = () => {
         className="fixed top-0 left-0 h-[2px] bg-accent-red z-50 transition-[width]"
         style={{ width: `${progress}%` }}
       />
-      <Masthead />
+      <Hero />
       <main>
-        <Hero />
         <SelectedWork />
         <Approach />
         <Veramante />
