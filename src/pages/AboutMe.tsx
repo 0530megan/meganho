@@ -194,75 +194,159 @@ const AboutMe = () => {
         </div>
       </section>
 
-      {/* Personalities — photo gallery */}
-      <section className="bg-paper-deep border-y border-ink/20 overflow-hidden relative">
+      {/* Personalities — editorial zine */}
+      <section className="bg-paper-deep border-y-2 border-ink overflow-hidden relative">
         <div
           aria-hidden
-          className="absolute inset-0 -z-0 opacity-60"
+          className="absolute inset-0 -z-0 opacity-70"
           style={{
             background:
-              "radial-gradient(40% 50% at 12% 18%, hsl(var(--accent-burnt) / 0.18) 0%, transparent 60%), radial-gradient(40% 50% at 88% 82%, hsl(var(--accent-red) / 0.14) 0%, transparent 65%)",
+              "radial-gradient(45% 55% at 8% 12%, hsl(var(--accent-burnt) / 0.22) 0%, transparent 60%), radial-gradient(45% 55% at 92% 88%, hsl(var(--accent-red) / 0.16) 0%, transparent 65%)",
           }}
         />
-        <div className="container py-16 md:py-24 relative">
-          <div className="border-t-4 border-ink pt-4 mb-12 flex items-end justify-between gap-6 flex-wrap">
-            <div>
-              <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">A field guide</p>
-              <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
-                A few little
-                <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> personalities</span>
-              </h2>
-              <p className="font-display italic text-lg text-ink-soft mt-4 max-w-xl">
-                Photos pinned to a wall. Each one is a small confession.
-              </p>
-            </div>
-            <span className="font-mono text-xs small-caps text-ink-mute hidden md:block">Hover · Tilt · Read</span>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[180px] md:auto-rows-[220px] gap-5 md:gap-7">
-            {PERSONALITIES.map((p, i) => {
-              const accentVar =
-                p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
-              return (
+        {/* Issue header */}
+        <div className="container relative pt-16 md:pt-24 pb-10">
+          <div className="flex items-end justify-between gap-6 flex-wrap mb-8">
+            <p className="font-mono text-[11px] small-caps text-ink-mute">Issue №02 · The Personality Index</p>
+            <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · scroll on</p>
+          </div>
+          <h2 className="font-display font-light text-[clamp(3rem,11vw,10rem)] leading-[0.82] tracking-tight">
+            who
+            <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> am </span>
+            i,
+            <br />
+            really?
+          </h2>
+          <div className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[11px] small-caps">
+            <span className="bg-ink text-paper px-3 py-1.5">A field guide</span>
+            <span className="border border-ink px-3 py-1.5">Photographs ✺ confessions</span>
+            <span className="border border-ink/40 px-3 py-1.5 italic font-display normal-case text-sm">turn the page →</span>
+          </div>
+        </div>
+
+        {/* Marquee divider */}
+        <div className="relative overflow-hidden border-y-2 border-ink bg-ink text-paper">
+          <div className="marquee flex whitespace-nowrap py-2 font-mono text-[12px] small-caps font-bold">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
+                {PERSONALITIES.map((p, j) => (
+                  <span key={j} className="px-2 flex items-center gap-6">
+                    <span className="text-[hsl(var(--accent-ochre))]">✺</span>
+                    {p.trait}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* The spreads */}
+        <div className="container relative py-16 md:py-20 space-y-24 md:space-y-32">
+          {PERSONALITIES.map((p, i) => {
+            const accentVar =
+              p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+            const isOdd = i % 2 === 1;
+            const num = String(i + 1).padStart(2, "0");
+
+            return (
+              <article
+                key={i}
+                className={`relative grid grid-cols-12 gap-x-6 gap-y-6 items-center ${
+                  isOdd ? "md:[&>figure]:order-2" : ""
+                }`}
+              >
+                {/* Photo */}
                 <figure
-                  key={i}
-                  className={`group relative ${p.span} ${p.tilt} hover:rotate-0 hover:z-10 transition-all duration-500`}
+                  className={`group relative col-span-12 md:col-span-7 ${p.tilt} hover:rotate-0 transition-transform duration-700`}
                 >
-                  {/* washi tape */}
                   <span
                     aria-hidden
-                    className={`absolute -top-2 ${p.tape === "left" ? "left-6 -rotate-6" : "right-6 rotate-6"} h-5 w-16 border border-ink/20 z-20 shadow-sm`}
-                    style={{ background: `hsl(var(${accentVar}) / 0.55)` }}
+                    className={`absolute -top-3 ${
+                      p.tape === "left" ? "left-8 -rotate-6" : "right-8 rotate-6"
+                    } h-6 w-20 border border-ink/20 z-20 shadow-sm`}
+                    style={{ background: `hsl(var(${accentVar}) / 0.6)` }}
                   />
                   <div
-                    className="relative h-full w-full border border-ink bg-paper p-2 transition-shadow duration-500 group-hover:shadow-[10px_12px_0_0_hsl(var(--ink))]"
-                    style={{ boxShadow: `5px 6px 0 0 hsl(var(${accentVar}))` }}
+                    className="relative border border-ink bg-paper p-3 transition-all duration-500 group-hover:shadow-[14px_16px_0_0_hsl(var(--ink))]"
+                    style={{ boxShadow: `8px 10px 0 0 hsl(var(${accentVar}))` }}
                   >
-                    <div className="relative h-[calc(100%-2.25rem)] w-full overflow-hidden bg-ink/5">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
                       <img
                         src={p.src}
                         alt={p.trait}
                         loading="lazy"
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
                       />
-                      {/* trait label that floats up on hover */}
-                      <div className="absolute inset-x-0 bottom-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent">
-                        <p className="font-display italic text-paper text-lg leading-tight">{p.note}</p>
-                      </div>
+                      {/* Floating trait sticker */}
+                      <span
+                        className="absolute top-4 left-4 bg-paper border border-ink px-3 py-1 font-mono text-[10px] small-caps font-bold shadow-[3px_3px_0_0_hsl(var(--ink))] -rotate-2"
+                      >
+                        {p.tag}
+                      </span>
                     </div>
-                    <figcaption className="h-9 pt-2 mt-0.5 border-t border-ink/30 flex items-baseline justify-between gap-2">
-                      <p className="font-display italic text-sm md:text-base truncate">{p.trait}</p>
-                      <p className="font-mono text-[9px] small-caps text-ink-mute shrink-0">{p.tag}</p>
+                    <figcaption className="pt-3 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
+                      <p className="font-display italic text-sm">"{p.note}"</p>
+                      <p className="font-mono text-[10px] small-caps text-ink-mute shrink-0">Plate {num}</p>
                     </figcaption>
                   </div>
                 </figure>
-              );
-            })}
-          </div>
 
-          <p className="font-display italic text-center text-ink-mute mt-12 text-base">
-            ✺ &nbsp; that&rsquo;s me, more or less &nbsp; ✺
-          </p>
+                {/* Text spread */}
+                <div className={`col-span-12 md:col-span-5 ${isOdd ? "md:pr-8" : "md:pl-8"} relative`}>
+                  <div className="flex items-baseline gap-4 mb-2">
+                    <span
+                      className="font-display font-light text-[clamp(5rem,12vw,9rem)] leading-none italic"
+                      style={{ color: `hsl(var(${accentVar}))` }}
+                    >
+                      {num}
+                    </span>
+                    <div className="flex-1 h-px bg-ink/30 mb-4" />
+                    <span className="font-mono text-[10px] small-caps text-ink-mute mb-4">trait</span>
+                  </div>
+                  <h3 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-5">
+                    {p.trait}.
+                  </h3>
+                  <p className="font-display italic text-xl text-ink-soft leading-relaxed mb-6">
+                    {p.note}
+                  </p>
+                  <div className="flex items-center gap-3 font-mono text-[10px] small-caps">
+                    <span
+                      className="inline-block size-2.5 rounded-full border border-ink"
+                      style={{ background: `hsl(var(${accentVar}))` }}
+                    />
+                    <span className="text-ink-mute">filed under · {p.accent}</span>
+                    <span className="text-ink-mute">·</span>
+                    <span className="text-ink-mute">{p.tag}</span>
+                  </div>
+
+                  {/* Decorative squiggle every few entries */}
+                  {i % 3 === 2 && (
+                    <svg aria-hidden className="mt-8 w-32 h-8 text-[hsl(var(--accent-red))]" viewBox="0 0 120 30" fill="none">
+                      <path d="M2 15 Q 15 2, 28 15 T 54 15 T 80 15 T 106 15 T 132 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  )}
+                </div>
+
+                {/* Hairline number watermark */}
+                <span
+                  aria-hidden
+                  className="hidden md:block absolute -top-10 right-0 font-mono text-[10px] small-caps text-ink-mute tracking-widest"
+                >
+                  Entry {num} / {String(PERSONALITIES.length).padStart(2, "0")}
+                </span>
+              </article>
+            );
+          })}
+        </div>
+
+        {/* Closing stamp */}
+        <div className="container relative pb-20 md:pb-28 text-center">
+          <div className="inline-flex items-center gap-3 border-2 border-ink px-6 py-3 -rotate-2 bg-paper">
+            <span className="font-mono text-[11px] small-caps font-bold">End of index</span>
+            <span className="text-[hsl(var(--accent-red))]">✺</span>
+            <span className="font-display italic">that&rsquo;s me, more or less</span>
+          </div>
         </div>
       </section>
 
