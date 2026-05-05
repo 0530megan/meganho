@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette, ChevronLeft, ChevronRight } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import picSunset from "@/assets/about/sunset.jpg";
 import picSandwich from "@/assets/about/sandwich.jpg";
@@ -194,161 +195,8 @@ const AboutMe = () => {
         </div>
       </section>
 
-      {/* Personalities — editorial zine */}
-      <section className="bg-paper-deep border-y-2 border-ink overflow-hidden relative">
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-0 opacity-70"
-          style={{
-            background:
-              "radial-gradient(45% 55% at 8% 12%, hsl(var(--accent-burnt) / 0.22) 0%, transparent 60%), radial-gradient(45% 55% at 92% 88%, hsl(var(--accent-red) / 0.16) 0%, transparent 65%)",
-          }}
-        />
-
-        {/* Issue header */}
-        <div className="container relative pt-16 md:pt-24 pb-10">
-          <div className="flex items-end justify-between gap-6 flex-wrap mb-8">
-            <p className="font-mono text-[11px] small-caps text-ink-mute">Issue №02 · The Personality Index</p>
-            <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · scroll on</p>
-          </div>
-          <h2 className="font-display font-light text-[clamp(3rem,11vw,10rem)] leading-[0.82] tracking-tight">
-            who
-            <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> am </span>
-            i,
-            <br />
-            really?
-          </h2>
-          <div className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[11px] small-caps">
-            <span className="bg-ink text-paper px-3 py-1.5">A field guide</span>
-            <span className="border border-ink px-3 py-1.5">Photographs ✺ confessions</span>
-            <span className="border border-ink/40 px-3 py-1.5 italic font-display normal-case text-sm">turn the page →</span>
-          </div>
-        </div>
-
-        {/* Marquee divider */}
-        <div className="relative overflow-hidden border-y-2 border-ink bg-ink text-paper">
-          <div className="marquee flex whitespace-nowrap py-2 font-mono text-[12px] small-caps font-bold">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
-                {PERSONALITIES.map((p, j) => (
-                  <span key={j} className="px-2 flex items-center gap-6">
-                    <span className="text-[hsl(var(--accent-ochre))]">✺</span>
-                    {p.trait}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* The spreads */}
-        <div className="container relative py-16 md:py-20 space-y-24 md:space-y-32">
-          {PERSONALITIES.map((p, i) => {
-            const accentVar =
-              p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
-            const isOdd = i % 2 === 1;
-            const num = String(i + 1).padStart(2, "0");
-
-            return (
-              <article
-                key={i}
-                className={`relative grid grid-cols-12 gap-x-6 gap-y-6 items-center ${
-                  isOdd ? "md:[&>figure]:order-2" : ""
-                }`}
-              >
-                {/* Photo */}
-                <figure
-                  className={`group relative col-span-12 md:col-span-7 ${p.tilt} hover:rotate-0 transition-transform duration-700`}
-                >
-                  <span
-                    aria-hidden
-                    className={`absolute -top-3 ${
-                      p.tape === "left" ? "left-8 -rotate-6" : "right-8 rotate-6"
-                    } h-6 w-20 border border-ink/20 z-20 shadow-sm`}
-                    style={{ background: `hsl(var(${accentVar}) / 0.6)` }}
-                  />
-                  <div
-                    className="relative border border-ink bg-paper p-3 transition-all duration-500 group-hover:shadow-[14px_16px_0_0_hsl(var(--ink))]"
-                    style={{ boxShadow: `8px 10px 0 0 hsl(var(${accentVar}))` }}
-                  >
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
-                      <img
-                        src={p.src}
-                        alt={p.trait}
-                        loading="lazy"
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
-                      />
-                      {/* Floating trait sticker */}
-                      <span
-                        className="absolute top-4 left-4 bg-paper border border-ink px-3 py-1 font-mono text-[10px] small-caps font-bold shadow-[3px_3px_0_0_hsl(var(--ink))] -rotate-2"
-                      >
-                        {p.tag}
-                      </span>
-                    </div>
-                    <figcaption className="pt-3 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
-                      <p className="font-display italic text-sm">"{p.note}"</p>
-                      <p className="font-mono text-[10px] small-caps text-ink-mute shrink-0">Plate {num}</p>
-                    </figcaption>
-                  </div>
-                </figure>
-
-                {/* Text spread */}
-                <div className={`col-span-12 md:col-span-5 ${isOdd ? "md:pr-8" : "md:pl-8"} relative`}>
-                  <div className="flex items-baseline gap-4 mb-2">
-                    <span
-                      className="font-display font-light text-[clamp(5rem,12vw,9rem)] leading-none italic"
-                      style={{ color: `hsl(var(${accentVar}))` }}
-                    >
-                      {num}
-                    </span>
-                    <div className="flex-1 h-px bg-ink/30 mb-4" />
-                    <span className="font-mono text-[10px] small-caps text-ink-mute mb-4">trait</span>
-                  </div>
-                  <h3 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-5">
-                    {p.trait}.
-                  </h3>
-                  <p className="font-display italic text-xl text-ink-soft leading-relaxed mb-6">
-                    {p.note}
-                  </p>
-                  <div className="flex items-center gap-3 font-mono text-[10px] small-caps">
-                    <span
-                      className="inline-block size-2.5 rounded-full border border-ink"
-                      style={{ background: `hsl(var(${accentVar}))` }}
-                    />
-                    <span className="text-ink-mute">filed under · {p.accent}</span>
-                    <span className="text-ink-mute">·</span>
-                    <span className="text-ink-mute">{p.tag}</span>
-                  </div>
-
-                  {/* Decorative squiggle every few entries */}
-                  {i % 3 === 2 && (
-                    <svg aria-hidden className="mt-8 w-32 h-8 text-[hsl(var(--accent-red))]" viewBox="0 0 120 30" fill="none">
-                      <path d="M2 15 Q 15 2, 28 15 T 54 15 T 80 15 T 106 15 T 132 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  )}
-                </div>
-
-                {/* Hairline number watermark */}
-                <span
-                  aria-hidden
-                  className="hidden md:block absolute -top-10 right-0 font-mono text-[10px] small-caps text-ink-mute tracking-widest"
-                >
-                  Entry {num} / {String(PERSONALITIES.length).padStart(2, "0")}
-                </span>
-              </article>
-            );
-          })}
-        </div>
-
-        {/* Closing stamp */}
-        <div className="container relative pb-20 md:pb-28 text-center">
-          <div className="inline-flex items-center gap-3 border-2 border-ink px-6 py-3 -rotate-2 bg-paper">
-            <span className="font-mono text-[11px] small-caps font-bold">End of index</span>
-            <span className="text-[hsl(var(--accent-red))]">✺</span>
-            <span className="font-display italic">that&rsquo;s me, more or less</span>
-          </div>
-        </div>
-      </section>
+      {/* Personalities — pick a layout */}
+      <PersonalitiesSection />
 
       {/* Values */}
       <section className="bg-paper-deep border-y border-ink/20">
@@ -466,3 +314,261 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
+/* ============================================================
+   PERSONALITIES — 4 LOW-KEY INTERACTIVE LAYOUT OPTIONS
+   ============================================================ */
+
+type Layout = "filmstrip" | "tabs" | "archive" | "stack";
+
+const LAYOUTS: { id: Layout; label: string; blurb: string }[] = [
+  { id: "filmstrip", label: "Filmstrip", blurb: "35mm horizontal scroller" },
+  { id: "tabs",      label: "Contact sheet", blurb: "Numbered tabs, one hero" },
+  { id: "archive",   label: "Archive slips", blurb: "Library-card list" },
+  { id: "stack",     label: "Card stack",    blurb: "Drag through one by one" },
+];
+
+const PersonalitiesSection = () => {
+  const [layout, setLayout] = useState<Layout>("filmstrip");
+
+  return (
+    <section className="bg-paper-deep border-y-2 border-ink overflow-hidden relative">
+      <div className="container relative pt-16 md:pt-20 pb-8">
+        <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
+          <div>
+            <p className="font-mono text-[11px] small-caps text-ink-mute mb-2">Issue №02 · The Personality Index</p>
+            <h2 className="font-display font-light text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] tracking-tight">
+              who<span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> am </span>i,
+              <br />really?
+            </h2>
+          </div>
+          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries</p>
+        </div>
+
+        {/* Layout switcher */}
+        <div className="mt-6 border-t border-b border-ink/30 py-3 flex items-center gap-2 flex-wrap">
+          <span className="font-mono text-[10px] small-caps text-ink-mute mr-2">View ⟶</span>
+          {LAYOUTS.map((l) => {
+            const active = layout === l.id;
+            return (
+              <button
+                key={l.id}
+                onClick={() => setLayout(l.id)}
+                className={`font-mono text-[11px] small-caps px-3 py-1.5 border transition-colors ${
+                  active
+                    ? "bg-ink text-paper border-ink"
+                    : "border-ink/30 text-ink-soft hover:border-ink hover:text-ink"
+                }`}
+              >
+                {l.label}
+              </button>
+            );
+          })}
+          <span className="font-display italic text-sm text-ink-mute ml-auto hidden md:inline">
+            {LAYOUTS.find((l) => l.id === layout)?.blurb}
+          </span>
+        </div>
+      </div>
+
+      <div className="relative">
+        {layout === "filmstrip" && <LayoutFilmstrip />}
+        {layout === "tabs"      && <LayoutTabs />}
+        {layout === "archive"   && <LayoutArchive />}
+        {layout === "stack"     && <LayoutStack />}
+      </div>
+    </section>
+  );
+};
+
+/* ---------- 1. FILMSTRIP ---------- */
+const LayoutFilmstrip = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (dir: 1 | -1) => {
+    ref.current?.scrollBy({ left: dir * 480, behavior: "smooth" });
+  };
+  return (
+    <div className="relative pb-20">
+      <div className="container flex items-center justify-between mb-4 font-mono text-[10px] small-caps text-ink-mute">
+        <span>35mm · drag or scroll →</span>
+        <div className="flex gap-2">
+          <button onClick={() => scroll(-1)} className="border border-ink p-1.5 hover:bg-ink hover:text-paper transition-colors"><ChevronLeft className="size-3.5" /></button>
+          <button onClick={() => scroll(1)}  className="border border-ink p-1.5 hover:bg-ink hover:text-paper transition-colors"><ChevronRight className="size-3.5" /></button>
+        </div>
+      </div>
+      <div className="bg-ink border-y-2 border-ink relative">
+        {/* sprocket holes */}
+        <div aria-hidden className="absolute inset-x-0 top-1.5 flex gap-3 px-4 overflow-hidden">
+          {Array.from({ length: 80 }).map((_, i) => <span key={i} className="size-3 bg-paper-deep shrink-0" />)}
+        </div>
+        <div aria-hidden className="absolute inset-x-0 bottom-1.5 flex gap-3 px-4 overflow-hidden">
+          {Array.from({ length: 80 }).map((_, i) => <span key={i} className="size-3 bg-paper-deep shrink-0" />)}
+        </div>
+        <div ref={ref} className="overflow-x-auto py-8 scrollbar-hide">
+          <div className="flex gap-2 px-6 w-max">
+            {PERSONALITIES.map((p, i) => (
+              <figure key={i} className="group relative w-[280px] md:w-[340px] shrink-0 border-x border-paper-deep/40">
+                <div className="relative aspect-[3/4] overflow-hidden bg-paper">
+                  <img src={p.src} alt={p.trait} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <span className="absolute top-2 left-2 font-mono text-[9px] small-caps text-paper bg-ink/70 px-1.5 py-0.5">FRAME {String(i+1).padStart(2,"0")}</span>
+                </div>
+                <figcaption className="bg-paper-deep px-3 py-3 border-t border-ink/20">
+                  <p className="font-display text-lg leading-tight">{p.trait}</p>
+                  <p className="font-display italic text-sm text-ink-mute mt-1">"{p.note}"</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ---------- 2. TABBED CONTACT SHEET ---------- */
+const LayoutTabs = () => {
+  const [active, setActive] = useState(0);
+  const p = PERSONALITIES[active];
+  const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+  return (
+    <div className="container py-12 md:py-16 grid grid-cols-12 gap-6 md:gap-10">
+      {/* Numbered list */}
+      <ol className="col-span-12 md:col-span-4 lg:col-span-3 border-t border-ink/30">
+        {PERSONALITIES.map((it, i) => {
+          const on = i === active;
+          return (
+            <li key={i} className="border-b border-ink/30">
+              <button
+                onClick={() => setActive(i)}
+                className={`w-full text-left flex items-baseline gap-4 py-3 transition-colors ${on ? "text-ink" : "text-ink-mute hover:text-ink"}`}
+              >
+                <span className="font-mono text-[11px] small-caps tabular-nums w-7">{String(i+1).padStart(2,"0")}</span>
+                <span className={`font-display text-lg leading-tight ${on ? "italic" : ""}`}>{it.trait}</span>
+                {on && <span className="ml-auto text-[hsl(var(--accent-burnt))]">●</span>}
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+
+      {/* Hero */}
+      <div className="col-span-12 md:col-span-8 lg:col-span-9">
+        <figure key={active} className="animate-fade-in">
+          <div className="relative aspect-[16/10] overflow-hidden border border-ink" style={{ boxShadow: `10px 12px 0 0 hsl(var(${accentVar}))` }}>
+            <img src={p.src} alt={p.trait} className="absolute inset-0 h-full w-full object-cover" />
+            <span className="absolute top-4 left-4 font-mono text-[10px] small-caps bg-paper border border-ink px-2 py-1">{p.tag}</span>
+          </div>
+          <figcaption className="mt-5 flex items-baseline justify-between gap-6 border-t border-ink pt-3">
+            <div>
+              <p className="font-display text-3xl md:text-4xl leading-tight">{p.trait}.</p>
+              <p className="font-display italic text-lg text-ink-soft mt-2 max-w-xl">"{p.note}"</p>
+            </div>
+            <p className="font-mono text-[10px] small-caps text-ink-mute shrink-0">{String(active+1).padStart(2,"0")} / {String(PERSONALITIES.length).padStart(2,"0")}</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  );
+};
+
+/* ---------- 3. ARCHIVE SLIPS ---------- */
+const LayoutArchive = () => {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <div className="container py-12 md:py-16 max-w-4xl">
+      <div className="border-t-2 border-ink">
+        {PERSONALITIES.map((p, i) => {
+          const isOpen = open === i;
+          const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+          return (
+            <div key={i} className="border-b border-ink/40">
+              <button
+                onClick={() => setOpen(isOpen ? null : i)}
+                className="w-full grid grid-cols-12 gap-4 items-center py-4 text-left group"
+              >
+                <span className="col-span-2 md:col-span-1 font-mono text-[11px] small-caps tabular-nums text-ink-mute">№ {String(i+1).padStart(3,"0")}</span>
+                <span className="col-span-7 md:col-span-7 font-display text-xl md:text-2xl group-hover:italic transition-all">{p.trait}</span>
+                <span className="col-span-2 md:col-span-3 font-mono text-[10px] small-caps text-ink-mute hidden md:inline">{p.tag}</span>
+                <span className="col-span-1 font-mono text-lg text-right" style={{ color: `hsl(var(${accentVar}))` }}>{isOpen ? "−" : "+"}</span>
+              </button>
+              <div className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div className="overflow-hidden">
+                  <div className="pb-6 grid grid-cols-12 gap-6">
+                    <div className="col-span-12 md:col-span-5">
+                      <div className="aspect-[4/3] overflow-hidden border border-ink" style={{ boxShadow: `6px 8px 0 0 hsl(var(${accentVar}))` }}>
+                        <img src={p.src} alt={p.trait} className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <div className="col-span-12 md:col-span-7 md:pt-2">
+                      <p className="font-display italic text-xl text-ink-soft leading-relaxed">"{p.note}"</p>
+                      <div className="mt-5 flex items-center gap-3 font-mono text-[10px] small-caps text-ink-mute">
+                        <span className="size-2 rounded-full" style={{ background: `hsl(var(${accentVar}))` }} />
+                        filed under · {p.accent} · {p.tag}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+/* ---------- 4. STACK ---------- */
+const LayoutStack = () => {
+  const [order, setOrder] = useState(() => PERSONALITIES.map((_, i) => i));
+  const next = () => setOrder((o) => [...o.slice(1), o[0]]);
+  const prev = () => setOrder((o) => [o[o.length - 1], ...o.slice(0, -1)]);
+  const top = order[0];
+  const p = PERSONALITIES[top];
+  const accentVar = p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+
+  return (
+    <div className="container py-12 md:py-16 grid grid-cols-12 gap-8 items-center">
+      <div className="col-span-12 md:col-span-7 relative h-[440px] md:h-[520px]">
+        {order.slice(0, 4).map((idx, stackPos) => {
+          const item = PERSONALITIES[idx];
+          const av = item.accent === "red" ? "--accent-red" : item.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+          const isTop = stackPos === 0;
+          return (
+            <button
+              key={idx}
+              onClick={isTop ? next : undefined}
+              className="absolute inset-0 transition-all duration-500 ease-out"
+              style={{
+                transform: `translate(${stackPos * 14}px, ${stackPos * 12}px) rotate(${(stackPos % 2 === 0 ? -1 : 1) * stackPos * 1.5}deg)`,
+                zIndex: 10 - stackPos,
+                opacity: stackPos === 3 ? 0.3 : 1 - stackPos * 0.12,
+                pointerEvents: isTop ? "auto" : "none",
+              }}
+            >
+              <div className="h-full w-full border border-ink bg-paper p-3" style={{ boxShadow: `10px 12px 0 0 hsl(var(${av}))` }}>
+                <div className="relative h-full w-full overflow-hidden">
+                  <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" />
+                  <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-paper border border-ink px-2 py-1">{item.tag}</span>
+                  {isTop && (
+                    <span className="absolute bottom-3 right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">tap for next →</span>
+                  )}
+                </div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+      <div className="col-span-12 md:col-span-5">
+        <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
+        <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: `hsl(var(${accentVar}))` }}>
+          {p.trait}.
+        </h3>
+        <p className="font-display italic text-xl text-ink-soft leading-relaxed mt-5">"{p.note}"</p>
+        <div className="mt-8 flex gap-2">
+          <button onClick={prev} className="font-mono text-[11px] small-caps border border-ink px-4 py-2 hover:bg-ink hover:text-paper transition-colors">← prev</button>
+          <button onClick={next} className="font-mono text-[11px] small-caps border border-ink bg-ink text-paper px-4 py-2 hover:bg-[hsl(var(--accent-burnt))] hover:border-[hsl(var(--accent-burnt))] transition-colors">next card →</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
