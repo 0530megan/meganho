@@ -160,7 +160,7 @@ const About = () => (
     <SectionHeader kicker="Profile" title="Who I Am & What I Bring" no="II" />
     <div className="grid grid-cols-12 gap-x-6 gap-y-10">
       <div className="col-span-12 md:col-span-4">
-        <div className="aspect-[3/4] bg-paper-deep border border-ink/20 relative overflow-hidden">
+        <div className="aspect-video bg-paper-deep border border-ink/20 relative overflow-hidden">
           <img
             src={meganPortrait}
             alt="Portrait of Megan Ho"
@@ -412,7 +412,7 @@ const Veramante = () => (
           ].map((c) => (
             <div key={c.name} className="border border-ink/30">
               <div
-                className={`aspect-square flex items-end p-3 ${c.ink}`}
+                className={`aspect-video flex items-end p-3 ${c.ink}`}
                 style={{ background: c.hex }}
               >
                 <span className="font-mono text-[10px] small-caps">{c.hex}</span>
@@ -651,7 +651,7 @@ const Sippy = () => (
           ].map((c) => (
             <div key={c.name} className="border border-ink/30">
               <div
-                className={`aspect-square flex items-end p-3 ${c.ink}`}
+                className={`aspect-video flex items-end p-3 ${c.ink}`}
                 style={{ background: c.hex }}
               >
                 <span className="font-mono text-[10px] small-caps">{c.hex}</span>
@@ -855,7 +855,7 @@ const MegsCreami = () => (
           ].map((c) => (
             <div key={c.name} className="border border-ink/30">
               <div
-                className={`aspect-square flex items-end p-3 ${c.ink}`}
+                className={`aspect-video flex items-end p-3 ${c.ink}`}
                 style={{ background: c.hex }}
               >
                 <span className="font-mono text-[10px] small-caps">{c.hex}</span>
