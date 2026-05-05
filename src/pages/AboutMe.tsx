@@ -16,138 +16,19 @@ import picBay from "@/assets/about/bay.jpg";
 import picFlowers from "@/assets/about/flowers.jpg";
 
 const PERSONALITIES = [
-  {
-    src: picSunset,
-    trait: "Romantic",
-    note: "Chasing pink skies & golden hours.",
-    masthead: "DUSK",
-    tagline: "the magazine for incurable romantics",
-    coverLines: ["The 6pm sky issue", "Why we still chase sunsets", "Field notes from a window seat", "Pink, peach, persimmon: a study"],
-    accent: "burnt",
-    align: "left",
-    price: "AU $7.50",
-  },
-  {
-    src: picSandwich,
-    trait: "Greedy (in the best way)",
-    note: "Will plan a whole day around one sandwich.",
-    masthead: "APPETITE",
-    tagline: "a quarterly for the deeply hungry",
-    coverLines: ["The sandwich that ruined me", "12 hours, 4 cities, 9 snacks", "On planning a day around lunch", "Crumbs: a love letter"],
-    accent: "red",
-    align: "right",
-    price: "AU $9.00",
-  },
-  {
-    src: picReading,
-    trait: "Slow living",
-    note: "Books, breeze, no notifications.",
-    masthead: "STILLNESS",
-    tagline: "for the quietly obsessed",
-    coverLines: ["The pleasure of doing nothing", "A case for paper books", "How to read in public", "On airplane mode as lifestyle"],
-    accent: "ochre",
-    align: "left",
-    price: "AU $6.00",
-  },
-  {
-    src: picDog,
-    trait: "Soft for animals",
-    note: "Every dog is my new best friend.",
-    masthead: "WARMTH",
-    tagline: "issued whenever a dog says hi",
-    coverLines: ["Every good dog: an index", "On falling in love at the park", "Strangers' pets I have known", "The ethics of asking to pet"],
-    accent: "burnt",
-    align: "right",
-    price: "AU $5.00",
-  },
-  {
-    src: picLatte,
-    trait: "Latte art apprentice",
-    note: "One day the rosetta will be perfect.",
-    masthead: "CRAFT",
-    tagline: "for the perpetually practising",
-    coverLines: ["The rosetta diaries", "200 pours later", "Milk, micro-foam, mood", "Why we keep trying"],
-    accent: "red",
-    align: "left",
-    price: "AU $8.00",
-  },
-  {
-    src: picForest,
-    trait: "Outdoorsy daydreamer",
-    note: "Sunlight through gum trees, always.",
-    masthead: "WANDER",
-    tagline: "trails, treetops & taking the long way",
-    coverLines: ["The gum tree issue", "12 walks worth waking up for", "On getting lost on purpose", "Pocket guide: forest light"],
-    accent: "ochre",
-    align: "right",
-    price: "AU $10.00",
-  },
-  {
-    src: picStreet,
-    trait: "Iced coffee girlie",
-    note: "Sydney terraces, oat latte, no agenda.",
-    masthead: "ROUTINE",
-    tagline: "small loops we secretly love",
-    coverLines: ["Same café, every Sunday", "Oat milk: a manifesto", "On loving a neighbourhood", "Why iced wins, even in winter"],
-    accent: "red",
-    align: "left",
-    price: "AU $6.50",
-  },
-  {
-    src: picOutfit,
-    trait: "Quiet vanity",
-    note: "An outfit is half the personality.",
-    masthead: "STYLE",
-    tagline: "a mirror, monthly",
-    coverLines: ["Dressing for no one in particular", "The case for one good coat", "An outfit is a sentence", "Mirror selfies, reconsidered"],
-    accent: "burnt",
-    align: "right",
-    price: "AU $12.00",
-  },
-  {
-    src: picBay,
-    trait: "Sea-staring type",
-    note: "Big water, small thoughts.",
-    masthead: "CALM",
-    tagline: "for the chronically overstimulated",
-    coverLines: ["The reset issue", "On staring at water", "Tide tables for the soul", "How to be small, on purpose"],
-    accent: "ochre",
-    align: "left",
-    price: "AU $7.00",
-  },
-  {
-    src: picFeast,
-    trait: "Hosts a mean dinner",
-    note: "Slow-cooked lamb, red wine, low light.",
-    masthead: "GATHER",
-    tagline: "tables, candles, second helpings",
-    coverLines: ["The dinner party revival", "8 hours, one lamb shoulder", "On low light & loud laughs", "Wine pairings I made up"],
-    accent: "ochre",
-    align: "right",
-    price: "AU $11.00",
-  },
-  {
-    src: picFlowers,
-    trait: "Sentimental",
-    note: "Keeps every flower, even the felt ones.",
-    masthead: "SOFT",
-    tagline: "a journal of small attachments",
-    coverLines: ["The felt flower archive", "Why we keep things", "Birthday cards: a taxonomy", "On crying at adverts"],
-    accent: "burnt",
-    align: "left",
-    price: "AU $5.50",
-  },
-  {
-    src: picWindow,
-    trait: "Homebody",
-    note: "Some days the window is enough.",
-    masthead: "QUIET",
-    tagline: "for the happily indoors",
-    coverLines: ["The window seat issue", "How to stay in well", "On candles as company", "Sunday: a defence"],
-    accent: "burnt",
-    align: "right",
-    price: "AU $6.00",
-  },
+  { src: picSunset, trait: "Romantic", note: "Chasing pink skies & golden hours.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
+  { src: picSandwich, trait: "Greedy (in the best way)", note: "Will plan a whole day around one sandwich.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picReading, trait: "Slow living", note: "Books, breeze, no notifications.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
+  { src: picDog, trait: "Soft for animals", note: "Every dog is my new best friend.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
+  { src: picLatte, trait: "Latte art apprentice", note: "One day the rosetta will be perfect.", tag: "05 · craft", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "left", accent: "red" },
+  { src: picForest, trait: "Outdoorsy daydreamer", note: "Sunlight through gum trees, always.", tag: "06 · wander", tilt: "rotate-[-4deg]", span: "md:col-span-5", tape: "left", accent: "ochre" },
+  { src: picStreet, trait: "Iced coffee girlie", note: "Sydney terraces, oat latte, no agenda.", tag: "07 · routine", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picOutfit, trait: "Quiet vanity", note: "An outfit is half the personality.", tag: "08 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picBay, trait: "Sea-staring type", note: "Big water, small thoughts. Reset button.", tag: "09 · calm", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
+  { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "10 · gather", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
+  { src: picFlowers, trait: "Sentimental", note: "Keeps every flower, even the felt ones.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  
+  { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
 ];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
@@ -360,154 +241,100 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* The cover stack */}
-        <div className="container relative py-12 md:py-16 space-y-16 md:space-y-24">
+        {/* The spreads */}
+        <div className="container relative py-16 md:py-20 space-y-24 md:space-y-32">
           {PERSONALITIES.map((p, i) => {
             const accentVar =
               p.accent === "red" ? "--accent-red" : p.accent === "ochre" ? "--accent-ochre" : "--accent-burnt";
+            const isOdd = i % 2 === 1;
             const num = String(i + 1).padStart(2, "0");
-            const issueNo = `№ ${String(i + 1).padStart(3, "0")}`;
-            const alignLeft = p.align === "left";
-            // Build a fake barcode pattern (deterministic per index)
-            const bars = Array.from({ length: 28 }).map((_, j) => ((i * 7 + j * 3) % 5) + 1);
 
             return (
               <article
                 key={i}
-                className="relative mx-auto w-full max-w-5xl"
-                style={{ transform: `rotate(${i % 2 === 0 ? -0.6 : 0.6}deg)` }}
+                className={`relative grid grid-cols-12 gap-x-6 gap-y-6 items-center ${
+                  isOdd ? "md:[&>figure]:order-2" : ""
+                }`}
               >
-                {/* Spine shadow */}
-                <div
-                  aria-hidden
-                  className="absolute -inset-x-2 -inset-y-2 -z-10"
-                  style={{ background: `hsl(var(${accentVar}) / 0.18)` }}
-                />
-
-                <div
-                  className="relative border-2 border-ink bg-paper overflow-hidden shadow-[14px_18px_0_0_hsl(var(--ink))]"
+                {/* Photo */}
+                <figure
+                  className={`group relative col-span-12 md:col-span-7 ${p.tilt} hover:rotate-0 transition-transform duration-700`}
                 >
-                  {/* Image — full bleed */}
-                  <div className="relative aspect-[3/4] md:aspect-[4/5] w-full overflow-hidden bg-ink">
-                    <img
-                      src={p.src}
-                      alt={p.trait}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                    {/* Tone wash */}
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 mix-blend-multiply opacity-40"
-                      style={{
-                        background: `linear-gradient(${alignLeft ? "135deg" : "225deg"}, hsl(var(${accentVar}) / 0.6), transparent 55%)`,
-                      }}
-                    />
-                    {/* Vignette for type legibility */}
-                    <div
-                      aria-hidden
-                      className="absolute inset-0"
-                      style={{
-                        background:
-                          "linear-gradient(180deg, hsl(0 0% 0% / 0.35) 0%, transparent 22%, transparent 60%, hsl(0 0% 0% / 0.55) 100%)",
-                      }}
-                    />
-
-                    {/* TOP BAR — masthead row */}
-                    <div className="absolute top-0 left-0 right-0 px-5 md:px-8 pt-5 md:pt-7 flex items-start justify-between gap-4 text-paper">
-                      <div className="font-mono text-[10px] small-caps tracking-[0.18em] opacity-90">
-                        Issue {issueNo} · Vol. {num}
-                      </div>
-                      <div className="font-mono text-[10px] small-caps tracking-[0.18em] opacity-90 text-right">
-                        {p.price} <br />
-                        <span className="opacity-70">printed in megan-land</span>
-                      </div>
-                    </div>
-
-                    {/* MASTHEAD */}
-                    <div
-                      className={`absolute left-0 right-0 px-5 md:px-10 top-14 md:top-20 ${alignLeft ? "text-left" : "text-right"} text-paper`}
-                    >
-                      <h3
-                        className="font-display font-light leading-[0.78] tracking-tight"
-                        style={{
-                          fontSize: "clamp(3rem, 12vw, 8.5rem)",
-                          textShadow: "0 2px 24px hsl(0 0% 0% / 0.35)",
-                        }}
+                  <span
+                    aria-hidden
+                    className={`absolute -top-3 ${
+                      p.tape === "left" ? "left-8 -rotate-6" : "right-8 rotate-6"
+                    } h-6 w-20 border border-ink/20 z-20 shadow-sm`}
+                    style={{ background: `hsl(var(${accentVar}) / 0.6)` }}
+                  />
+                  <div
+                    className="relative border border-ink bg-paper p-3 transition-all duration-500 group-hover:shadow-[14px_16px_0_0_hsl(var(--ink))]"
+                    style={{ boxShadow: `8px 10px 0 0 hsl(var(${accentVar}))` }}
+                  >
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
+                      <img
+                        src={p.src}
+                        alt={p.trait}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
+                      />
+                      {/* Floating trait sticker */}
+                      <span
+                        className="absolute top-4 left-4 bg-paper border border-ink px-3 py-1 font-mono text-[10px] small-caps font-bold shadow-[3px_3px_0_0_hsl(var(--ink))] -rotate-2"
                       >
-                        {p.masthead.split("").map((ch, k) => (
-                          <span key={k} className={k === 1 ? "italic" : ""} style={k === 1 ? { color: `hsl(var(${accentVar}))` } : undefined}>
-                            {ch}
-                          </span>
-                        ))}
-                      </h3>
-                      <p className="font-display italic text-base md:text-lg mt-2 opacity-90 max-w-md ml-auto" style={alignLeft ? { marginLeft: 0 } : undefined}>
-                        {p.tagline}
-                      </p>
+                        {p.tag}
+                      </span>
                     </div>
+                    <figcaption className="pt-3 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
+                      <p className="font-display italic text-sm">"{p.note}"</p>
+                      <p className="font-mono text-[10px] small-caps text-ink-mute shrink-0">Plate {num}</p>
+                    </figcaption>
+                  </div>
+                </figure>
 
-                    {/* COVER LINES */}
-                    <div
-                      className={`absolute bottom-24 md:bottom-28 ${alignLeft ? "left-5 md:left-10 text-left" : "right-5 md:right-10 text-right"} text-paper max-w-[78%] md:max-w-[55%] space-y-2`}
+                {/* Text spread */}
+                <div className={`col-span-12 md:col-span-5 ${isOdd ? "md:pr-8" : "md:pl-8"} relative`}>
+                  <div className="flex items-baseline gap-4 mb-2">
+                    <span
+                      className="font-display font-light text-[clamp(5rem,12vw,9rem)] leading-none italic"
+                      style={{ color: `hsl(var(${accentVar}))` }}
                     >
-                      {p.coverLines.slice(0, 4).map((line, k) => (
-                        <p
-                          key={k}
-                          className={`font-display leading-tight ${k === 0 ? "text-2xl md:text-3xl" : "text-base md:text-lg italic opacity-90"}`}
-                        >
-                          {k === 0 && (
-                            <span
-                              className="inline-block align-middle mr-2 font-mono text-[10px] small-caps not-italic px-1.5 py-0.5 border border-paper/70"
-                            >
-                              feature
-                            </span>
-                          )}
-                          {line}
-                        </p>
-                      ))}
-                    </div>
-
-                    {/* BOTTOM BAR — barcode + issue number */}
-                    <div className="absolute bottom-0 left-0 right-0 px-5 md:px-8 pb-5 md:pb-7 flex items-end justify-between gap-4 text-paper">
-                      <div className="bg-paper text-ink px-2 py-1.5 inline-flex items-end gap-[2px]" aria-hidden>
-                        {bars.map((h, k) => (
-                          <span
-                            key={k}
-                            className="block bg-ink"
-                            style={{ width: h % 2 === 0 ? 1 : 2, height: 28 + h * 2 }}
-                          />
-                        ))}
-                        <span className="ml-2 font-mono text-[9px] small-caps">9 770{(1000 + i * 137).toString().slice(0, 3)} 4{i}2</span>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-display italic text-lg md:text-xl">"{p.note}"</p>
-                        <p className="font-mono text-[10px] small-caps opacity-80 mt-1">— Plate {num} · filed under {p.accent}</p>
-                      </div>
-                    </div>
-
-                    {/* Corner stamp */}
-                    <div
-                      className={`absolute ${alignLeft ? "right-5 md:right-8" : "left-5 md:left-8"} top-20 md:top-28`}
-                    >
-                      <div
-                        className="size-20 md:size-24 rounded-full border-2 border-paper flex flex-col items-center justify-center text-paper text-center -rotate-12"
-                        style={{ background: `hsl(var(${accentVar}) / 0.85)` }}
-                      >
-                        <span className="font-mono text-[9px] small-caps tracking-widest">trait no.</span>
-                        <span className="font-display text-3xl leading-none italic">{num}</span>
-                        <span className="font-mono text-[8px] small-caps tracking-widest mt-0.5">of {String(PERSONALITIES.length).padStart(2, "0")}</span>
-                      </div>
-                    </div>
+                      {num}
+                    </span>
+                    <div className="flex-1 h-px bg-ink/30 mb-4" />
+                    <span className="font-mono text-[10px] small-caps text-ink-mute mb-4">trait</span>
+                  </div>
+                  <h3 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-5">
+                    {p.trait}.
+                  </h3>
+                  <p className="font-display italic text-xl text-ink-soft leading-relaxed mb-6">
+                    {p.note}
+                  </p>
+                  <div className="flex items-center gap-3 font-mono text-[10px] small-caps">
+                    <span
+                      className="inline-block size-2.5 rounded-full border border-ink"
+                      style={{ background: `hsl(var(${accentVar}))` }}
+                    />
+                    <span className="text-ink-mute">filed under · {p.accent}</span>
+                    <span className="text-ink-mute">·</span>
+                    <span className="text-ink-mute">{p.tag}</span>
                   </div>
 
-                  {/* Footer strip outside the cover */}
-                  <div className="flex items-center justify-between gap-4 px-5 md:px-8 py-3 border-t-2 border-ink bg-paper-deep">
-                    <p className="font-mono text-[10px] small-caps text-ink-mute">
-                      The Megan Quarterly · {p.masthead.toLowerCase()} edition
-                    </p>
-                    <p className="font-display italic text-base">{p.trait}.</p>
-                  </div>
+                  {/* Decorative squiggle every few entries */}
+                  {i % 3 === 2 && (
+                    <svg aria-hidden className="mt-8 w-32 h-8 text-[hsl(var(--accent-red))]" viewBox="0 0 120 30" fill="none">
+                      <path d="M2 15 Q 15 2, 28 15 T 54 15 T 80 15 T 106 15 T 132 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  )}
                 </div>
+
+                {/* Hairline number watermark */}
+                <span
+                  aria-hidden
+                  className="hidden md:block absolute -top-10 right-0 font-mono text-[10px] small-caps text-ink-mute tracking-widest"
+                >
+                  Entry {num} / {String(PERSONALITIES.length).padStart(2, "0")}
+                </span>
               </article>
             );
           })}
