@@ -10,7 +10,7 @@ import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
 import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.jpg";
-import megsCreamiLogo from "@/assets/megs-creami-logo.jpg";
+import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const NAV = [
   { id: "about", label: "About" },
