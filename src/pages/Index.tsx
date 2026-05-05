@@ -130,6 +130,39 @@ const Hero = () => (
           >
             Est. 2026
           </span>
+          {/* Hand-drawn "that's me" arrow */}
+          <div className="absolute -top-8 -left-16 md:-left-24 flex items-end gap-1 rotate-[-8deg] pointer-events-none select-none">
+            <span
+              className="font-display italic text-2xl md:text-3xl whitespace-nowrap"
+              style={{ color: "hsl(var(--accent-burnt))" }}
+            >
+              that&rsquo;s me!
+            </span>
+            <svg
+              width="80"
+              height="60"
+              viewBox="0 0 80 60"
+              fill="none"
+              className="translate-y-2"
+              style={{ color: "hsl(var(--accent-burnt))" }}
+              aria-hidden="true"
+            >
+              <path
+                d="M4 8 C 25 6, 50 18, 68 44"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <path
+                d="M68 44 L 58 38 M68 44 L 62 32"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
         </figure>
       </div>
     </div>
