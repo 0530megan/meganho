@@ -90,7 +90,7 @@ const Hero = () => (
           Hello, I&rsquo;m
         </p>
         <h2
-          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(5rem,19vw,16rem)] uppercase text-center"
+          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center"
           style={{ fontWeight: 500 }}
         >
           <span className="block text-ink">MEGAN</span>
