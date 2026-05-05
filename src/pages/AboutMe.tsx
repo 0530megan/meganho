@@ -15,6 +15,7 @@ import picWindow from "@/assets/about/window.jpg";
 import picLatte from "@/assets/about/latte.jpg";
 import picBay from "@/assets/about/bay.jpg";
 import picFlowers from "@/assets/about/flowers.jpg";
+import picColoring from "@/assets/about/coloring.jpg";
 
 const PERSONALITIES = [
   { src: picSunset, trait: "Sentimental", note: "Always stop for a good sky.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
@@ -29,6 +30,7 @@ const PERSONALITIES = [
   { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "10 · gather", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
   { src: picFlowers, trait: "Keeper", note: "Keeps every flower, even the felt ones.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
   
+  { src: picColoring, trait: "Hands-on creative", note: "Will fill any blank page with colour.", tag: "12 · play", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
   { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
 ];
 
