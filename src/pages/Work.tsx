@@ -428,7 +428,7 @@ const Work = () => {
               href={cs.href}
               className="group block border border-ink bg-paper hover:bg-paper-deep transition-colors"
             >
-              <div className="relative overflow-hidden aspect-[4/5] border-b border-ink bg-paper-deep">
+              <div className="relative overflow-hidden aspect-video border-b border-ink bg-paper-deep">
                 <img
                   src={cs.cover}
                   alt={`${cs.name} brand board cover`}
