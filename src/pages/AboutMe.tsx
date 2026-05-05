@@ -258,6 +258,25 @@ const AboutMe = () => {
             </div>
           ))}
         </dl>
+
+        {/* Personal palette */}
+        <div className="mt-16">
+          <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-3">My personal palette</p>
+          <div className="grid grid-cols-5 border border-ink">
+            {[
+              { hex: "#F4F3EE", name: "Paper" },
+              { hex: "#C56B3E", name: "Burnt" },
+              { hex: "#B33A1F", name: "Vermilion" },
+              { hex: "#C49A4A", name: "Ochre" },
+              { hex: "#1C1B1A", name: "Ink" },
+            ].map((c, i) => (
+              <div key={c.hex} className={`aspect-square flex flex-col justify-end p-3 ${i < 4 ? "border-r border-ink" : ""}`} style={{ background: c.hex }}>
+                <p className="font-mono text-[10px] small-caps font-bold" style={{ color: i === 0 || i === 3 ? "#1C1B1A" : "#F4F3EE" }}>{c.name}</p>
+                <p className="font-mono text-[9px]" style={{ color: i === 0 || i === 3 ? "#1C1B1A" : "#F4F3EE" }}>{c.hex}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Timeline */}
