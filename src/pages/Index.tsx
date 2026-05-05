@@ -84,7 +84,7 @@ const Hero = () => (
     </nav>
 
     {/* Hero content */}
-    <div className="container relative py-16 md:py-24 grid grid-cols-12 gap-x-6 gap-y-10 items-center">
+    <div className="container relative pt-32 pb-16 md:pt-48 md:pb-24 grid grid-cols-12 gap-x-6 gap-y-10 items-center">
       <div className="col-span-12 md:col-span-8">
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-2">
           Hello, I&rsquo;m
