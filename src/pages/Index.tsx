@@ -164,38 +164,71 @@ const SectionHeader = ({
   </div>
 );
 
-const About = () => (
-  <section id="about" className="container py-16 md:py-24">
-    <SectionHeader kicker="Profile" title="Who I Am & What I Bring" no="II" />
-    <div className="grid grid-cols-12 gap-x-6 gap-y-10">
-      <div className="col-span-12 md:col-span-4">
-        <div className="aspect-video bg-paper-deep border border-ink/20 relative overflow-hidden">
-          <img
-            src={meganPortrait}
-            alt="Portrait of Megan Ho"
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-ink/30 bg-paper/85 backdrop-blur">
-            <p className="font-mono text-[10px] small-caps text-ink-mute">Plate I</p>
-            <p className="font-display italic text-sm">Megan Ho, the author</p>
-          </div>
-        </div>
+const SelectedWork = () => {
+  const studies = [
+    {
+      no: "I",
+      name: "Veramente",
+      subtitle: "Carry Your SPF — wearable sunscreen as accessory.",
+      cover: veramenteBrandBoard,
+      href: "#work",
+    },
+    {
+      no: "II",
+      name: "Sippy",
+      subtitle: "Sparkling blood orange — keep it cute, keep it sippy.",
+      cover: sippyBrandBoard,
+      href: "#sippy",
+    },
+    {
+      no: "III",
+      name: "Meg's Creami",
+      subtitle: "Small-batch ice cream — a spoonful of nostalgia.",
+      cover: megsCreamiBrandBoard,
+      href: "#megs-creami",
+    },
+  ];
+  return (
+    <section id="about" className="container py-16 md:py-24">
+      <SectionHeader kicker="Some of my work" title="Selected Case Studies" no="II" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {studies.map((s) => (
+          <a
+            key={s.no}
+            href={s.href}
+            className="group block border border-ink bg-paper hover:bg-paper-deep transition-colors"
+          >
+            <div className="relative overflow-hidden aspect-video border-b border-ink bg-paper-deep">
+              <img
+                src={s.cover}
+                alt={`${s.name} case study cover`}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
+                Case · {s.no}
+              </span>
+              <div
+                aria-hidden
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-multiply"
+                style={{ background: "hsl(var(--accent-burnt) / 0.22)" }}
+              />
+            </div>
+            <div className="p-5">
+              <div className="flex items-baseline justify-between gap-3 mb-2">
+                <h3 className="font-display text-2xl tracking-tight">{s.name}</h3>
+                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-[hsl(var(--accent-burnt))]" />
+              </div>
+              <p className="font-display italic text-sm text-ink-soft">
+                {s.subtitle}
+              </p>
+            </div>
+          </a>
+        ))}
       </div>
-      <div className="col-span-12 md:col-span-8 md:columns-2 md:gap-8 font-display text-lg leading-relaxed text-ink-soft">
-        <p className="drop-cap mb-5 break-inside-avoid">
-          I am a Master of Marketing student at RMIT University with a strong focus on product-led marketing and brand strategy. My work explores how consumer insight, design, and storytelling can be integrated to create marketing systems where the product itself becomes the primary driver of engagement and visibility.
-        </p>
-        <p className="mb-5 break-inside-avoid">
-          I have developed multiple brand concepts using tools such as Figma and Canva, where I translate ideas into visual identities, product designs, and campaign assets. Through these projects, I focus on creating work that is not only visually compelling, but also grounded in strategic thinking and consumer behaviour.
-        </p>
-        <p className="break-inside-avoid italic text-ink">
-          I am particularly interested in the intersection of beauty, lifestyle, and luxury branding developing concepts that align functionality with identity and everyday behaviour.
-        </p>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const Approach = () => {
   const principles = [
