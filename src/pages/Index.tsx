@@ -1244,7 +1244,6 @@ const Index = () => {
       />
       <Hero />
       <main>
-        <Hero />
         <SelectedWork />
         <Approach />
         <Veramante />
