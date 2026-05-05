@@ -1256,7 +1256,7 @@ const Index = () => {
       <Masthead />
       <main>
         <Hero />
-        <About />
+        <SelectedWork />
         <Approach />
         <Veramante />
         <Sippy />
