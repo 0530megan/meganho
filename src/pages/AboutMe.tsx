@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
-import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import picSunset from "@/assets/about/sunset.jpg";
 import picSandwich from "@/assets/about/sandwich.jpg";
