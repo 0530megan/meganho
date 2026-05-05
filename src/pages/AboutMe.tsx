@@ -330,7 +330,7 @@ const PersonalitiesSection = () => {
           <div>
             <p className="font-mono text-[11px] small-caps text-ink-soft mb-2">Issue №02 · The Personality Index</p>
             <h2 className="font-display font-light text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] tracking-tight">
-              who<span className="italic" style={{ color: "hsl(35 55% 38%)" }}> am </span>i,
+              who<span className="italic" style={{ color: "hsl(46 85% 78%)" }}> am </span>i,
               <br />really?
             </h2>
           </div>
@@ -350,8 +350,8 @@ const LayoutStack = () => {
   const prev = () => setOrder((o) => [o[o.length - 1], ...o.slice(0, -1)]);
   const top = order[0];
   const p = PERSONALITIES[top];
-  const cream = "hsl(42 38% 92%)";
-  const ochre = "hsl(35 55% 42%)";
+  const cream = "hsl(46 60% 92%)";
+  const ochre = "hsl(46 85% 72%)";
 
   return (
     <div className="container py-12 md:py-20 grid grid-cols-12 gap-10 items-center">
