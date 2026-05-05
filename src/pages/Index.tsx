@@ -85,39 +85,125 @@ const Hero = () => (
 
     {/* Hero content */}
     <div className="container relative py-16 md:py-24 grid grid-cols-12 gap-x-6 gap-y-10 items-center">
-      <div className="col-span-12 md:col-span-8">
-        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-2">
+      {/* Floating ornaments */}
+      <span
+        aria-hidden
+        className="hidden md:block absolute top-6 right-10 font-display text-7xl text-accent-red/80 select-none animate-[spin_18s_linear_infinite]"
+      >
+        ✺
+      </span>
+      <span
+        aria-hidden
+        className="hidden md:block absolute bottom-10 left-4 font-mono text-[10px] small-caps text-ink-mute rotate-[-90deg] origin-left tracking-[0.4em]"
+      >
+        ※ Folio · One ※
+      </span>
+
+      <div className="col-span-12 md:col-span-8 relative">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="h-px w-10 bg-ink" />
+          <p className="font-mono text-[11px] small-caps text-accent-red">
+            Featured · Designer at large
+          </p>
+        </div>
+        <p className="font-display italic text-2xl md:text-3xl text-ink-soft mb-2">
           Hello, I&rsquo;m
         </p>
         <h2
-          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center"
+          className="font-display leading-[0.82] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center relative"
           style={{ fontWeight: 500 }}
         >
-          <span className="block text-ink">MEGAN</span>
+          <span className="block text-ink relative">
+            MEGAN
+            <span
+              aria-hidden
+              className="absolute -top-2 -right-2 md:-right-4 font-mono text-[10px] small-caps text-accent-red rotate-12"
+            >
+              ✶ née 2026
+            </span>
+          </span>
           <span
-            className="block italic"
+            className="block italic relative"
             style={{ color: "hsl(var(--accent-burnt))" }}
           >
             Ho.
+            <svg
+              aria-hidden
+              viewBox="0 0 200 14"
+              className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[42%] h-3"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M2 8 Q 50 1, 100 7 T 198 6"
+                fill="none"
+                stroke="hsl(var(--accent-burnt))"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+            </svg>
           </span>
         </h2>
-        <div className="mt-10 flex items-end gap-6 flex-wrap">
-          <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
-          <p className="font-mono text-[11px] small-caps text-ink-mute">
-            Lead Essay · 01
-          </p>
+
+        <div className="mt-10 grid grid-cols-12 gap-4 items-start">
+          <div className="col-span-12 sm:col-span-7">
+            <p className="font-mono text-[11px] small-caps text-ink-mute mb-2">
+              Lead Essay · 01
+            </p>
+            <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft drop-cap">
+              I&rsquo;m passionate about marketing that turns heads and leaves an impression — built from type, texture, and a touch of mischief.
+            </p>
+          </div>
+          <aside className="col-span-12 sm:col-span-5 border-l border-ink/40 pl-4 space-y-2">
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Currently
+            </p>
+            <p className="font-display italic text-base leading-snug">
+              Designing brand systems out of Melbourne — open to studio briefs &amp; freelance commissions.
+            </p>
+            <div className="flex gap-2 pt-2 flex-wrap">
+              <span className="font-mono text-[10px] small-caps border border-ink px-2 py-0.5">Brand</span>
+              <span className="font-mono text-[10px] small-caps border border-ink px-2 py-0.5">Editorial</span>
+              <span className="font-mono text-[10px] small-caps bg-ink text-paper px-2 py-0.5">Type</span>
+            </div>
+          </aside>
         </div>
-        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft mt-6 max-w-xl">
-          I&rsquo;m passionate about marketing that turns heads and leaves an impression.
-        </p>
       </div>
-      <div className="col-span-12 md:col-span-4">
+
+      <div className="col-span-12 md:col-span-4 relative">
+        {/* Hand-drawn arrow pointing at portrait */}
+        <svg
+          aria-hidden
+          viewBox="0 0 120 80"
+          className="hidden md:block absolute -left-20 top-8 w-24 h-16 text-ink"
+        >
+          <path
+            d="M5 70 Q 40 10, 110 25"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M110 25 L 100 18 M110 25 L 102 32"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </svg>
+        <span
+          aria-hidden
+          className="hidden md:block absolute -left-24 -top-2 font-display italic text-sm text-ink-soft rotate-[-6deg]"
+        >
+          that&rsquo;s me →
+        </span>
+
         <figure className="relative">
           <div className="border border-ink bg-paper p-2 shadow-[10px_12px_0_0_hsl(var(--ink))] rotate-[2deg] hover:rotate-0 transition-transform duration-500">
             <img
               src={meganPortrait}
               alt="Megan Ho"
-              className="w-full h-auto block"
+              className="w-full h-auto block grayscale-[20%]"
               loading="eager"
             />
             <figcaption className="pt-2 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
@@ -130,7 +216,34 @@ const Hero = () => (
           >
             Est. 2026
           </span>
+          <span
+            className="absolute -bottom-4 -right-4 font-mono text-[10px] small-caps bg-[hsl(var(--accent-burnt))] text-paper px-2 py-1 rotate-[6deg] shadow-[3px_3px_0_0_hsl(var(--ink))]"
+          >
+            ★ One of one
+          </span>
         </figure>
+      </div>
+    </div>
+
+    {/* Marquee strip closing the hero */}
+    <div className="border-y-2 border-ink bg-ink text-paper overflow-hidden">
+      <div className="marquee whitespace-nowrap py-2 font-mono text-[11px] small-caps flex gap-8">
+        {Array.from({ length: 2 }).map((_, i) => (
+          <span key={i} className="flex gap-8 shrink-0">
+            <span>✺ Brand identity</span>
+            <span>· Editorial design</span>
+            <span>· Art direction</span>
+            <span>· Type-led systems</span>
+            <span>· Packaging</span>
+            <span>· Available for commissions 2026</span>
+            <span>✺ Brand identity</span>
+            <span>· Editorial design</span>
+            <span>· Art direction</span>
+            <span>· Type-led systems</span>
+            <span>· Packaging</span>
+            <span>· Available for commissions 2026</span>
+          </span>
+        ))}
       </div>
     </div>
   </header>
