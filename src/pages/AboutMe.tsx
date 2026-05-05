@@ -323,7 +323,7 @@ const PersonalitiesSection = () => {
   return (
     <section
       className="border-y-2 border-ink overflow-hidden relative"
-      style={{ background: "hsl(80 14% 82%)" }}
+      style={{ background: "hsl(8 65% 48%)" }}
     >
       <div className="container relative pt-16 md:pt-20 pb-4">
         <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
