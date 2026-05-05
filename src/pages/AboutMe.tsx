@@ -321,17 +321,20 @@ export default AboutMe;
 
 const PersonalitiesSection = () => {
   return (
-    <section className="bg-paper-deep border-y-2 border-ink overflow-hidden relative">
+    <section
+      className="border-y-2 border-ink overflow-hidden relative"
+      style={{ background: "hsl(80 14% 82%)" }}
+    >
       <div className="container relative pt-16 md:pt-20 pb-4">
         <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
           <div>
-            <p className="font-mono text-[11px] small-caps text-ink-mute mb-2">Issue №02 · The Personality Index</p>
+            <p className="font-mono text-[11px] small-caps text-ink-soft mb-2">Issue №02 · The Personality Index</p>
             <h2 className="font-display font-light text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] tracking-tight">
-              who<span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> am </span>i,
+              who<span className="italic" style={{ color: "hsl(35 55% 38%)" }}> am </span>i,
               <br />really?
             </h2>
           </div>
-          <p className="font-mono text-[11px] small-caps text-ink-mute">{PERSONALITIES.length} entries · tap a card</p>
+          <p className="font-mono text-[11px] small-caps text-ink-soft">{PERSONALITIES.length} entries · tap a card</p>
         </div>
       </div>
 
