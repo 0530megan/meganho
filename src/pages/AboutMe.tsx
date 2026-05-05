@@ -18,20 +18,20 @@ import picFlowers from "@/assets/about/flowers.jpg";
 import picColoring from "@/assets/about/coloring.jpg";
 
 const PERSONALITIES = [
-  { src: picSunset, trait: "Sentimental", note: "Always stop for a good sky.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
-  { src: picSandwich, trait: "Greedy (in the best way)", note: "Will plan a whole day around one sandwich.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
-  { src: picReading, trait: "Slow living", note: "Books, breeze, no notifications.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
-  { src: picDog, trait: "Soft for animals", note: "Every dog is my new best friend.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
-  { src: picLatte, trait: "Latte art apprentice", note: "One day the rosetta will be perfect.", tag: "05 · craft", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "left", accent: "red" },
-  { src: picForest, trait: "Outdoorsy daydreamer", note: "Sunlight through gum trees, always.", tag: "06 · wander", tilt: "rotate-[-4deg]", span: "md:col-span-5", tape: "left", accent: "ochre" },
-  { src: picStreet, trait: "Iced coffee girlie", note: "Sydney terraces, oat latte, no agenda.", tag: "07 · routine", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
-  { src: picOutfit, trait: "Quiet vanity", note: "An outfit is half the personality.", tag: "08 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
-  { src: picBay, trait: "Sea-staring type", note: "Big water, small thoughts. Reset button.", tag: "09 · calm", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
-  { src: picFeast, trait: "Hosts a mean dinner", note: "Slow-cooked lamb, red wine, low light.", tag: "10 · gather", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
-  { src: picFlowers, trait: "Keeper", note: "Keeps every flower, even the felt ones.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picSunset, trait: "Sentimental", note: "For the sky, always.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt" },
+  { src: picSandwich, trait: "Greedy (in a good way)", note: "Built around one perfect bite.", tag: "02 · appetite", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picReading, trait: "Slow living", note: "Pages, air, offline.", tag: "03 · stillness", tilt: "rotate-[-2deg]", span: "md:col-span-3 md:row-span-2", tape: "left", accent: "ochre" },
+  { src: picDog, trait: "Soft for animals", note: "Stops for every dog.", tag: "04 · warmth", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "burnt" },
+  { src: picLatte, trait: "Foam Art?", note: "Yes, rosetta.", tag: "05 · craft", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "left", accent: "red" },
+  { src: picForest, trait: "Outdoorsy daydreamer", note: "Light through gum trees.", tag: "06 · wander", tilt: "rotate-[-4deg]", span: "md:col-span-5", tape: "left", accent: "ochre" },
+  { src: picStreet, trait: "Always coffee", note: "Iced long black, wandering.", tag: "07 · routine", tilt: "rotate-[2deg]", span: "md:col-span-4", tape: "right", accent: "red" },
+  { src: picOutfit, trait: "Quiet vanity", note: "Dressed like it matters.", tag: "08 · style", tilt: "rotate-[-2deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
+  { src: picBay, trait: "Sea-staring type", note: "Water, then reset.", tag: "09 · calm", tilt: "rotate-[3deg]", span: "md:col-span-5", tape: "right", accent: "ochre" },
+  { src: picFeast, trait: "Good host", note: "Slow dinners, good wine.", tag: "10 · gather", tilt: "rotate-[3deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
+  { src: picFlowers, trait: "Keeper", note: "Flowers, kept forever.", tag: "11 · soft", tilt: "rotate-[-3deg]", span: "md:col-span-3", tape: "left", accent: "burnt" },
   
-  { src: picColoring, trait: "Hands-on creative", note: "Will fill any blank page with colour.", tag: "12 · play", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
-  { src: picWindow, trait: "Homebody", note: "Some days the window is enough.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
+  { src: picColoring, trait: "Hands-on creative", note: "Colour finds its way.", tag: "12 · play", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
+  { src: picWindow, trait: "Homebody", note: "Stays in, stays soft.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
 ];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
