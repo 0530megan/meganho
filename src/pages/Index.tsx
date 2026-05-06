@@ -512,16 +512,19 @@ const Veramante = () => (
               <p className="font-mono text-[12px] small-caps text-accent-red mb-2">Product Story</p>
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { Icon: Lightbulb, label: "Concept", body: "Sunscreen as a wearable accessory.", pull: "Wear it, don't hide it." },
-                  { Icon: Eye, label: "Insight", body: "People skip SPF when it's hidden.", pull: "Aesthetic = adherence." },
-                  { Icon: Package, label: "Solution", body: "SPF50+ stick paired with blind-box collectible charms.", pull: "Product as touchpoint." },
-                ].map(({ Icon, label, body, pull }) => (
+                  { Icon: Lightbulb, label: "Concept", em: "Sunscreen as a wearable", body: " accessory.", pull: "Wear it, don't hide it." },
+                  { Icon: Eye, label: "Insight", em: "People skip SPF", body: " when it's hidden.", pull: "Aesthetic = adherence." },
+                  { Icon: Package, label: "Solution", em: "SPF50+ stick", body: " paired with blind-box collectible charms.", pull: "Product as touchpoint." },
+                ].map(({ Icon, label, em, body, pull }) => (
                   <div key={label} className="flex flex-col">
                     <div className="flex items-center gap-1.5 mb-1">
                       <Icon className="size-3.5 text-accent-red" />
                       <p className="font-mono text-[11px] small-caps text-ink-mute">{label}</p>
                     </div>
-                    <p className="font-display text-[14px] font-medium leading-snug mb-1.5">{body}</p>
+                    <p className="font-display text-[14px] leading-snug mb-1.5">
+                      <strong className="font-semibold text-ink">{em}</strong>
+                      <span className="text-ink-soft">{body}</span>
+                    </p>
                     <p className="mt-auto font-display italic text-[12px] text-accent-red leading-snug border-l-2 border-accent-red pl-2">
                       {pull}
                     </p>
