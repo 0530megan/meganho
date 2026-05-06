@@ -79,6 +79,16 @@ const TIMELINE = [
 ];
 
 const AboutMe = () => {
+  if (typeof window !== "undefined") {
+    const dump: Record<string, string> = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && (k.startsWith("personality-") || k === "about-portrait")) {
+        dump[k] = localStorage.getItem(k) || "";
+      }
+    }
+    console.log("ADJUST_DUMP:" + JSON.stringify(dump));
+  }
   return (
     <div className="paper-grain min-h-screen text-ink">
       {/* Top bar */}
