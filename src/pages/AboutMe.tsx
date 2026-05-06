@@ -79,16 +79,17 @@ const TIMELINE = [
 ];
 
 const AboutMe = () => {
-  if (typeof window !== "undefined") {
-    const dump: Record<string, string> = {};
+  const [dump, setDump] = useState<string>("");
+  const showDump = () => {
+    const out: Record<string, unknown> = {};
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
       if (k && (k.startsWith("personality-") || k === "about-portrait")) {
-        dump[k] = localStorage.getItem(k) || "";
+        try { out[k] = JSON.parse(localStorage.getItem(k) || "null"); } catch { /* noop */ }
       }
     }
-    console.log("ADJUST_DUMP:" + JSON.stringify(dump));
-  }
+    setDump(JSON.stringify(out, null, 2));
+  };
   return (
     <div className="paper-grain min-h-screen text-ink">
       {/* Top bar */}
