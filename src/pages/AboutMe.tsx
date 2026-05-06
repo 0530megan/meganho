@@ -141,11 +141,6 @@ const AboutMe = () => {
                   <p className="font-mono text-[10px] small-caps text-ink-mute">Polaroid · I</p>
                 </figcaption>
               </div>
-              <span
-                className="absolute -top-3 -right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[6deg]"
-              >
-                Hello you ✿
-              </span>
             </figure>
           </div>
         </div>
