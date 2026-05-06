@@ -291,7 +291,7 @@ const LayoutStack = () => {
 
   return (
     <div className="container py-12 md:py-20 grid grid-cols-12 gap-10 items-center">
-      <div className="col-span-12 md:col-span-7 relative h-[460px] md:h-[560px]">
+      <div className="col-span-12 md:col-span-8 relative h-[600px] md:h-[760px]">
         {order.slice(0, 4).map((idx, stackPos) => {
           const item = PERSONALITIES[idx];
           const isTop = stackPos === 0;
