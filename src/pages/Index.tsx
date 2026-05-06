@@ -17,9 +17,62 @@ const NAV = [
   { id: "approach", label: "Approach" },
   { id: "work", label: "Selected Work" },
   { id: "skills", label: "Skills" },
-  
-  
 ];
+
+const FONT_OPTIONS = [
+  { name: "Fraunces", family: "'Fraunces', serif", url: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&display=swap" },
+  { name: "Playfair Display", family: "'Playfair Display', serif", url: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" },
+  { name: "Cormorant", family: "'Cormorant Garamond', serif", url: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&display=swap" },
+  { name: "Bodoni Moda", family: "'Bodoni Moda', serif", url: "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&display=swap" },
+  { name: "DM Serif Display", family: "'DM Serif Display', serif", url: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" },
+  { name: "Newsreader", family: "'Newsreader', serif", url: "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&display=swap" },
+];
+
+const NameWithFontPicker = () => {
+  const [idx, setIdx] = useState(0);
+  const font = FONT_OPTIONS[idx];
+  useEffect(() => {
+    const id = `font-preview-${font.name.replace(/\s+/g, "-")}`;
+    if (!document.getElementById(id)) {
+      const link = document.createElement("link");
+      link.id = id;
+      link.rel = "stylesheet";
+      link.href = font.url;
+      document.head.appendChild(link);
+    }
+  }, [font]);
+  return (
+    <div>
+      <h2
+        className="leading-[0.85] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center"
+        style={{ fontFamily: font.family, fontWeight: 500 }}
+      >
+        <span className="block text-ink">MEGAN</span>
+        <span className="block italic" style={{ color: "hsl(var(--accent-burnt))" }}>
+          Ho.
+        </span>
+      </h2>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+        <span className="font-mono text-[10px] small-caps text-ink-mute mr-2">Try a font:</span>
+        {FONT_OPTIONS.map((f, i) => (
+          <button
+            key={f.name}
+            onClick={() => setIdx(i)}
+            className={`font-mono text-[10px] small-caps px-2 py-1 border transition-colors ${
+              i === idx
+                ? "bg-ink text-paper border-ink"
+                : "bg-paper text-ink border-ink/40 hover:border-ink"
+            }`}
+            style={{ fontFamily: f.family }}
+          >
+            {f.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
   weekday: "long",
@@ -97,18 +150,7 @@ const Hero = () => (
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-8 md:mb-12">
           Hello, I&rsquo;m
         </p>
-        <h2
-          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center"
-          style={{ fontWeight: 500 }}
-        >
-          <span className="block text-ink">MEGAN</span>
-          <span
-            className="block italic"
-            style={{ color: "hsl(var(--accent-burnt))" }}
-          >
-            Ho.
-          </span>
-        </h2>
+        <NameWithFontPicker />
         <div className="mt-10 flex items-end gap-6 flex-wrap">
           <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
           <p className="font-mono text-[11px] small-caps text-ink-mute">
