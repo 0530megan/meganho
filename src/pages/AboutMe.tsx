@@ -261,8 +261,8 @@ const PersonalitiesSection = () => {
       className="border-y-2 border-ink overflow-hidden relative"
       style={{ background: "hsl(8 65% 48%)" }}
     >
-      <div className="container relative pt-16 md:pt-20 pb-4">
-        <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
+      <div className="container relative pt-16 md:pt-20 pb-0">
+        <div className="flex items-end justify-between gap-6 flex-wrap mb-0">
           <div>
             <p className="font-mono text-[11px] small-caps text-white mb-2">Issue №02 · The Personality Index</p>
             <h2 className="font-display font-light text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] tracking-tight whitespace-nowrap">
@@ -289,7 +289,7 @@ const LayoutStack = () => {
   const ochre = "hsl(46 85% 72%)";
 
   return (
-    <div className="container pt-2 pb-8 md:pt-4 md:pb-12 grid grid-cols-12 gap-10 items-center">
+    <div className="container pt-0 pb-8 md:pt-0 md:pb-12 grid grid-cols-12 gap-10 items-center">
       <div className="col-span-12 md:col-span-8 relative aspect-[4/3] w-full scale-80 origin-center" style={{ transform: "scale(0.8)" }}>
         {order.slice(0, 4).map((idx, stackPos) => {
           const item = PERSONALITIES[idx];
