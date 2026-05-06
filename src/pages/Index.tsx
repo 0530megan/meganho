@@ -133,8 +133,8 @@ const Hero = () => (
           >
             Est. 2026
           </span>
-          {/* Hand-drawn "that's me" arrow — sits above the portrait, points down */}
-          <div className="absolute top-2 right-2 md:top-3 md:right-3 z-10 flex flex-col items-center rotate-[8deg] pointer-events-none select-none">
+          {/* Hand-drawn "that's me" arrow — sits outside the portrait (upper-right), points down-left */}
+          <div className="hidden sm:flex absolute -top-6 -right-2 md:-top-8 md:-right-10 lg:-right-16 z-10 flex-col items-center -rotate-[8deg] pointer-events-none select-none">
             <span
               className="font-display italic text-2xl md:text-3xl whitespace-nowrap"
               style={{ color: "hsl(var(--accent-burnt))" }}
@@ -146,19 +146,19 @@ const Hero = () => (
               height="50"
               viewBox="0 0 60 50"
               fill="none"
-              className="-mt-1"
+              className="-mt-1 self-start ml-2"
               style={{ color: "hsl(var(--accent-burnt))" }}
               aria-hidden="true"
             >
               <path
-                d="M10 4 C 16 18, 28 32, 40 44"
+                d="M50 4 C 44 18, 32 32, 20 44"
                 stroke="currentColor"
                 strokeWidth="2.2"
                 strokeLinecap="round"
                 fill="none"
               />
               <path
-                d="M40 44 L 30 42 M40 44 L 38 34"
+                d="M20 44 L 30 42 M20 44 L 22 34"
                 stroke="currentColor"
                 strokeWidth="2.2"
                 strokeLinecap="round"
