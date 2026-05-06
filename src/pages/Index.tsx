@@ -86,7 +86,7 @@ const Hero = () => (
     {/* Hero content */}
     <div className="container relative pt-24 pb-16 md:pt-32 md:pb-24 grid grid-cols-12 gap-x-6 gap-y-10 items-center">
       <div className="col-span-12 md:col-span-8">
-        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-2">
+        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-8 md:mb-12">
           Hello, I&rsquo;m
         </p>
         <h2
