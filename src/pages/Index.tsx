@@ -449,44 +449,44 @@ const Veramante = () => (
 
       {/* 16:9 frame — single screen case study */}
       <article className="relative w-full aspect-video border border-ink/30 bg-paper-deep/40 overflow-hidden">
-        <div className="absolute inset-0 grid grid-cols-12 gap-4 md:gap-6 p-5 md:p-8">
+        <div className="absolute inset-0 grid grid-cols-12 gap-3 md:gap-5 p-4 md:p-6">
           {/* LEFT — copy + at-a-glance */}
-          <div className="col-span-12 md:col-span-5 flex flex-col min-h-0">
+          <div className="col-span-12 md:col-span-4 flex flex-col min-h-0">
             <p className="font-mono text-[10px] small-caps text-accent-red mb-2">
               Case Study 01 · Beauty · Concept Brand
             </p>
-            <h3 className="font-display font-light text-3xl md:text-5xl leading-[0.9] tracking-tight">
+            <h3 className="font-display font-light text-2xl md:text-4xl leading-[0.9] tracking-tight">
               VERAMENTE
               <span className="font-display italic text-accent-red">.</span>
-              <span className="block font-display italic text-lg md:text-2xl text-ink-soft mt-2">
+              <span className="block font-display italic text-base md:text-xl text-ink-soft mt-2">
                 Carry Your SPF.
               </span>
             </h3>
-            <p className="font-display text-sm md:text-base text-ink-soft mt-4 leading-relaxed">
+            <p className="font-display text-xs md:text-sm text-ink-soft mt-3 leading-relaxed">
               A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
             </p>
 
-            <div className="mt-auto pt-4">
-              <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">At a glance</p>
-              <dl className="space-y-1.5">
+            <div className="mt-auto pt-3">
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-1.5">At a glance</p>
+              <dl className="space-y-1">
                 {[
                   ["Format", "SPF50+ stick with charm loop"],
-                  ["Category", "Skincare · Lifestyle Accessory"],
+                  ["Category", "Skincare · Accessory"],
                   ["Tools", "Figma · Canva · AI Mockups"],
-                  ["Deliverables", "Logo, packaging, product, campaign"],
-                  ["Role", "Brand identity, product, art direction"],
+                  ["Deliverables", "Logo, packaging, campaign"],
+                  ["Role", "Brand, product, art direction"],
                 ].map(([k, v]) => (
-                  <div key={k} className="flex justify-between gap-4 border-b border-rule pb-1">
-                    <dt className="font-mono text-[10px] small-caps text-ink-mute pt-0.5">{k}</dt>
-                    <dd className="font-display text-xs md:text-sm text-right">{v}</dd>
+                  <div key={k} className="flex justify-between gap-3 border-b border-rule pb-0.5">
+                    <dt className="font-mono text-[9px] small-caps text-ink-mute pt-0.5">{k}</dt>
+                    <dd className="font-display text-[11px] md:text-xs text-right">{v}</dd>
                   </div>
                 ))}
               </dl>
             </div>
           </div>
 
-          {/* RIGHT — brand identity board */}
-          <figure className="col-span-12 md:col-span-7 flex flex-col min-h-0">
+          {/* MIDDLE — brand identity board */}
+          <figure className="col-span-12 md:col-span-5 flex flex-col min-h-0">
             <div className="flex-1 min-h-0 flex items-center justify-center">
               <img
                 src={veramenteBrandBoard}
@@ -495,15 +495,33 @@ const Veramante = () => (
                 loading="lazy"
               />
             </div>
-            <figcaption className="pt-2 mt-2 border-t border-ink/20 flex items-baseline justify-between gap-4 flex-wrap">
-              <p className="font-mono text-[10px] small-caps text-ink-mute">
+            <figcaption className="pt-1.5 mt-1.5 border-t border-ink/20 flex items-baseline justify-between gap-3 flex-wrap">
+              <p className="font-mono text-[9px] small-caps text-ink-mute">
                 Plate II — Brand Identity Board
               </p>
-              <p className="font-display italic text-xs text-ink-mute">
+              <p className="font-display italic text-[10px] text-ink-mute">
                 Logo · Mark · Palette · Packaging
               </p>
             </figcaption>
           </figure>
+
+          {/* RIGHT — 3 product/lifestyle plates stacked */}
+          <div className="col-span-12 md:col-span-3 flex flex-col gap-2 md:gap-3 min-h-0">
+            {[
+              { src: veramenteTinyBites, alt: "Veramente Tiny Bites blind box keychain collection", cap: "Plate III — Tiny Bites" },
+              { src: veramenteBagCharm, alt: "Veramente SPF stick clipped to a cream shoulder bag", cap: "Plate IV — Wear It Daily" },
+              { src: veramenteCafe, alt: "Model carrying the Veramente SPF charm at an outdoor café", cap: "Plate V — In The Wild" },
+            ].map((p) => (
+              <figure key={p.cap} className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col flex-1 min-h-0">
+                <div className="flex-1 min-h-0 overflow-hidden">
+                  <img src={p.src} alt={p.alt} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <figcaption className="px-2 py-1 border-t border-ink/30 bg-paper/85">
+                  <p className="font-mono text-[9px] small-caps text-ink-mute">{p.cap}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </article>
     </div>
