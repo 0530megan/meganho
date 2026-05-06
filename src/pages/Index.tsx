@@ -484,7 +484,7 @@ const Veramante = () => (
               </dl>
             </div>
 
-            <div className="mt-auto pt-2.5">
+            <div className="pt-2.5">
               <p className="font-mono text-[10px] small-caps text-accent-red mb-1.5">Brand Voice</p>
               <ol className="space-y-0.5">
                 {[
