@@ -533,7 +533,7 @@ const Veramante = () => (
                 {[
                   { Icon: Lightbulb, label: "Concept", body: "Sunscreen as a wearable accessory.", pull: "Wear it, don't hide it." },
                   { Icon: Eye, label: "Insight", body: "People skip SPF when it's hidden.", pull: "Aesthetic = adherence." },
-                  { Icon: Package, label: "Solution", body: "SPF50+ stick + collectible charms.", pull: "Product as touchpoint." },
+                  { Icon: Package, label: "Solution", body: "SPF50+ stick paired with blind-box collectible charms.", pull: "Product as touchpoint." },
                 ].map(({ Icon, label, body, pull }) => (
                   <div key={label} className="flex flex-col">
                     <div className="flex items-center gap-1.5 mb-1">
