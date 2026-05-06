@@ -170,9 +170,9 @@ const Veramente = () => (
       </div>
     </section>
 
-    {/* IDENTITY BOARD */}
+    {/* IDENTITY BOARD — broken out as an editorial bento */}
     <section className="container py-20 md:py-28">
-      <div className="grid md:grid-cols-12 gap-10 mb-10">
+      <div className="grid md:grid-cols-12 gap-10 mb-12">
         <div className="md:col-span-5">
           <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
             02 · Identity System
@@ -193,27 +193,199 @@ const Veramente = () => (
             Soft confidence — skincare that whispers. A warm ochre & terracotta
             palette borrowed from late-afternoon light, paired with a tactile
             wordmark and a charm-loop mark that doubles as the brand&rsquo;s
-            product silhouette.
+            product silhouette. Below — the system, broken open.
           </p>
         </div>
       </div>
 
-      <figure className="border-2 border-ink shadow-[12px_14px_0_0_hsl(var(--accent-ochre))] bg-paper p-3">
-        <img
-          src={veramenteBrandBoard}
-          alt="Veramente brand identity board: logo, mark, palette, packaging"
-          className="w-full h-auto block"
-          loading="lazy"
-        />
-        <figcaption className="pt-3 mt-2 border-t border-ink/30 flex items-baseline justify-between gap-3 px-2">
-          <p className="font-display italic text-base">
-            Plate II — Brand Identity Board
-          </p>
-          <p className="font-mono text-[10px] small-caps text-ink-mute">
-            Logo · Mark · Palette · Packaging
-          </p>
-        </figcaption>
-      </figure>
+      {(() => {
+        // Each region is a normalized rect of the source brand-board image
+        // [x, y, w, h] within a 1284×1920 board
+        const board = veramenteBrandBoard;
+        const cell = (
+          rect: [number, number, number, number],
+        ): React.CSSProperties => {
+          const [x, y, w, h] = rect;
+          return {
+            backgroundImage: `url(${board})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: `${100 / w}% ${100 / h}%`,
+            backgroundPosition: `${(x / (1 - w)) * 100}% ${(y / (1 - h)) * 100}%`,
+          };
+        };
+
+        const Tag = ({ children }: { children: React.ReactNode }) => (
+          <span className="absolute top-3 left-3 z-10 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
+            {children}
+          </span>
+        );
+
+        const Cap = ({
+          title,
+          meta,
+        }: {
+          title: string;
+          meta: string;
+        }) => (
+          <figcaption className="px-3 py-2 border-t border-ink/30 bg-paper flex items-baseline justify-between gap-3">
+            <p className="font-display italic text-sm">{title}</p>
+            <p className="font-mono text-[9px] small-caps text-ink-mute">
+              {meta}
+            </p>
+          </figcaption>
+        );
+
+        return (
+          <div className="grid grid-cols-12 gap-4 md:gap-5">
+            {/* Primary mark — sun */}
+            <figure className="col-span-12 md:col-span-5 border border-ink bg-paper shadow-[6px_8px_0_0_hsl(var(--ink))] flex flex-col">
+              <div className="relative">
+                <Tag>Primary Logo</Tag>
+                <div
+                  className="aspect-[4/3]"
+                  style={cell([0, 0, 1, 0.175])}
+                  role="img"
+                  aria-label="Veramente primary sun mark"
+                />
+              </div>
+              <Cap title="The Sun" meta="Hand-drawn · Optimism" />
+            </figure>
+
+            {/* Wordmark + brand mark stacked into a 7-col column */}
+            <div className="col-span-12 md:col-span-7 grid grid-cols-2 gap-4 md:gap-5">
+              <figure className="col-span-2 border border-ink bg-paper shadow-[6px_8px_0_0_hsl(var(--accent-burnt))] flex flex-col">
+                <div className="relative">
+                  <Tag>Secondary Logo</Tag>
+                  <div
+                    className="aspect-[16/7]"
+                    style={cell([0, 0.18, 0.5, 0.16])}
+                    role="img"
+                    aria-label="Veramente script wordmark on dusty rose"
+                  />
+                </div>
+                <Cap title="Veramente — script" meta="Tactile · Soft confidence" />
+              </figure>
+
+              <figure className="col-span-1 border border-ink bg-paper shadow-[6px_8px_0_0_hsl(var(--ink))] flex flex-col">
+                <div className="relative">
+                  <Tag>Brand Mark</Tag>
+                  <div
+                    className="aspect-[4/5]"
+                    style={cell([0.5, 0.18, 0.5, 0.16])}
+                    role="img"
+                    aria-label="Veramente Ve monogram on olive"
+                  />
+                </div>
+                <Cap title="Ve · Monogram" meta="Stamp · Charm" />
+              </figure>
+
+              <div className="col-span-1 border border-ink bg-paper p-4 md:p-5 flex flex-col justify-between shadow-[6px_8px_0_0_hsl(var(--accent-red))]">
+                <p className="font-mono text-[10px] small-caps text-accent-red">
+                  Type Pairing
+                </p>
+                <div>
+                  <p className="font-display italic text-3xl leading-none">
+                    Veramente
+                  </p>
+                  <p className="font-mono text-[10px] small-caps text-ink-mute mt-2">
+                    Display · Hand script
+                  </p>
+                </div>
+                <div className="border-t border-ink/30 pt-2">
+                  <p className="font-display text-sm leading-snug">
+                    Soft serif body
+                  </p>
+                  <p className="font-mono text-[10px] small-caps text-ink-mute mt-1">
+                    Body · Editorial
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Palette as native swatches */}
+            <div className="col-span-12 border border-ink bg-paper shadow-[6px_8px_0_0_hsl(var(--ink))]">
+              <div className="px-4 pt-3 pb-2 border-b border-ink/30 flex items-baseline justify-between gap-3">
+                <p className="font-display italic text-base">Color Palette</p>
+                <p className="font-mono text-[10px] small-caps text-ink-mute">
+                  Sun-bleached · 3 swatches
+                </p>
+              </div>
+              <div className="grid grid-cols-3">
+                {[
+                  { name: "Soft Peach Beige", hex: "#F7E0D1", fg: "text-ink" },
+                  { name: "Deep Olive Moss", hex: "#55573F", fg: "text-paper" },
+                  { name: "Dusty Rose Taupe", hex: "#AA706C", fg: "text-paper" },
+                ].map((s, i) => (
+                  <div
+                    key={s.hex}
+                    className={`p-6 md:p-8 flex flex-col justify-between min-h-[160px] ${s.fg} ${
+                      i < 2 ? "border-r border-ink/20" : ""
+                    }`}
+                    style={{ background: s.hex }}
+                  >
+                    <p className="font-mono text-[10px] small-caps opacity-70">
+                      Swatch · 0{i + 1}
+                    </p>
+                    <div>
+                      <p className="font-display text-xl md:text-2xl leading-tight">
+                        {s.name}
+                      </p>
+                      <p className="font-mono text-[11px] small-caps mt-1 opacity-80">
+                        {s.hex}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Packaging — wide */}
+            <figure className="col-span-12 md:col-span-8 border border-ink bg-paper shadow-[8px_10px_0_0_hsl(var(--accent-ochre))] flex flex-col">
+              <div className="relative">
+                <Tag>Packaging — Dieline</Tag>
+                <div
+                  className="aspect-[16/10]"
+                  style={cell([0, 0.55, 0.66, 0.45])}
+                  role="img"
+                  aria-label="Veramente SPF stick dieline and packaging spread"
+                />
+              </div>
+              <Cap
+                title="SPF50+ Stick — Unfolded"
+                meta="Dieline · Ingredients · Direction"
+              />
+            </figure>
+
+            {/* Charms + box stacked */}
+            <div className="col-span-12 md:col-span-4 grid grid-rows-2 gap-4 md:gap-5">
+              <figure className="border border-ink bg-paper shadow-[6px_8px_0_0_hsl(var(--ink))] flex flex-col">
+                <div className="relative">
+                  <Tag>Box</Tag>
+                  <div
+                    className="aspect-[4/3]"
+                    style={cell([0.66, 0.55, 0.34, 0.22])}
+                    role="img"
+                    aria-label="Veramente outer box pair"
+                  />
+                </div>
+                <Cap title="Outer Box" meta="Olive · Peach · System" />
+              </figure>
+              <figure className="border border-ink bg-paper shadow-[6px_8px_0_0_hsl(var(--accent-red))] flex flex-col">
+                <div className="relative">
+                  <Tag>Charms</Tag>
+                  <div
+                    className="aspect-[4/3]"
+                    style={cell([0.66, 0.78, 0.34, 0.22])}
+                    role="img"
+                    aria-label="Veramente collectible bag charms"
+                  />
+                </div>
+                <Cap title="Collectible Charms" meta="Blind-box · Ritual" />
+              </figure>
+            </div>
+          </div>
+        );
+      })()}
     </section>
 
     {/* STRATEGY 3-UP */}
