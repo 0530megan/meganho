@@ -17,6 +17,7 @@ const NAV = [
   { id: "approach", label: "Approach" },
   { id: "work", label: "Selected Work" },
   { id: "skills", label: "Skills" },
+];
 
 const FONT_OPTIONS = [
   { name: "Fraunces", family: "'Fraunces', serif", url: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&display=swap" },
