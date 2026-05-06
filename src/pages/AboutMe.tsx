@@ -17,6 +17,7 @@ import picLatte from "@/assets/about/latte.jpg";
 import picBay from "@/assets/about/bay.jpg";
 import picFlowers from "@/assets/about/flowers.jpg";
 import picColoring from "@/assets/about/coloring.jpg";
+import picPizza from "@/assets/about/new-card.jpg";
 
 const PERSONALITIES = [
   { src: picSunset, trait: "Sentimental", note: "For the sky, always.", tag: "01 · dusk", tilt: "rotate-[-3deg]", span: "md:col-span-5 md:row-span-2", tape: "left", accent: "burnt", pos: "center 65%" },
@@ -33,6 +34,7 @@ const PERSONALITIES = [
   
   { src: picColoring, trait: "Hands-on creative", note: "Colour finds its way.", tag: "12 · play", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "right", accent: "ochre" },
   { src: picWindow, trait: "Homebody", note: "Stays in, stays soft.", tag: "13 · quiet", tilt: "rotate-[2deg]", span: "md:col-span-5", tape: "right", accent: "burnt" },
+  { src: picPizza, trait: "Pizza pilgrim", note: "Aftermath of a great table.", tag: "14 · feast", tilt: "rotate-[-2deg]", span: "md:col-span-4", tape: "left", accent: "red" },
 ];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
