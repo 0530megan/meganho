@@ -123,8 +123,8 @@ const AboutMe = () => {
               </span>
             </h1>
             <p className="font-display text-xl md:text-2xl text-ink-soft mt-6 max-w-2xl leading-relaxed">
-              Part marketer, part designer, full-time daydreamer — I build brands
-              that feel less like logos and more like people you&rsquo;d want to know.
+              A curious mind learning at the crossroads of marketing and design —
+              quietly building things with care, taste, and a little bit of mischief.
             </p>
           </div>
           <div className="col-span-12 md:col-span-5">
