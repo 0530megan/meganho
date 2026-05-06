@@ -48,11 +48,19 @@ const Hero = () => (
 
     {/* Nav */}
     <nav className="relative border-b border-ink/40 bg-paper/60 backdrop-blur sticky top-0 z-30">
-      <div className="container flex items-center justify-between gap-6 overflow-x-auto">
-        <a href="#top" className="font-display text-lg py-3 shrink-0">
+      <div className="container relative flex items-center justify-between gap-6 overflow-x-auto py-3">
+        <a href="#top" className="font-display text-lg shrink-0">
           M.H.
         </a>
-        <ul className="flex items-center gap-6 md:gap-8 py-3">
+        <ul className="flex items-center gap-6 md:gap-8 mx-auto">
+          <li>
+            <Link
+              to="/about-me"
+              className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
+              About Me <ArrowUpRight className="size-3" />
+            </Link>
+          </li>
           {NAV.map((n) => (
             <li key={n.id}>
               <a
@@ -63,21 +71,16 @@ const Hero = () => (
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-ink hover:text-accent-red whitespace-nowrap"
+            >
+              Hire <ArrowUpRight className="size-3" />
+            </a>
+          </li>
         </ul>
-        <div className="hidden md:flex items-center gap-4">
-          <Link
-            to="/about-me"
-            className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity"
-          >
-            About Me <ArrowUpRight className="size-3" />
-          </Link>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-ink hover:text-accent-red"
-          >
-            Hire <ArrowUpRight className="size-3" />
-          </a>
-        </div>
+        <span aria-hidden className="font-display text-lg shrink-0 invisible">M.H.</span>
       </div>
     </nav>
 
