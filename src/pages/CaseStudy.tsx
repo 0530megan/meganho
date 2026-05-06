@@ -1,20 +1,472 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  Lightbulb,
+  Eye,
+  Package,
+  Sparkles,
+  TrendingUp,
+  Heart,
+} from "lucide-react";
+import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 import veramenteLogo from "@/assets/veramente-logo.jpg";
+import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
+import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
+import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
-const CASES: Record<
+const Veramente = () => (
+  <div className="paper-grain min-h-screen text-ink">
+    {/* Top bar */}
+    <header className="border-b-2 border-ink sticky top-0 z-30 bg-paper/80 backdrop-blur">
+      <div className="container py-3 flex items-center justify-between gap-4">
+        <Link
+          to="/"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(var(--accent-burnt))] transition-colors"
+        >
+          <ArrowLeft className="size-3.5" /> Back to Folio
+        </Link>
+        <p className="font-mono text-[11px] small-caps text-ink-mute">
+          Case · I · Veramente
+        </p>
+        <Link
+          to="/case/sippy"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(var(--accent-burnt))] transition-colors"
+        >
+          Next Case <ArrowUpRight className="size-3" />
+        </Link>
+      </div>
+    </header>
+
+    {/* HERO */}
+    <section className="relative overflow-hidden border-b-2 border-ink">
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-0"
+        style={{
+          background:
+            "radial-gradient(60% 70% at 18% 30%, hsl(var(--accent-ochre) / 0.28) 0%, transparent 60%), radial-gradient(45% 55% at 85% 75%, hsl(var(--accent-red) / 0.14) 0%, transparent 65%)",
+        }}
+      />
+      <div className="container py-16 md:py-24 relative grid md:grid-cols-12 gap-10 items-end">
+        <div className="md:col-span-8">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-5 tracking-[0.2em]">
+            ✦ Case Study No. I · Beauty · Concept Brand ✦
+          </p>
+          <h1
+            className="font-display font-light leading-[0.85] tracking-[-0.03em] uppercase text-[clamp(3.5rem,12vw,9rem)]"
+            style={{ fontWeight: 500 }}
+          >
+            <span className="block text-ink">Veramente</span>
+            <span
+              className="block italic"
+              style={{ color: "hsl(var(--accent-burnt))" }}
+            >
+              Carry your SPF.
+            </span>
+          </h1>
+          <p className="font-display text-xl md:text-2xl text-ink-soft mt-8 max-w-2xl leading-relaxed">
+            A wearable SPF concept brand that reframes sunscreen as a{" "}
+            <em
+              className="not-italic font-semibold"
+              style={{ color: "hsl(var(--accent-red))" }}
+            >
+              daily accessory people want to show off.
+            </em>{" "}
+            Built end-to-end in Figma — strategy, identity, packaging, and campaign.
+          </p>
+        </div>
+        <div className="md:col-span-4">
+          <figure
+            className="relative border border-ink p-6 shadow-[10px_12px_0_0_hsl(var(--ink))] rotate-[2deg] hover:rotate-0 transition-transform duration-500"
+            style={{ background: "hsl(28 60% 92%)" }}
+          >
+            <img
+              src={veramenteLogo}
+              alt="Veramente logo"
+              className="w-full h-auto block aspect-square object-contain"
+            />
+            <span className="absolute -top-3 -left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[-4deg]">
+              SPF · 50
+            </span>
+            <figcaption className="pt-3 mt-2 border-t border-ink/30 flex items-baseline justify-between gap-3">
+              <p className="font-display italic text-sm">Veramente</p>
+              <p className="font-mono text-[10px] small-caps text-ink-mute">
+                Plate I
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    {/* AT A GLANCE */}
+    <section className="border-b-2 border-ink bg-paper-deep/40">
+      <div className="container py-10 grid md:grid-cols-5 gap-6">
+        {[
+          ["Role", "Brand · Product · Art Direction"],
+          ["Category", "Skincare · Accessory"],
+          ["Format", "SPF50+ stick + charm loop"],
+          ["Tools", "Figma · Canva · AI Mockups"],
+          ["Year", "2025 — Concept"],
+        ].map(([k, v]) => (
+          <div key={k} className="border-l-2 border-ink/30 pl-4">
+            <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">
+              {k}
+            </p>
+            <p className="font-display text-base leading-snug">{v}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* THE BRIEF */}
+    <section className="container py-20 md:py-28 grid md:grid-cols-12 gap-10">
+      <div className="md:col-span-4">
+        <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
+          01 · The Brief
+        </p>
+        <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+          People skip SPF when it&rsquo;s
+          <span
+            className="italic"
+            style={{ color: "hsl(var(--accent-burnt))" }}
+          >
+            {" "}
+            hidden.
+          </span>
+        </h2>
+      </div>
+      <div className="md:col-span-8 md:pt-3">
+        <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed mb-6">
+          Sunscreen is the most-skipped step in skincare — not because it
+          doesn&rsquo;t work, but because it lives at the bottom of a bag. The
+          opportunity wasn&rsquo;t a better formula. It was a{" "}
+          <strong className="text-ink font-semibold">better behaviour</strong>.
+        </p>
+        <p className="font-display italic text-lg md:text-xl text-ink-soft leading-relaxed">
+          Veramente turns SPF into something you{" "}
+          <em className="not-italic text-ink font-semibold">wear</em> — a charm
+          on your bag, a small ritual on the go, a brand cue people see before
+          they ever read the label.
+        </p>
+      </div>
+    </section>
+
+    {/* BIG PULL QUOTE */}
+    <section className="border-y-2 border-ink bg-ink text-paper">
+      <div className="container py-16 md:py-24 text-center">
+        <p className="font-mono text-[11px] small-caps text-paper/60 mb-6 tracking-[0.3em]">
+          ✦ Brand Promise ✦
+        </p>
+        <blockquote className="font-display italic font-light text-4xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl mx-auto">
+          &ldquo;Wear it, don&rsquo;t hide it.&rdquo;
+        </blockquote>
+        <p className="font-mono text-[11px] small-caps text-paper/60 mt-8">
+          — Aesthetic = Adherence
+        </p>
+      </div>
+    </section>
+
+    {/* IDENTITY BOARD */}
+    <section className="container py-20 md:py-28">
+      <div className="grid md:grid-cols-12 gap-10 mb-10">
+        <div className="md:col-span-5">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
+            02 · Identity System
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+            A sun-bleached
+            <span
+              className="italic"
+              style={{ color: "hsl(var(--accent-burnt))" }}
+            >
+              {" "}
+              language.
+            </span>
+          </h2>
+        </div>
+        <div className="md:col-span-7 md:pt-2">
+          <p className="font-display text-lg text-ink-soft leading-relaxed">
+            Soft confidence — skincare that whispers. A warm ochre & terracotta
+            palette borrowed from late-afternoon light, paired with a tactile
+            wordmark and a charm-loop mark that doubles as the brand&rsquo;s
+            product silhouette.
+          </p>
+        </div>
+      </div>
+
+      <figure className="border-2 border-ink shadow-[12px_14px_0_0_hsl(var(--accent-ochre))] bg-paper p-3">
+        <img
+          src={veramenteBrandBoard}
+          alt="Veramente brand identity board: logo, mark, palette, packaging"
+          className="w-full h-auto block"
+          loading="lazy"
+        />
+        <figcaption className="pt-3 mt-2 border-t border-ink/30 flex items-baseline justify-between gap-3 px-2">
+          <p className="font-display italic text-base">
+            Plate II — Brand Identity Board
+          </p>
+          <p className="font-mono text-[10px] small-caps text-ink-mute">
+            Logo · Mark · Palette · Packaging
+          </p>
+        </figcaption>
+      </figure>
+    </section>
+
+    {/* STRATEGY 3-UP */}
+    <section className="border-y-2 border-ink bg-paper-deep/40">
+      <div className="container py-20 md:py-24">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3 tracking-[0.2em]">
+            03 · Marketing Strategy
+          </p>
+          <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight">
+            From insight to
+            <span
+              className="italic"
+              style={{ color: "hsl(var(--accent-burnt))" }}
+            >
+              {" "}
+              object.
+            </span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {[
+            {
+              Icon: Lightbulb,
+              no: "Concept",
+              title: "Wearable accessory, not skincare.",
+              body: "Reposition SPF away from the bathroom shelf and onto the bag — where it gets seen, gets reached for, and gets reapplied.",
+              tilt: "-rotate-1",
+            },
+            {
+              Icon: Eye,
+              no: "Insight",
+              title: "Aesthetic = adherence.",
+              body: "If a product is beautiful enough to display, people use it more. Visibility is the marketing channel.",
+              tilt: "rotate-1",
+            },
+            {
+              Icon: Package,
+              no: "Solution",
+              title: "SPF50+ stick + blind-box charms.",
+              body: "A clip-on stick paired with collectible charms — turning reapplication into a ritual and the product into a touchpoint.",
+              tilt: "-rotate-1",
+            },
+          ].map(({ Icon, no, title, body, tilt }) => (
+            <article
+              key={no}
+              className={`relative bg-paper border border-ink p-7 ${tilt} hover:rotate-0 transition-transform duration-500 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_hsl(var(--accent-burnt))]`}
+            >
+              <span
+                aria-hidden
+                className="absolute -top-2 left-1/2 -translate-x-1/2 size-4 rounded-full border border-ink"
+                style={{ background: "hsl(var(--accent-burnt))" }}
+              />
+              <Icon
+                className="size-6 mb-4"
+                style={{ color: "hsl(var(--accent-red))" }}
+              />
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">
+                {no}
+              </p>
+              <h3 className="font-display text-2xl leading-tight mb-3">
+                {title}
+              </h3>
+              <p className="font-display italic text-base text-ink-soft leading-relaxed">
+                {body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* PRODUCT WORLD — image grid */}
+    <section className="container py-20 md:py-28">
+      <div className="flex items-end justify-between gap-6 flex-wrap mb-10">
+        <div>
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
+            04 · The Product World
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight max-w-2xl">
+            The product
+            <span
+              className="italic"
+              style={{ color: "hsl(var(--accent-burnt))" }}
+            >
+              {" "}
+              is the campaign.
+            </span>
+          </h2>
+        </div>
+        <p className="font-mono text-[11px] small-caps text-ink-mute max-w-xs md:text-right">
+          Mockups built in Figma · styled with AI-generated lifestyle frames
+        </p>
+      </div>
+
+      <div className="grid grid-cols-12 gap-5 md:gap-6">
+        {/* Big lifestyle */}
+        <figure className="col-span-12 md:col-span-8 border border-ink bg-paper-deep overflow-hidden group">
+          <div className="aspect-[4/3] overflow-hidden">
+            <img
+              src={veramenteCafe}
+              alt="Model carrying the Veramente SPF charm at an outdoor café"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+          <figcaption className="px-4 py-3 border-t border-ink/30 flex items-baseline justify-between gap-3 bg-paper">
+            <p className="font-display italic text-base">In The Wild</p>
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Plate V — Lifestyle
+            </p>
+          </figcaption>
+        </figure>
+
+        {/* Bag charm */}
+        <figure className="col-span-12 md:col-span-4 border border-ink bg-paper-deep overflow-hidden group">
+          <div className="aspect-[4/5] overflow-hidden">
+            <img
+              src={veramenteBagCharm}
+              alt="Veramente SPF stick clipped to a cream shoulder bag"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+          <figcaption className="px-4 py-3 border-t border-ink/30 flex items-baseline justify-between gap-3 bg-paper">
+            <p className="font-display italic text-base">Wear It Daily</p>
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Plate IV
+            </p>
+          </figcaption>
+        </figure>
+
+        {/* Tiny bites — full width */}
+        <figure className="col-span-12 border border-ink bg-paper-deep overflow-hidden group">
+          <div className="aspect-[21/9] overflow-hidden">
+            <img
+              src={veramenteTinyBites}
+              alt="Veramente Tiny Bites blind box keychain collection"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+          <figcaption className="px-4 py-3 border-t border-ink/30 flex items-baseline justify-between gap-3 bg-paper">
+            <p className="font-display italic text-base">
+              Tiny Bites — Blind-Box Charms
+            </p>
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Plate III — Collectible System
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    {/* OUTCOMES */}
+    <section className="border-y-2 border-ink bg-ink text-paper">
+      <div className="container py-20 md:py-24">
+        <p className="font-mono text-[11px] small-caps text-paper/60 mb-3 tracking-[0.2em]">
+          05 · Why It Works
+        </p>
+        <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight max-w-3xl mb-14">
+          A brand built to be
+          <span
+            className="italic"
+            style={{ color: "hsl(var(--accent-ochre))" }}
+          >
+            {" "}
+            seen, shared, repeated.
+          </span>
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-10">
+          {[
+            {
+              Icon: Sparkles,
+              k: "Visibility",
+              v: "Product worn on the outside of the bag — every customer becomes a billboard.",
+            },
+            {
+              Icon: Heart,
+              k: "Ritual",
+              v: "Charm-collecting drives reapplication & emotional attachment to the object.",
+            },
+            {
+              Icon: TrendingUp,
+              k: "Repeatability",
+              v: "Blind-box drops create ongoing reasons to return — without new formulas.",
+            },
+          ].map(({ Icon, k, v }) => (
+            <div key={k} className="border-t border-paper/30 pt-6">
+              <Icon
+                className="size-6 mb-4"
+                style={{ color: "hsl(var(--accent-ochre))" }}
+              />
+              <p className="font-mono text-[10px] small-caps text-paper/60 mb-2">
+                {k}
+              </p>
+              <p className="font-display text-lg leading-relaxed text-paper/90">
+                {v}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* CTA / NEXT */}
+    <section className="container py-20 md:py-24 text-center">
+      <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">
+        ✦ End of Case I ✦
+      </p>
+      <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight mb-8">
+        Want the rest of the
+        <span
+          className="italic"
+          style={{ color: "hsl(var(--accent-burnt))" }}
+        >
+          {" "}
+          folio?
+        </span>
+      </h2>
+      <div className="flex items-center justify-center gap-3 flex-wrap">
+        <Link
+          to="/case/sippy"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 bg-ink text-paper px-5 py-3 hover:opacity-90 transition-opacity"
+        >
+          Next: Sippy <ArrowUpRight className="size-3.5" />
+        </Link>
+        <Link
+          to="/"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 border border-ink px-5 py-3 hover:bg-paper-deep transition-colors"
+        >
+          <ArrowLeft className="size-3.5" /> Back to Folio
+        </Link>
+      </div>
+    </section>
+
+    <footer className="border-t-2 border-ink">
+      <div className="container py-6 flex items-center justify-between gap-4 flex-wrap">
+        <p className="font-mono text-[11px] small-caps text-ink-mute">
+          Megan Ho · Veramente Case Study
+        </p>
+        <p className="font-mono text-[11px] small-caps text-ink-mute">◼</p>
+      </div>
+    </footer>
+  </div>
+);
+
+const PLACEHOLDERS: Record<
   string,
   { no: string; name: string; tagline: string; cover: string; tint: string }
 > = {
-  veramente: {
-    no: "I",
-    name: "Veramente",
-    tagline: "Carry Your SPF — wearable sunscreen as accessory.",
-    cover: veramenteLogo,
-    tint: "hsl(28 60% 92%)",
-  },
   sippy: {
     no: "II",
     name: "Sippy",
@@ -31,10 +483,8 @@ const CASES: Record<
   },
 };
 
-const CaseStudy = () => {
-  const { slug = "" } = useParams();
-  const cs = CASES[slug];
-
+const Placeholder = ({ slug }: { slug: string }) => {
+  const cs = PLACEHOLDERS[slug];
   if (!cs) {
     return (
       <div className="paper-grain min-h-screen text-ink">
@@ -53,7 +503,6 @@ const CaseStudy = () => {
       </div>
     );
   }
-
   return (
     <div className="paper-grain min-h-screen text-ink">
       <header className="border-b-2 border-ink">
@@ -69,65 +518,42 @@ const CaseStudy = () => {
           </p>
         </div>
       </header>
-
-      <section className="border-b-2 border-ink">
-        <div className="container py-16 md:py-24 grid md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-7">
-            <p className="font-mono text-[11px] small-caps text-[hsl(var(--accent-burnt))] mb-4">
-              Case Study · No. {cs.no}
-            </p>
-            <h1 className="font-display font-light leading-[0.9] tracking-tight text-[clamp(3rem,8vw,7rem)]">
-              {cs.name}
-            </h1>
-            <p className="font-display italic text-xl md:text-2xl text-ink-soft mt-6 max-w-xl">
-              {cs.tagline}
-            </p>
-          </div>
-          <div className="md:col-span-5">
-            <div
-              className="aspect-square border border-ink p-6 flex items-center justify-center shadow-[10px_12px_0_0_hsl(var(--ink))]"
-              style={{ background: cs.tint }}
-            >
-              <img
-                src={cs.cover}
-                alt={`${cs.name} logo`}
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="container py-20">
-        <div className="max-w-3xl mx-auto text-center border border-dashed border-ink/40 p-12">
-          <p className="font-mono text-[11px] small-caps text-ink-mute mb-3">
-            Layout in progress
+      <section className="container py-24 grid md:grid-cols-12 gap-8 items-center">
+        <div className="md:col-span-7">
+          <p className="font-mono text-[11px] small-caps text-[hsl(var(--accent-burnt))] mb-4">
+            Case Study · No. {cs.no}
           </p>
-          <h2 className="font-display text-3xl md:text-4xl mb-4">
-            Case study coming together here.
-          </h2>
-          <p className="font-display italic text-ink-soft">
-            Build out the {cs.name} story — concept, process, and outcomes — in
-            this space.
+          <h1 className="font-display font-light leading-[0.9] tracking-tight text-[clamp(3rem,8vw,7rem)]">
+            {cs.name}
+          </h1>
+          <p className="font-display italic text-xl md:text-2xl text-ink-soft mt-6 max-w-xl">
+            {cs.tagline}
+          </p>
+          <p className="font-mono text-[11px] small-caps text-ink-mute mt-10">
+            Layout in progress — coming soon.
           </p>
         </div>
-      </section>
-
-      <footer className="border-t-2 border-ink">
-        <div className="container py-6 flex items-center justify-between gap-4 flex-wrap">
-          <Link
-            to="/"
-            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(var(--accent-burnt))] transition-colors"
+        <div className="md:col-span-5">
+          <div
+            className="aspect-square border border-ink p-6 flex items-center justify-center shadow-[10px_12px_0_0_hsl(var(--ink))]"
+            style={{ background: cs.tint }}
           >
-            <ArrowLeft className="size-3.5" /> Back to Folio
-          </Link>
-          <p className="font-mono text-[11px] small-caps text-ink-mute">
-            End · ◼
-          </p>
+            <img
+              src={cs.cover}
+              alt={`${cs.name} logo`}
+              className="max-h-full max-w-full object-contain"
+            />
+          </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
+};
+
+const CaseStudy = () => {
+  const { slug = "" } = useParams();
+  if (slug === "veramente") return <Veramente />;
+  return <Placeholder slug={slug} />;
 };
 
 export default CaseStudy;
