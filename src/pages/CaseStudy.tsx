@@ -13,6 +13,9 @@ import {
 import veramenteLogos from "@/assets/veramente-logos.jpg";
 import veramentePalette from "@/assets/veramente-palette.jpg";
 import veramentePackaging from "@/assets/veramente-packaging.jpg";
+import veramentePackDieline from "@/assets/veramente-pack-dieline.jpg";
+import veramentePackCarton from "@/assets/veramente-pack-carton.jpg";
+import veramentePackCharms from "@/assets/veramente-pack-charms.jpg";
 import veramenteLogo from "@/assets/veramente-logo.jpg";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
@@ -333,47 +336,103 @@ const Veramente = () => (
         </ol>
       </div>
 
-      {/* Packaging plate */}
-      <figure className="mt-16 md:mt-20 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-red))] overflow-hidden">
-        <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
-          <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
-            Plate III · Packaging & Charms
-          </p>
-          <p className="font-mono text-[10px] small-caps text-ink-mute">
+      {/* Packaging plate — three image + caption rows */}
+      <div className="mt-16 md:mt-20">
+        <div className="flex items-end justify-between gap-4 border-b-2 border-ink pb-3 mb-8">
+          <div>
+            <p className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mb-1">
+              Plate III
+            </p>
+            <h3 className="font-display text-3xl md:text-4xl leading-tight">
+              Packaging & Charms
+            </h3>
+          </div>
+          <p className="font-mono text-[10px] small-caps text-ink-mute hidden sm:block">
             Dieline · Carton · Collectibles
           </p>
         </div>
-        <div className="relative w-full bg-paper-deep" style={{ aspectRatio: "16 / 9" }}>
-          <img
-            src={veramentePackaging}
-            alt="Veramente packaging: SPF stick dieline, outer carton, and collectible bag charms"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-        </div>
-        <figcaption className="border-t-2 border-ink grid md:grid-cols-3 divide-y-2 md:divide-y-0 md:divide-x-2 divide-ink">
+
+        <div className="space-y-6">
           {[
-            { n: "01", label: "Dieline", body: "Flat-pack carton with a branded interior — pretty inside and out." },
-            { n: "02", label: "Carton", body: "Cream + olive base. Sun mark up top, story along the side." },
-            { n: "03", label: "Charms", body: "Blind-box collectibles that clip on — SPF you actually want to show." },
-          ].map((c) => (
-            <div key={c.n} className="p-5 bg-paper">
-              <div className="flex items-baseline gap-3 mb-2">
-                <span className="font-display text-3xl leading-none text-accent-burnt">{c.n}</span>
-                <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">
-                  {c.label}
-                </span>
+            {
+              n: "01",
+              label: "Dieline",
+              img: veramentePackDieline,
+              ratio: "16 / 10",
+              title: "Flat-pack, fully designed.",
+              body: "The carton is laid flat and printed end-to-end — exterior, interior flaps, and dust-cover. Pretty inside and out, even before it's folded.",
+              meta: ["Print-ready", "Single-sheet", "Cream + olive"],
+            },
+            {
+              n: "02",
+              label: "Carton",
+              img: veramentePackCarton,
+              ratio: "5 / 4",
+              title: "Cream + olive, sun on top.",
+              body: "The folded box leads with the sun mark and wordmark — story and SPF specs run down the side panel. Stands tall on a shelf without shouting.",
+              meta: ["SPF50+ · 30g", "Folded carton", "Shelf-ready"],
+            },
+            {
+              n: "03",
+              label: "Charms",
+              img: veramentePackCharms,
+              ratio: "5 / 4",
+              title: "Blind-box collectibles.",
+              body: "Each stick clips onto a bag with a mini food charm — apple pie, cookie, watermelon. SPF you actually want to show off, not stash in a drawer.",
+              meta: ["Blind-box", "Bag-clip", "Collectible"],
+            },
+          ].map((c, i) => (
+            <article
+              key={c.n}
+              className={`grid md:grid-cols-12 gap-0 border-2 border-ink bg-paper shadow-[8px_10px_0_0_hsl(var(--accent-red))] overflow-hidden ${
+                i % 2 === 1 ? "md:[&>figure]:order-2" : ""
+              }`}
+            >
+              <figure className="md:col-span-7 bg-paper-deep border-b-2 md:border-b-0 md:border-r-2 border-ink">
+                <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
+                  <img
+                    src={c.img}
+                    alt={`Veramente ${c.label.toLowerCase()}`}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
+                </div>
+              </figure>
+              <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-center">
+                <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-rule">
+                  <span className="font-display text-5xl leading-none text-accent-burnt">
+                    {c.n}
+                  </span>
+                  <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">
+                    · {c.label} ·
+                  </span>
+                </div>
+                <h4 className="font-display text-2xl md:text-[26px] leading-tight mb-3 text-ink">
+                  {c.title}
+                </h4>
+                <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-5">
+                  {c.body}
+                </p>
+                <ul className="flex flex-wrap gap-2 mt-auto">
+                  {c.meta.map((m) => (
+                    <li
+                      key={m}
+                      className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1 bg-paper-deep/60"
+                    >
+                      {m}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="font-body text-[14px] text-ink-soft leading-relaxed">
-                {c.body}
-              </p>
-            </div>
+            </article>
           ))}
-        </figcaption>
-      </figure>
+        </div>
+      </div>
 
       <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
-        Plate II — Brand Identity Board · Built in Figma
+        Plate III — Packaging System · Built in Figma
       </p>
+
     </section>
 
     {/* STRATEGY 3-UP */}
