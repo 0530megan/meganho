@@ -444,279 +444,68 @@ const Veramante = () => (
           "radial-gradient(55% 55% at 12% 18%, hsl(var(--accent-ochre)) 0%, transparent 60%), radial-gradient(45% 45% at 88% 82%, hsl(var(--accent-red)) 0%, transparent 60%)",
       }}
     />
-    <div className="container py-16 md:py-24 relative">
+    <div className="container py-12 md:py-16 relative">
       <SectionHeader kicker="Selected Work" title="Case Study I" no="IV" />
 
-      <article className="grid grid-cols-12 gap-x-6 gap-y-8 items-stretch">
-        {/* Intro copy */}
-        <div className="col-span-12 md:col-span-7">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
-            Case Study 01 · Beauty · Concept Brand
-          </p>
-          <h3 className="font-display font-light text-5xl md:text-7xl leading-[0.9] tracking-tight">
-            VERAMENTE
-            <span className="font-display italic text-accent-red">.</span>
-            <span className="block font-display italic text-2xl md:text-3xl text-ink-soft mt-3">
-              Carry Your SPF.
-            </span>
-          </h3>
-          <p className="font-display text-xl text-ink-soft mt-6 max-w-2xl leading-relaxed">
-            A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
-          </p>
-        </div>
+      {/* 16:9 frame — single screen case study */}
+      <article className="relative w-full aspect-video border border-ink/30 bg-paper-deep/40 overflow-hidden">
+        <div className="absolute inset-0 grid grid-cols-12 gap-4 md:gap-6 p-5 md:p-8">
+          {/* LEFT — copy + at-a-glance */}
+          <div className="col-span-12 md:col-span-5 flex flex-col min-h-0">
+            <p className="font-mono text-[10px] small-caps text-accent-red mb-2">
+              Case Study 01 · Beauty · Concept Brand
+            </p>
+            <h3 className="font-display font-light text-3xl md:text-5xl leading-[0.9] tracking-tight">
+              VERAMENTE
+              <span className="font-display italic text-accent-red">.</span>
+              <span className="block font-display italic text-lg md:text-2xl text-ink-soft mt-2">
+                Carry Your SPF.
+              </span>
+            </h3>
+            <p className="font-display text-sm md:text-base text-ink-soft mt-4 leading-relaxed">
+              A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
+            </p>
 
-        {/* Quick stats panel — mirrors Sippy */}
-        <aside className="col-span-12 md:col-span-5 md:border-l md:border-ink/30 md:pl-6">
-          <p className="font-mono text-[11px] small-caps text-ink-mute mb-4">At a glance</p>
-          <dl className="space-y-3">
-            {[
-              ["Format", "SPF50+ stick with charm loop"],
-              ["Category", "Skincare · Lifestyle Accessory"],
-              ["Tools", "Figma · Canva · AI Mockups"],
-              ["Deliverables", "Logo, packaging, product, campaign"],
-              ["Role", "Brand identity, product, art direction"],
-            ].map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-4 border-b border-rule pb-2">
-                <dt className="font-mono text-[11px] small-caps text-ink-mute pt-1">{k}</dt>
-                <dd className="font-display text-lg text-right">{v}</dd>
-              </div>
-            ))}
-          </dl>
-        </aside>
-
-        {/* Brand board — large left plate, no frame, image centred with caption below */}
-        <figure className="col-span-12 md:col-span-7 flex flex-col">
-          <div className="flex-1 min-h-0 flex items-center justify-center">
-            <img
-              src={veramenteBrandBoard}
-              alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
-              className="max-w-full max-h-full w-auto h-auto object-contain"
-              loading="lazy"
-            />
+            <div className="mt-auto pt-4">
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">At a glance</p>
+              <dl className="space-y-1.5">
+                {[
+                  ["Format", "SPF50+ stick with charm loop"],
+                  ["Category", "Skincare · Lifestyle Accessory"],
+                  ["Tools", "Figma · Canva · AI Mockups"],
+                  ["Deliverables", "Logo, packaging, product, campaign"],
+                  ["Role", "Brand identity, product, art direction"],
+                ].map(([k, v]) => (
+                  <div key={k} className="flex justify-between gap-4 border-b border-rule pb-1">
+                    <dt className="font-mono text-[10px] small-caps text-ink-mute pt-0.5">{k}</dt>
+                    <dd className="font-display text-xs md:text-sm text-right">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
-          <figcaption className="pt-3 mt-3 border-t border-ink/20 flex items-baseline justify-between gap-4 flex-wrap">
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Plate II — Brand Identity Board
-            </p>
-            <p className="font-display italic text-sm text-ink-mute">
-              Logo · Mark · Palette · Packaging
-            </p>
-          </figcaption>
-        </figure>
 
-        {/* Right column — 3 product photos stretch to match left height with no gaps */}
-        <div className="col-span-12 md:col-span-5 flex flex-col gap-4 md:gap-6">
-          <figure className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col flex-1 min-h-0">
-            <div className="flex-1 min-h-0 overflow-hidden">
+          {/* RIGHT — brand identity board */}
+          <figure className="col-span-12 md:col-span-7 flex flex-col min-h-0">
+            <div className="flex-1 min-h-0 flex items-center justify-center">
               <img
-                src={veramenteTinyBites}
-                alt="Veramente Tiny Bites blind box keychain collection display with affirmation cards"
-                className="w-full h-full object-cover"
+                src={veramenteBrandBoard}
+                alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
+                className="max-w-full max-h-full w-auto h-auto object-contain"
                 loading="lazy"
               />
             </div>
-            <figcaption className="px-4 py-2 border-t border-ink/30 bg-paper/85">
+            <figcaption className="pt-2 mt-2 border-t border-ink/20 flex items-baseline justify-between gap-4 flex-wrap">
               <p className="font-mono text-[10px] small-caps text-ink-mute">
-                Plate III — Tiny Bites Collection
+                Plate II — Brand Identity Board
               </p>
-            </figcaption>
-          </figure>
-          <figure className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col flex-1 min-h-0">
-            <div className="flex-1 min-h-0 overflow-hidden">
-              <img
-                src={veramenteBagCharm}
-                alt="Veramente SPF stick clipped to a cream shoulder bag as a wearable charm"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
-            </div>
-            <figcaption className="px-4 py-2 border-t border-ink/30 bg-paper/85">
-              <p className="font-mono text-[10px] small-caps text-ink-mute">
-                Plate IV — Wear It Daily
-              </p>
-            </figcaption>
-          </figure>
-          <figure className="relative border border-ink/20 bg-paper-deep overflow-hidden flex flex-col flex-1 min-h-0">
-            <div className="flex-1 min-h-0 overflow-hidden">
-              <img
-                src={veramenteCafe}
-                alt="Model carrying the Veramente SPF charm at an outdoor café in sunlight"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
-            </div>
-            <figcaption className="px-4 py-2 border-t border-ink/30 bg-paper/85">
-              <p className="font-mono text-[10px] small-caps text-ink-mute">
-                Plate V — In The Wild
+              <p className="font-display italic text-xs text-ink-mute">
+                Logo · Mark · Palette · Packaging
               </p>
             </figcaption>
           </figure>
         </div>
       </article>
-
-      <div className="editorial-rule my-12" />
-
-      {/* Concept / Insight / Solution */}
-      <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-        {[
-          {
-            icon: Lightbulb,
-            label: "Concept",
-            body: "VERAMENTE reimagines sunscreen as a wearable lifestyle accessory, transforming it from a routine necessity into a visible, aesthetic object integrated into everyday styling.",
-            pull: "Sunscreen you don't forget — because you want to show it.",
-          },
-          {
-            icon: Eye,
-            label: "Insight",
-            body: "Most consumers neglect SPF reapplication due to inconvenience, but actively engage with products that are aesthetic, portable, and expressive enough to leave the bathroom shelf.",
-            pull: "When skincare becomes an accessory, it shifts from obligation to identity.",
-          },
-          {
-            icon: Package,
-            label: "Solution",
-            body: "A portable SPF50+ sunscreen stick designed with a built-in keychain loop, paired with a collectible charm system that lets users carry and display it as part of their daily outfit.",
-            pull: "The product functions as both skincare and a mobile brand touchpoint.",
-          },
-        ].map(({ icon: Icon, label, body, pull }) => (
-          <div key={label} className="col-span-12 md:col-span-4">
-            <div className="flex items-center gap-2 mb-3">
-              <Icon className="size-4 text-accent-red" />
-              <p className="font-mono text-[11px] small-caps text-ink-mute">{label}</p>
-            </div>
-            <p className="font-display text-lg leading-relaxed mb-4">{body}</p>
-            <p className="font-display italic text-base text-accent-red leading-snug border-l-2 border-accent-red pl-3">
-              {pull}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      <div className="editorial-rule my-12" />
-
-      {/* Palette — sun-bleached, warm cream + terracotta */}
-      <div className="grid grid-cols-12 gap-x-6 gap-y-8">
-        <div className="col-span-12 md:col-span-4">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">Palette</p>
-          <h4 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
-            A sun-warmed, second-skin palette.
-          </h4>
-          <p className="font-display italic text-lg text-ink-soft mt-4 leading-relaxed">
-            Cream and butter neutrals grounded by a confident terracotta — chosen so the product reads as skincare, not packaging.
-          </p>
-        </div>
-        <div className="col-span-12 md:col-span-8 grid grid-cols-2 sm:grid-cols-5 gap-3">
-          {[
-            { name: "Terracotta", hex: "#C24A2C", ink: "text-paper" },
-            { name: "Sun Ochre", hex: "#E8A95B", ink: "text-ink" },
-            { name: "Butter", hex: "#F4D9A4", ink: "text-ink" },
-            { name: "Cream Paper", hex: "#F6EFE2", ink: "text-ink" },
-            { name: "Ink", hex: "#2A2520", ink: "text-paper" },
-          ].map((c) => (
-            <div key={c.name} className="border border-ink/30">
-              <div
-                className={`aspect-video flex items-end p-3 ${c.ink}`}
-                style={{ background: c.hex }}
-              >
-                <span className="font-mono text-[10px] small-caps">{c.hex}</span>
-              </div>
-              <p className="font-display text-sm px-3 py-2 border-t border-ink/30">
-                {c.name}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="editorial-rule my-12" />
-
-      {/* Campaign */}
-      <div className="grid grid-cols-12 gap-x-6 gap-y-8">
-        <div className="col-span-12 md:col-span-5">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">Campaign</p>
-          <h4 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
-            Clip. Protect. Collect.
-          </h4>
-          <p className="font-display italic text-lg text-ink-soft mt-4 leading-relaxed">
-            Sunscreen repositioned as part of a collectible accessory culture — every clip is a chance to restate the brand.
-          </p>
-        </div>
-        <div className="col-span-12 md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {[
-            { icon: Tag, t: "Selectable Charm", d: "Choose your base charm with each purchase." },
-            { icon: Gift, t: "Blind Box +$10", d: "Optional mystery upgrade for the collector." },
-            { icon: Share2, t: "Buy 3, Get 1", d: "Bundle incentive that rewards repeat buys." },
-          ].map(({ icon: Icon, t, d }) => (
-            <div key={t} className="border border-ink/30 p-5 bg-paper-deep">
-              <Icon className="size-5 text-accent-red mb-3" />
-              <p className="font-display text-xl mb-2 leading-tight">{t}</p>
-              <p className="font-mono text-xs text-ink-mute leading-relaxed">{d}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="editorial-rule my-12" />
-
-      {/* Brand Voice + Impact (mirrors Sippy structure) */}
-      <div className="grid grid-cols-12 gap-x-6 gap-y-10">
-        <div className="col-span-12 md:col-span-7">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-4">Brand Voice</p>
-          <ol className="space-y-5">
-            {[
-              "Soft confidence — skincare that whispers, never lectures.",
-              "Tactile, sun-washed packaging that feels like a personal object.",
-              "Copy that treats SPF as self-care, not a chore.",
-              "A collectible charm system that turns the product into a ritual.",
-            ].map((s, i) => (
-              <li key={i} className="flex gap-5 border-b border-rule pb-5">
-                <span className="font-display text-4xl text-accent-red leading-none w-12 shrink-0">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="font-display text-xl leading-snug">{s}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-        <div className="col-span-12 md:col-span-5 md:border-l md:border-ink/30 md:pl-6">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-4">
-            Impact · Projected
-          </p>
-          <div className="space-y-6">
-            {[
-              { Icon: TrendingUp, v: "Increased brand visibility through everyday wear." },
-              { Icon: Repeat, v: "Higher repeat purchase via charm collectability." },
-              { Icon: Sparkles, v: "Strong UGC potential — unboxing, styling, restocks." },
-              { Icon: Users, v: "A community of collectors, not just consumers." },
-            ].map(({ Icon, v }) => (
-              <div key={v} className="flex gap-4 items-start">
-                <Icon className="size-5 text-ink/70 mt-1 shrink-0" />
-                <p className="font-display text-lg italic text-ink-soft leading-snug">
-                  {v}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 p-5 border border-ink/30 bg-paper-deep">
-            <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">
-              Key Takeaway
-            </p>
-            <p className="font-display italic text-sm text-ink-soft leading-relaxed">
-              "Product design acts as marketing — turning a functional item into a shareable, identity-driven experience that naturally drives visibility and engagement."
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Marquee */}
-      <div className="mt-20 -mx-6 overflow-hidden border-y-2 border-ink py-4">
-        <div className="marquee whitespace-nowrap font-display italic text-3xl md:text-5xl">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <span key={i} className="mx-8">
-              VERAMENTE · Carry Your SPF · A wearable ritual · VERAMENTE · Carry Your SPF · A wearable ritual ·{" "}
-            </span>
-          ))}
-        </div>
-      </div>
     </div>
   </section>
 );
