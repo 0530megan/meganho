@@ -125,33 +125,8 @@ const TIMELINE = [
 ];
 
 const AboutMe = () => {
-  const [dump, setDump] = useState<string>("");
-  const showDump = () => {
-    const out: Record<string, unknown> = {};
-    for (let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i);
-      if (k && (k.startsWith("personality-") || k === "about-portrait")) {
-        try { out[k] = JSON.parse(localStorage.getItem(k) || "null"); } catch { /* noop */ }
-      }
-    }
-    setDump(JSON.stringify(out, null, 2));
-  };
   return (
     <div className="paper-grain min-h-screen text-ink">
-      {/* TEMP — Export image adjustments */}
-      <div className="fixed bottom-4 right-4 z-[100] max-w-md">
-        <button onClick={showDump} className="font-mono text-[11px] small-caps bg-ink text-paper px-3 py-2 border border-paper">
-          Export image adjustments
-        </button>
-        {dump && (
-          <textarea
-            readOnly
-            value={dump}
-            className="mt-2 w-full h-64 p-2 font-mono text-[10px] bg-paper border border-ink"
-            onFocus={(e) => e.currentTarget.select()}
-          />
-        )}
-      </div>
       {/* Top bar */}
       <header className="border-b-2 border-ink">
         <div className="container py-4 flex items-center justify-between gap-4">
