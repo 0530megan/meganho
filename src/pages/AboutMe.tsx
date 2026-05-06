@@ -284,7 +284,10 @@ const AboutMe = () => {
           , let&rsquo;s talk.
         </h2>
         <Link
-          to="/#contact"
+          to="/?scrollTo=contact#contact"
+          onClick={() => {
+            sessionStorage.setItem("scrollTo", "contact");
+          }}
           className="inline-flex items-center gap-2 mt-10 bg-ink text-paper font-mono text-xs small-caps px-6 py-3 hover:bg-[hsl(var(--accent-burnt))] transition-colors"
         >
           Send me a note <ArrowUpRight className="size-4" />
