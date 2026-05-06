@@ -190,7 +190,18 @@ const Hero = () => (
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-8 md:mb-12">
           Hello, I&rsquo;m
         </p>
-        <NameWithFontPicker />
+        <h2
+          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center"
+          style={{ fontWeight: 500 }}
+        >
+          <span className="block text-ink">MEGAN</span>
+          <span
+            className="block italic"
+            style={{ color: "hsl(var(--accent-burnt))" }}
+          >
+            Ho.
+          </span>
+        </h2>
         <div className="mt-10 flex items-end gap-6 flex-wrap">
           <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
           <p className="font-mono text-[11px] small-caps text-ink-mute">
