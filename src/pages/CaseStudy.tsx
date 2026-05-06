@@ -30,7 +30,7 @@ const Veramente = () => (
       <div className="container py-3 flex items-center justify-between gap-4">
         <Link
           to="/"
-          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(var(--accent-burnt))] transition-colors"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(48_90%_70%)] transition-colors"
         >
           <ArrowLeft className="size-3.5" /> Back to Folio
         </Link>
@@ -39,7 +39,7 @@ const Veramente = () => (
         </p>
         <Link
           to="/case/sippy"
-          className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(var(--accent-burnt))] transition-colors"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(48_90%_70%)] transition-colors"
         >
           Next Case <ArrowUpRight className="size-3" />
         </Link>
@@ -138,7 +138,7 @@ const Veramente = () => (
           People skip SPF when it&rsquo;s
           <span
             className="italic"
-            style={{ color: "hsl(var(--accent-burnt))" }}
+            style={{ color: "hsl(48 90% 70%)" }}
           >
             {" "}
             hidden.
@@ -187,7 +187,7 @@ const Veramente = () => (
           </p>
           <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-6">
             A sun-bleached
-            <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>
+            <span className="italic" style={{ color: "hsl(48 90% 70%)" }}>
               {" "}language.
             </span>
           </h2>
@@ -220,7 +220,7 @@ const Veramente = () => (
 
           <p className="font-display italic text-base text-ink-soft mt-6 leading-relaxed">
             &ldquo;Soft confidence — skincare that{" "}
-            <span style={{ color: "hsl(var(--accent-burnt))" }}>whispers.</span>&rdquo;
+            <span style={{ color: "hsl(48 90% 70%)" }}>whispers.</span>&rdquo;
           </p>
         </div>
 
@@ -273,7 +273,7 @@ const Veramente = () => (
             </p>
             <h3 className="font-display text-3xl md:text-4xl leading-[0.95] tracking-tight">
               Four ideas behind
-              <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>
+              <span className="italic" style={{ color: "hsl(48 90% 70%)" }}>
                 {" "}the marks.
               </span>
             </h3>
@@ -317,7 +317,7 @@ const Veramente = () => (
               <div className="flex items-baseline justify-between gap-4 mb-4 pb-3 border-b border-ink/20">
                 <span
                   className="font-display text-5xl leading-none"
-                  style={{ color: "hsl(var(--accent-burnt))" }}
+                  style={{ color: "hsl(48 90% 70%)" }}
                 >
                   {no}
                 </span>
@@ -400,7 +400,7 @@ const Veramente = () => (
               </figure>
               <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-center">
                 <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-rule">
-                  <span className="font-display text-5xl leading-none text-accent-burnt">
+                  <span className="font-display text-5xl leading-none text-[hsl(48_90%_70%)]">
                     {c.n}
                   </span>
                   <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">
@@ -446,7 +446,7 @@ const Veramente = () => (
             From insight to
             <span
               className="italic"
-              style={{ color: "hsl(var(--accent-burnt))" }}
+              style={{ color: "hsl(48 90% 70%)" }}
             >
               {" "}
               object.
@@ -517,7 +517,7 @@ const Veramente = () => (
             The product
             <span
               className="italic"
-              style={{ color: "hsl(var(--accent-burnt))" }}
+              style={{ color: "hsl(48 90% 70%)" }}
             >
               {" "}
               is the campaign.
@@ -649,7 +649,7 @@ const Veramente = () => (
         Want the rest of the
         <span
           className="italic"
-          style={{ color: "hsl(var(--accent-burnt))" }}
+          style={{ color: "hsl(48 90% 70%)" }}
         >
           {" "}
           folio?
@@ -714,7 +714,7 @@ const Placeholder = ({ slug }: { slug: string }) => {
           <h1 className="font-display text-5xl mb-6">No case study here.</h1>
           <Link
             to="/"
-            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(var(--accent-burnt))]"
+            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(48_90%_70%)]"
           >
             <ArrowLeft className="size-3.5" /> Back to Folio
           </Link>
@@ -728,7 +728,7 @@ const Placeholder = ({ slug }: { slug: string }) => {
         <div className="container py-4 flex items-center justify-between gap-4">
           <Link
             to="/"
-            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(var(--accent-burnt))] transition-colors"
+            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(48_90%_70%)] transition-colors"
           >
             <ArrowLeft className="size-3.5" /> Back to Folio
           </Link>
@@ -739,7 +739,7 @@ const Placeholder = ({ slug }: { slug: string }) => {
       </header>
       <section className="container py-24 grid md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-7">
-          <p className="font-mono text-[11px] small-caps text-[hsl(var(--accent-burnt))] mb-4">
+          <p className="font-mono text-[11px] small-caps text-[hsl(48_90%_70%)] mb-4">
             Case Study · No. {cs.no}
           </p>
           <h1 className="font-display font-light leading-[0.9] tracking-tight text-[clamp(3rem,8vw,7rem)]">
