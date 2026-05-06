@@ -62,18 +62,15 @@ const Veramente = () => (
           <p className="font-mono text-[11px] small-caps text-accent-red mb-5 tracking-[0.2em]">
             ✦ Case Study No. I · Beauty · Concept Brand ✦
           </p>
-          <h1
-            className="font-display font-light leading-[0.85] tracking-[-0.03em] uppercase text-[clamp(3.5rem,12vw,9rem)]"
-            style={{ fontWeight: 500 }}
-          >
+          <h1 className="font-display font-light leading-[0.95] tracking-[-0.02em]">
             <img
               src={veramenteWordmark}
               alt="Veramente"
-              className="block w-full max-w-[720px] h-auto mix-blend-multiply"
+              className="block w-full max-w-[640px] h-auto -ml-2 mix-blend-multiply"
             />
             <span
-              className="block italic"
-              style={{ color: "hsl(48 90% 70%)" }}
+              className="block italic uppercase tracking-[-0.03em] leading-[0.9] mt-2 text-[clamp(2.25rem,7vw,5.25rem)]"
+              style={{ color: "hsl(48 90% 70%)", fontWeight: 500 }}
             >
               Carry your SPF.
             </span>
