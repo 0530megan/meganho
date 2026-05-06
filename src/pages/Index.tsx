@@ -13,7 +13,7 @@ import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const NAV = [
-  { id: "about", label: "About" },
+  
   { id: "approach", label: "Approach" },
   { id: "work", label: "Selected Work" },
   { id: "skills", label: "Skills" },
