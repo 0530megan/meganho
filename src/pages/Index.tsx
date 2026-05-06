@@ -359,7 +359,7 @@ const Approach = () => {
           {principles.map((p) => (
             <article key={p.no} className="bg-paper-deep p-8 md:p-10">
               <div className="flex items-baseline justify-between mb-6">
-                <span className="font-mono text-xs small-caps text-accent-red">
+                <span className="font-mono font-bold text-sm small-caps text-accent-red">
                   Principle {p.no}
                 </span>
                 <Sparkles className="size-4 text-ink-mute" />
