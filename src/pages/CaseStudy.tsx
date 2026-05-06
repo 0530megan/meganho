@@ -343,11 +343,13 @@ const Veramente = () => (
             Dieline · Carton · Collectibles
           </p>
         </div>
-        <img
-          src={veramentePackaging}
-          alt="Veramente packaging: SPF stick dieline, outer carton, and collectible bag charms"
-          className="block w-full h-auto"
-        />
+        <div className="relative w-full bg-paper-deep" style={{ aspectRatio: "16 / 9" }}>
+          <img
+            src={veramentePackaging}
+            alt="Veramente packaging: SPF stick dieline, outer carton, and collectible bag charms"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </div>
         <figcaption className="px-4 py-4 border-t-2 border-ink grid md:grid-cols-3 gap-4 text-sm">
           <div>
             <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
