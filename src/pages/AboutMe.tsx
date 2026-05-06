@@ -123,7 +123,7 @@ const AboutMe = () => {
               </span>
             </h1>
             <p className="font-display text-xl md:text-2xl text-ink-soft mt-6 max-w-2xl leading-relaxed">
-              A curious mind learning at the crossroads of marketing and design —
+              A curious mind learning at the crossroads of marketing and design,
               quietly building things with care, taste, and a little bit of mischief.
             </p>
           </div>
