@@ -350,31 +350,24 @@ const Veramente = () => (
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </div>
-        <figcaption className="px-4 py-4 border-t-2 border-ink grid md:grid-cols-3 gap-4 text-sm">
-          <div>
-            <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
-              ① Dieline
-            </p>
-            <p className="font-display italic text-ink-soft leading-snug">
-              Flat-pack carton with a branded interior — pretty inside and out.
-            </p>
-          </div>
-          <div>
-            <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
-              ② Carton
-            </p>
-            <p className="font-display italic text-ink-soft leading-snug">
-              Cream + olive base. Sun mark up top, story along the side.
-            </p>
-          </div>
-          <div>
-            <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
-              ③ Charms
-            </p>
-            <p className="font-display italic text-ink-soft leading-snug">
-              Blind-box collectibles that clip on — SPF you actually want to show.
-            </p>
-          </div>
+        <figcaption className="border-t-2 border-ink grid md:grid-cols-3 divide-y-2 md:divide-y-0 md:divide-x-2 divide-ink">
+          {[
+            { n: "01", label: "Dieline", body: "Flat-pack carton with a branded interior — pretty inside and out." },
+            { n: "02", label: "Carton", body: "Cream + olive base. Sun mark up top, story along the side." },
+            { n: "03", label: "Charms", body: "Blind-box collectibles that clip on — SPF you actually want to show." },
+          ].map((c) => (
+            <div key={c.n} className="p-5 bg-paper">
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="font-display text-3xl leading-none text-accent-burnt">{c.n}</span>
+                <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">
+                  {c.label}
+                </span>
+              </div>
+              <p className="font-body text-[14px] text-ink-soft leading-relaxed">
+                {c.body}
+              </p>
+            </div>
+          ))}
         </figcaption>
       </figure>
 
