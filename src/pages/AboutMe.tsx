@@ -276,22 +276,53 @@ const AboutMe = () => {
 
 
       {/* Contact CTA */}
-      <section className="container py-20 md:py-28 text-center">
-        <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-6">P.S.</p>
-        <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">
-          If any of this sounds like
-          <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> your kind of person</span>
-          , let&rsquo;s talk.
-        </h2>
-        <Link
-          to="/?scrollTo=contact#contact"
-          onClick={() => {
-            sessionStorage.setItem("scrollTo", "contact");
-          }}
-          className="inline-flex items-center gap-2 mt-10 bg-ink text-paper font-mono text-xs small-caps px-6 py-3 hover:bg-[hsl(var(--accent-burnt))] transition-colors"
-        >
-          Send me a note <ArrowUpRight className="size-4" />
-        </Link>
+      <section className="container py-20 md:py-28">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-center">
+          <div className="col-span-12 md:col-span-7">
+            <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-6">P.S.</p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">
+              If any of this sounds like
+              <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}> your kind of person</span>
+              , let&rsquo;s talk.
+            </h2>
+            <p className="font-display text-xl text-ink-soft mt-6 max-w-xl leading-relaxed">
+              Open to graduate marketing & brand opportunities — full-time roles,
+              internships, and collaborative projects, especially in design-led
+              and experience-focused industries.
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-5 space-y-5">
+            <a
+              href="mailto:megan123ho@icloud.com"
+              className="block group border border-ink p-6 hover:bg-ink hover:text-paper transition-colors"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <Mail className="size-5" />
+                <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </div>
+              <p className="font-mono text-[11px] small-caps mb-1 opacity-70">Email</p>
+              <p className="font-display text-2xl break-all">megan123ho@icloud.com</p>
+            </a>
+            <a
+              href="tel:+61412176909"
+              className="block group border border-ink p-6 hover:bg-ink hover:text-paper transition-colors"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <Phone className="size-5" />
+                <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </div>
+              <p className="font-mono text-[11px] small-caps mb-1 opacity-70">Phone</p>
+              <p className="font-display text-2xl">0412 176 909</p>
+            </a>
+            <div className="border border-ink/30 p-6">
+              <div className="flex items-center justify-between mb-3">
+                <MapPin className="size-5 text-ink-soft" />
+              </div>
+              <p className="font-mono text-[11px] small-caps mb-1 text-ink-mute">Based in</p>
+              <p className="font-display text-2xl">Melbourne, Australia</p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
