@@ -68,7 +68,7 @@ const Veramente = () => (
             <span className="block text-ink">Veramente</span>
             <span
               className="block italic"
-              style={{ color: "hsl(var(--accent-burnt))" }}
+              style={{ color: "hsl(48 90% 70%)" }}
             >
               Carry your SPF.
             </span>
