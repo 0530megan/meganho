@@ -228,32 +228,6 @@ const AboutMe = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="bg-paper-deep border-y border-ink/20">
-        <div className="container py-16 md:py-24">
-          <div className="border-t-4 border-ink pt-4 mb-10 flex items-end justify-between gap-6 flex-wrap">
-            <div>
-              <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">Chapter 04</p>
-              <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
-                The shortest timeline
-              </h2>
-            </div>
-            <span className="font-mono text-xs small-caps text-ink-mute">In reverse</span>
-          </div>
-          <ol className="relative border-l-2 border-ink ml-2">
-            {TIMELINE.map((t, i) => (
-              <li key={i} className="pl-6 pb-8 last:pb-0 relative">
-                <span
-                  aria-hidden
-                  className="absolute -left-[7px] top-1.5 size-3 rounded-full bg-[hsl(var(--accent-burnt))] border border-ink"
-                />
-                <p className="font-mono text-[11px] small-caps text-accent-red mb-1">{t.year} · {t.place}</p>
-                <p className="font-display text-2xl md:text-3xl leading-snug">{t.title}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
 
       {/* Contact CTA */}
       <section className="container py-20 md:py-28 text-center">
