@@ -337,7 +337,7 @@ const LayoutStack = () => {
           );
         })}
       </div>
-      <div className="col-span-12 md:col-span-5">
+      <div className="col-span-12 md:col-span-4">
         <p className="font-mono text-[11px] small-caps text-ink-soft mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
         <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: ochre }}>
           {p.trait}.
