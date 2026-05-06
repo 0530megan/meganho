@@ -524,6 +524,74 @@ const Veramante = () => (
           </div>
         </div>
       </article>
+
+      {/* Plate VI — 16:9 narrative frame: Concept · Insight · Solution + Brand Voice */}
+      <article className="relative w-full aspect-video border border-ink/30 bg-paper-deep/40 overflow-hidden mt-6 md:mt-8">
+        <div className="absolute inset-0 grid grid-cols-12 gap-4 md:gap-6 p-5 md:p-8">
+          {/* LEFT — Concept · Insight · Solution */}
+          <div className="col-span-12 md:col-span-7 flex flex-col min-h-0">
+            <p className="font-mono text-[10px] small-caps text-accent-red mb-3">
+              Plate VI — Product Story
+            </p>
+            <div className="grid grid-cols-3 gap-4 md:gap-5 flex-1 min-h-0">
+              {[
+                {
+                  Icon: Lightbulb,
+                  label: "Concept",
+                  body: "Sunscreen reimagined as a wearable accessory.",
+                  pull: "Want to wear it, not hide it.",
+                },
+                {
+                  Icon: Eye,
+                  label: "Insight",
+                  body: "People skip SPF when it's hidden — they engage when it's expressive.",
+                  pull: "Aesthetic = adherence.",
+                },
+                {
+                  Icon: Package,
+                  label: "Solution",
+                  body: "SPF50+ stick with a charm loop and a collectible charm system.",
+                  pull: "Product as brand touchpoint.",
+                },
+              ].map(({ Icon, label, body, pull }) => (
+                <div key={label} className="flex flex-col">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Icon className="size-3.5 text-accent-red" />
+                    <p className="font-mono text-[10px] small-caps text-ink-mute">{label}</p>
+                  </div>
+                  <p className="font-display text-sm md:text-base leading-snug mb-3">{body}</p>
+                  <p className="mt-auto font-display italic text-xs md:text-sm text-accent-red leading-snug border-l-2 border-accent-red pl-2.5">
+                    {pull}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT — Brand Voice */}
+          <div className="col-span-12 md:col-span-5 md:border-l md:border-ink/30 md:pl-6 flex flex-col min-h-0">
+            <p className="font-mono text-[10px] small-caps text-accent-red mb-3">Brand Voice</p>
+            <ol className="space-y-2 flex-1 min-h-0">
+              {[
+                "Soft confidence — skincare that whispers.",
+                "Tactile, sun-washed packaging as a personal object.",
+                "SPF as self-care, not a chore.",
+                "A charm system that turns product into ritual.",
+              ].map((s, i) => (
+                <li key={i} className="flex gap-3 border-b border-rule pb-2">
+                  <span className="font-display text-2xl md:text-3xl text-accent-red leading-none w-8 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="font-display text-sm md:text-base leading-snug">{s}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="font-display italic text-xs text-ink-mute mt-3 leading-relaxed">
+              "Product design as marketing — a functional object turned into a shareable, identity-driven ritual."
+            </p>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 );
