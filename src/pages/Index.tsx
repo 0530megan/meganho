@@ -94,7 +94,7 @@ const Hero = () => (
     {/* Hero content */}
     <div className="container relative pt-6 pb-10 md:pt-8 md:pb-14 grid grid-cols-12 gap-x-6 gap-y-6 items-center">
       <div className="col-span-12 md:col-span-8">
-        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-3 md:mb-4 text-center">
+        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-3 md:mb-4 text-center py-[13px]">
           Hello, I&rsquo;m
         </p>
         <h2
@@ -110,7 +110,7 @@ const Hero = () => (
           </span>
         </h2>
         <div className="mx-auto mt-6 mb-4 h-px w-24 bg-ink/30" />
-        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft whitespace-nowrap text-center rounded-sm font-light">
+        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft whitespace-nowrap text-center rounded-sm font-light px-px py-[12px] mx-0 my-[5px]">
           I&rsquo;m passionate about marketing that turns heads and leaves an impression.
         </p>
       </div>
