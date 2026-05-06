@@ -509,85 +509,113 @@ const Veramente = () => (
       </div>
     </section>
 
-    {/* PRODUCT WORLD — image grid */}
+    {/* PRODUCT WORLD — campaign as product */}
     <section className="container py-20 md:py-28">
-      <div className="flex items-end justify-between gap-6 flex-wrap mb-10">
-        <div>
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
-            04 · The Product World
+      {/* Section header — mirrors packaging section rhythm */}
+      <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-end mb-12 md:mb-16">
+        <div className="md:col-span-7">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">
+            ✦ 04 · The Product World ✦
           </p>
-          <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight max-w-2xl">
+          <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight">
             The product
             <span
-              className="italic"
+              className="italic block"
               style={{ color: "hsl(48 90% 70%)" }}
             >
-              {" "}
               is the campaign.
             </span>
           </h2>
         </div>
-        <p className="font-mono text-[11px] small-caps text-ink-mute max-w-xs md:text-right">
-          Mockups built in Figma · styled with AI-generated lifestyle frames
-        </p>
+        <div className="md:col-span-5 md:pl-8 md:border-l-2 md:border-ink/20">
+          <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed">
+            No paid media. The charm <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>is</em> the ad — worn on bags, photographed in cafés, traded in blind boxes.
+          </p>
+          <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-5">
+            Mockups · Figma + AI lifestyle frames
+          </p>
+        </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-5 md:gap-6">
-        {/* Big lifestyle */}
-        <figure className="col-span-12 md:col-span-8 border border-ink bg-paper-deep overflow-hidden group">
-          <div className="aspect-[4/3] overflow-hidden">
-            <img
-              src={veramenteCafe}
-              alt="Model carrying the Veramente SPF charm at an outdoor café"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            />
-          </div>
-          <figcaption className="px-4 py-3 border-t border-ink/30 flex items-baseline justify-between gap-3 bg-paper">
-            <p className="font-display italic text-base">In The Wild</p>
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Plate V — Lifestyle
-            </p>
-          </figcaption>
-        </figure>
-
-        {/* Bag charm */}
-        <figure className="col-span-12 md:col-span-4 border border-ink bg-paper-deep overflow-hidden group">
-          <div className="aspect-[4/5] overflow-hidden">
-            <img
-              src={veramenteBagCharm}
-              alt="Veramente SPF stick clipped to a cream shoulder bag"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            />
-          </div>
-          <figcaption className="px-4 py-3 border-t border-ink/30 flex items-baseline justify-between gap-3 bg-paper">
-            <p className="font-display italic text-base">Wear It Daily</p>
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Plate IV
-            </p>
-          </figcaption>
-        </figure>
-
-        {/* Tiny bites — full width */}
-        <figure className="col-span-12 border border-ink bg-paper-deep overflow-hidden group">
-          <div className="aspect-[21/9] overflow-hidden">
-            <img
-              src={veramenteTinyBites}
-              alt="Veramente Tiny Bites blind box keychain collection"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            />
-          </div>
-          <figcaption className="px-4 py-3 border-t border-ink/30 flex items-baseline justify-between gap-3 bg-paper">
-            <p className="font-display italic text-base">
-              Tiny Bites — Blind-Box Charms
-            </p>
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Plate III — Collectible System
-            </p>
-          </figcaption>
-        </figure>
+      {/* Numbered campaign articles — same bold-bordered card system as packaging */}
+      <div className="space-y-10 md:space-y-14">
+        {[
+          {
+            n: "01",
+            label: "In The Wild",
+            img: veramenteCafe,
+            ratio: "16 / 10",
+            title: "Café tables, sun-soaked moments.",
+            body: "Lifestyle frames stage the charm in everyday rituals — coffee runs, market mornings, weekend wandering. The product photographs itself.",
+            meta: ["Lifestyle", "Outdoor", "UGC-ready"],
+            shadow: "hsl(var(--accent-red))",
+          },
+          {
+            n: "02",
+            label: "Wear It Daily",
+            img: veramenteBagCharm,
+            ratio: "4 / 5",
+            title: "Bag-clipped, never buried.",
+            body: "Worn on the outside of the bag, the SPF stick becomes a styling object. Every customer turns into a quiet billboard for the brand.",
+            meta: ["Bag-clip", "Visibility", "Daily wear"],
+            shadow: "hsl(var(--accent-ochre))",
+          },
+          {
+            n: "03",
+            label: "Tiny Bites",
+            img: veramenteTinyBites,
+            ratio: "21 / 9",
+            title: "Blind-box collectible drops.",
+            body: "A growing system of mini food charms — apple pie, cookie, watermelon, cake — turns reapplication into a collecting ritual worth coming back for.",
+            meta: ["Blind-box", "Collectible", "Drop-based"],
+            shadow: "hsl(48 90% 70%)",
+          },
+        ].map((c, i) => (
+          <article
+            key={c.n}
+            className={`grid md:grid-cols-12 gap-0 border-2 border-ink bg-paper overflow-hidden ${
+              i % 2 === 1 ? "md:[&>figure]:order-2" : ""
+            }`}
+            style={{ boxShadow: `8px 10px 0 0 ${c.shadow}` }}
+          >
+            <figure className="md:col-span-7 bg-paper-deep border-b-2 md:border-b-0 md:border-r-2 border-ink">
+              <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
+                <img
+                  src={c.img}
+                  alt={`Veramente ${c.label.toLowerCase()}`}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
+            </figure>
+            <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-center">
+              <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-rule">
+                <span className="font-display text-5xl leading-none text-[hsl(48_90%_70%)]">
+                  {c.n}
+                </span>
+                <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">
+                  · {c.label} ·
+                </span>
+              </div>
+              <h4 className="font-display text-2xl md:text-[26px] leading-tight mb-3 text-ink">
+                {c.title}
+              </h4>
+              <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-5">
+                {c.body}
+              </p>
+              <ul className="flex flex-wrap gap-2 mt-auto">
+                {c.meta.map((m) => (
+                  <li
+                    key={m}
+                    className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1 bg-paper-deep/60"
+                  >
+                    {m}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
 
