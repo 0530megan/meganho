@@ -215,7 +215,7 @@ const Veramente = () => (
           };
         };
 
-        const Tag = ({ children }: { children: React.ReactNode }) => (
+        const Tag = ({ children }: { children: ReactNode }) => (
           <span className="absolute top-3 left-3 z-10 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
             {children}
           </span>
