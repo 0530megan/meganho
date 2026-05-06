@@ -63,13 +63,13 @@ export const AdjustableImage = ({
   };
 
   return (
-    <div className="relative">
+    <div className={aspectRatio === "auto" ? "relative h-full w-full" : "relative"}>
       <div
         onMouseDown={onMouseDown}
-        className={`relative w-full overflow-hidden bg-ink/5 ${
+        className={`relative w-full overflow-hidden bg-ink/5 ${aspectRatio === "auto" ? "h-full" : ""} ${
           open ? "cursor-grab active:cursor-grabbing ring-2 ring-[hsl(var(--accent-burnt))]" : ""
         }`}
-        style={{ aspectRatio }}
+        style={aspectRatio === "auto" ? undefined : { aspectRatio }}
       >
         <img
           src={src}
