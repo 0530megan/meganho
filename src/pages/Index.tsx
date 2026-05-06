@@ -42,8 +42,6 @@ const Hero = () => (
     {/* Top meta bar */}
     <div className="relative border-b border-ink/30">
       <div className="container flex items-center justify-between py-2 text-[11px] small-caps text-ink-soft font-mono">
-        <span>Vol. I No. 01</span>
-        <span className="hidden md:inline">{TODAY}</span>
         <span>Melbourne · Edition</span>
       </div>
     </div>
