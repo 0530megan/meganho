@@ -464,7 +464,7 @@ const Veramante = () => (
                 </span>
               </h3>
               <p className="font-display text-sm md:text-base text-ink-soft mt-3 leading-relaxed">
-                A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
+                A <strong className="font-semibold text-ink">wearable SPF concept brand</strong> — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a <em className="not-italic font-semibold text-accent-red">daily accessory people actually want to show off</em>.
               </p>
             </div>
 
