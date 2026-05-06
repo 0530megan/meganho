@@ -453,23 +453,23 @@ const Veramante = () => (
           {/* LEFT — copy + at-a-glance + brand voice */}
           <div className="col-span-12 md:col-span-4 flex flex-col min-h-0 gap-3">
             <div>
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-2">
+              <p className="font-mono text-[12px] small-caps text-accent-red mb-2">
                 Case Study 01 · Beauty · Concept Brand
               </p>
-              <h3 className="font-display font-light text-2xl md:text-4xl leading-[0.9] tracking-tight">
+              <h3 className="font-display font-light text-3xl md:text-5xl leading-[0.9] tracking-tight">
                 VERAMENTE
                 <span className="font-display italic text-accent-red">.</span>
-                <span className="block font-display italic text-base md:text-xl text-ink-soft mt-1.5">
+                <span className="block font-display italic text-lg md:text-2xl text-ink-soft mt-2">
                   Carry Your SPF.
                 </span>
               </h3>
-              <p className="font-display text-xs md:text-sm text-ink-soft mt-2.5 leading-relaxed">
+              <p className="font-display text-sm md:text-base text-ink-soft mt-3 leading-relaxed">
                 A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
               </p>
             </div>
 
             <div>
-              <p className="font-mono text-[10px] small-caps text-ink-mute mb-1.5">At a glance</p>
+              <p className="font-mono text-[12px] small-caps text-ink-mute mb-2">At a glance</p>
               <dl className="space-y-1">
                 {[
                   ["Format", "SPF50+ stick with charm loop"],
@@ -479,15 +479,15 @@ const Veramante = () => (
                   ["Role", "Brand, product, art direction"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex justify-between gap-3 border-b border-rule pb-1">
-                    <dt className="font-mono text-[10px] small-caps text-ink-mute pt-0.5">{k}</dt>
-                    <dd className="font-display text-[13px] font-medium text-right">{v}</dd>
+                    <dt className="font-mono text-[11px] small-caps text-ink-mute pt-0.5">{k}</dt>
+                    <dd className="font-display text-[15px] font-medium text-right">{v}</dd>
                   </div>
                 ))}
               </dl>
             </div>
 
             <div className="flex-1 min-h-0 flex flex-col">
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-2">Brand Voice</p>
+              <p className="font-mono text-[12px] small-caps text-accent-red mb-2">Brand Voice</p>
               <ol className="space-y-1 flex-1 flex flex-col justify-between">
                 {[
                   "Soft confidence — skincare that whispers.",
@@ -495,19 +495,19 @@ const Veramante = () => (
                   "SPF as self-care, not a chore.",
                   "A charm system that turns product into ritual.",
                 ].map((s, i) => (
-                  <li key={i} className="flex gap-2.5 border-b border-rule pb-1.5">
-                    <span className="font-display text-xl text-accent-red leading-none w-7 shrink-0">
+                  <li key={i} className="flex gap-3 border-b border-rule pb-1.5">
+                    <span className="font-display text-2xl text-accent-red leading-none w-8 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="font-display text-[13px] font-medium leading-snug">{s}</p>
+                    <p className="font-display text-[15px] font-medium leading-snug">{s}</p>
                   </li>
                 ))}
               </ol>
             </div>
 
             <div>
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-2">Product Story</p>
-              <div className="grid grid-cols-3 gap-2.5">
+              <p className="font-mono text-[12px] small-caps text-accent-red mb-2">Product Story</p>
+              <div className="grid grid-cols-3 gap-3">
                 {[
                   { Icon: Lightbulb, label: "Concept", body: "Sunscreen as a wearable accessory.", pull: "Wear it, don't hide it." },
                   { Icon: Eye, label: "Insight", body: "People skip SPF when it's hidden.", pull: "Aesthetic = adherence." },
@@ -515,11 +515,11 @@ const Veramante = () => (
                 ].map(({ Icon, label, body, pull }) => (
                   <div key={label} className="flex flex-col">
                     <div className="flex items-center gap-1.5 mb-1">
-                      <Icon className="size-3 text-accent-red" />
-                      <p className="font-mono text-[10px] small-caps text-ink-mute">{label}</p>
+                      <Icon className="size-3.5 text-accent-red" />
+                      <p className="font-mono text-[11px] small-caps text-ink-mute">{label}</p>
                     </div>
-                    <p className="font-display text-[12px] font-medium leading-snug mb-1.5">{body}</p>
-                    <p className="mt-auto font-display italic text-[10px] text-accent-red leading-snug border-l-2 border-accent-red pl-2">
+                    <p className="font-display text-[14px] font-medium leading-snug mb-1.5">{body}</p>
+                    <p className="mt-auto font-display italic text-[12px] text-accent-red leading-snug border-l-2 border-accent-red pl-2">
                       {pull}
                     </p>
                   </div>
