@@ -312,7 +312,7 @@ const SelectedWork = () => {
                 ))}
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
