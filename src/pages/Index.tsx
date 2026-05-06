@@ -1286,7 +1286,6 @@ const Index = () => {
         <SelectedWork />
         <Approach />
         <Skills />
-        <Experience />
         <Statement />
         <Contact />
       </main>
