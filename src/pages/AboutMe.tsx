@@ -204,7 +204,7 @@ const AboutMe = () => {
           <div className="col-span-12 md:col-span-5">
             <figure className="relative max-w-sm md:ml-auto">
               <div className="border border-ink bg-paper p-2 shadow-[12px_14px_0_0_hsl(var(--accent-burnt))] -rotate-3 hover:rotate-0 transition-transform duration-500">
-                <AdjustableImage src={meganPortrait} alt="Megan Ho" storageKey="about-portrait" aspectRatio="4 / 5" />
+                <SavedImage src={meganPortrait} alt="Megan Ho" storageKey="about-portrait" aspectRatio="4 / 5" />
                 <figcaption className="pt-2 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
                   
                   <p className="font-mono text-[10px] small-caps text-ink-mute">Polaroid · I</p>
