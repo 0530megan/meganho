@@ -129,7 +129,7 @@ const Hero = () => (
               loading="eager"
             />
             <figcaption className="pt-2 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
-              <p className="font-display italic text-sm">The author</p>
+              <p className="font-display italic text-sm">M.H</p>
               <p className="font-mono text-[10px] small-caps text-ink-mute">Plate I</p>
             </figcaption>
           </div>
