@@ -188,7 +188,7 @@ const SectionHeader = ({
 }) => (
   <div className="border-t-4 border-ink pt-4 mb-10 flex items-end justify-between gap-6 flex-wrap">
     <div>
-      <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">{kicker}</p>
+      <p className="font-mono font-bold text-sm small-caps text-accent-red mb-2">{kicker}</p>
       <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
         {title}
       </h2>
@@ -359,7 +359,7 @@ const Approach = () => {
           {principles.map((p) => (
             <article key={p.no} className="bg-paper-deep p-8 md:p-10">
               <div className="flex items-baseline justify-between mb-6">
-                <span className="font-mono text-xs small-caps text-accent-red">
+                <span className="font-mono font-bold text-sm small-caps text-accent-red">
                   Principle {p.no}
                 </span>
                 <Sparkles className="size-4 text-ink-mute" />
