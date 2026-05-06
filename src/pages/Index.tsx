@@ -92,7 +92,7 @@ const Hero = () => (
     </nav>
 
     {/* Hero content */}
-    <div className="container relative pt-16 pb-10 md:pt-20 md:pb-14 grid grid-cols-12 gap-x-6 gap-y-6 items-center">
+    <div className="container relative pt-6 pb-10 md:pt-8 md:pb-14 grid grid-cols-12 gap-x-6 gap-y-6 items-center">
       <div className="col-span-12 md:col-span-8">
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-3 md:mb-4 text-center">
           Hello, I&rsquo;m
