@@ -26,6 +26,19 @@ const FONT_OPTIONS = [
   { name: "Bodoni Moda", family: "'Bodoni Moda', serif", url: "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&display=swap" },
   { name: "DM Serif Display", family: "'DM Serif Display', serif", url: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" },
   { name: "Newsreader", family: "'Newsreader', serif", url: "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&display=swap" },
+  { name: "Italiana", family: "'Italiana', serif", url: "https://fonts.googleapis.com/css2?family=Italiana&display=swap" },
+  { name: "Cinzel", family: "'Cinzel', serif", url: "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" },
+  { name: "Libre Caslon", family: "'Libre Caslon Display', serif", url: "https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" },
+  { name: "Tenor Sans", family: "'Tenor Sans', sans-serif", url: "https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" },
+  { name: "Marcellus", family: "'Marcellus', serif", url: "https://fonts.googleapis.com/css2?family=Marcellus&display=swap" },
+  { name: "Abril Fatface", family: "'Abril Fatface', serif", url: "https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" },
+  { name: "Big Shoulders", family: "'Big Shoulders Display', sans-serif", url: "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&display=swap" },
+  { name: "Anton", family: "'Anton', sans-serif", url: "https://fonts.googleapis.com/css2?family=Anton&display=swap" },
+  { name: "Archivo Black", family: "'Archivo Black', sans-serif", url: "https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" },
+  { name: "Syne", family: "'Syne', sans-serif", url: "https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&display=swap" },
+  { name: "Space Grotesk", family: "'Space Grotesk', sans-serif", url: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" },
+  { name: "Major Mono", family: "'Major Mono Display', monospace", url: "https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" },
+  { name: "Caveat", family: "'Caveat', cursive", url: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" },
 ];
 
 const NameWithFontPicker = () => {
