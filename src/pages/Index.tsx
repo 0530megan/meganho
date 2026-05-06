@@ -1095,66 +1095,6 @@ const Skills = () => {
   );
 };
 
-const Experience = () => {
-  const items = [
-    {
-      year: "Current",
-      org: "RMIT University · Australia",
-      role: "Master of Marketing",
-      body: "Graduate study in marketing strategy, consumer behaviour, and brand systems.",
-    },
-    {
-      year: "Prior",
-      org: "University · Malaysia",
-      role: "Bachelor of Entrepreneurship",
-      body: "Foundation in venture-building, commercial thinking, and business strategy.",
-    },
-    {
-      year: "Recent",
-      org: "Moonlight Industries",
-      role: "Part-Time Junior Marketing Executive",
-      body: "Conducted market research and competitor analysis, managed company social platforms, and supported campaign planning and execution.",
-    },
-    {
-      year: "Earlier",
-      org: "Inter Island Manpower",
-      role: "Recruitment Consultant Intern",
-      body: "Worked in a team-driven corporate environment managing candidate sourcing and communication, developing strong coordination and professional communication skills.",
-    },
-  ];
-  return (
-    <section id="experience" className="container py-16 md:py-24">
-      <SectionHeader kicker="Record" title="Education & Experience" no="VI" />
-      <div className="space-y-0">
-        {items.map((it, i) => (
-          <article
-            key={i}
-            className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 border-b border-ink/30 first:border-t first:border-ink/30 group"
-          >
-            <div className="col-span-12 md:col-span-2">
-              <span className="font-mono text-xs small-caps text-accent-red">
-                {it.year}
-              </span>
-            </div>
-            <div className="col-span-12 md:col-span-4">
-              <h3 className="font-display text-2xl md:text-3xl leading-tight">
-                {it.org}
-              </h3>
-            </div>
-            <div className="col-span-12 md:col-span-3">
-              <p className="font-display italic text-lg text-ink-soft">{it.role}</p>
-            </div>
-            <div className="col-span-12 md:col-span-3">
-              <p className="font-body text-sm text-ink-soft leading-relaxed">
-                {it.body}
-              </p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-};
 
 const Statement = () => (
   <section className="bg-ink text-paper">
@@ -1286,7 +1226,6 @@ const Index = () => {
         <SelectedWork />
         <Approach />
         <Skills />
-        <Experience />
         <Statement />
         <Contact />
       </main>
