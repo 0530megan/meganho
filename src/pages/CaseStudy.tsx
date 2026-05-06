@@ -13,6 +13,9 @@ import {
 import veramenteLogos from "@/assets/veramente-logos.jpg";
 import veramentePalette from "@/assets/veramente-palette.jpg";
 import veramentePackaging from "@/assets/veramente-packaging.jpg";
+import veramentePackDieline from "@/assets/veramente-pack-dieline.jpg";
+import veramentePackCarton from "@/assets/veramente-pack-carton.jpg";
+import veramentePackCharms from "@/assets/veramente-pack-charms.jpg";
 import veramenteLogo from "@/assets/veramente-logo.jpg";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
