@@ -274,6 +274,64 @@ const AboutMe = () => {
         </div>
       </section>
 
+      {/* Education & Experience */}
+      <section className="container py-16 md:py-24 border-t border-ink/20">
+        <div className="border-t-4 border-ink pt-4 mb-10 flex items-end justify-between gap-6 flex-wrap">
+          <div>
+            <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">Chapter 04</p>
+            <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
+              Education & Experience
+            </h2>
+          </div>
+          <span className="font-mono text-xs small-caps text-ink-mute">The record</span>
+        </div>
+        <div className="space-y-0">
+          {[
+            {
+              year: "Current",
+              org: "RMIT University · Australia",
+              role: "Master of Marketing",
+              body: "Graduate study in marketing strategy, consumer behaviour, and brand systems.",
+            },
+            {
+              year: "Prior",
+              org: "University · Malaysia",
+              role: "Bachelor of Entrepreneurship",
+              body: "Foundation in venture-building, commercial thinking, and business strategy.",
+            },
+            {
+              year: "Recent",
+              org: "Moonlight Industries",
+              role: "Part-Time Junior Marketing Executive",
+              body: "Conducted market research and competitor analysis, managed company social platforms, and supported campaign planning and execution.",
+            },
+            {
+              year: "Earlier",
+              org: "Inter Island Manpower",
+              role: "Recruitment Consultant Intern",
+              body: "Worked in a team-driven corporate environment managing candidate sourcing and communication, developing strong coordination and professional communication skills.",
+            },
+          ].map((it, i) => (
+            <article
+              key={i}
+              className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 border-b border-ink/30 first:border-t first:border-ink/30 group"
+            >
+              <div className="col-span-12 md:col-span-2">
+                <span className="font-mono text-xs small-caps text-accent-red">{it.year}</span>
+              </div>
+              <div className="col-span-12 md:col-span-4">
+                <h3 className="font-display text-2xl md:text-3xl leading-tight">{it.org}</h3>
+              </div>
+              <div className="col-span-12 md:col-span-3">
+                <p className="font-display italic text-lg text-ink-soft">{it.role}</p>
+              </div>
+              <div className="col-span-12 md:col-span-3">
+                <p className="font-body text-sm text-ink-soft leading-relaxed">{it.body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       {/* Contact CTA */}
       <section className="container py-20 md:py-28">
