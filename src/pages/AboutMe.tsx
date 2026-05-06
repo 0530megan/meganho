@@ -264,13 +264,13 @@ const PersonalitiesSection = () => {
       <div className="container relative pt-16 md:pt-20 pb-4">
         <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
           <div>
-            <p className="font-mono text-[11px] small-caps text-ink-soft mb-2">Issue №02 · The Personality Index</p>
+            <p className="font-mono text-[11px] small-caps text-white mb-2">Issue №02 · The Personality Index</p>
             <h2 className="font-display font-light text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] tracking-tight">
               who<span className="italic" style={{ color: "hsl(46 85% 78%)" }}> am </span>i,
               <br />really?
             </h2>
           </div>
-          <p className="font-mono text-[11px] small-caps text-ink-soft">{PERSONALITIES.length} entries · tap a card</p>
+          <p className="font-mono text-[11px] small-caps text-white">{PERSONALITIES.length} entries · tap a card</p>
         </div>
       </div>
 
@@ -338,11 +338,11 @@ const LayoutStack = () => {
         })}
       </div>
       <div className="col-span-12 md:col-span-4">
-        <p className="font-mono text-[11px] small-caps text-ink-soft mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
+        <p className="font-mono text-[11px] small-caps text-white mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
         <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: ochre }}>
           {p.trait}.
         </h3>
-        <p className="font-display italic text-xl text-ink-soft leading-relaxed mt-5">"{p.note}"</p>
+        <p className="font-display italic text-xl text-white leading-relaxed mt-5">"{p.note}"</p>
         <div className="mt-8 flex gap-2">
           <button onClick={prev} className="font-mono text-[11px] small-caps border border-ink px-4 py-2 hover:bg-ink hover:text-paper transition-colors">← prev</button>
           <button onClick={next} className="font-mono text-[11px] small-caps border border-ink bg-ink text-paper px-4 py-2 transition-colors" style={{}}>next card →</button>
