@@ -126,11 +126,6 @@ const AboutMe = () => {
               A designer-marketer who treats brands like characters — give them a voice,
               a wardrobe, a few quirks, and watch people fall a little in love.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[11px] small-caps">
-              <span className="border border-ink px-3 py-1.5">Melbourne · AU</span>
-              <span className="border border-ink/40 px-3 py-1.5">She / Her</span>
-              <span className="border border-ink/40 px-3 py-1.5">Open to projects</span>
-            </div>
           </div>
           <div className="col-span-12 md:col-span-5">
             <figure className="relative max-w-sm md:ml-auto">
