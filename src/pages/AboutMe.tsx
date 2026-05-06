@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette, Mail, Phone, MapPin } from "lucide-react";
 
 /** Read-only image that honours any previously-saved adjustment in localStorage. */
 const SavedImage = ({
