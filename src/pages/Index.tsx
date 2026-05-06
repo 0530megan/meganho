@@ -449,9 +449,9 @@ const Veramante = () => (
         <SectionHeader kicker="Selected Work" title="Case Study I" no="IV" />
       </div>
 
-      {/* 16:9 frame — single screen case study, full-bleed for max reading area */}
-      <article className="relative w-full aspect-video border border-ink/30 bg-paper-deep/40 overflow-hidden">
-        <div className="absolute inset-0 grid grid-cols-12 gap-5 md:gap-8 p-6 md:p-10">
+      {/* 16:9 frame — capped so it fits a laptop screen without overflow */}
+      <article className="relative mx-auto aspect-video w-full max-h-[88vh] border border-ink/30 bg-paper-deep/40 overflow-hidden" style={{ maxWidth: "calc(88vh * 16 / 9)" }}>
+        <div className="absolute inset-0 grid grid-cols-12 gap-5 md:gap-7 p-6 md:p-8">
           {/* LEFT — copy + at-a-glance + brand voice */}
           <div className="col-span-12 md:col-span-4 flex flex-col min-h-0 gap-4">
             <div>
