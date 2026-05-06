@@ -10,6 +10,7 @@ import {
   Heart,
 } from "lucide-react";
 
+import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 import veramenteLogo from "@/assets/veramente-logo.jpg";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
@@ -194,74 +195,132 @@ const Veramente = () => (
         </div>
       </div>
 
-      {/* Board */}
+      {/* Board — assembled from crops of the original Figma board */}
       <div className="border-2 border-ink bg-paper shadow-[12px_14px_0_0_hsl(var(--accent-ochre))]">
-        {/* Primary logo banner */}
-        <div
-          className="relative border-b-2 border-ink p-10 md:p-16 flex items-center justify-center"
-          style={{ background: "#AA706C" }}
-        >
-          <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[11px] small-caps text-paper tracking-[0.25em]">
+        {/* Primary logo banner — sun */}
+        <div className="relative border-b-2 border-ink">
+          <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-ink tracking-[0.25em]">
             Primary Logo
           </span>
-          <p
-            className="font-display italic font-light text-paper text-6xl md:text-8xl leading-none"
-            style={{ fontFamily: "'Brush Script MT', cursive" }}
-          >
-            Veramente
-          </p>
+          <div
+            className="aspect-[16/5] w-full"
+            role="img"
+            aria-label="Veramente primary sun mark"
+            style={{
+              backgroundImage: `url(${veramenteBrandBoard})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% auto",
+              backgroundPosition: "center 0%",
+              clipPath: "inset(0)",
+            }}
+          />
         </div>
 
-        {/* Logo Type + Brand Mark */}
+        {/* Secondary logo + Brand mark — both 50% width slices */}
         <div className="grid grid-cols-2 border-b-2 border-ink">
-          <div
-            className="relative p-10 md:p-14 flex items-center justify-center border-r-2 border-ink min-h-[280px]"
-            style={{ background: "#F7E0D1" }}
-          >
-            <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[11px] small-caps text-ink tracking-[0.25em]">
-              Logo Type
+          <div className="relative border-r-2 border-ink">
+            <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-paper tracking-[0.25em]">
+              Secondary Logo
             </span>
-            <p className="font-display italic text-5xl md:text-6xl text-ink leading-none">
-              veramente
-            </p>
+            <div
+              className="aspect-[5/4] w-full overflow-hidden"
+              role="img"
+              aria-label="Veramente script wordmark on dusty rose"
+              style={{
+                backgroundImage: `url(${veramenteBrandBoard})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "200% auto",
+                backgroundPosition: "0% 24%",
+              }}
+            />
           </div>
-          <div
-            className="relative p-10 md:p-14 flex items-center justify-center min-h-[280px]"
-            style={{ background: "#55573F" }}
-          >
-            <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[11px] small-caps text-paper tracking-[0.25em]">
+          <div className="relative">
+            <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-paper tracking-[0.25em]">
               Brand Mark
             </span>
-            <p className="font-display italic text-7xl md:text-8xl text-paper leading-none">
-              Ve
-            </p>
+            <div
+              className="aspect-[5/4] w-full overflow-hidden"
+              role="img"
+              aria-label="Veramente Ve monogram on olive"
+              style={{
+                backgroundImage: `url(${veramenteBrandBoard})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "200% auto",
+                backgroundPosition: "100% 24%",
+              }}
+            />
           </div>
         </div>
 
-        {/* Color Palette */}
-        <div className="p-8 md:p-12">
-          <p className="font-mono text-[11px] small-caps text-ink tracking-[0.25em] text-center mb-8">
+        {/* Color Palette — crop from the source */}
+        <div className="relative border-b-2 border-ink">
+          <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-ink tracking-[0.25em]">
             Color Palette
-          </p>
-          <div className="grid grid-cols-3 gap-6 md:gap-10 max-w-3xl mx-auto">
-            {[
-              { name: "Soft Peach Beige", hex: "#F7E0D1" },
-              { name: "Deep Olive Moss", hex: "#55573F" },
-              { name: "Dusty Rose Taupe", hex: "#AA706C" },
-            ].map((s) => (
-              <div key={s.hex} className="text-center">
-                <div
-                  className="aspect-square rounded-full border border-ink/20 mx-auto mb-4"
-                  style={{ background: s.hex }}
-                />
-                <p className="font-display text-base md:text-lg leading-tight">
-                  {s.name}
-                </p>
-                <p className="font-mono text-[11px] small-caps text-ink-mute mt-1">
-                  {s.hex.replace("#", "")}
-                </p>
-              </div>
-            ))}
+          </span>
+          <div
+            className="aspect-[16/6] w-full overflow-hidden"
+            role="img"
+            aria-label="Veramente color palette: peach beige, olive moss, rose taupe"
+            style={{
+              backgroundImage: `url(${veramenteBrandBoard})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% auto",
+              backgroundPosition: "center 47%",
+            }}
+          />
+        </div>
+
+        {/* Packaging row — dieline (wide) + box stack */}
+        <div className="grid grid-cols-3">
+          <div className="relative col-span-2 border-r-2 border-ink">
+            <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-ink tracking-[0.25em]">
+              Packaging — Dieline
+            </span>
+            <div
+              className="aspect-[3/2] w-full overflow-hidden"
+              role="img"
+              aria-label="Veramente SPF stick dieline and packaging spread"
+              style={{
+                backgroundImage: `url(${veramenteBrandBoard})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "150% auto",
+                backgroundPosition: "0% 100%",
+              }}
+            />
+          </div>
+          <div className="grid grid-rows-2">
+            <div className="relative border-b-2 border-ink">
+              <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[10px] small-caps text-ink tracking-[0.25em]">
+                Outer Box
+              </span>
+              <div
+                className="aspect-[4/3] w-full overflow-hidden"
+                role="img"
+                aria-label="Veramente outer box pair"
+                style={{
+                  backgroundImage: `url(${veramenteBrandBoard})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "300% auto",
+                  backgroundPosition: "100% 78%",
+                }}
+              />
+            </div>
+            <div className="relative">
+              <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[10px] small-caps text-ink tracking-[0.25em]">
+                Charms
+              </span>
+              <div
+                className="aspect-[4/3] w-full overflow-hidden"
+                role="img"
+                aria-label="Veramente collectible bag charms"
+                style={{
+                  backgroundImage: `url(${veramenteBrandBoard})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "300% auto",
+                  backgroundPosition: "100% 100%",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
