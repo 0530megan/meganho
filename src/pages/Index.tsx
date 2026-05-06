@@ -19,99 +19,6 @@ const NAV = [
   { id: "skills", label: "Skills" },
 ];
 
-const FONT_OPTIONS = [
-  { name: "Fraunces", family: "'Fraunces', serif", url: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&display=swap" },
-  { name: "Playfair Display", family: "'Playfair Display', serif", url: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" },
-  { name: "Cormorant", family: "'Cormorant Garamond', serif", url: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&display=swap" },
-  { name: "Bodoni Moda", family: "'Bodoni Moda', serif", url: "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&display=swap" },
-  { name: "DM Serif Display", family: "'DM Serif Display', serif", url: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" },
-  { name: "Newsreader", family: "'Newsreader', serif", url: "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&display=swap" },
-  { name: "Italiana", family: "'Italiana', serif", url: "https://fonts.googleapis.com/css2?family=Italiana&display=swap" },
-  { name: "Cinzel", family: "'Cinzel', serif", url: "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" },
-  { name: "Libre Caslon", family: "'Libre Caslon Display', serif", url: "https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" },
-  { name: "Tenor Sans", family: "'Tenor Sans', sans-serif", url: "https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" },
-  { name: "Marcellus", family: "'Marcellus', serif", url: "https://fonts.googleapis.com/css2?family=Marcellus&display=swap" },
-  { name: "Abril Fatface", family: "'Abril Fatface', serif", url: "https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" },
-  { name: "Big Shoulders", family: "'Big Shoulders Display', sans-serif", url: "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&display=swap" },
-  { name: "Anton", family: "'Anton', sans-serif", url: "https://fonts.googleapis.com/css2?family=Anton&display=swap" },
-  { name: "Archivo Black", family: "'Archivo Black', sans-serif", url: "https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" },
-  { name: "Syne", family: "'Syne', sans-serif", url: "https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&display=swap" },
-  { name: "Space Grotesk", family: "'Space Grotesk', sans-serif", url: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" },
-  { name: "Major Mono", family: "'Major Mono Display', monospace", url: "https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" },
-  { name: "Caveat", family: "'Caveat', cursive", url: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" },
-  { name: "Yeseva One", family: "'Yeseva One', serif", url: "https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" },
-  { name: "Cormorant Infant", family: "'Cormorant Infant', serif", url: "https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,500;0,700;1,500&display=swap" },
-  { name: "EB Garamond", family: "'EB Garamond', serif", url: "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,500&display=swap" },
-  { name: "Libre Bodoni", family: "'Libre Bodoni', serif", url: "https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,500;0,700;1,500&display=swap" },
-  { name: "Old Standard", family: "'Old Standard TT', serif", url: "https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" },
-  { name: "Cardo", family: "'Cardo', serif", url: "https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" },
-  { name: "Prata", family: "'Prata', serif", url: "https://fonts.googleapis.com/css2?family=Prata&display=swap" },
-  { name: "Cormorant SC", family: "'Cormorant SC', serif", url: "https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;700&display=swap" },
-  { name: "Spectral", family: "'Spectral', serif", url: "https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,700;1,500&display=swap" },
-  { name: "Lora", family: "'Lora', serif", url: "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&display=swap" },
-  { name: "Forum", family: "'Forum', serif", url: "https://fonts.googleapis.com/css2?family=Forum&display=swap" },
-  { name: "Cinzel Decorative", family: "'Cinzel Decorative', serif", url: "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&display=swap" },
-  { name: "Bebas Neue", family: "'Bebas Neue', sans-serif", url: "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" },
-  { name: "Oswald", family: "'Oswald', sans-serif", url: "https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" },
-  { name: "Unbounded", family: "'Unbounded', sans-serif", url: "https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&display=swap" },
-  { name: "Bricolage", family: "'Bricolage Grotesque', sans-serif", url: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" },
-  { name: "Instrument Serif", family: "'Instrument Serif', serif", url: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" },
-  { name: "Cormorant Garamond", family: "'Cormorant Garamond', serif", url: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&display=swap" },
-  { name: "Sacramento", family: "'Sacramento', cursive", url: "https://fonts.googleapis.com/css2?family=Sacramento&display=swap" },
-  { name: "Great Vibes", family: "'Great Vibes', cursive", url: "https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" },
-  { name: "Dancing Script", family: "'Dancing Script', cursive", url: "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" },
-  { name: "Pinyon Script", family: "'Pinyon Script', cursive", url: "https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" },
-  { name: "Allura", family: "'Allura', cursive", url: "https://fonts.googleapis.com/css2?family=Allura&display=swap" },
-  { name: "Monoton", family: "'Monoton', sans-serif", url: "https://fonts.googleapis.com/css2?family=Monoton&display=swap" },
-  { name: "Rozha One", family: "'Rozha One', serif", url: "https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" },
-  { name: "Tangerine", family: "'Tangerine', cursive", url: "https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" },
-  { name: "Parisienne", family: "'Parisienne', cursive", url: "https://fonts.googleapis.com/css2?family=Parisienne&display=swap" },
-];
-
-const NameWithFontPicker = () => {
-  const [idx, setIdx] = useState(0);
-  const font = FONT_OPTIONS[idx];
-  useEffect(() => {
-    const id = `font-preview-${font.name.replace(/\s+/g, "-")}`;
-    if (!document.getElementById(id)) {
-      const link = document.createElement("link");
-      link.id = id;
-      link.rel = "stylesheet";
-      link.href = font.url;
-      document.head.appendChild(link);
-    }
-  }, [font]);
-  return (
-    <div>
-      <h2
-        className="leading-[0.85] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center"
-        style={{ fontFamily: font.family, fontWeight: 500 }}
-      >
-        <span className="block text-ink">MEGAN</span>
-        <span className="block italic" style={{ color: "hsl(var(--accent-burnt))" }}>
-          Ho.
-        </span>
-      </h2>
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-        <span className="font-mono text-[10px] small-caps text-ink-mute mr-2">Try a font:</span>
-        {FONT_OPTIONS.map((f, i) => (
-          <button
-            key={f.name}
-            onClick={() => setIdx(i)}
-            className={`font-mono text-[10px] small-caps px-2 py-1 border transition-colors ${
-              i === idx
-                ? "bg-ink text-paper border-ink"
-                : "bg-paper text-ink border-ink/40 hover:border-ink"
-            }`}
-            style={{ fontFamily: f.family }}
-          >
-            {f.name}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
@@ -190,7 +97,18 @@ const Hero = () => (
         <p className="font-display text-2xl md:text-3xl text-ink-soft mb-8 md:mb-12">
           Hello, I&rsquo;m
         </p>
-        <NameWithFontPicker />
+        <h2
+          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)] uppercase text-center"
+          style={{ fontWeight: 500 }}
+        >
+          <span className="block text-ink">MEGAN</span>
+          <span
+            className="block italic"
+            style={{ color: "hsl(var(--accent-burnt))" }}
+          >
+            Ho.
+          </span>
+        </h2>
         <div className="mt-10 flex items-end gap-6 flex-wrap">
           <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
           <p className="font-mono text-[11px] small-caps text-ink-mute">
