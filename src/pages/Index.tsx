@@ -502,46 +502,21 @@ const Veramante = () => (
                 ))}
               </ol>
             </div>
-          </div>
-
-          {/* MIDDLE — brand board + product story */}
-          <div className="col-span-12 md:col-span-5 flex flex-col min-h-0">
-            <figure className="flex-1 min-h-0 flex flex-col">
-              <div className="flex-1 min-h-0 flex items-center justify-center">
-                <img
-                  src={veramenteBrandBoard}
-                  alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
-                  className="max-w-full max-h-full w-auto h-auto object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <figcaption className="pt-1.5 mt-1.5 border-t border-ink/20 flex items-baseline justify-between gap-3 flex-wrap">
-                <p className="font-mono text-[9px] small-caps text-ink-mute">
-                  Plate II — Brand Identity Board
-                </p>
-                <p className="font-display italic text-[10px] text-ink-mute">
-                  Logo · Mark · Palette · Packaging
-                </p>
-              </figcaption>
-            </figure>
-
-            <div className="pt-3 mt-3 border-t border-ink/20">
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-2">
-                Product Story
-              </p>
-              <div className="grid grid-cols-3 gap-3">
+            <div className="pt-2.5">
+              <p className="font-mono text-[10px] small-caps text-accent-red mb-1.5">Product Story</p>
+              <div className="grid grid-cols-3 gap-2">
                 {[
                   { Icon: Lightbulb, label: "Concept", body: "Sunscreen as a wearable accessory.", pull: "Wear it, don't hide it." },
                   { Icon: Eye, label: "Insight", body: "People skip SPF when it's hidden.", pull: "Aesthetic = adherence." },
                   { Icon: Package, label: "Solution", body: "SPF50+ stick paired with blind-box collectible charms.", pull: "Product as touchpoint." },
                 ].map(({ Icon, label, body, pull }) => (
                   <div key={label} className="flex flex-col">
-                    <div className="flex items-center gap-1.5 mb-1">
-                      <Icon className="size-3 text-accent-red" />
+                    <div className="flex items-center gap-1 mb-0.5">
+                      <Icon className="size-2.5 text-accent-red" />
                       <p className="font-mono text-[9px] small-caps text-ink-mute">{label}</p>
                     </div>
-                    <p className="font-display text-[11px] leading-snug mb-1.5">{body}</p>
-                    <p className="mt-auto font-display italic text-[10px] text-accent-red leading-snug border-l-2 border-accent-red pl-2">
+                    <p className="font-display text-[10px] leading-snug mb-1">{body}</p>
+                    <p className="mt-auto font-display italic text-[9px] text-accent-red leading-snug border-l-2 border-accent-red pl-1.5">
                       {pull}
                     </p>
                   </div>
@@ -549,6 +524,26 @@ const Veramante = () => (
               </div>
             </div>
           </div>
+
+          {/* MIDDLE — brand identity board */}
+          <figure className="col-span-12 md:col-span-5 flex flex-col min-h-0">
+            <div className="flex-1 min-h-0 flex items-center justify-center">
+              <img
+                src={veramenteBrandBoard}
+                alt="Veramente brand identity board featuring primary logo, secondary logo, brand mark, color palette, and packaging mockups"
+                className="max-w-full max-h-full w-auto h-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="pt-1.5 mt-1.5 border-t border-ink/20 flex items-baseline justify-between gap-3 flex-wrap">
+              <p className="font-mono text-[9px] small-caps text-ink-mute">
+                Plate II — Brand Identity Board
+              </p>
+              <p className="font-display italic text-[10px] text-ink-mute">
+                Logo · Mark · Palette · Packaging
+              </p>
+            </figcaption>
+          </figure>
 
           {/* RIGHT — 3 product/lifestyle plates stacked */}
           <div className="col-span-12 md:col-span-3 flex flex-col gap-2 md:gap-3 min-h-0">
