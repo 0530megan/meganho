@@ -137,9 +137,6 @@ const AboutMe = () => {
             <ArrowLeft className="size-3.5" />
             Back to Folio
           </Link>
-          <p className="font-mono text-[11px] small-caps text-ink-mute hidden md:block">
-            {TODAY}
-          </p>
           <Link
             to="/#contact"
             className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(var(--accent-burnt))] transition-colors"
