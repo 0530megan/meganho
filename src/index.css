@@ -18,7 +18,11 @@
     --rule: 30 8% 78%;
     --accent-red: 8 72% 42%;            /* editorial vermilion */
     --accent-ochre: 35 55% 48%;
-    --accent-burnt: 18 78% 44%;         /* burnt orange */
+    --accent-burnt: 18 78% 44%;         /* primary accent */
+    --accent-burnt-darker: 18 78% 16%;
+    --accent-burnt-dark: 18 78% 29%;
+    --accent-burnt-light: 18 78% 62%;
+    --accent-burnt-lighter: 18 78% 76%;
 
     --card: 44 24% 95%;
     --card-foreground: 30 6% 11%;
