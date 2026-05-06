@@ -115,7 +115,7 @@ const Hero = () => (
             Lead Essay · 01
           </p>
         </div>
-        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft mt-6 max-w-none whitespace-nowrap">
+        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft mt-6 whitespace-nowrap text-center">
           I&rsquo;m passionate about marketing that turns heads and leaves an impression.
         </p>
       </div>
