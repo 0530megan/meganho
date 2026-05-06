@@ -10,7 +10,9 @@ import {
   Heart,
 } from "lucide-react";
 
-import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
+import veramenteLogos from "@/assets/veramente-logos.jpg";
+import veramentePalette from "@/assets/veramente-palette.jpg";
+import veramentePackaging from "@/assets/veramente-packaging.jpg";
 import veramenteLogo from "@/assets/veramente-logo.jpg";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
@@ -195,134 +197,104 @@ const Veramente = () => (
         </div>
       </div>
 
-      {/* Board — assembled from crops of the original Figma board */}
-      <div className="border-2 border-ink bg-paper shadow-[12px_14px_0_0_hsl(var(--accent-ochre))]">
-        {/* Primary logo banner — sun */}
-        <div className="relative border-b-2 border-ink">
-          <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-ink tracking-[0.25em]">
-            Primary Logo
-          </span>
-          <div
-            className="aspect-[16/5] w-full"
-            role="img"
-            aria-label="Veramente primary sun mark"
-            style={{
-              backgroundImage: `url(${veramenteBrandBoard})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "100% auto",
-              backgroundPosition: "center 0%",
-              clipPath: "inset(0)",
-            }}
+      {/* Board — three uploaded plates, neatly composed */}
+      <div className="grid grid-cols-12 gap-5 md:gap-6">
+        {/* Plate A — Logos */}
+        <figure className="col-span-12 md:col-span-8 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-ochre))] overflow-hidden">
+          <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+            <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
+              Plate A · Logo System
+            </p>
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Primary · Secondary · Mark
+            </p>
+          </div>
+          <img
+            src={veramenteLogos}
+            alt="Veramente logo system: primary sun mark, script wordmark, Ve monogram"
+            className="block w-full h-auto"
           />
-        </div>
-
-        {/* Secondary logo + Brand mark — both 50% width slices */}
-        <div className="grid grid-cols-2 border-b-2 border-ink">
-          <div className="relative border-r-2 border-ink">
-            <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-paper tracking-[0.25em]">
-              Secondary Logo
+          <figcaption className="px-4 py-3 border-t-2 border-ink flex items-baseline justify-between gap-3">
+            <p className="font-display italic text-base">
+              A sun, a signature, a single letter — three ways to say the same thing.
+            </p>
+            <span className="font-mono text-[10px] small-caps text-ink-mute whitespace-nowrap">
+              Fig. 01
             </span>
-            <div
-              className="aspect-[5/4] w-full overflow-hidden"
-              role="img"
-              aria-label="Veramente script wordmark on dusty rose"
-              style={{
-                backgroundImage: `url(${veramenteBrandBoard})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "200% auto",
-                backgroundPosition: "0% 24%",
-              }}
+          </figcaption>
+        </figure>
+
+        {/* Plate B — Palette */}
+        <figure className="col-span-12 md:col-span-4 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-burnt))] overflow-hidden flex flex-col">
+          <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+            <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
+              Plate B · Palette
+            </p>
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              3 swatches
+            </p>
+          </div>
+          <div className="flex-1 flex items-center justify-center bg-[#E8D3CE]">
+            <img
+              src={veramentePalette}
+              alt="Veramente color palette: Soft Peach Beige, Deep Olive Moss, Dusty Rose Taupe"
+              className="block w-full h-auto"
             />
           </div>
-          <div className="relative">
-            <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-paper tracking-[0.25em]">
-              Brand Mark
-            </span>
-            <div
-              className="aspect-[5/4] w-full overflow-hidden"
-              role="img"
-              aria-label="Veramente Ve monogram on olive"
-              style={{
-                backgroundImage: `url(${veramenteBrandBoard})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "200% auto",
-                backgroundPosition: "100% 24%",
-              }}
-            />
-          </div>
-        </div>
+          <figcaption className="px-4 py-3 border-t-2 border-ink">
+            <p className="font-display italic text-sm leading-snug">
+              Late-afternoon light, bottled.
+            </p>
+            <div className="mt-2 grid grid-cols-3 gap-2 font-mono text-[9px] small-caps text-ink-mute">
+              <span>#F7E0D1</span>
+              <span>#55573F</span>
+              <span>#AA706C</span>
+            </div>
+          </figcaption>
+        </figure>
 
-        {/* Color Palette — crop from the source */}
-        <div className="relative border-b-2 border-ink">
-          <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-ink tracking-[0.25em]">
-            Color Palette
-          </span>
-          <div
-            className="aspect-[16/6] w-full overflow-hidden"
-            role="img"
-            aria-label="Veramente color palette: peach beige, olive moss, rose taupe"
-            style={{
-              backgroundImage: `url(${veramenteBrandBoard})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "100% auto",
-              backgroundPosition: "center 47%",
-            }}
+        {/* Plate C — Packaging */}
+        <figure className="col-span-12 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-red))] overflow-hidden">
+          <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+            <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
+              Plate C · Packaging & Charms
+            </p>
+            <p className="font-mono text-[10px] small-caps text-ink-mute">
+              Dieline · Carton · Collectibles
+            </p>
+          </div>
+          <img
+            src={veramentePackaging}
+            alt="Veramente packaging: SPF stick dieline, outer carton, and collectible bag charms"
+            className="block w-full h-auto"
           />
-        </div>
-
-        {/* Packaging row — dieline (wide) + box stack */}
-        <div className="grid grid-cols-3">
-          <div className="relative col-span-2 border-r-2 border-ink">
-            <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[11px] small-caps text-ink tracking-[0.25em]">
-              Packaging — Dieline
-            </span>
-            <div
-              className="aspect-[3/2] w-full overflow-hidden"
-              role="img"
-              aria-label="Veramente SPF stick dieline and packaging spread"
-              style={{
-                backgroundImage: `url(${veramenteBrandBoard})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "150% auto",
-                backgroundPosition: "0% 100%",
-              }}
-            />
-          </div>
-          <div className="grid grid-rows-2">
-            <div className="relative border-b-2 border-ink">
-              <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[10px] small-caps text-ink tracking-[0.25em]">
-                Outer Box
-              </span>
-              <div
-                className="aspect-[4/3] w-full overflow-hidden"
-                role="img"
-                aria-label="Veramente outer box pair"
-                style={{
-                  backgroundImage: `url(${veramenteBrandBoard})`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "300% auto",
-                  backgroundPosition: "100% 78%",
-                }}
-              />
+          <figcaption className="px-4 py-3 border-t-2 border-ink grid md:grid-cols-3 gap-3 text-sm">
+            <div>
+              <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
+                ① Dieline
+              </p>
+              <p className="font-display italic text-ink-soft leading-snug">
+                Flat-pack carton with branded interior — pretty inside and out.
+              </p>
             </div>
-            <div className="relative">
-              <span className="absolute top-3 left-1/2 -translate-x-1/2 z-10 font-mono text-[10px] small-caps text-ink tracking-[0.25em]">
-                Charms
-              </span>
-              <div
-                className="aspect-[4/3] w-full overflow-hidden"
-                role="img"
-                aria-label="Veramente collectible bag charms"
-                style={{
-                  backgroundImage: `url(${veramenteBrandBoard})`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "300% auto",
-                  backgroundPosition: "100% 100%",
-                }}
-              />
+            <div>
+              <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
+                ② Carton
+              </p>
+              <p className="font-display italic text-ink-soft leading-snug">
+                Soft cream + olive base. Sun mark up top, story along the side.
+              </p>
             </div>
-          </div>
-        </div>
+            <div>
+              <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
+                ③ Charms
+              </p>
+              <p className="font-display italic text-ink-soft leading-snug">
+                Blind-box collectibles that clip onto your bag — SPF you actually want to show.
+              </p>
+            </div>
+          </figcaption>
+        </figure>
       </div>
 
       <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
