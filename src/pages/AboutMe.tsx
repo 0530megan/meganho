@@ -1,7 +1,53 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
-import { AdjustableImage } from "@/components/AdjustableImage";
+
+/** Read-only image that honours any previously-saved adjustment in localStorage. */
+const SavedImage = ({
+  src,
+  alt,
+  storageKey,
+  aspectRatio = "4 / 5",
+}: {
+  src: string;
+  alt: string;
+  storageKey: string;
+  aspectRatio?: string;
+}) => {
+  const t = (() => {
+    if (typeof window === "undefined") return { scale: 1, x: 50, y: 50 };
+    try {
+      const saved = localStorage.getItem(storageKey);
+      return saved
+        ? { scale: 1, x: 50, y: 50, ...JSON.parse(saved) }
+        : { scale: 1, x: 50, y: 50 };
+    } catch {
+      return { scale: 1, x: 50, y: 50 };
+    }
+  })();
+  const isAuto = aspectRatio === "auto";
+  return (
+    <div className={isAuto ? "relative h-full w-full" : "relative"}>
+      <div
+        className={`relative w-full overflow-hidden bg-ink/5 ${isAuto ? "h-full" : ""}`}
+        style={isAuto ? undefined : { aspectRatio }}
+      >
+        <img
+          src={src}
+          alt={alt}
+          draggable={false}
+          className="absolute inset-0 w-full h-full select-none"
+          style={{
+            objectFit: "cover",
+            objectPosition: `${t.x}% ${t.y}%`,
+            transform: `scale(${t.scale})`,
+            transformOrigin: `${t.x}% ${t.y}%`,
+          }}
+        />
+      </div>
+    </div>
+  );
+};
 import meganPortrait from "@/assets/megan-portrait-about.jpg";
 import picSunset from "@/assets/about/sunset.jpg";
 import picSandwich from "@/assets/about/sandwich.jpg";
