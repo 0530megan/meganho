@@ -242,6 +242,7 @@ const Veramente = () => (
               src={veramenteLogos}
               alt="Veramente logo system: primary sun mark, script wordmark, Ve monogram"
               className="block w-full h-auto border-b-2 border-ink"
+              style={{ background: "hsl(82 25% 28%)" }}
             />
 
             {/* Palette image */}
