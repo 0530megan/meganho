@@ -200,7 +200,7 @@ const SelectedWork = () => {
       subtitle: "Carry Your SPF — wearable sunscreen as accessory.",
       cover: veramenteLogo,
       tint: "hsl(28 60% 92%)",
-      href: "#work",
+      href: "/case/veramente",
       tags: ["Beauty", "Concept", "Identity"],
       stamp: "SPF · 50",
       tilt: "-rotate-2",
@@ -212,7 +212,7 @@ const SelectedWork = () => {
       subtitle: "Sparkling blood orange — keep it cute, keep it sippy.",
       cover: sippyLogo,
       tint: "hsl(10 90% 55%)",
-      href: "#sippy",
+      href: "/case/sippy",
       tags: ["Beverage", "Packaging", "Campaign"],
       stamp: "Pop · Fizz",
       tilt: "rotate-1",
@@ -224,7 +224,7 @@ const SelectedWork = () => {
       subtitle: "Small-batch ice cream — a spoonful of nostalgia.",
       cover: megsCreamiLogo,
       tint: "hsl(350 70% 92%)",
-      href: "#megs-creami",
+      href: "/case/megs-creami",
       tags: ["Dessert", "Brand", "World"],
       stamp: "Scoop · 02",
       tilt: "-rotate-1",
@@ -250,9 +250,9 @@ const SelectedWork = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 pt-4">
         {studies.map((s, i) => (
-          <a
+          <Link
             key={s.no}
-            href={s.href}
+            to={s.href}
             className={`group relative block border border-ink bg-paper transition-all duration-300 hover:-translate-y-2 hover:rotate-0 ${s.tilt}`}
             style={{ boxShadow: `8px 10px 0 0 ${s.shadow}` }}
           >
@@ -312,7 +312,7 @@ const SelectedWork = () => {
                 ))}
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -1275,9 +1275,6 @@ const Index = () => {
       <main>
         <SelectedWork />
         <Approach />
-        <Veramante />
-        <Sippy />
-        <MegsCreami />
         <Skills />
         <Experience />
         <Statement />
