@@ -291,7 +291,7 @@ const LayoutStack = () => {
 
   return (
     <div className="container py-12 md:py-20 grid grid-cols-12 gap-10 items-center">
-      <div className="col-span-12 md:col-span-7 relative h-[460px] md:h-[560px]">
+      <div className="col-span-12 md:col-span-8 relative h-[600px] md:h-[760px]">
         {order.slice(0, 4).map((idx, stackPos) => {
           const item = PERSONALITIES[idx];
           const isTop = stackPos === 0;
@@ -337,7 +337,7 @@ const LayoutStack = () => {
           );
         })}
       </div>
-      <div className="col-span-12 md:col-span-5">
+      <div className="col-span-12 md:col-span-4">
         <p className="font-mono text-[11px] small-caps text-ink-soft mb-3">Card {String(top+1).padStart(2,"0")} of {String(PERSONALITIES.length).padStart(2,"0")}</p>
         <h3 key={top} className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight animate-fade-in" style={{ color: ochre }}>
           {p.trait}.
