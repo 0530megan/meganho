@@ -89,7 +89,7 @@ export const AdjustableImage = ({
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="absolute -top-3 -right-3 z-20 font-mono text-[11px] small-caps font-bold bg-ink text-paper border border-paper px-3 py-1.5 shadow-md hover:bg-[hsl(var(--accent-burnt))] transition-colors"
+        className="absolute top-2 right-2 z-20 font-mono text-[11px] small-caps font-bold bg-ink text-paper border border-paper px-3 py-1.5 shadow-md hover:bg-[hsl(var(--accent-burnt))] transition-colors"
       >
         {open ? "Done" : "Adjust ✎"}
       </button>
