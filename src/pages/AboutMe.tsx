@@ -265,9 +265,8 @@ const PersonalitiesSection = () => {
         <div className="flex items-end justify-between gap-6 flex-wrap mb-6">
           <div>
             <p className="font-mono text-[11px] small-caps text-white mb-2">Issue №02 · The Personality Index</p>
-            <h2 className="font-display font-light text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] tracking-tight">
-              who<span className="italic" style={{ color: "hsl(46 85% 78%)" }}> am </span>i,
-              <br />really?
+            <h2 className="font-display font-light text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] tracking-tight whitespace-nowrap">
+              who<span className="italic" style={{ color: "hsl(46 85% 78%)" }}> am </span>i, really?
             </h2>
           </div>
           <p className="font-mono text-[11px] small-caps text-white">{PERSONALITIES.length} entries · tap a card</p>
