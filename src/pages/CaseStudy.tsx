@@ -394,7 +394,7 @@ const Veramente = () => (
                     src={c.img}
                     alt={`Veramente ${c.label.toLowerCase()}`}
                     loading="lazy"
-                    className={`absolute inset-0 w-full h-full object-center ${c.n === "03" ? "object-cover" : "object-contain"}`}
+                    className="absolute inset-0 w-full h-full object-cover object-center"
                   />
                 </div>
               </figure>
