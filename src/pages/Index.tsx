@@ -188,7 +188,7 @@ const SectionHeader = ({
 }) => (
   <div className="border-t-4 border-ink pt-4 mb-10 flex items-end justify-between gap-6 flex-wrap">
     <div>
-      <p className="font-mono font-bold text-[11px] small-caps text-accent-red mb-2">{kicker}</p>
+      <p className="font-mono font-bold text-sm small-caps text-accent-red mb-2">{kicker}</p>
       <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
         {title}
       </h2>
