@@ -261,42 +261,73 @@ const Veramente = () => (
         </div>
       </div>
 
-      {/* Numbered design notes (C) */}
+      {/* Design Notes — 2x2 card grid, larger body, clearer hierarchy */}
       <div className="mt-16 md:mt-20 border-t-2 border-ink pt-10">
-        <div className="flex items-end justify-between flex-wrap gap-3 mb-8">
-          <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.2em]">
-            Design Notes
-          </p>
-          <p className="font-mono text-[10px] small-caps text-ink-mute">
-            Four ideas behind the marks
+        <div className="grid md:grid-cols-12 gap-6 items-end mb-8">
+          <div className="md:col-span-7">
+            <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.2em] mb-3">
+              Design Notes
+            </p>
+            <h3 className="font-display text-3xl md:text-4xl leading-[0.95] tracking-tight">
+              Four ideas behind
+              <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>
+                {" "}the marks.
+              </span>
+            </h3>
+          </div>
+          <p className="md:col-span-5 font-display italic text-base text-ink-soft leading-relaxed md:text-right">
+            The thinking that shaped every curve, color, and clip.
           </p>
         </div>
 
-        <ol className="grid md:grid-cols-2 gap-x-12">
+        <ol className="grid sm:grid-cols-2 gap-5 md:gap-6">
           {[
-            ["01", "Sun-bleached, never loud", "Soft confidence over shout — a brand that reads as calm, not clinical."],
-            ["02", "A signature, not a logo", "The wordmark is handwritten — human touch where most SPF feels sterile."],
-            ["03", "Wear it, don't hide it", "The mark doubles as the product silhouette: a charm-loop you clip on."],
-            ["04", "Aesthetic = adherence", "If it's pretty enough to display, you'll reach for it. Beauty is the channel."],
-          ].map(([no, title, body]) => (
+            {
+              no: "01",
+              title: "Sun-bleached, never loud",
+              body: "Soft confidence over shout. The brand reads as calm and considered — not clinical, not shouting from a shelf.",
+              tag: "Tone",
+            },
+            {
+              no: "02",
+              title: "A signature, not a logo",
+              body: "The wordmark is handwritten by hand. A human touch in a category that usually feels sterile and pharmaceutical.",
+              tag: "Identity",
+            },
+            {
+              no: "03",
+              title: "Wear it, don't hide it",
+              body: "The brand mark doubles as the product silhouette — a charm-loop you clip onto a bag, in plain sight.",
+              tag: "Form",
+            },
+            {
+              no: "04",
+              title: "Aesthetic = adherence",
+              body: "If it's pretty enough to display, you'll reach for it more often. Beauty isn't decoration — it's the marketing channel.",
+              tag: "Strategy",
+            },
+          ].map(({ no, title, body, tag }) => (
             <li
               key={no}
-              className="grid grid-cols-[auto_1fr] gap-5 py-5 border-b border-ink/20"
+              className="relative bg-paper border-2 border-ink p-6 md:p-7 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_hsl(var(--accent-burnt))] transition-shadow"
             >
-              <span
-                className="font-display text-3xl leading-none pt-1"
-                style={{ color: "hsl(var(--accent-burnt))" }}
-              >
-                {no}
-              </span>
-              <div>
-                <h3 className="font-display text-xl leading-tight mb-1">
-                  {title}
-                </h3>
-                <p className="font-display italic text-sm text-ink-soft leading-relaxed">
-                  {body}
-                </p>
+              <div className="flex items-baseline justify-between gap-4 mb-4 pb-3 border-b border-ink/20">
+                <span
+                  className="font-display text-5xl leading-none"
+                  style={{ color: "hsl(var(--accent-burnt))" }}
+                >
+                  {no}
+                </span>
+                <span className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.2em]">
+                  · {tag} ·
+                </span>
               </div>
+              <h4 className="font-display text-2xl leading-tight mb-3 text-ink">
+                {title}
+              </h4>
+              <p className="font-body text-[15px] text-ink-soft leading-relaxed">
+                {body}
+              </p>
             </li>
           ))}
         </ol>
