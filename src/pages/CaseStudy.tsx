@@ -205,7 +205,7 @@ const Veramente = () => (
         const board = veramenteBrandBoard;
         const cell = (
           rect: [number, number, number, number],
-        ): React.CSSProperties => {
+        ): CSSProperties => {
           const [x, y, w, h] = rect;
           return {
             backgroundImage: `url(${board})`,
