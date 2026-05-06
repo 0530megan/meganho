@@ -115,7 +115,7 @@ const Hero = () => (
         </p>
       </div>
       <div className="col-span-12 md:col-span-4">
-        <figure className="relative">
+        <figure className="relative mt-10 md:mt-14">
           <div className="border border-ink bg-paper p-2 shadow-[10px_12px_0_0_hsl(var(--ink))] rotate-[2deg] hover:rotate-0 transition-transform duration-500">
             <img
               src={meganPortrait}
