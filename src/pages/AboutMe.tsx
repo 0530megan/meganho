@@ -247,7 +247,7 @@ const AboutMe = () => {
           {FAVOURITES.map((f) => (
             <div key={f.label} className="flex items-baseline justify-between gap-4 border-b border-ink/20 pb-3">
               <dt className="font-mono text-[11px] small-caps text-ink-mute shrink-0">{f.label}</dt>
-              <dd className="font-display italic text-lg text-right">{f.value}</dd>
+              <dd className="font-display italic text-lg text-right" style={{ color: "hsl(var(--accent-burnt))" }}>{f.value}</dd>
             </div>
           ))}
         </dl>
