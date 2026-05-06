@@ -61,20 +61,27 @@ const Hero = () => (
               About Me <ArrowUpRight className="size-3" />
             </Link>
           </li>
-          {NAV.map((n) => (
-            <li key={n.id}>
-              <a
-                href={`#${n.id}`}
-                className="font-mono text-[11px] small-caps text-ink-soft hover:text-accent-red transition-colors whitespace-nowrap"
-              >
-                {n.label}
-              </a>
-            </li>
-          ))}
+          {NAV.map((n) => {
+            const isHighlight = n.id === "work";
+            return (
+              <li key={n.id}>
+                <a
+                  href={`#${n.id}`}
+                  className={
+                    isHighlight
+                      ? "inline-flex items-center font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity whitespace-nowrap"
+                      : "font-mono text-[11px] small-caps text-ink-soft hover:text-accent-red transition-colors whitespace-nowrap"
+                  }
+                >
+                  {n.label}
+                </a>
+              </li>
+            );
+          })}
           <li>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-ink hover:text-accent-red whitespace-nowrap"
+              className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity whitespace-nowrap"
             >
               Hire <ArrowUpRight className="size-3" />
             </a>
