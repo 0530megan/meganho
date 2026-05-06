@@ -109,12 +109,6 @@ const Hero = () => (
             Ho.
           </span>
         </h2>
-        <div className="mt-5 flex items-end gap-6 flex-wrap">
-          <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
-          <p className="font-mono text-[11px] small-caps text-ink-mute">
-            Lead Essay · 01
-          </p>
-        </div>
         <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft mt-3 whitespace-nowrap text-center rounded-sm font-light">
           I&rsquo;m passionate about marketing that turns heads and leaves an impression.
         </p>
