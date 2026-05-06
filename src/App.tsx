@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Work from "./pages/Work.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import { AccentColorPicker } from "./components/AccentColorPicker";
 
 const queryClient = new QueryClient();
 
