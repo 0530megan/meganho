@@ -91,11 +91,11 @@ const TODAY = new Date().toLocaleDateString("en-GB", {
 });
 
 const FAVOURITES = [
-  { label: "Coffee order", value: "Oat flat white, extra hot" },
-  { label: "Listening to", value: "Clairo, Mk.gee, Ravyn Lenae" },
-  { label: "Reading", value: "Anything by Joan Didion" },
+  { label: "Coffee order", value: "Iced Long Black, Extra Shots" },
+  { label: "Listening to", value: "Winny, Fred Again.., Sammy Virji" },
+  { label: "Reading", value: "The Untethered Soul by Michael A. Singer" },
   { label: "Watching", value: "Studio Ghibli on repeat" },
-  { label: "Designing in", value: "Figma, always Figma" },
+  { label: "Designing in", value: "Figma, always Figma and.. Canva" },
   { label: "Recharging at", value: "A noisy ramen bar" },
 ];
 
