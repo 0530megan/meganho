@@ -351,63 +351,88 @@ const Approach = () => {
       body: "I use design as a tool to communicate marketing ideas, transforming concepts into tangible brand experiences through visual storytelling.",
     },
   ];
+  const rotations = ["-rotate-2", "rotate-1", "-rotate-1"];
+  const stamps = ["Strategy", "Craft", "Story"];
   return (
-    <section id="approach" className="relative bg-paper-deep border-y border-ink/20 overflow-hidden">
-      {/* Decorative oversized word in background */}
-      <span
+    <section id="approach" className="relative bg-paper overflow-hidden border-y-2 border-ink">
+      {/* Soft tinted backdrop */}
+      <div
         aria-hidden
-        className="pointer-events-none absolute -top-6 right-[-2vw] font-display italic text-[18vw] leading-none text-ink/[0.04] select-none"
-      >
-        approach
-      </span>
+        className="absolute inset-0 -z-0"
+        style={{
+          background:
+            "radial-gradient(60% 50% at 80% 20%, hsl(var(--accent-burnt) / 0.10) 0%, transparent 65%), radial-gradient(45% 45% at 10% 85%, hsl(var(--accent-red) / 0.08) 0%, transparent 65%)",
+        }}
+      />
 
       <div className="container py-20 md:py-28 relative">
-        {/* Editorial header */}
-        <div className="grid grid-cols-12 gap-6 items-end mb-16 md:mb-24">
-          <div className="col-span-12 md:col-span-7">
-            <p className="font-mono font-bold text-sm small-caps text-accent-red mb-3">
-              · Method ·
-            </p>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">
-              How I <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>think</span>,
-              <br />
-              how I <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>make</span>.
-            </h2>
-          </div>
-          <div className="hidden md:flex col-span-5 items-end justify-end gap-3">
-            <span className="h-px flex-1 bg-ink/40" />
-            <span className="font-mono text-xs small-caps text-ink-mute whitespace-nowrap">Section III · Three principles</span>
-          </div>
+        {/* Header — small kicker, big handwritten-feel headline */}
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <p className="font-mono font-bold text-xs small-caps text-accent-red mb-4 tracking-[0.2em]">
+            ✦ The Method ✦
+          </p>
+          <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">
+            Three things I&rsquo;m
+            <br />
+            <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>
+              quietly obsessed
+            </span>{" "}
+            with.
+          </h2>
         </div>
 
-        {/* Principles list — editorial, numbered, with hover lift */}
-        <ol className="divide-y divide-ink/20 border-y border-ink/20">
-          {principles.map((p) => (
-            <li
+        {/* Pinned-card layout */}
+        <div className="grid md:grid-cols-3 gap-8 md:gap-6 max-w-6xl mx-auto">
+          {principles.map((p, i) => (
+            <article
               key={p.no}
-              className="group grid grid-cols-12 gap-6 py-8 md:py-12 transition-colors duration-300 hover:bg-paper"
+              className={`group relative bg-paper border border-ink p-7 md:p-8 ${rotations[i]} hover:rotate-0 transition-transform duration-500 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_hsl(var(--accent-burnt))]`}
             >
-              <div className="col-span-12 md:col-span-2">
+              {/* Pin */}
+              <span
+                aria-hidden
+                className="absolute -top-2 left-1/2 -translate-x-1/2 size-4 rounded-full border border-ink"
+                style={{ background: "hsl(var(--accent-burnt))" }}
+              />
+
+              {/* Stamp tag */}
+              <span
+                className="absolute -top-3 -right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-3"
+              >
+                {stamps[i]}
+              </span>
+
+              {/* Big numeral */}
+              <div className="flex items-baseline gap-3 mb-5 border-b border-ink/30 pb-4">
                 <span
-                  className="font-display italic text-6xl md:text-7xl leading-none transition-transform duration-500 group-hover:translate-x-2 inline-block"
+                  className="font-display italic text-5xl leading-none"
                   style={{ color: "hsl(var(--accent-burnt))" }}
                 >
                   {p.no}
                 </span>
+                <span className="font-mono text-[10px] small-caps text-ink-mute">
+                  Principle
+                </span>
               </div>
-              <div className="col-span-12 md:col-span-5">
-                <h3 className="font-display text-2xl md:text-3xl leading-tight">
-                  {p.title}
-                </h3>
-              </div>
-              <div className="col-span-12 md:col-span-5">
-                <p className="font-display italic text-lg md:text-xl leading-relaxed text-ink-soft">
-                  {p.body}
-                </p>
-              </div>
-            </li>
+
+              <h3 className="font-display text-2xl md:text-[1.65rem] leading-tight mb-4">
+                {p.title}
+              </h3>
+              <p className="font-display italic text-base md:text-lg leading-relaxed text-ink-soft">
+                {p.body}
+              </p>
+            </article>
           ))}
-        </ol>
+        </div>
+
+        {/* Footer rule */}
+        <div className="mt-16 md:mt-20 flex items-center gap-4 max-w-6xl mx-auto">
+          <span className="h-px flex-1 bg-ink/30" />
+          <span className="font-mono text-[10px] small-caps text-ink-mute">
+            Section III
+          </span>
+          <span className="h-px flex-1 bg-ink/30" />
+        </div>
       </div>
     </section>
   );
