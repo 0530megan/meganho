@@ -250,9 +250,9 @@ const SelectedWork = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 pt-4">
         {studies.map((s, i) => (
-          <a
+          <Link
             key={s.no}
-            href={s.href}
+            to={s.href}
             className={`group relative block border border-ink bg-paper transition-all duration-300 hover:-translate-y-2 hover:rotate-0 ${s.tilt}`}
             style={{ boxShadow: `8px 10px 0 0 ${s.shadow}` }}
           >
