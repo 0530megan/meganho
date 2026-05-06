@@ -490,16 +490,19 @@ const Veramante = () => (
               <p className="font-mono text-[12px] small-caps text-accent-red mb-2">Brand Voice</p>
               <ol className="space-y-1 flex-1 flex flex-col justify-between">
                 {[
-                  "Soft confidence — skincare that whispers.",
-                  "Tactile, sun-washed packaging as a personal object.",
-                  "SPF as self-care, not a chore.",
-                  "A charm system that turns product into ritual.",
-                ].map((s, i) => (
+                  { t: "Soft confidence", r: " — skincare that whispers." },
+                  { t: "Tactile, sun-washed packaging", r: " as a personal object." },
+                  { t: "SPF as self-care", r: ", not a chore." },
+                  { t: "A charm system", r: " that turns product into ritual." },
+                ].map(({ t, r }, i) => (
                   <li key={i} className="flex gap-3 border-b border-rule pb-1.5">
                     <span className="font-display text-2xl text-accent-red leading-none w-8 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="font-display text-[15px] font-medium leading-snug">{s}</p>
+                    <p className="font-display text-[15px] leading-snug">
+                      <strong className="font-semibold text-ink">{t}</strong>
+                      <span className="text-ink-soft">{r}</span>
+                    </p>
                   </li>
                 ))}
               </ol>
