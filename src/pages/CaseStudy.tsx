@@ -1,3 +1,4 @@
+import type { CSSProperties, ReactNode } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   ArrowLeft,
