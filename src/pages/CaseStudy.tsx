@@ -162,7 +162,7 @@ const Veramente = () => (
     </section>
 
     {/* BIG PULL QUOTE */}
-    <section className="border-y-2 border-ink bg-ink text-paper">
+    <section className="border-y-2 border-ink text-paper" style={{ background: "#55573F" }}>
       <div className="container py-16 md:py-24 text-center">
         <p className="font-mono text-[11px] small-caps text-paper/60 mb-6 tracking-[0.3em]">
           ✦ Brand Promise ✦
