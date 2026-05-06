@@ -226,7 +226,7 @@ const Veramente = () => (
 
         {/* RIGHT — Stacked identity board (Sippy-faithful) */}
         <div className="md:col-span-7 lg:col-span-8">
-          <div className="border-2 border-ink bg-paper shadow-[12px_14px_0_0_hsl(var(--accent-ochre))] overflow-hidden">
+          <div className="border-2 border-ink shadow-[12px_14px_0_0_hsl(var(--accent-ochre))] overflow-hidden" style={{ background: "hsl(82 25% 28%)" }}>
             {/* Plate header */}
             <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
               <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
