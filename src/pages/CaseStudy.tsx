@@ -17,6 +17,7 @@ import veramentePackDieline from "@/assets/veramente-pack-dieline.png";
 import veramentePackCarton from "@/assets/veramente-pack-carton.png";
 import veramentePackCharms from "@/assets/veramente-pack-charms.jpg";
 import veramenteLogo from "@/assets/veramente-logo.jpg";
+import veramenteWordmark from "@/assets/veramente-wordmark.png";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
 import veramenteCafe from "@/assets/veramente-cafe.png";
@@ -65,7 +66,11 @@ const Veramente = () => (
             className="font-display font-light leading-[0.85] tracking-[-0.03em] uppercase text-[clamp(3.5rem,12vw,9rem)]"
             style={{ fontWeight: 500 }}
           >
-            <span className="block text-ink">Veramente</span>
+            <img
+              src={veramenteWordmark}
+              alt="Veramente"
+              className="block w-full max-w-[720px] h-auto mix-blend-multiply"
+            />
             <span
               className="block italic"
               style={{ color: "hsl(48 90% 70%)" }}
