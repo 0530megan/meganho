@@ -384,7 +384,7 @@ const LayoutStack = () => {
               >
                 <div className="relative h-full w-full overflow-hidden">
                   {isTop ? (
-                    <AdjustableImage
+                    <SavedImage
                       src={item.src}
                       alt={item.trait}
                       storageKey={`personality-${idx}`}
