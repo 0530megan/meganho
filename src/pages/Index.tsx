@@ -451,24 +451,26 @@ const Veramante = () => (
       <article className="relative w-full aspect-video border border-ink/30 bg-paper-deep/40 overflow-hidden">
         <div className="absolute inset-0 grid grid-cols-12 gap-3 md:gap-5 p-4 md:p-6">
           {/* LEFT — copy + at-a-glance + brand voice */}
-          <div className="col-span-12 md:col-span-4 flex flex-col min-h-0">
-            <p className="font-mono text-[10px] small-caps text-accent-red mb-2">
-              Case Study 01 · Beauty · Concept Brand
-            </p>
-            <h3 className="font-display font-light text-2xl md:text-4xl leading-[0.9] tracking-tight">
-              VERAMENTE
-              <span className="font-display italic text-accent-red">.</span>
-              <span className="block font-display italic text-base md:text-xl text-ink-soft mt-1.5">
-                Carry Your SPF.
-              </span>
-            </h3>
-            <p className="font-display text-[11px] md:text-xs text-ink-soft mt-2 leading-relaxed">
-              A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
-            </p>
+          <div className="col-span-12 md:col-span-4 flex flex-col min-h-0 gap-3">
+            <div>
+              <p className="font-mono text-[10px] small-caps text-accent-red mb-2">
+                Case Study 01 · Beauty · Concept Brand
+              </p>
+              <h3 className="font-display font-light text-2xl md:text-4xl leading-[0.9] tracking-tight">
+                VERAMENTE
+                <span className="font-display italic text-accent-red">.</span>
+                <span className="block font-display italic text-base md:text-xl text-ink-soft mt-1.5">
+                  Carry Your SPF.
+                </span>
+              </h3>
+              <p className="font-display text-xs md:text-sm text-ink-soft mt-2.5 leading-relaxed">
+                A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
+              </p>
+            </div>
 
-            <div className="pt-2.5">
-              <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">At a glance</p>
-              <dl className="space-y-0.5">
+            <div>
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-1.5">At a glance</p>
+              <dl className="space-y-1">
                 {[
                   ["Format", "SPF50+ stick with charm loop"],
                   ["Category", "Skincare · Accessory"],
@@ -476,47 +478,48 @@ const Veramante = () => (
                   ["Deliverables", "Logo, packaging, campaign"],
                   ["Role", "Brand, product, art direction"],
                 ].map(([k, v]) => (
-                  <div key={k} className="flex justify-between gap-3 border-b border-rule pb-0.5">
-                    <dt className="font-mono text-[9px] small-caps text-ink-mute pt-0.5">{k}</dt>
-                    <dd className="font-display text-[11px] text-right">{v}</dd>
+                  <div key={k} className="flex justify-between gap-3 border-b border-rule pb-1">
+                    <dt className="font-mono text-[10px] small-caps text-ink-mute pt-0.5">{k}</dt>
+                    <dd className="font-display text-[13px] font-medium text-right">{v}</dd>
                   </div>
                 ))}
               </dl>
             </div>
 
-            <div className="pt-2.5">
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-1.5">Brand Voice</p>
-              <ol className="space-y-0.5">
+            <div className="flex-1 min-h-0 flex flex-col">
+              <p className="font-mono text-[10px] small-caps text-accent-red mb-2">Brand Voice</p>
+              <ol className="space-y-1 flex-1 flex flex-col justify-between">
                 {[
                   "Soft confidence — skincare that whispers.",
                   "Tactile, sun-washed packaging as a personal object.",
                   "SPF as self-care, not a chore.",
                   "A charm system that turns product into ritual.",
                 ].map((s, i) => (
-                  <li key={i} className="flex gap-2 border-b border-rule pb-0.5">
-                    <span className="font-display text-base text-accent-red leading-tight w-5 shrink-0">
+                  <li key={i} className="flex gap-2.5 border-b border-rule pb-1.5">
+                    <span className="font-display text-xl text-accent-red leading-none w-7 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="font-display text-[11px] leading-snug">{s}</p>
+                    <p className="font-display text-[13px] font-medium leading-snug">{s}</p>
                   </li>
                 ))}
               </ol>
             </div>
-            <div className="pt-2.5">
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-1.5">Product Story</p>
-              <div className="grid grid-cols-3 gap-2">
+
+            <div>
+              <p className="font-mono text-[10px] small-caps text-accent-red mb-2">Product Story</p>
+              <div className="grid grid-cols-3 gap-2.5">
                 {[
                   { Icon: Lightbulb, label: "Concept", body: "Sunscreen as a wearable accessory.", pull: "Wear it, don't hide it." },
                   { Icon: Eye, label: "Insight", body: "People skip SPF when it's hidden.", pull: "Aesthetic = adherence." },
                   { Icon: Package, label: "Solution", body: "SPF50+ stick paired with blind-box collectible charms.", pull: "Product as touchpoint." },
                 ].map(({ Icon, label, body, pull }) => (
                   <div key={label} className="flex flex-col">
-                    <div className="flex items-center gap-1 mb-0.5">
-                      <Icon className="size-2.5 text-accent-red" />
-                      <p className="font-mono text-[9px] small-caps text-ink-mute">{label}</p>
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <Icon className="size-3 text-accent-red" />
+                      <p className="font-mono text-[10px] small-caps text-ink-mute">{label}</p>
                     </div>
-                    <p className="font-display text-[10px] leading-snug mb-1">{body}</p>
-                    <p className="mt-auto font-display italic text-[9px] text-accent-red leading-snug border-l-2 border-accent-red pl-1.5">
+                    <p className="font-display text-[12px] font-medium leading-snug mb-1.5">{body}</p>
+                    <p className="mt-auto font-display italic text-[10px] text-accent-red leading-snug border-l-2 border-accent-red pl-2">
                       {pull}
                     </p>
                   </div>
