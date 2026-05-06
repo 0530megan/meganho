@@ -464,7 +464,7 @@ const Veramante = () => (
                 </span>
               </h3>
               <p className="font-display text-sm md:text-base text-ink-soft mt-3 leading-relaxed">
-                A wearable SPF concept brand — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a daily accessory people actually want to show off.
+                A <strong className="font-semibold text-ink">wearable SPF concept brand</strong> — a Figma-built identity exploring how product design, packaging, and a soft sun-bleached palette can turn sunscreen from a forgotten routine into a <em className="not-italic font-semibold text-accent-red">daily accessory people actually want to show off</em>.
               </p>
             </div>
 
@@ -490,16 +490,19 @@ const Veramante = () => (
               <p className="font-mono text-[12px] small-caps text-accent-red mb-2">Brand Voice</p>
               <ol className="space-y-1 flex-1 flex flex-col justify-between">
                 {[
-                  "Soft confidence — skincare that whispers.",
-                  "Tactile, sun-washed packaging as a personal object.",
-                  "SPF as self-care, not a chore.",
-                  "A charm system that turns product into ritual.",
-                ].map((s, i) => (
+                  { t: "Soft confidence", r: " — skincare that whispers." },
+                  { t: "Tactile, sun-washed packaging", r: " as a personal object." },
+                  { t: "SPF as self-care", r: ", not a chore." },
+                  { t: "A charm system", r: " that turns product into ritual." },
+                ].map(({ t, r }, i) => (
                   <li key={i} className="flex gap-3 border-b border-rule pb-1.5">
                     <span className="font-display text-2xl text-accent-red leading-none w-8 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="font-display text-[15px] font-medium leading-snug">{s}</p>
+                    <p className="font-display text-[15px] leading-snug">
+                      <strong className="font-semibold text-ink">{t}</strong>
+                      <span className="text-ink-soft">{r}</span>
+                    </p>
                   </li>
                 ))}
               </ol>
@@ -509,16 +512,19 @@ const Veramante = () => (
               <p className="font-mono text-[12px] small-caps text-accent-red mb-2">Product Story</p>
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { Icon: Lightbulb, label: "Concept", body: "Sunscreen as a wearable accessory.", pull: "Wear it, don't hide it." },
-                  { Icon: Eye, label: "Insight", body: "People skip SPF when it's hidden.", pull: "Aesthetic = adherence." },
-                  { Icon: Package, label: "Solution", body: "SPF50+ stick paired with blind-box collectible charms.", pull: "Product as touchpoint." },
-                ].map(({ Icon, label, body, pull }) => (
+                  { Icon: Lightbulb, label: "Concept", em: "Sunscreen as a wearable", body: " accessory.", pull: "Wear it, don't hide it." },
+                  { Icon: Eye, label: "Insight", em: "People skip SPF", body: " when it's hidden.", pull: "Aesthetic = adherence." },
+                  { Icon: Package, label: "Solution", em: "SPF50+ stick", body: " paired with blind-box collectible charms.", pull: "Product as touchpoint." },
+                ].map(({ Icon, label, em, body, pull }) => (
                   <div key={label} className="flex flex-col">
                     <div className="flex items-center gap-1.5 mb-1">
                       <Icon className="size-3.5 text-accent-red" />
                       <p className="font-mono text-[11px] small-caps text-ink-mute">{label}</p>
                     </div>
-                    <p className="font-display text-[14px] font-medium leading-snug mb-1.5">{body}</p>
+                    <p className="font-display text-[14px] leading-snug mb-1.5">
+                      <strong className="font-semibold text-ink">{em}</strong>
+                      <span className="text-ink-soft">{body}</span>
+                    </p>
                     <p className="mt-auto font-display italic text-[12px] text-accent-red leading-snug border-l-2 border-accent-red pl-2">
                       {pull}
                     </p>
