@@ -1,7 +1,53 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
-import { AdjustableImage } from "@/components/AdjustableImage";
+
+/** Read-only image that honours any previously-saved adjustment in localStorage. */
+const SavedImage = ({
+  src,
+  alt,
+  storageKey,
+  aspectRatio = "4 / 5",
+}: {
+  src: string;
+  alt: string;
+  storageKey: string;
+  aspectRatio?: string;
+}) => {
+  const t = (() => {
+    if (typeof window === "undefined") return { scale: 1, x: 50, y: 50 };
+    try {
+      const saved = localStorage.getItem(storageKey);
+      return saved
+        ? { scale: 1, x: 50, y: 50, ...JSON.parse(saved) }
+        : { scale: 1, x: 50, y: 50 };
+    } catch {
+      return { scale: 1, x: 50, y: 50 };
+    }
+  })();
+  const isAuto = aspectRatio === "auto";
+  return (
+    <div className={isAuto ? "relative h-full w-full" : "relative"}>
+      <div
+        className={`relative w-full overflow-hidden bg-ink/5 ${isAuto ? "h-full" : ""}`}
+        style={isAuto ? undefined : { aspectRatio }}
+      >
+        <img
+          src={src}
+          alt={alt}
+          draggable={false}
+          className="absolute inset-0 w-full h-full select-none"
+          style={{
+            objectFit: "cover",
+            objectPosition: `${t.x}% ${t.y}%`,
+            transform: `scale(${t.scale})`,
+            transformOrigin: `${t.x}% ${t.y}%`,
+          }}
+        />
+      </div>
+    </div>
+  );
+};
 import meganPortrait from "@/assets/megan-portrait-about.jpg";
 import picSunset from "@/assets/about/sunset.jpg";
 import picSandwich from "@/assets/about/sandwich.jpg";
@@ -79,33 +125,8 @@ const TIMELINE = [
 ];
 
 const AboutMe = () => {
-  const [dump, setDump] = useState<string>("");
-  const showDump = () => {
-    const out: Record<string, unknown> = {};
-    for (let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i);
-      if (k && (k.startsWith("personality-") || k === "about-portrait")) {
-        try { out[k] = JSON.parse(localStorage.getItem(k) || "null"); } catch { /* noop */ }
-      }
-    }
-    setDump(JSON.stringify(out, null, 2));
-  };
   return (
     <div className="paper-grain min-h-screen text-ink">
-      {/* TEMP — Export image adjustments */}
-      <div className="fixed bottom-4 right-4 z-[100] max-w-md">
-        <button onClick={showDump} className="font-mono text-[11px] small-caps bg-ink text-paper px-3 py-2 border border-paper">
-          Export image adjustments
-        </button>
-        {dump && (
-          <textarea
-            readOnly
-            value={dump}
-            className="mt-2 w-full h-64 p-2 font-mono text-[10px] bg-paper border border-ink"
-            onFocus={(e) => e.currentTarget.select()}
-          />
-        )}
-      </div>
       {/* Top bar */}
       <header className="border-b-2 border-ink">
         <div className="container py-4 flex items-center justify-between gap-4">
@@ -158,7 +179,7 @@ const AboutMe = () => {
           <div className="col-span-12 md:col-span-5">
             <figure className="relative max-w-sm md:ml-auto">
               <div className="border border-ink bg-paper p-2 shadow-[12px_14px_0_0_hsl(var(--accent-burnt))] -rotate-3 hover:rotate-0 transition-transform duration-500">
-                <AdjustableImage src={meganPortrait} alt="Megan Ho" storageKey="about-portrait" aspectRatio="4 / 5" />
+                <SavedImage src={meganPortrait} alt="Megan Ho" storageKey="about-portrait" aspectRatio="4 / 5" />
                 <figcaption className="pt-2 mt-1 border-t border-ink/30 flex items-baseline justify-between gap-3">
                   
                   <p className="font-mono text-[10px] small-caps text-ink-mute">Polaroid · I</p>
@@ -338,7 +359,7 @@ const LayoutStack = () => {
               >
                 <div className="relative h-full w-full overflow-hidden">
                   {isTop ? (
-                    <AdjustableImage
+                    <SavedImage
                       src={item.src}
                       alt={item.trait}
                       storageKey={`personality-${idx}`}
