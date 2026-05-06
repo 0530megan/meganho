@@ -173,129 +173,177 @@ const Veramente = () => (
       </div>
     </section>
 
-    {/* IDENTITY BOARD — clean editorial board, Sippy-style */}
+    {/* IDENTITY BOARD — Split spread (B) + Numbered notes (C) */}
     <section className="container py-20 md:py-28">
-      <div className="grid md:grid-cols-12 gap-10 mb-12">
-        <div className="md:col-span-5">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">
+      {/* Spread: Branding column (left) + Identity board (right) */}
+      <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+        {/* LEFT — Branding column */}
+        <div className="md:col-span-5 lg:col-span-4 md:sticky md:top-20">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">
             02 · Branding
           </p>
-          <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+          <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-6">
             A sun-bleached
             <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>
               {" "}language.
             </span>
           </h2>
-        </div>
-        <div className="md:col-span-7 md:pt-2">
-          <p className="font-display text-lg text-ink-soft leading-relaxed">
-            Soft confidence — skincare that whispers. A warm ochre & terracotta
-            palette borrowed from late-afternoon light, paired with a tactile
-            wordmark and a charm-loop mark that doubles as the brand&rsquo;s
-            product silhouette.
+          <p className="font-display text-base text-ink-soft leading-relaxed mb-8">
+            Soft confidence — skincare that whispers. A warm palette borrowed
+            from late-afternoon light, paired with a tactile wordmark and a
+            charm-loop mark that doubles as the product silhouette.
+          </p>
+
+          {/* At-a-glance table */}
+          <dl className="border-t border-ink/30">
+            {[
+              ["Format", "SPF50+ stick · 30g"],
+              ["Palette", "Peach · Olive · Taupe"],
+              ["Type", "Script + clean serif"],
+              ["Tools", "Figma · Canva · AI"],
+              ["Deliverables", "Identity, packaging, copy"],
+            ].map(([k, v]) => (
+              <div
+                key={k}
+                className="grid grid-cols-5 gap-3 py-2.5 border-b border-ink/30"
+              >
+                <dt className="col-span-2 font-mono text-[10px] small-caps text-ink-mute pt-0.5">
+                  {k}
+                </dt>
+                <dd className="col-span-3 font-display text-sm text-ink">{v}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="font-display italic text-base text-ink-soft mt-6 leading-relaxed">
+            &ldquo;Soft confidence — skincare that{" "}
+            <span style={{ color: "hsl(var(--accent-burnt))" }}>whispers.</span>&rdquo;
           </p>
         </div>
-      </div>
 
-      {/* Board — three uploaded plates, neatly composed */}
-      <div className="grid grid-cols-12 gap-5 md:gap-6">
-        {/* Plate A — Logos */}
-        <figure className="col-span-12 md:col-span-8 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-ochre))] overflow-hidden">
-          <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
-            <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
-              Plate A · Logo System
-            </p>
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Primary · Secondary · Mark
-            </p>
-          </div>
-          <img
-            src={veramenteLogos}
-            alt="Veramente logo system: primary sun mark, script wordmark, Ve monogram"
-            className="block w-full h-auto"
-          />
-          <figcaption className="px-4 py-3 border-t-2 border-ink flex items-baseline justify-between gap-3">
-            <p className="font-display italic text-base">
-              A sun, a signature, a single letter — three ways to say the same thing.
-            </p>
-            <span className="font-mono text-[10px] small-caps text-ink-mute whitespace-nowrap">
-              Fig. 01
-            </span>
-          </figcaption>
-        </figure>
+        {/* RIGHT — Stacked identity board (Sippy-faithful) */}
+        <div className="md:col-span-7 lg:col-span-8">
+          <div className="border-2 border-ink bg-paper shadow-[12px_14px_0_0_hsl(var(--accent-ochre))] overflow-hidden">
+            {/* Plate header */}
+            <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+              <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
+                Plate II · Identity Board
+              </p>
+              <p className="font-mono text-[10px] small-caps text-ink-mute">
+                Logo system + palette
+              </p>
+            </div>
 
-        {/* Plate B — Palette */}
-        <figure className="col-span-12 md:col-span-4 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-burnt))] overflow-hidden flex flex-col">
-          <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
-            <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
-              Plate B · Palette
-            </p>
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              3 swatches
-            </p>
-          </div>
-          <div className="flex-1 flex items-center justify-center bg-[#E8D3CE]">
+            {/* Logos image */}
+            <img
+              src={veramenteLogos}
+              alt="Veramente logo system: primary sun mark, script wordmark, Ve monogram"
+              className="block w-full h-auto border-b-2 border-ink"
+            />
+
+            {/* Palette image */}
             <img
               src={veramentePalette}
-              alt="Veramente color palette: Soft Peach Beige, Deep Olive Moss, Dusty Rose Taupe"
+              alt="Veramente palette: Soft Peach Beige, Deep Olive Moss, Dusty Rose Taupe"
               className="block w-full h-auto"
             />
-          </div>
-          <figcaption className="px-4 py-3 border-t-2 border-ink">
-            <p className="font-display italic text-sm leading-snug">
-              Late-afternoon light, bottled.
-            </p>
-            <div className="mt-2 grid grid-cols-3 gap-2 font-mono text-[9px] small-caps text-ink-mute">
-              <span>#F7E0D1</span>
-              <span>#55573F</span>
-              <span>#AA706C</span>
-            </div>
-          </figcaption>
-        </figure>
 
-        {/* Plate C — Packaging */}
-        <figure className="col-span-12 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-red))] overflow-hidden">
-          <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
-            <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
-              Plate C · Packaging & Charms
+            {/* Footer caption */}
+            <figcaption className="px-4 py-3 border-t-2 border-ink flex items-baseline justify-between gap-3 flex-wrap">
+              <p className="font-display italic text-sm">
+                A sun, a signature, a single letter — three ways to say the same thing.
+              </p>
+              <span className="font-mono text-[10px] small-caps text-ink-mute">
+                Fig. 01–02
+              </span>
+            </figcaption>
+          </div>
+        </div>
+      </div>
+
+      {/* Numbered design notes (C) */}
+      <div className="mt-16 md:mt-20 border-t-2 border-ink pt-10">
+        <div className="flex items-end justify-between flex-wrap gap-3 mb-8">
+          <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.2em]">
+            Design Notes
+          </p>
+          <p className="font-mono text-[10px] small-caps text-ink-mute">
+            Four ideas behind the marks
+          </p>
+        </div>
+
+        <ol className="grid md:grid-cols-2 gap-x-12">
+          {[
+            ["01", "Sun-bleached, never loud", "Soft confidence over shout — a brand that reads as calm, not clinical."],
+            ["02", "A signature, not a logo", "The wordmark is handwritten — human touch where most SPF feels sterile."],
+            ["03", "Wear it, don't hide it", "The mark doubles as the product silhouette: a charm-loop you clip on."],
+            ["04", "Aesthetic = adherence", "If it's pretty enough to display, you'll reach for it. Beauty is the channel."],
+          ].map(([no, title, body]) => (
+            <li
+              key={no}
+              className="grid grid-cols-[auto_1fr] gap-5 py-5 border-b border-ink/20"
+            >
+              <span
+                className="font-display text-3xl leading-none pt-1"
+                style={{ color: "hsl(var(--accent-burnt))" }}
+              >
+                {no}
+              </span>
+              <div>
+                <h3 className="font-display text-xl leading-tight mb-1">
+                  {title}
+                </h3>
+                <p className="font-display italic text-sm text-ink-soft leading-relaxed">
+                  {body}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {/* Packaging plate */}
+      <figure className="mt-16 md:mt-20 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-red))] overflow-hidden">
+        <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+          <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
+            Plate III · Packaging & Charms
+          </p>
+          <p className="font-mono text-[10px] small-caps text-ink-mute">
+            Dieline · Carton · Collectibles
+          </p>
+        </div>
+        <img
+          src={veramentePackaging}
+          alt="Veramente packaging: SPF stick dieline, outer carton, and collectible bag charms"
+          className="block w-full h-auto"
+        />
+        <figcaption className="px-4 py-4 border-t-2 border-ink grid md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
+              ① Dieline
             </p>
-            <p className="font-mono text-[10px] small-caps text-ink-mute">
-              Dieline · Carton · Collectibles
+            <p className="font-display italic text-ink-soft leading-snug">
+              Flat-pack carton with a branded interior — pretty inside and out.
             </p>
           </div>
-          <img
-            src={veramentePackaging}
-            alt="Veramente packaging: SPF stick dieline, outer carton, and collectible bag charms"
-            className="block w-full h-auto"
-          />
-          <figcaption className="px-4 py-3 border-t-2 border-ink grid md:grid-cols-3 gap-3 text-sm">
-            <div>
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
-                ① Dieline
-              </p>
-              <p className="font-display italic text-ink-soft leading-snug">
-                Flat-pack carton with branded interior — pretty inside and out.
-              </p>
-            </div>
-            <div>
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
-                ② Carton
-              </p>
-              <p className="font-display italic text-ink-soft leading-snug">
-                Soft cream + olive base. Sun mark up top, story along the side.
-              </p>
-            </div>
-            <div>
-              <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
-                ③ Charms
-              </p>
-              <p className="font-display italic text-ink-soft leading-snug">
-                Blind-box collectibles that clip onto your bag — SPF you actually want to show.
-              </p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
+          <div>
+            <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
+              ② Carton
+            </p>
+            <p className="font-display italic text-ink-soft leading-snug">
+              Cream + olive base. Sun mark up top, story along the side.
+            </p>
+          </div>
+          <div>
+            <p className="font-mono text-[10px] small-caps text-accent-red mb-1">
+              ③ Charms
+            </p>
+            <p className="font-display italic text-ink-soft leading-snug">
+              Blind-box collectibles that clip on — SPF you actually want to show.
+            </p>
+          </div>
+        </figcaption>
+      </figure>
 
       <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
         Plate II — Brand Identity Board · Built in Figma
