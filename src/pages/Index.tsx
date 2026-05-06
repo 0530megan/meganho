@@ -92,9 +92,9 @@ const Hero = () => (
     </nav>
 
     {/* Hero content */}
-    <div className="container relative pt-24 pb-16 md:pt-32 md:pb-24 grid grid-cols-12 gap-x-6 gap-y-10 items-center">
+    <div className="container relative pt-16 pb-10 md:pt-20 md:pb-14 grid grid-cols-12 gap-x-6 gap-y-6 items-center">
       <div className="col-span-12 md:col-span-8">
-        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-8 md:mb-12">
+        <p className="font-display text-2xl md:text-3xl text-ink-soft mb-3 md:mb-4">
           Hello, I&rsquo;m
         </p>
         <h2
@@ -109,13 +109,13 @@ const Hero = () => (
             Ho.
           </span>
         </h2>
-        <div className="mt-10 flex items-end gap-6 flex-wrap">
+        <div className="mt-5 flex items-end gap-6 flex-wrap">
           <div className="h-px flex-1 min-w-[80px] bg-ink/40" />
           <p className="font-mono text-[11px] small-caps text-ink-mute">
             Lead Essay · 01
           </p>
         </div>
-        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft mt-6 whitespace-nowrap text-center rounded-sm font-light">
+        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft mt-3 whitespace-nowrap text-center rounded-sm font-light">
           I&rsquo;m passionate about marketing that turns heads and leaves an impression.
         </p>
       </div>
