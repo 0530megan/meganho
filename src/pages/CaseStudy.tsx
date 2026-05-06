@@ -336,9 +336,6 @@ const Veramente = () => (
         </ol>
       </div>
 
-      {/* Packaging plate */}
-      <figure className="mt-16 md:mt-20 border-2 border-ink bg-paper shadow-[10px_12px_0_0_hsl(var(--accent-red))] overflow-hidden">
-        <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
       {/* Packaging plate — three image + caption rows */}
       <div className="mt-16 md:mt-20">
         <div className="flex items-end justify-between gap-4 border-b-2 border-ink pb-3 mb-8">
