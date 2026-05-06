@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Sparkles, Heart, Palette } from "lucide-react";
+import { AdjustableImage } from "@/components/AdjustableImage";
 import meganPortrait from "@/assets/megan-portrait-about.jpg";
 import picSunset from "@/assets/about/sunset.jpg";
 import picSandwich from "@/assets/about/sandwich.jpg";
