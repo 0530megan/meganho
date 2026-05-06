@@ -296,9 +296,8 @@ const LayoutStack = () => {
           const item = PERSONALITIES[idx];
           const isTop = stackPos === 0;
           return (
-            <button
+            <div
               key={idx}
-              onClick={isTop ? next : undefined}
               className="absolute inset-0 transition-all duration-500 ease-out"
               style={{
                 transform: `translate(${stackPos * 14}px, ${stackPos * 12}px) rotate(${(stackPos % 2 === 0 ? -1 : 1) * stackPos * 1.5}deg)`,
@@ -312,14 +311,29 @@ const LayoutStack = () => {
                 style={{ background: cream, boxShadow: `10px 12px 0 0 ${ochre}` }}
               >
                 <div className="relative h-full w-full overflow-hidden">
-                  <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition: (item as any).pos ?? "center" }} />
-                  <span className="absolute top-3 left-3 font-mono text-[10px] small-caps border border-ink px-2 py-1" style={{ background: cream }}>{item.tag}</span>
+                  {isTop ? (
+                    <AdjustableImage
+                      src={item.src}
+                      alt={item.trait}
+                      storageKey={`personality-${idx}`}
+                      aspectRatio="auto"
+                    />
+                  ) : (
+                    <img src={item.src} alt={item.trait} className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition: (item as any).pos ?? "center" }} />
+                  )}
+                  <span className="absolute top-3 left-3 z-10 font-mono text-[10px] small-caps border border-ink px-2 py-1" style={{ background: cream }}>{item.tag}</span>
                   {isTop && (
-                    <span className="absolute bottom-3 right-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">tap for next →</span>
+                    <button
+                      type="button"
+                      onClick={next}
+                      className="absolute bottom-3 right-3 z-10 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 hover:bg-[hsl(var(--accent-burnt))] transition-colors"
+                    >
+                      next →
+                    </button>
                   )}
                 </div>
               </div>
-            </button>
+            </div>
           );
         })}
       </div>
