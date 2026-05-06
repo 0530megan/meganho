@@ -18,7 +18,7 @@ const NAV = [
   { id: "work", label: "Selected Work" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
-  { id: "contact", label: "Contact" },
+  
 ];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
