@@ -1275,9 +1275,6 @@ const Index = () => {
       <main>
         <SelectedWork />
         <Approach />
-        <Veramante />
-        <Sippy />
-        <MegsCreami />
         <Skills />
         <Experience />
         <Statement />
