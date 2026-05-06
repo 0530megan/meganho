@@ -73,7 +73,6 @@ const NameWithFontPicker = () => {
   );
 };
 
-];
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
   weekday: "long",
