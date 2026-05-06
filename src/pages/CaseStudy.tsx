@@ -10,6 +10,7 @@ import {
   Heart,
 } from "lucide-react";
 
+import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 import veramenteLogo from "@/assets/veramente-logo.jpg";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
