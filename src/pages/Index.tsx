@@ -17,7 +17,7 @@ const NAV = [
   { id: "approach", label: "Approach" },
   { id: "work", label: "Selected Work" },
   { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
+  
   
 ];
 
