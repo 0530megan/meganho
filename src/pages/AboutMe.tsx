@@ -286,9 +286,8 @@ const AboutMe = () => {
               , let&rsquo;s talk.
             </h2>
             <p className="font-display text-xl text-ink-soft mt-6 max-w-xl leading-relaxed">
-              Open to graduate marketing & brand opportunities — full-time roles,
-              internships, and collaborative projects, especially in design-led
-              and experience-focused industries.
+              Open to graduate marketing & brand opportunities <br />
+              full-time roles, internships, and collaborative projects.
             </p>
           </div>
           <div className="col-span-12 md:col-span-5 space-y-5">
