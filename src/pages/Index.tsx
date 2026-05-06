@@ -352,25 +352,62 @@ const Approach = () => {
     },
   ];
   return (
-    <section id="approach" className="bg-paper-deep border-y border-ink/20">
-      <div className="container py-16 md:py-24">
-        <SectionHeader kicker="Method" title="My Approach" no="III" />
-        <div className="grid md:grid-cols-3 gap-px bg-ink/30 border border-ink/30">
-          {principles.map((p) => (
-            <article key={p.no} className="bg-paper-deep p-8 md:p-10">
-              <div className="flex items-baseline justify-between mb-6">
-                <span className="font-mono font-bold text-sm small-caps text-accent-red">
-                  Principle {p.no}
-                </span>
-                <Sparkles className="size-4 text-ink-mute" />
-              </div>
-              <h3 className="font-display text-3xl leading-tight mb-4">{p.title}</h3>
-              <p className="font-display text-lg italic text-ink-soft leading-relaxed">
-                {p.body}
-              </p>
-            </article>
-          ))}
+    <section id="approach" className="relative bg-paper-deep border-y border-ink/20 overflow-hidden">
+      {/* Decorative oversized word in background */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -top-6 right-[-2vw] font-display italic text-[18vw] leading-none text-ink/[0.04] select-none"
+      >
+        approach
+      </span>
+
+      <div className="container py-20 md:py-28 relative">
+        {/* Editorial header */}
+        <div className="grid grid-cols-12 gap-6 items-end mb-16 md:mb-24">
+          <div className="col-span-12 md:col-span-7">
+            <p className="font-mono font-bold text-sm small-caps text-accent-red mb-3">
+              · Method ·
+            </p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">
+              How I <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>think</span>,
+              <br />
+              how I <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>make</span>.
+            </h2>
+          </div>
+          <div className="hidden md:flex col-span-5 items-end justify-end gap-3">
+            <span className="h-px flex-1 bg-ink/40" />
+            <span className="font-mono text-xs small-caps text-ink-mute whitespace-nowrap">Section III · Three principles</span>
+          </div>
         </div>
+
+        {/* Principles list — editorial, numbered, with hover lift */}
+        <ol className="divide-y divide-ink/20 border-y border-ink/20">
+          {principles.map((p) => (
+            <li
+              key={p.no}
+              className="group grid grid-cols-12 gap-6 py-8 md:py-12 transition-colors duration-300 hover:bg-paper"
+            >
+              <div className="col-span-12 md:col-span-2">
+                <span
+                  className="font-display italic text-6xl md:text-7xl leading-none transition-transform duration-500 group-hover:translate-x-2 inline-block"
+                  style={{ color: "hsl(var(--accent-burnt))" }}
+                >
+                  {p.no}
+                </span>
+              </div>
+              <div className="col-span-12 md:col-span-5">
+                <h3 className="font-display text-2xl md:text-3xl leading-tight">
+                  {p.title}
+                </h3>
+              </div>
+              <div className="col-span-12 md:col-span-5">
+                <p className="font-display italic text-lg md:text-xl leading-relaxed text-ink-soft">
+                  {p.body}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
