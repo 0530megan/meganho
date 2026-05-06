@@ -134,7 +134,7 @@ const Hero = () => (
             Est. 2026
           </span>
           {/* Hand-drawn "that's me" arrow — sits above the portrait, points down */}
-          <div className="absolute -top-8 -right-2 md:-top-10 md:-right-8 z-10 flex flex-col items-center rotate-[8deg] pointer-events-none select-none">
+          <div className="absolute top-2 right-2 md:top-3 md:right-3 z-10 flex flex-col items-center rotate-[8deg] pointer-events-none select-none">
             <span
               className="font-display italic text-2xl md:text-3xl whitespace-nowrap"
               style={{ color: "hsl(var(--accent-burnt))" }}
