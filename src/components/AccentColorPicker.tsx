@@ -43,7 +43,22 @@ export const AccentColorPicker = () => {
   });
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--accent-burnt", active);
+    const root = document.documentElement;
+    root.style.setProperty("--accent-burnt", active);
+    // Parse "H S% L%" and derive shades
+    const match = active.match(/^(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)%\s+(\d+(?:\.\d+)?)%$/);
+    if (match) {
+      const [, h, s, l] = match;
+      const lNum = parseFloat(l);
+      const dark = Math.max(8, lNum - 15);
+      const darker = Math.max(4, lNum - 28);
+      const light = Math.min(94, lNum + 18);
+      const lighter = Math.min(98, lNum + 32);
+      root.style.setProperty("--accent-burnt-darker", `${h} ${s}% ${darker}%`);
+      root.style.setProperty("--accent-burnt-dark", `${h} ${s}% ${dark}%`);
+      root.style.setProperty("--accent-burnt-light", `${h} ${s}% ${light}%`);
+      root.style.setProperty("--accent-burnt-lighter", `${h} ${s}% ${lighter}%`);
+    }
     localStorage.setItem(STORAGE_KEY, active);
   }, [active]);
 
