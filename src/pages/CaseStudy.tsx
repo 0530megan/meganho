@@ -25,7 +25,6 @@ import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const Veramente = () => {
-  const [productVariant, setProductVariant] = useState<"A" | "B" | "C">("A");
   return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
