@@ -928,7 +928,7 @@ const Sippy = () => {
       style={{
         backgroundImage: `url(${sippyHeroBg})`,
         backgroundSize: "cover",
-        backgroundPosition: "center 30%",
+        backgroundPosition: `${bgPosX}% ${bgPosY}%`,
         backgroundRepeat: "no-repeat",
         backgroundColor: "#F4B8B8",
         ...(preview169 ? { aspectRatio: "16 / 9" as const, overflow: "hidden" as const } : {}),
