@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   ArrowLeft,
@@ -28,8 +28,6 @@ import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const Veramente = () => {
   const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
-  const [headlinePos, setHeadlinePos] = useState<"1" | "2" | "3" | "4">("1");
-  const [headlineStyle, setHeadlineStyle] = useState<"1" | "2" | "3">("3");
   return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
@@ -76,51 +74,6 @@ const Veramente = () => {
             {opt.k} · {opt.label}
           </button>
         ))}
-        {heroLayout === "A" && (
-          <>
-            <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mx-2">
-              · Headline ·
-            </span>
-            {([
-              { k: "1", label: "Top-L" },
-              { k: "2", label: "Top-C" },
-              { k: "3", label: "Bot-L" },
-              { k: "4", label: "Top-R" },
-            ] as const).map((opt) => (
-              <button
-                key={opt.k}
-                onClick={() => setHeadlinePos(opt.k)}
-                className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
-                  headlinePos === opt.k
-                    ? "bg-accent-red text-paper"
-                    : "bg-paper text-ink hover:bg-paper-deep"
-                }`}
-              >
-                {opt.k} · {opt.label}
-              </button>
-            ))}
-            <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mx-2">
-              · Style ·
-            </span>
-            {([
-              { k: "1", label: "Outlined" },
-              { k: "2", label: "Hollow" },
-              { k: "3", label: "Drop-shadow" },
-            ] as const).map((opt) => (
-              <button
-                key={opt.k}
-                onClick={() => setHeadlineStyle(opt.k)}
-                className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
-                  headlineStyle === opt.k
-                    ? "bg-ink text-paper"
-                    : "bg-paper text-ink hover:bg-paper-deep"
-                }`}
-              >
-                S{opt.k} · {opt.label}
-              </button>
-            ))}
-          </>
-        )}
       </div>
     </div>
 
@@ -143,100 +96,30 @@ const Veramente = () => {
           }}
         />
         <section className="relative">
-          <div className="container min-h-[72vh] sm:min-h-[80vh] md:min-h-[88vh] grid grid-rows-[auto_1fr_auto] gap-y-6 sm:gap-y-8 md:gap-y-10 py-6 sm:py-8 md:py-12 lg:py-14">
-            {(() => {
-              // Per-position alignment + offset
-              const headlineWrap =
-                headlinePos === "1"
-                  ? "text-left items-start pl-0 sm:pl-1 md:pl-2"
-                  : headlinePos === "4"
-                  ? "text-right items-end pr-0 sm:pr-1 md:pr-2"
-                  : headlinePos === "3"
-                  ? "text-left items-start"
-                  : "text-center items-center";
-
-              const headlineBlock = (
-                <div className={`flex flex-col ${headlineWrap}`}>
-                  <p className="font-mono text-[10px] sm:text-[11px] small-caps text-accent-red tracking-[0.25em]">
-                    ✦ Case Study No. I · Beauty · Concept Brand ✦
-                  </p>
-                  {(() => {
-                    const baseCls =
-                      "font-display italic uppercase tracking-[-0.03em] leading-[0.88] text-[clamp(1.75rem,5vw,4rem)] mt-10 sm:mt-12 md:mt-16 whitespace-nowrap";
-                    const styleMap: Record<string, React.CSSProperties> = {
-                      // S1 — Outlined yellow
-                      "1": {
-                        color: "hsl(48 95% 62%)",
-                        fontWeight: 600,
-                        WebkitTextStroke: "1.5px hsl(20 35% 18%)",
-                        textShadow: "3px 4px 0 hsl(20 35% 18% / 0.18)",
-                      },
-                      // S2 — Hollow outline
-                      "2": {
-                        color: "transparent",
-                        fontWeight: 700,
-                        WebkitTextStroke: "2px hsl(20 35% 18%)",
-                      },
-                      // S3 — Butter yellow fill + deep olive drop shadow
-                      "3": {
-                        color: "hsl(46 92% 72%)",
-                        fontWeight: 600,
-                        textShadow:
-                          "4px 5px 0 hsl(75 35% 22%), 5px 6px 0 hsl(75 40% 14% / 0.45)",
-                      },
-                    };
-                    return (
-                      <h1 className={baseCls} style={styleMap[headlineStyle]}>
-                        Carry your SPF.
-                      </h1>
-                    );
-                  })()}
-                </div>
-              );
-
-              // Description always sits at the bottom; alignment matches headline side
-              const descWrap =
-                headlinePos === "1" || headlinePos === "3"
-                  ? "text-left items-start mx-0 mr-auto pl-0 sm:pl-1 md:pl-2"
-                  : headlinePos === "4"
-                  ? "text-right items-end mx-0 ml-auto pr-0 sm:pr-1 md:pr-2"
-                  : "text-center items-center mx-auto";
-
-              const descBlock = (
-                <div className={`w-full max-w-[36ch] sm:max-w-[42ch] md:max-w-2xl pb-1 sm:pb-2 flex flex-col ${descWrap}`}>
-                  <p className="font-display text-[15px] sm:text-base md:text-xl text-ink leading-relaxed">
-                    A wearable SPF concept brand that reframes sunscreen as a{" "}
-                    <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
-                      daily accessory people want to show off.
-                    </em>
-                  </p>
-                  <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-3 sm:mt-4 md:mt-5">
-                    Plate I · Veramente
-                  </p>
-                </div>
-              );
-
-              if (headlinePos === "3") {
-                return (
-                  <>
-                    <div />
-                    <div />
-                    <div className="flex flex-col items-start gap-4 sm:gap-5 md:gap-6 max-w-2xl">
-                      {headlineBlock}
-                      {descBlock}
-                    </div>
-                  </>
-                );
-              }
-
-              return (
-                <>
-                  {headlineBlock}
-                  <div className="min-h-[18vh] sm:min-h-[22vh] md:min-h-[26vh]" />
-                  {descBlock}
-                </>
-              );
-            })()}
+          <div className="container min-h-[88vh] grid grid-rows-[auto_1fr_auto] py-8 md:py-10">
+            <div className="text-center">
+              <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
+                ✦ Case Study No. I · Beauty · Concept Brand ✦
+              </p>
+              <h1
+                className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] mt-5"
+                style={{ color: "hsl(48 90% 60%)", fontWeight: 500 }}
+              >
+                Carry your SPF.
+              </h1>
+            </div>
+            <div />
+            <div className="text-center max-w-2xl mx-auto pb-2">
+              <p className="font-display text-base md:text-xl text-ink leading-relaxed">
+                A wearable SPF concept brand that reframes sunscreen as a{" "}
+                <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
+                  daily accessory people want to show off.
+                </em>
+              </p>
+              <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-5">
+                Plate I · Veramente
+              </p>
+            </div>
           </div>
         </section>
 
