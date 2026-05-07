@@ -49,12 +49,8 @@ const SpotlightTagline = ({
       className={`relative inline-block cursor-none ${className}`}
       style={{ isolation: "isolate" }}
     >
-      {/* Dimmed base layer */}
-      <span
-        aria-hidden={active}
-        className="block transition-opacity duration-300"
-        style={{ opacity: active ? dimOpacity : 1 }}
-      >
+      {/* Invisible base layer — preserves layout / hover area */}
+      <span aria-hidden className="block" style={{ opacity: 0 }}>
         {children}
       </span>
 
