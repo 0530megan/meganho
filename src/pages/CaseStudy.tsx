@@ -75,6 +75,31 @@ const Veramente = () => {
             {opt.k} · {opt.label}
           </button>
         ))}
+        {heroLayout === "A" && (
+          <>
+            <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mx-2">
+              · Headline ·
+            </span>
+            {([
+              { k: "1", label: "Top-L" },
+              { k: "2", label: "Top-C" },
+              { k: "3", label: "Bot-L" },
+              { k: "4", label: "Top-R" },
+            ] as const).map((opt) => (
+              <button
+                key={opt.k}
+                onClick={() => setHeadlinePos(opt.k)}
+                className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
+                  headlinePos === opt.k
+                    ? "bg-accent-red text-paper"
+                    : "bg-paper text-ink hover:bg-paper-deep"
+                }`}
+              >
+                {opt.k} · {opt.label}
+              </button>
+            ))}
+          </>
+        )}
       </div>
     </div>
 
