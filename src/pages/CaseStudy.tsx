@@ -921,27 +921,11 @@ const Sippy = () => {
           <div />
           <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
             <div className="relative inline-block w-full">
-              <button
-                type="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    e.currentTarget.classList.toggle("is-revealed");
-                  }
-                }}
-                style={{ fontWeight: 700 }}
-                className={`group is-revealable font-mono small-caps text-accent-red text-[13px] md:text-sm tracking-[0.32em] inline-flex items-center gap-3 animate-fade-in cursor-pointer bg-transparent border-0 p-0 whitespace-nowrap transition-all duration-500 ease-out hover:-translate-y-1 hover:tracking-[0.42em] hover:text-ink focus-visible:-translate-y-1 focus-visible:tracking-[0.42em] focus-visible:text-ink focus-visible:outline-none [&.is-revealed]:-translate-y-1 [&.is-revealed]:tracking-[0.42em] [&.is-revealed]:text-ink ${hintPosClasses[hintPos]}`}
-              >
-                <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:rotate-180 group-focus-visible:rotate-180 group-[.is-revealed]:rotate-180 animate-pulse">🍊</span>
-                <span className="transition-opacity duration-500 ease-out">hover or press enter to reveal</span>
-                <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:-rotate-180 group-focus-visible:-rotate-180 group-[.is-revealed]:-rotate-180 animate-pulse">🍊</span>
-              </button>
               <p className="text-base md:text-xl text-ink leading-relaxed whitespace-nowrap" style={{ fontFamily: "'Fraunces', serif", fontWeight: 500, fontVariationSettings: "'SOFT' 100, 'WONK' 1" }}>
                 <SpotlightTagline radius={260} dimOpacity={0}>
-                  A sparkling blood orange concept drink that turns hydration into a{" "}
+                  Tastes like a treat, drinks like a habit —{" "}
                   <em className="not-italic font-semibold" style={{ color: "hsl(10 80% 50%)" }}>
-                    cute, collectible little ritual.
+                    just 80 kcal of sparkling, feel-good fizz.
                   </em>
                 </SpotlightTagline>
               </p>
