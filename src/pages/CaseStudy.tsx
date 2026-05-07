@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import SpotlightTagline from "@/components/SpotlightTagline";
 import {
@@ -856,11 +856,54 @@ const Veramente = () => {
   );
 };
 
+const SIPPY_BG_STORAGE_KEY = "sippy:hero-bg-pos";
+
 const Sippy = () => {
   const [hintPos] = useState<HintPos>("center");
   const [preview169, setPreview169] = useState(false);
   const [bgPosX, setBgPosX] = useState(50);
   const [bgPosY, setBgPosY] = useState(30);
+  const [savedToast, setSavedToast] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(SIPPY_BG_STORAGE_KEY);
+      if (raw) {
+        const { x, y } = JSON.parse(raw);
+        if (typeof x === "number") setBgPosX(x);
+        if (typeof y === "number") setBgPosY(y);
+      }
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const handleSave = () => {
+    try {
+      localStorage.setItem(SIPPY_BG_STORAGE_KEY, JSON.stringify({ x: bgPosX, y: bgPosY }));
+      setSavedToast("Saved");
+    } catch {
+      setSavedToast("Save failed");
+    }
+    setTimeout(() => setSavedToast(null), 1500);
+  };
+
+  const handleLoad = () => {
+    try {
+      const raw = localStorage.getItem(SIPPY_BG_STORAGE_KEY);
+      if (raw) {
+        const { x, y } = JSON.parse(raw);
+        if (typeof x === "number") setBgPosX(x);
+        if (typeof y === "number") setBgPosY(y);
+        setSavedToast("Loaded");
+      } else {
+        setSavedToast("Nothing saved");
+      }
+    } catch {
+      setSavedToast("Load failed");
+    }
+    setTimeout(() => setSavedToast(null), 1500);
+  };
 
   const headlineClass =
     "font-display italic uppercase tracking-[-0.03em] leading-[0.9] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both] text-6xl";
@@ -901,6 +944,25 @@ const Sippy = () => {
             className="w-full accent-[hsl(10_80%_60%)]"
           />
         </label>
+        <div className="flex items-center gap-2 pt-1">
+          <button
+            onClick={handleSave}
+            className="flex-1 font-mono text-[10px] small-caps tracking-[0.2em] bg-ink text-paper px-2 py-1.5 border border-ink hover:opacity-90"
+          >
+            Save
+          </button>
+          <button
+            onClick={handleLoad}
+            className="flex-1 font-mono text-[10px] small-caps tracking-[0.2em] bg-paper text-ink px-2 py-1.5 border border-ink hover:bg-ink hover:text-paper transition-colors"
+          >
+            Load
+          </button>
+        </div>
+        {savedToast && (
+          <p className="font-mono text-[10px] small-caps tracking-[0.2em] text-[hsl(10_80%_45%)]">
+            {savedToast}
+          </p>
+        )}
       </div>
     </div>
     <header className="border-b-2 border-ink sticky top-0 z-30 bg-paper/80 backdrop-blur">
