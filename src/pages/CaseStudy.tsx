@@ -34,7 +34,7 @@ const hintPosClasses: Record<HintPos, string> = {
   bottom: "absolute left-1/2 -translate-x-1/2 -bottom-12 md:-bottom-16",
   left: "absolute top-1/2 -translate-y-1/2 -left-4 md:-left-8 -rotate-90 origin-center",
   right: "absolute top-1/2 -translate-y-1/2 -right-4 md:-right-8 rotate-90 origin-center",
-  center: "block mt-10 md:mt-14 mb-10 md:mb-14 mx-auto",
+  center: "block mt-10 md:mt-14 mb-10 md:mb-14 mx-auto translate-y-[10%]",
 };
 
 const Veramente = () => {
