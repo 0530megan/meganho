@@ -92,10 +92,10 @@ const Veramente = () => {
           <h1
             className={headlineClass}
             style={{
-              color: headlineColor,
+              color: "#FFF8E0",
               fontWeight: 500,
               textShadow:
-                "1px 1px 0 rgba(255,250,230,0.7), -1px -1px 1px rgba(120,80,15,0.45), 0 0 1px rgba(120,80,15,0.3)",
+                "1px 1px 0 rgba(255,255,255,0.85), 2px 2px 0 rgba(245,225,150,0.55), -1px -1px 1px rgba(160,120,40,0.35), 0 2px 4px rgba(120,85,20,0.22)",
             }}
           >
             {headlineBase}
