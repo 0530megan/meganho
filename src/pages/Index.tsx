@@ -59,7 +59,7 @@ const Hero = () => (
             </Link>
           </li>
           {NAV.map((n) => {
-            const isHighlight = n.id === "work";
+            const isHighlight = n.id === "about";
             return (
               <li key={n.id}>
                 <a
