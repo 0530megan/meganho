@@ -1185,8 +1185,7 @@ const Sippy = () => {
   </div>
   );
 };
-
-
+const PLACEHOLDERS: Record<
   string,
   { no: string; name: string; tagline: string; cover: string; tint: string }
 > = {
