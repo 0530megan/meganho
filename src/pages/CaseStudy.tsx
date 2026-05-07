@@ -129,7 +129,7 @@ const Veramente = () => {
                 <span aria-hidden className="inline-block animate-pulse">☀</span>
               </p>
               <p className="font-display text-base md:text-xl text-ink leading-relaxed whitespace-nowrap">
-                <SpotlightTagline radius={200} dimOpacity={0}>
+                <SpotlightTagline radius={260} dimOpacity={0}>
                   A wearable SPF concept brand that reframes sunscreen as a{" "}
                   <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
                     daily accessory people want to show off.
