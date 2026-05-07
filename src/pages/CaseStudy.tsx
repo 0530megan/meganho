@@ -714,7 +714,8 @@ const Veramente = () => {
       </div>
     </footer>
   </div>
-);
+  );
+};
 
 const PLACEHOLDERS: Record<
   string,
