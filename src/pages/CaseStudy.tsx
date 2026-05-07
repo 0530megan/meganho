@@ -29,7 +29,7 @@ import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 const Veramente = () => {
   const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
   const [headlinePos, setHeadlinePos] = useState<"1" | "2" | "3" | "4">("1");
-  const [headlineStyle, setHeadlineStyle] = useState<"1" | "2" | "3">("1");
+  const [headlineStyle, setHeadlineStyle] = useState<"1" | "2" | "3">("3");
   return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
@@ -162,27 +162,27 @@ const Veramente = () => {
                   </p>
                   {(() => {
                     const baseCls =
-                      "font-display italic uppercase tracking-[-0.03em] leading-[0.88] text-[clamp(2.25rem,6.5vw,5rem)] mt-3 sm:mt-4 md:mt-5 max-w-[14ch]";
+                      "font-display italic uppercase tracking-[-0.03em] leading-[0.88] text-[clamp(1.75rem,5vw,4rem)] mt-10 sm:mt-12 md:mt-16 whitespace-nowrap";
                     const styleMap: Record<string, React.CSSProperties> = {
-                      // S1 — Outlined yellow: warm fill + crisp ink stroke
+                      // S1 — Outlined yellow
                       "1": {
                         color: "hsl(48 95% 62%)",
                         fontWeight: 600,
                         WebkitTextStroke: "1.5px hsl(20 35% 18%)",
                         textShadow: "3px 4px 0 hsl(20 35% 18% / 0.18)",
                       },
-                      // S2 — Hollow outline: transparent fill, ink stroke only
+                      // S2 — Hollow outline
                       "2": {
                         color: "transparent",
                         fontWeight: 700,
                         WebkitTextStroke: "2px hsl(20 35% 18%)",
                       },
-                      // S3 — Drop-shadow: deep terracotta fill + warm yellow halo
+                      // S3 — Butter yellow fill + deep olive drop shadow
                       "3": {
-                        color: "hsl(15 55% 28%)",
+                        color: "hsl(46 92% 72%)",
                         fontWeight: 600,
                         textShadow:
-                          "4px 5px 0 hsl(48 95% 62%), 5px 6px 0 hsl(20 35% 18% / 0.35)",
+                          "4px 5px 0 hsl(75 35% 22%), 5px 6px 0 hsl(75 40% 14% / 0.45)",
                       },
                     };
                     return (
