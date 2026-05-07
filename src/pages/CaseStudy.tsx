@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 
 import veramenteHeroBg from "@/assets/veramente-hero-bg.jpg";
+import veramenteWordmarkScript from "@/assets/veramente-wordmark-script.png";
+import veramenteCarrySpf from "@/assets/veramente-carry-spf.png";
 import veramenteLogos from "@/assets/veramente-logos.jpg";
 import veramentePalette from "@/assets/veramente-palette.jpg";
 import veramentePackaging from "@/assets/veramente-packaging.jpg";
@@ -102,20 +104,20 @@ const Veramente = () => {
               <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
                 ✦ Case Study No. I · Beauty · Concept Brand ✦
               </p>
-              {renderHeadline()}
+              <img
+                src={veramenteWordmarkScript}
+                alt="Veramente"
+                className="block mx-auto mt-10 md:mt-14 w-[clamp(280px,42vw,640px)] h-auto animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]"
+                style={{ filter: "invert(1) brightness(1.05)" }}
+              />
             </div>
             <div />
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
-              <div className="relative inline-block w-full">
-                <p className="text-base md:text-xl text-ink leading-relaxed whitespace-nowrap" style={{ fontFamily: "'Fraunces', serif", fontWeight: 500, fontVariationSettings: "'SOFT' 100, 'WONK' 1" }}>
-                  <SpotlightTagline radius={260} dimOpacity={0}>
-                    A wearable SPF concept brand that reframes sunscreen as a{" "}
-                    <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
-                      daily accessory people want to show off.
-                    </em>
-                  </SpotlightTagline>
-                </p>
-              </div>
+              <img
+                src={veramenteCarrySpf}
+                alt="Carry your SPF."
+                className="block mx-auto w-[clamp(180px,22vw,340px)] h-auto"
+              />
             </div>
           </div>
         </section>
