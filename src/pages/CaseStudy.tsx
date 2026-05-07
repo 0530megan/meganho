@@ -176,12 +176,7 @@ const Veramente = () => {
               <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
                 ✦ Case Study No. I · Beauty · Concept Brand ✦
               </p>
-              <h1
-                className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] mt-16 md:mt-24"
-                style={{ color: "#EEB033", fontWeight: 500 }}
-              >
-                Carry your SPF.
-              </h1>
+              {renderHeadline()}
             </div>
             <div />
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
