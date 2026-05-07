@@ -28,6 +28,7 @@ import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const Veramente = () => {
   const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
+  const [headlinePos, setHeadlinePos] = useState<"1" | "2" | "3" | "4">("2");
   return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
