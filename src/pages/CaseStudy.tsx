@@ -1110,7 +1110,7 @@ const Sippy = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
-            { Icon: Lightbulb, no: "Concept", title: "A drink that feels like a treat.", body: "Reposition functional beverages away from the gym bag and onto the desk — a tiny daily indulgence that happens to hydrate.", tilt: "-rotate-1" },
+            { Icon: Lightbulb, no: "Concept", title: "Tastes like a treat, only 80 kcal.", body: "Reposition functional beverages away from the gym bag and onto the desk — a tiny daily indulgence that feels indulgent but sips light, guilt-free, and good for you.", tilt: "-rotate-1" },
             { Icon: Eye, no: "Insight", title: "Cute is a category.", body: "Gen Z buys aesthetics first, ingredients second. The can is the marketing — every desk shot is a free billboard.", tilt: "rotate-1" },
             { Icon: Package, no: "Solution", title: "Sparkling blood orange, in a hug-able can.", body: "A bouncy wordmark, a squiggly world, and a flavor that tastes as bright as it looks. Built to be photographed, shared, and re-bought.", tilt: "-rotate-1" },
           ].map(({ Icon, no, title, body, tilt }) => (
