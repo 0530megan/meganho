@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import SpotlightTagline from "@/components/SpotlightTagline";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -123,10 +124,12 @@ const Veramente = () => {
             <div />
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
               <p className="font-display text-base md:text-xl text-ink leading-relaxed whitespace-nowrap">
-                A wearable SPF concept brand that reframes sunscreen as a{" "}
-                <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
-                  daily accessory people want to show off.
-                </em>
+                <SpotlightTagline radius={200}>
+                  A wearable SPF concept brand that reframes sunscreen as a{" "}
+                  <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
+                    daily accessory people want to show off.
+                  </em>
+                </SpotlightTagline>
               </p>
               <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-5">
                 Plate I · Veramente
