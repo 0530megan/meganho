@@ -89,7 +89,7 @@ const Veramente = () => {
           <section className="relative">
             <div className="container min-h-[88vh] grid grid-rows-[auto_1fr_auto] py-8 md:py-10">
               <div className="text-center">
-                <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
+                <p className="font-mono text-[11px] small-caps tracking-[0.25em]" style={{ color: '#ffffff85' }}>
                   ✦ Case Study No. I · Beauty · Concept Brand ✦
                 </p>
                 <img
