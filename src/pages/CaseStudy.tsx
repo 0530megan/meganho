@@ -96,14 +96,6 @@ const Veramente = () => {
           backgroundPosition: "center",
         }}
       >
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, hsl(var(--paper) / 0.15) 0%, hsl(var(--paper) / 0.35) 70%, hsl(var(--paper) / 0.85) 100%)",
-          }}
-        />
         <section className="relative">
           <div className="container min-h-[88vh] grid grid-rows-[auto_1fr_auto] py-8 md:py-10">
             <div className="text-center">
