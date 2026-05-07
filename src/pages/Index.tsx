@@ -13,7 +13,7 @@ import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const NAV = [
-  { id: "work", label: "Selected Work" },
+  { id: "about", label: "Selected Work" },
 ];
 
 
@@ -59,7 +59,7 @@ const Hero = () => (
             </Link>
           </li>
           {NAV.map((n) => {
-            const isHighlight = n.id === "work";
+            const isHighlight = n.id === "about";
             return (
               <li key={n.id}>
                 <a
