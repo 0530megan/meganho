@@ -200,7 +200,6 @@ const Veramente = () => {
           {/* At-a-glance table */}
           <dl className="border-t border-ink/30">
             {[
-              ["Format", "SPF50+ stick · 30g"],
               ["Palette", "Peach · Olive · Taupe"],
               ["Type", "Script + clean serif"],
               ["Tools", "Figma · Canva · AI"],
