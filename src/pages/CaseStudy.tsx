@@ -112,11 +112,9 @@ const Veramente = () => {
 
     {/* AT A GLANCE */}
     <section className="border-b-2 border-ink bg-paper-deep/40">
-      <div className="container py-10 grid md:grid-cols-5 gap-6">
+      <div className="container py-10 grid md:grid-cols-3 gap-6">
         {[
-          ["Role", "Brand · Product · Art Direction"],
           ["Category", "Skincare · Accessory"],
-          ["Format", "SPF50+ stick + charm loop"],
           ["Tools", "Figma · Canva · AI Mockups"],
           ["Year", "2025 — Concept"],
         ].map(([k, v]) => (
