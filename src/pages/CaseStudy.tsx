@@ -1081,7 +1081,7 @@ const Sippy = () => {
         <div className="space-y-6">
           {[
             { n: "01", label: "Wordmark", img: sippyLogo, ratio: "16 / 10", title: "Bouncy, blushy, never serious.", body: "A bespoke wordmark with a wobble — letters that feel like they were squeezed by hand, paired with a soft pink-and-orange palette.", meta: ["Hand-drawn", "Pink + orange", "Display"] },
-            { n: "02", label: "Can", img: sippyBrandBoard, ratio: "5 / 4", title: "A can that wants to be on your desk.", body: "Sparkling blood orange in a slim 250ml can — design leads with squiggles and citrus, with the spec details whispered down the side.", meta: ["250ml · Sparkling", "Slim can", "Shelf-ready"] },
+            { n: "02", label: "Can", img: sippyCanDesk, ratio: "16 / 10", title: "At home on a pink-tiled shelf.", body: "Styled against terrazzo and soft pink tile, the can holds its own next to mushroom lamps and monstera leaves — a little object of desire that quietly belongs in the scene.", meta: ["440ml · Sparkling", "Blood orange", "Still-life"] },
             { n: "03", label: "Cans In Hand", img: sippyCans, ratio: "16 / 10", title: "Cheers, in slim pink cans.", body: "440ml of sparkling blood orange, dressed in blush pink with a juicy orange wordmark. Designed to look as good in a hand as it does on a shelf — clinking, sipping, and being held up to the light.", meta: ["440ml", "Sparkling", "Lifestyle"] },
           ].map((c, i) => (
             <article key={c.n} className={`grid md:grid-cols-12 gap-0 border-2 border-ink bg-paper shadow-[8px_10px_0_0_hsl(10_80%_60%)] overflow-hidden ${i % 2 === 1 ? "md:[&>figure]:order-2" : ""}`}>
