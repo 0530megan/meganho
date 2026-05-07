@@ -109,8 +109,8 @@ const Veramente = () => {
               </h1>
             </div>
             <div />
-            <div className="text-center max-w-2xl mx-auto pb-2 mt-24 md:mt-32">
-              <p className="font-display text-base md:text-xl text-ink leading-relaxed">
+            <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
+              <p className="font-display text-base md:text-xl text-ink leading-relaxed whitespace-nowrap">
                 A wearable SPF concept brand that reframes sunscreen as a{" "}
                 <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
                   daily accessory people want to show off.
