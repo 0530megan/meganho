@@ -123,11 +123,6 @@ const Veramente = () => {
             </div>
             <div />
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
-              <p className="font-mono text-[13px] md:text-sm small-caps text-accent-red tracking-[0.32em] mb-6 md:mb-8 inline-flex items-center gap-3 animate-fade-in">
-                <span aria-hidden className="inline-block animate-pulse">☀</span>
-                hover or press enter to reveal
-                <span aria-hidden className="inline-block animate-pulse">☀</span>
-              </p>
               <p className="font-display text-base md:text-xl text-ink leading-relaxed whitespace-nowrap">
                 <SpotlightTagline radius={260} dimOpacity={0}>
                   A wearable SPF concept brand that reframes sunscreen as a{" "}
@@ -135,6 +130,11 @@ const Veramente = () => {
                     daily accessory people want to show off.
                   </em>
                 </SpotlightTagline>
+              </p>
+              <p className="font-mono text-[13px] md:text-sm small-caps text-accent-red tracking-[0.32em] mt-5 inline-flex items-center gap-3 animate-fade-in">
+                <span aria-hidden className="inline-block animate-pulse">☀</span>
+                hover or press enter to reveal
+                <span aria-hidden className="inline-block animate-pulse">☀</span>
               </p>
               <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-5">
                 Plate I · Veramente
