@@ -888,7 +888,7 @@ const Sippy = () => {
       className="relative border-b-2 border-ink"
       style={{
         backgroundImage: `url(${sippyHeroBg})`,
-        backgroundSize: "80%",
+        backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundColor: "#F4B8B8",
