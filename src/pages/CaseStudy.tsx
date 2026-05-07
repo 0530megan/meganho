@@ -841,6 +841,12 @@ const Veramente = () => {
         >
           <ArrowLeft className="size-3.5" /> Back to Folio
         </Link>
+        <Link
+          to="/#contact"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 border border-ink px-5 py-3 hover:bg-ink hover:text-paper transition-colors"
+        >
+          Contact <ArrowUpRight className="size-3.5" />
+        </Link>
       </div>
     </section>
 
