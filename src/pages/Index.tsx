@@ -272,7 +272,7 @@ const SelectedWork = () => {
               <img
                 src={s.cover}
                 alt={`${s.name} logo`}
-                className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[-2deg]"
+                className={`transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[-2deg] ${s.name === "Veramente" ? "absolute inset-0 w-full h-full object-cover scale-[1.3]" : "max-h-full max-w-full object-contain"}`}
                 loading="lazy"
               />
               <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
