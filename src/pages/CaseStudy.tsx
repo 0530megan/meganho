@@ -870,7 +870,7 @@ const Sippy = () => {
   const [hintPos] = useState<HintPos>("center");
   const [preview169, setPreview169] = useState(false);
   const [bgPosX, setBgPosX] = useState(50);
-  const [bgPosY, setBgPosY] = useState(30);
+  const [bgPosY, setBgPosY] = useState(70);
   const [savedToast, setSavedToast] = useState<string | null>(null);
 
   useEffect(() => {
