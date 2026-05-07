@@ -889,7 +889,7 @@ const Sippy = () => {
       style={{
         backgroundImage: `url(${sippyHeroBg})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center 30%",
         backgroundRepeat: "no-repeat",
         backgroundColor: "#F4B8B8",
       }}
