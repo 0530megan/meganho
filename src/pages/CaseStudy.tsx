@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import SpotlightTagline from "@/components/SpotlightTagline";
 import {
   ArrowLeft,
   ArrowUpRight,
