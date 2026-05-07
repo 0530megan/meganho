@@ -943,6 +943,7 @@ const Placeholder = ({ slug }: { slug: string }) => {
 const CaseStudy = () => {
   const { slug = "" } = useParams();
   if (slug === "veramente") return <Veramente />;
+  if (slug === "sippy") return <Sippy />;
   return <Placeholder slug={slug} />;
 };
 
