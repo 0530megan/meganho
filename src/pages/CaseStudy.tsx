@@ -132,7 +132,13 @@ const Veramente = () => {
                     e.currentTarget.classList.toggle("is-revealed");
                   }
                 }}
-                className="group is-revealable font-mono text-[13px] md:text-sm small-caps text-accent-red tracking-[0.32em] mt-10 md:mt-14 mb-10 md:mb-14 inline-flex items-center gap-3 animate-fade-in cursor-pointer bg-transparent border-0 p-0 transition-all duration-500 ease-out hover:-translate-y-1 hover:tracking-[0.42em] hover:text-ink focus-visible:-translate-y-1 focus-visible:tracking-[0.42em] focus-visible:text-ink focus-visible:outline-none [&.is-revealed]:-translate-y-1 [&.is-revealed]:tracking-[0.42em] [&.is-revealed]:text-ink"
+                style={{
+                  color: "#FFF8E0",
+                  fontWeight: 500,
+                  textShadow:
+                    "1px 1px 0 rgba(255,255,255,0.85), 2px 2px 0 rgba(245,225,150,0.55), -1px -1px 1px rgba(160,120,40,0.35), 0 2px 4px rgba(120,85,20,0.22)",
+                }}
+                className="group is-revealable font-display italic uppercase tracking-[0.08em] text-base md:text-lg mt-10 md:mt-14 mb-10 md:mb-14 inline-flex items-center gap-3 animate-fade-in cursor-pointer bg-transparent border-0 p-0 transition-all duration-500 ease-out hover:-translate-y-1 hover:tracking-[0.18em] focus-visible:-translate-y-1 focus-visible:tracking-[0.18em] focus-visible:outline-none [&.is-revealed]:-translate-y-1 [&.is-revealed]:tracking-[0.18em]"
               >
                 <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:rotate-180 group-focus-visible:rotate-180 group-[.is-revealed]:rotate-180 animate-pulse">☀</span>
                 <span className="transition-opacity duration-500 ease-out">hover or press enter to reveal</span>
