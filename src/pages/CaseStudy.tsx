@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   ArrowLeft,
@@ -26,6 +27,7 @@ import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const Veramente = () => {
+  const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
   return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
@@ -49,92 +51,195 @@ const Veramente = () => {
       </div>
     </header>
 
-    {/* HERO + AT A GLANCE — shared image background */}
-    <div
-      className="relative border-b-2 border-ink"
-      style={{
-        backgroundImage: `url(${veramenteHeroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, hsl(var(--paper) / 0.25) 0%, hsl(var(--paper) / 0.45) 60%, hsl(var(--paper) / 0.75) 100%)",
-        }}
-      />
+    {/* Hero layout switcher */}
+    <div className="border-b border-ink/30 bg-paper/80 backdrop-blur sticky top-[49px] z-20">
+      <div className="container py-2 flex items-center gap-2 flex-wrap">
+        <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mr-1">
+          Hero ·
+        </span>
+        {([
+          { k: "A", label: "Minimal" },
+          { k: "B", label: "Side rail" },
+          { k: "C", label: "Bottom band" },
+        ] as const).map((opt) => (
+          <button
+            key={opt.k}
+            onClick={() => setHeroLayout(opt.k)}
+            className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
+              heroLayout === opt.k
+                ? "bg-ink text-paper"
+                : "bg-paper text-ink hover:bg-paper-deep"
+            }`}
+          >
+            {opt.k} · {opt.label}
+          </button>
+        ))}
+      </div>
+    </div>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="container py-16 md:py-24 relative grid md:grid-cols-12 gap-10 items-end">
-          <div className="md:col-span-8">
-            <p className="font-mono text-[11px] small-caps text-accent-red mb-5 tracking-[0.2em] px-0 mx-0 my-0 py-0">
+    {/* HERO + AT A GLANCE — shared image background */}
+    {heroLayout === "A" && (
+      <div
+        className="relative border-b-2 border-ink"
+        style={{
+          backgroundImage: `url(${veramenteHeroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(var(--paper) / 0.15) 0%, hsl(var(--paper) / 0.35) 70%, hsl(var(--paper) / 0.85) 100%)",
+          }}
+        />
+        <section className="relative">
+          <div className="container min-h-[78vh] flex flex-col justify-between py-10 md:py-14">
+            <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em] text-center">
               ✦ Case Study No. I · Beauty · Concept Brand ✦
             </p>
-            <h1 className="font-display font-light leading-[0.95] tracking-[-0.02em]">
-              <span
-                className="block italic uppercase tracking-[-0.03em] leading-[0.9] mt-8 md:mt-10 text-[clamp(2.25rem,7vw,5.25rem)]"
-                style={{ color: "hsl(48 90% 70%)", fontWeight: 500 }}
-              >
+            <div className="text-center max-w-3xl mx-auto">
+              <h1 className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(3rem,9vw,7rem)]"
+                style={{ color: "hsl(48 90% 70%)", fontWeight: 500 }}>
                 Carry your SPF.
-              </span>
+              </h1>
+              <p className="font-display text-lg md:text-2xl text-ink mt-8 leading-relaxed">
+                A wearable SPF concept brand that reframes sunscreen as a{" "}
+                <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
+                  daily accessory people want to show off.
+                </em>
+              </p>
+            </div>
+            <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] text-center">
+              Plate I · Veramente
+            </p>
+          </div>
+        </section>
+        <section className="relative border-t border-ink/30 bg-paper/70 backdrop-blur-sm">
+          <div className="container py-8 grid md:grid-cols-3 gap-6">
+            {[
+              ["Category", "Skincare · Accessory"],
+              ["Tools", "Figma · Canva · AI Mockups"],
+              ["Year", "2025 — Concept"],
+            ].map(([k, v]) => (
+              <div key={k} className="border-l-2 border-ink/40 pl-4">
+                <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">{k}</p>
+                <p className="font-display text-base leading-snug">{v}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    )}
+
+    {heroLayout === "B" && (
+      <div className="relative border-b-2 border-ink grid md:grid-cols-12">
+        {/* Left rail — paper column */}
+        <div className="md:col-span-5 lg:col-span-4 bg-paper border-r-2 border-ink relative z-10">
+          <div className="px-8 md:px-10 py-12 md:py-16 flex flex-col h-full">
+            <p className="font-mono text-[11px] small-caps text-accent-red mb-8 tracking-[0.25em]">
+              ✦ Case · No. I ✦
+            </p>
+            <h1 className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,6vw,4.5rem)]"
+              style={{ color: "hsl(48 90% 60%)", fontWeight: 500 }}>
+              Carry your SPF.
             </h1>
-            <p className="font-display text-xl md:text-2xl text-ink-soft mt-8 max-w-2xl leading-relaxed">
+            <p className="font-display text-lg md:text-xl text-ink-soft mt-6 leading-relaxed">
               A wearable SPF concept brand that reframes sunscreen as a{" "}
-              <em
-                className="not-italic font-semibold"
-                style={{ color: "hsl(var(--accent-red))" }}
-              >
+              <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
                 daily accessory people want to show off.
               </em>
             </p>
-          </div>
-          <div className="md:col-span-4">
-            <figure
-              className="relative border border-ink p-6 shadow-[10px_12px_0_0_hsl(var(--ink))] rotate-[2deg] hover:rotate-0 transition-transform duration-500"
-              style={{ background: "hsl(28 60% 92%)" }}
-            >
-              <img
-                src={veramenteLogo}
-                alt="Veramente logo"
-                className="w-full h-auto block aspect-square object-contain"
-              />
-              <span className="absolute -top-3 -left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[-4deg]">
-                SPF · 50
-              </span>
-              <figcaption className="pt-3 mt-2 border-t border-ink/30 flex items-baseline justify-between gap-3">
-                <p className="font-display italic text-sm">Veramente</p>
-                <p className="font-mono text-[10px] small-caps text-ink-mute">
-                  Plate I
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* AT A GLANCE */}
-      <section className="relative border-t border-ink/30">
-        <div className="container py-10 grid md:grid-cols-3 gap-6">
-          {[
-            ["Category", "Skincare · Accessory"],
-            ["Tools", "Figma · Canva · AI Mockups"],
-            ["Year", "2025 — Concept"],
-          ].map(([k, v]) => (
-            <div key={k} className="border-l-2 border-ink/40 pl-4">
-              <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">
-                {k}
-              </p>
-              <p className="font-display text-base leading-snug">{v}</p>
+            <div className="mt-10 pt-8 border-t border-ink/30 grid grid-cols-1 gap-5">
+              {[
+                ["Category", "Skincare · Accessory"],
+                ["Tools", "Figma · Canva · AI Mockups"],
+                ["Year", "2025 — Concept"],
+              ].map(([k, v]) => (
+                <div key={k} className="flex items-baseline justify-between gap-3 border-b border-ink/15 pb-2">
+                  <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em]">{k}</p>
+                  <p className="font-display text-sm">{v}</p>
+                </div>
+              ))}
             </div>
-          ))}
+            <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-auto pt-10">
+              Beauty · Concept Brand
+            </p>
+          </div>
         </div>
-      </section>
-    </div>
+        {/* Right — full background */}
+        <div
+          className="md:col-span-7 lg:col-span-8 min-h-[60vh] md:min-h-[88vh] relative"
+          style={{
+            backgroundImage: `url(${veramenteHeroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <span className="absolute top-6 right-6 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 tracking-[0.2em]">
+            Plate I · SPF 50
+          </span>
+        </div>
+      </div>
+    )}
+
+    {heroLayout === "C" && (
+      <div className="border-b-2 border-ink">
+        {/* Top — image */}
+        <div
+          className="relative w-full"
+          style={{
+            backgroundImage: `url(${veramenteHeroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            minHeight: "clamp(320px, 58vh, 640px)",
+          }}
+        >
+          <div className="container h-full">
+            <div className="pt-6 flex items-start justify-between">
+              <p className="font-mono text-[11px] small-caps text-ink tracking-[0.25em] bg-paper/80 backdrop-blur px-3 py-1.5">
+                ✦ Case Study No. I · Veramente ✦
+              </p>
+              <p className="font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 tracking-[0.2em]">
+                SPF · 50
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Bottom — paper band */}
+        <section className="bg-paper border-t-2 border-ink">
+          <div className="container py-12 md:py-16 grid md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-8">
+              <h1 className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.5rem)]"
+                style={{ color: "hsl(48 90% 60%)", fontWeight: 500 }}>
+                Carry your SPF.
+              </h1>
+              <p className="font-display text-lg md:text-xl text-ink-soft mt-6 max-w-2xl leading-relaxed">
+                A wearable SPF concept brand that reframes sunscreen as a{" "}
+                <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
+                  daily accessory people want to show off.
+                </em>
+              </p>
+            </div>
+            <div className="md:col-span-4 grid grid-cols-1 gap-4">
+              {[
+                ["Category", "Skincare · Accessory"],
+                ["Tools", "Figma · Canva · AI Mockups"],
+                ["Year", "2025 — Concept"],
+              ].map(([k, v]) => (
+                <div key={k} className="flex items-baseline justify-between gap-3 border-b border-ink/20 pb-2">
+                  <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em]">{k}</p>
+                  <p className="font-display text-sm">{v}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    )}
+
 
     {/* THE BRIEF */}
     <section className="container py-20 md:py-28 grid md:grid-cols-12 gap-10">
