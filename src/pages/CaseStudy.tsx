@@ -13,7 +13,7 @@ import {
   
 } from "lucide-react";
 
-import veramenteHeroBg from "@/assets/veramente-hero-bg.png";
+import veramenteHeroBg from "@/assets/veramente-hero-bg.jpg";
 import veramenteLogos from "@/assets/veramente-logos.jpg";
 import veramentePalette from "@/assets/veramente-palette.jpg";
 import veramentePackaging from "@/assets/veramente-packaging.jpg";
