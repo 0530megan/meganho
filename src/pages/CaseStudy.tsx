@@ -25,6 +25,8 @@ import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
 import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyLogo from "@/assets/sippy-logo.jpg";
+import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
+import sippyHeroBg from "@/assets/sippy-hero-bg.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 type HintPos = "top" | "bottom" | "left" | "right" | "center";
