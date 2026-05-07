@@ -27,8 +27,19 @@ import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
+type HintPos = "top" | "bottom" | "left" | "right" | "center";
+
+const hintPosClasses: Record<HintPos, string> = {
+  top: "absolute left-1/2 -translate-x-1/2 -top-12 md:-top-16",
+  bottom: "absolute left-1/2 -translate-x-1/2 -bottom-12 md:-bottom-16",
+  left: "absolute top-1/2 -translate-y-1/2 -left-4 md:-left-8 -rotate-90 origin-center",
+  right: "absolute top-1/2 -translate-y-1/2 -right-4 md:-right-8 rotate-90 origin-center",
+  center: "block mt-10 md:mt-14 mb-10 md:mb-14 mx-auto",
+};
+
 const Veramente = () => {
   const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
+  const [hintPos, setHintPos] = useState<HintPos>("center");
 
   const headlineClass =
     "font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]";
