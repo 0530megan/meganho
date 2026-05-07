@@ -858,12 +858,20 @@ const Veramente = () => {
 
 const Sippy = () => {
   const [hintPos] = useState<HintPos>("center");
+  const [preview169, setPreview169] = useState(false);
 
   const headlineClass =
     "font-display italic uppercase tracking-[-0.03em] leading-[0.9] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both] text-6xl";
 
   return (
   <div className="paper-grain min-h-screen text-ink">
+    <button
+      onClick={() => setPreview169((v) => !v)}
+      className="fixed bottom-4 right-4 z-50 font-mono text-[10px] small-caps tracking-[0.2em] bg-ink text-paper px-3 py-2 border-2 border-ink shadow-[3px_3px_0_0_hsl(10_80%_60%)] hover:translate-y-[-1px] transition-transform"
+      aria-pressed={preview169}
+    >
+      {preview169 ? "Exit 16:9" : "Preview 16:9"}
+    </button>
     <header className="border-b-2 border-ink sticky top-0 z-30 bg-paper/80 backdrop-blur">
       <div className="container py-3 flex items-center justify-between gap-4">
         <Link
@@ -892,6 +900,7 @@ const Sippy = () => {
         backgroundPosition: "center 30%",
         backgroundRepeat: "no-repeat",
         backgroundColor: "#F4B8B8",
+        ...(preview169 ? { aspectRatio: "16 / 9" as const, overflow: "hidden" as const } : {}),
       }}
     >
       <div
