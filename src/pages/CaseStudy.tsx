@@ -864,7 +864,7 @@ const Veramente = () => {
 };
 
 const SIPPY_BG_STORAGE_KEY = "sippy:hero-bg-pos";
-const SIPPY_WORKING_BG_POSITION = { x: 50, y: 30 };
+
 
 const Sippy = () => {
   const [hintPos] = useState<HintPos>("center");
