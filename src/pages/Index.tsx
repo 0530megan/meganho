@@ -53,9 +53,9 @@ const Hero = () => (
           <li>
             <Link
               to="/about-me"
-              className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 font-mono text-sm small-caps text-paper bg-[hsl(var(--accent-burnt))] px-5 py-2.5 hover:opacity-90 transition-opacity whitespace-nowrap"
             >
-              About Me <ArrowUpRight className="size-3" />
+              About Me <ArrowUpRight className="size-4" />
             </Link>
           </li>
           {NAV.map((n) => {
@@ -66,8 +66,8 @@ const Hero = () => (
                   href={`#${n.id}`}
                   className={
                     isHighlight
-                      ? "inline-flex items-center font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity whitespace-nowrap"
-                      : "font-mono text-[11px] small-caps text-ink-soft hover:text-accent-red transition-colors whitespace-nowrap"
+                      ? "inline-flex items-center font-mono text-sm small-caps text-paper bg-[hsl(var(--accent-burnt))] px-5 py-2.5 hover:opacity-90 transition-opacity whitespace-nowrap"
+                      : "font-mono text-sm small-caps text-ink-soft hover:text-accent-red transition-colors whitespace-nowrap"
                   }
                 >
                   {n.label}
@@ -78,9 +78,9 @@ const Hero = () => (
           <li>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1 font-mono text-[11px] small-caps text-paper bg-[hsl(var(--accent-burnt))] px-3 py-1.5 hover:opacity-90 transition-opacity whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 font-mono text-sm small-caps text-paper bg-[hsl(var(--accent-burnt))] px-5 py-2.5 hover:opacity-90 transition-opacity whitespace-nowrap"
             >
-              Hire <ArrowUpRight className="size-3" />
+              Hire <ArrowUpRight className="size-4" />
             </a>
           </li>
         </ul>
