@@ -164,7 +164,7 @@ const Veramente = () => {
                   className={`group is-revealable font-mono small-caps text-accent-red text-[13px] md:text-sm tracking-[0.32em] inline-flex items-center gap-3 animate-fade-in cursor-pointer bg-transparent border-0 p-0 whitespace-nowrap transition-all duration-500 ease-out hover:-translate-y-1 hover:tracking-[0.42em] hover:text-ink focus-visible:-translate-y-1 focus-visible:tracking-[0.42em] focus-visible:text-ink focus-visible:outline-none [&.is-revealed]:-translate-y-1 [&.is-revealed]:tracking-[0.42em] [&.is-revealed]:text-ink ${hintPosClasses[hintPos]}`}
                 >
                   <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:rotate-180 group-focus-visible:rotate-180 group-[.is-revealed]:rotate-180 animate-pulse">☀</span>
-                  <span className="inline-block overflow-hidden transition-all duration-700 ease-out opacity-60 blur-[2px] -translate-y-1 group-hover:opacity-100 group-hover:blur-0 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:blur-0 group-focus-visible:translate-y-0 group-[.is-revealed]:opacity-100 group-[.is-revealed]:blur-0 group-[.is-revealed]:translate-y-0">hover or press enter to reveal</span>
+                  <span className="transition-opacity duration-500 ease-out">hover or press enter to reveal</span>
                   <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:-rotate-180 group-focus-visible:-rotate-180 group-[.is-revealed]:-rotate-180 animate-pulse">☀</span>
                 </button>
                 <p className="font-display text-base md:text-xl text-ink leading-relaxed whitespace-nowrap">
