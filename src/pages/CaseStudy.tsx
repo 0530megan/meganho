@@ -760,7 +760,7 @@ const Veramente = () => {
           A brand built to be
           <span
             className="italic"
-            style={{ color: "hsl(var(--accent-ochre))" }}
+            style={{ color: "#F3E5A0" }}
           >
             {" "}
             seen, shared, repeated.
