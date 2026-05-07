@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   ArrowLeft,
@@ -29,6 +29,7 @@ import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 const Veramente = () => {
   const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
   const [headlinePos, setHeadlinePos] = useState<"1" | "2" | "3" | "4">("1");
+  const [headlineStyle, setHeadlineStyle] = useState<"1" | "2" | "3">("1");
   return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
@@ -98,6 +99,26 @@ const Veramente = () => {
                 {opt.k} · {opt.label}
               </button>
             ))}
+            <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mx-2">
+              · Style ·
+            </span>
+            {([
+              { k: "1", label: "Outlined" },
+              { k: "2", label: "Hollow" },
+              { k: "3", label: "Drop-shadow" },
+            ] as const).map((opt) => (
+              <button
+                key={opt.k}
+                onClick={() => setHeadlineStyle(opt.k)}
+                className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
+                  headlineStyle === opt.k
+                    ? "bg-ink text-paper"
+                    : "bg-paper text-ink hover:bg-paper-deep"
+                }`}
+              >
+                S{opt.k} · {opt.label}
+              </button>
+            ))}
           </>
         )}
       </div>
@@ -139,12 +160,37 @@ const Veramente = () => {
                   <p className="font-mono text-[10px] sm:text-[11px] small-caps text-accent-red tracking-[0.25em]">
                     ✦ Case Study No. I · Beauty · Concept Brand ✦
                   </p>
-                  <h1
-                    className="font-display italic uppercase tracking-[-0.03em] leading-[0.88] text-[clamp(2.25rem,6.5vw,5rem)] mt-3 sm:mt-4 md:mt-5 max-w-[14ch]"
-                    style={{ color: "hsl(48 90% 60%)", fontWeight: 500 }}
-                  >
-                    Carry your SPF.
-                  </h1>
+                  {(() => {
+                    const baseCls =
+                      "font-display italic uppercase tracking-[-0.03em] leading-[0.88] text-[clamp(2.25rem,6.5vw,5rem)] mt-3 sm:mt-4 md:mt-5 max-w-[14ch]";
+                    const styleMap: Record<string, React.CSSProperties> = {
+                      // S1 — Outlined yellow: warm fill + crisp ink stroke
+                      "1": {
+                        color: "hsl(48 95% 62%)",
+                        fontWeight: 600,
+                        WebkitTextStroke: "1.5px hsl(20 35% 18%)",
+                        textShadow: "3px 4px 0 hsl(20 35% 18% / 0.18)",
+                      },
+                      // S2 — Hollow outline: transparent fill, ink stroke only
+                      "2": {
+                        color: "transparent",
+                        fontWeight: 700,
+                        WebkitTextStroke: "2px hsl(20 35% 18%)",
+                      },
+                      // S3 — Drop-shadow: deep terracotta fill + warm yellow halo
+                      "3": {
+                        color: "hsl(15 55% 28%)",
+                        fontWeight: 600,
+                        textShadow:
+                          "4px 5px 0 hsl(48 95% 62%), 5px 6px 0 hsl(20 35% 18% / 0.35)",
+                      },
+                    };
+                    return (
+                      <h1 className={baseCls} style={styleMap[headlineStyle]}>
+                        Carry your SPF.
+                      </h1>
+                    );
+                  })()}
                 </div>
               );
 
