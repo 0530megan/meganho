@@ -860,7 +860,7 @@ const Sippy = () => {
   const [hintPos] = useState<HintPos>("center");
 
   const headlineClass =
-    "font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]";
+    "font-display italic uppercase tracking-[-0.03em] leading-[0.9] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both] text-6xl";
 
   return (
   <div className="paper-grain min-h-screen text-ink">
