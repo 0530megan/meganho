@@ -751,7 +751,7 @@ const Veramente = () => {
     </section>
 
     {/* OUTCOMES */}
-    <section className="border-y-2 border-ink bg-ink text-paper">
+    <section className="border-y-2 border-ink text-paper" style={{ backgroundColor: "#55573F" }}>
       <div className="container py-20 md:py-24">
         <p className="font-mono text-[11px] small-caps text-paper/60 mb-3 tracking-[0.2em]">
           05 · Why It Works
