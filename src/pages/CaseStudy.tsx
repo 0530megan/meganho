@@ -28,6 +28,81 @@ import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const Veramente = () => {
   const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
+  const [headlineTexture, setHeadlineTexture] = useState<"A" | "B" | "C" | "D">("A");
+
+  const headlineBase = "Carry your SPF.";
+  const headlineColor = "#EEB033";
+  const headlineClass =
+    "font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] mt-16 md:mt-24 inline-block";
+
+  const renderHeadline = () => {
+    switch (headlineTexture) {
+      case "A":
+        return (
+          <h1
+            className={headlineClass}
+            style={{
+              fontWeight: 500,
+              backgroundImage:
+                "linear-gradient(180deg, #F8D77A 0%, #EEB033 35%, #B8801F 55%, #F4C760 75%, #8A5E14 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+              WebkitTextStroke: "0.5px rgba(120,80,15,0.35)",
+              filter:
+                "drop-shadow(0 1px 0 rgba(255,255,255,0.35)) drop-shadow(0 2px 6px rgba(120,80,15,0.25))",
+            }}
+          >
+            {headlineBase}
+          </h1>
+        );
+      case "B":
+        return (
+          <h1
+            className={headlineClass}
+            style={{
+              color: headlineColor,
+              fontWeight: 500,
+              textShadow:
+                "0 1px 0 rgba(255,250,230,0.55), 0 -1px 0 rgba(120,80,15,0.35), 0 2px 3px rgba(80,55,10,0.18)",
+            }}
+          >
+            {headlineBase}
+          </h1>
+        );
+      case "C":
+        return (
+          <h1
+            className={headlineClass}
+            style={{
+              fontWeight: 500,
+              backgroundImage: `radial-gradient(circle at 30% 30%, #F6CC5E 0%, #EEB033 45%, #C88A20 100%), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.38  0 0 0 0 0.1  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")`,
+              backgroundBlendMode: "multiply",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+              filter: "drop-shadow(0 0 14px rgba(238,176,51,0.35))",
+            }}
+          >
+            {headlineBase}
+          </h1>
+        );
+      case "D":
+        return (
+          <h1
+            className={headlineClass}
+            style={{
+              color: headlineColor,
+              fontWeight: 500,
+              textShadow:
+                "1px 1px 0 rgba(255,250,230,0.7), -1px -1px 1px rgba(120,80,15,0.45), 0 0 1px rgba(120,80,15,0.3)",
+            }}
+          >
+            {headlineBase}
+          </h1>
+        );
+    }
+  };
   return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
@@ -74,6 +149,27 @@ const Veramente = () => {
             {opt.k} · {opt.label}
           </button>
         ))}
+        <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mx-2">
+          | Headline ·
+        </span>
+        {([
+          { k: "A", label: "Gold foil" },
+          { k: "B", label: "Letterpress" },
+          { k: "C", label: "Sun grain" },
+          { k: "D", label: "Embossed" },
+        ] as const).map((opt) => (
+          <button
+            key={opt.k}
+            onClick={() => setHeadlineTexture(opt.k)}
+            className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
+              headlineTexture === opt.k
+                ? "bg-ink text-paper"
+                : "bg-paper text-ink hover:bg-paper-deep"
+            }`}
+          >
+            {opt.k} · {opt.label}
+          </button>
+        ))}
       </div>
     </div>
 
@@ -101,12 +197,7 @@ const Veramente = () => {
               <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
                 ✦ Case Study No. I · Beauty · Concept Brand ✦
               </p>
-              <h1
-                className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] mt-16 md:mt-24"
-                style={{ color: "#EEB033", fontWeight: 500 }}
-              >
-                Carry your SPF.
-              </h1>
+              {renderHeadline()}
             </div>
             <div />
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
