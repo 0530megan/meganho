@@ -13,10 +13,7 @@ import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 const NAV = [
-  
-  { id: "approach", label: "Approach" },
   { id: "work", label: "Selected Work" },
-  { id: "skills", label: "Skills" },
 ];
 
 
@@ -1103,11 +1100,9 @@ const Statement = () => (
         Personal Statement
       </p>
       <p className="font-display italic font-light text-3xl md:text-5xl leading-[1.15] tracking-tight max-w-5xl">
-        "I am interested in creating marketing that goes beyond communication 
-        where products themselves become platforms for engagement. I focus on
-        understanding how consumer behaviour, aesthetics, and everyday habits
-        can be translated into ideas that are both creatively compelling and
-        commercially viable."
+        "I make marketing that doesn't just talk — it shows up.
+        Turning everyday habits and good taste into ideas
+        that feel sharp, fun, and actually work."
       </p>
       <p className="font-mono text-xs small-caps text-paper/60 mt-8">
         Megan Ho, Melbourne
