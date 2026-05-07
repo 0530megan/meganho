@@ -820,8 +820,14 @@ const Veramente = () => {
       <div className="flex items-center justify-center gap-3 flex-wrap">
         <Link
           to="/case/sippy"
-          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 bg-ink text-paper px-5 py-3 hover:opacity-90 transition-opacity"
+          className="group font-mono text-[11px] small-caps inline-flex items-center gap-2 bg-ink text-paper pl-2 pr-5 py-2 hover:opacity-90 transition-opacity"
         >
+          <img
+            src={sippyLogo}
+            alt=""
+            aria-hidden
+            className="size-7 rounded-full object-cover ring-2 ring-paper/80 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
+          />
           Next: Sippy <ArrowUpRight className="size-3.5" />
         </Link>
         <Link
