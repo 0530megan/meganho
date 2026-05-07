@@ -33,7 +33,7 @@ const Veramente = () => {
   const headlineBase = "Carry your SPF.";
   const headlineColor = "#EEB033";
   const headlineClass =
-    "font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4";
+    "font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]";
 
   const renderHeadline = () => {
     switch (headlineTexture) {
