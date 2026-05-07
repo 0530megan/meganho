@@ -10,6 +10,7 @@ import {
   Heart,
 } from "lucide-react";
 
+import veramenteHeroBg from "@/assets/veramente-hero-bg.png";
 import veramenteLogos from "@/assets/veramente-logos.jpg";
 import veramentePalette from "@/assets/veramente-palette.jpg";
 import veramentePackaging from "@/assets/veramente-packaging.jpg";
@@ -48,85 +49,97 @@ const Veramente = () => {
       </div>
     </header>
 
-    {/* HERO */}
-    <section className="relative overflow-hidden border-b-2 border-ink">
+    {/* HERO + AT A GLANCE — shared image background */}
+    <div
+      className="relative border-b-2 border-ink"
+      style={{
+        backgroundImage: `url(${veramenteHeroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div
         aria-hidden
-        className="absolute inset-0 -z-0"
+        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 70% at 18% 30%, hsl(var(--accent-ochre) / 0.28) 0%, transparent 60%), radial-gradient(45% 55% at 85% 75%, hsl(var(--accent-red) / 0.14) 0%, transparent 65%)",
+            "linear-gradient(180deg, hsl(var(--paper) / 0.25) 0%, hsl(var(--paper) / 0.45) 60%, hsl(var(--paper) / 0.75) 100%)",
         }}
       />
-      <div className="container py-16 md:py-24 relative grid md:grid-cols-12 gap-10 items-end">
-        <div className="md:col-span-8">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-5 tracking-[0.2em] px-0 mx-0 my-0 py-0">
-            ✦ Case Study No. I · Beauty · Concept Brand ✦
-          </p>
-          <h1 className="font-display font-light leading-[0.95] tracking-[-0.02em]">
-            <img
-              src={veramenteWordmark}
-              alt="Veramente"
-              className="block w-full max-w-[640px] h-auto -ml-2 mix-blend-multiply"
-            />
-            <span
-              className="block italic uppercase tracking-[-0.03em] leading-[0.9] mt-8 md:mt-10 text-[clamp(2.25rem,7vw,5.25rem)]"
-              style={{ color: "hsl(48 90% 70%)", fontWeight: 500 }}
-            >
-              Carry your SPF.
-            </span>
-          </h1>
-          <p className="font-display text-xl md:text-2xl text-ink-soft mt-8 max-w-2xl leading-relaxed">
-            A wearable SPF concept brand that reframes sunscreen as a{" "}
-            <em
-              className="not-italic font-semibold"
-              style={{ color: "hsl(var(--accent-red))" }}
-            >
-              daily accessory people want to show off.
-            </em>
-          </p>
-        </div>
-        <div className="md:col-span-4">
-          <figure
-            className="relative border border-ink p-6 shadow-[10px_12px_0_0_hsl(var(--ink))] rotate-[2deg] hover:rotate-0 transition-transform duration-500"
-            style={{ background: "hsl(28 60% 92%)" }}
-          >
-            <img
-              src={veramenteLogo}
-              alt="Veramente logo"
-              className="w-full h-auto block aspect-square object-contain"
-            />
-            <span className="absolute -top-3 -left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[-4deg]">
-              SPF · 50
-            </span>
-            <figcaption className="pt-3 mt-2 border-t border-ink/30 flex items-baseline justify-between gap-3">
-              <p className="font-display italic text-sm">Veramente</p>
-              <p className="font-mono text-[10px] small-caps text-ink-mute">
-                Plate I
-              </p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
 
-    {/* AT A GLANCE */}
-    <section className="border-b-2 border-ink bg-paper-deep/40">
-      <div className="container py-10 grid md:grid-cols-3 gap-6">
-        {[
-          ["Category", "Skincare · Accessory"],
-          ["Tools", "Figma · Canva · AI Mockups"],
-          ["Year", "2025 — Concept"],
-        ].map(([k, v]) => (
-          <div key={k} className="border-l-2 border-ink/30 pl-4">
-            <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">
-              {k}
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="container py-16 md:py-24 relative grid md:grid-cols-12 gap-10 items-end">
+          <div className="md:col-span-8">
+            <p className="font-mono text-[11px] small-caps text-accent-red mb-5 tracking-[0.2em] px-0 mx-0 my-0 py-0">
+              ✦ Case Study No. I · Beauty · Concept Brand ✦
             </p>
-            <p className="font-display text-base leading-snug">{v}</p>
+            <h1 className="font-display font-light leading-[0.95] tracking-[-0.02em]">
+              <img
+                src={veramenteWordmark}
+                alt="Veramente"
+                className="block w-full max-w-[640px] h-auto -ml-2 mix-blend-multiply"
+              />
+              <span
+                className="block italic uppercase tracking-[-0.03em] leading-[0.9] mt-8 md:mt-10 text-[clamp(2.25rem,7vw,5.25rem)]"
+                style={{ color: "hsl(48 90% 70%)", fontWeight: 500 }}
+              >
+                Carry your SPF.
+              </span>
+            </h1>
+            <p className="font-display text-xl md:text-2xl text-ink-soft mt-8 max-w-2xl leading-relaxed">
+              A wearable SPF concept brand that reframes sunscreen as a{" "}
+              <em
+                className="not-italic font-semibold"
+                style={{ color: "hsl(var(--accent-red))" }}
+              >
+                daily accessory people want to show off.
+              </em>
+            </p>
           </div>
-        ))}
-      </div>
-    </section>
+          <div className="md:col-span-4">
+            <figure
+              className="relative border border-ink p-6 shadow-[10px_12px_0_0_hsl(var(--ink))] rotate-[2deg] hover:rotate-0 transition-transform duration-500"
+              style={{ background: "hsl(28 60% 92%)" }}
+            >
+              <img
+                src={veramenteLogo}
+                alt="Veramente logo"
+                className="w-full h-auto block aspect-square object-contain"
+              />
+              <span className="absolute -top-3 -left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[-4deg]">
+                SPF · 50
+              </span>
+              <figcaption className="pt-3 mt-2 border-t border-ink/30 flex items-baseline justify-between gap-3">
+                <p className="font-display italic text-sm">Veramente</p>
+                <p className="font-mono text-[10px] small-caps text-ink-mute">
+                  Plate I
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* AT A GLANCE */}
+      <section className="relative border-t border-ink/30">
+        <div className="container py-10 grid md:grid-cols-3 gap-6">
+          {[
+            ["Category", "Skincare · Accessory"],
+            ["Tools", "Figma · Canva · AI Mockups"],
+            ["Year", "2025 — Concept"],
+          ].map(([k, v]) => (
+            <div key={k} className="border-l-2 border-ink/40 pl-4">
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">
+                {k}
+              </p>
+              <p className="font-display text-base leading-snug">{v}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
 
     {/* THE BRIEF */}
     <section className="container py-20 md:py-28 grid md:grid-cols-12 gap-10">
