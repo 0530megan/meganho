@@ -123,29 +123,68 @@ const Veramente = () => {
         />
         <section className="relative">
           <div className="container min-h-[88vh] grid grid-rows-[auto_1fr_auto] py-8 md:py-10">
-            <div className="text-center">
-              <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
-                ✦ Case Study No. I · Beauty · Concept Brand ✦
-              </p>
-              <h1
-                className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] mt-5"
-                style={{ color: "hsl(48 90% 60%)", fontWeight: 500 }}
-              >
-                Carry your SPF.
-              </h1>
-            </div>
-            <div />
-            <div className="text-center max-w-2xl mx-auto pb-2">
-              <p className="font-display text-base md:text-xl text-ink leading-relaxed">
-                A wearable SPF concept brand that reframes sunscreen as a{" "}
-                <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
-                  daily accessory people want to show off.
-                </em>
-              </p>
-              <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-5">
-                Plate I · Veramente
-              </p>
-            </div>
+            {(() => {
+              const align =
+                headlinePos === "1"
+                  ? "text-left items-start"
+                  : headlinePos === "4"
+                  ? "text-right items-end"
+                  : headlinePos === "3"
+                  ? "text-left items-start"
+                  : "text-center items-center";
+              const headlineBlock = (
+                <div className={`flex flex-col ${align}`}>
+                  <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
+                    ✦ Case Study No. I · Beauty · Concept Brand ✦
+                  </p>
+                  <h1
+                    className="font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] mt-5"
+                    style={{ color: "hsl(48 90% 60%)", fontWeight: 500 }}
+                  >
+                    Carry your SPF.
+                  </h1>
+                </div>
+              );
+
+              const descAlign =
+                headlinePos === "3"
+                  ? "text-left items-start mx-0"
+                  : "text-center items-center mx-auto";
+              const descBlock = (
+                <div className={`max-w-2xl pb-2 flex flex-col ${descAlign}`}>
+                  <p className="font-display text-base md:text-xl text-ink leading-relaxed">
+                    A wearable SPF concept brand that reframes sunscreen as a{" "}
+                    <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
+                      daily accessory people want to show off.
+                    </em>
+                  </p>
+                  <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-5">
+                    Plate I · Veramente
+                  </p>
+                </div>
+              );
+
+              if (headlinePos === "3") {
+                // Bottom-left: empty top, then headline + desc stacked at bottom
+                return (
+                  <>
+                    <div />
+                    <div />
+                    <div className="flex flex-col items-start gap-6">
+                      {headlineBlock}
+                      {descBlock}
+                    </div>
+                  </>
+                );
+              }
+              return (
+                <>
+                  {headlineBlock}
+                  <div />
+                  {descBlock}
+                </>
+              );
+            })()}
           </div>
         </section>
 
