@@ -91,27 +91,6 @@ const Veramente = () => {
             {opt.k} · {opt.label}
           </button>
         ))}
-        <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mx-2">
-          | Headline ·
-        </span>
-        {([
-          { k: "A", label: "Gold foil" },
-          { k: "B", label: "Letterpress" },
-          { k: "C", label: "Sun grain" },
-          { k: "D", label: "Embossed" },
-        ] as const).map((opt) => (
-          <button
-            key={opt.k}
-            onClick={() => setHeadlineTexture(opt.k)}
-            className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
-              headlineTexture === opt.k
-                ? "bg-ink text-paper"
-                : "bg-paper text-ink hover:bg-paper-deep"
-            }`}
-          >
-            {opt.k} · {opt.label}
-          </button>
-        ))}
       </div>
     </div>
 
