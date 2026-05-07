@@ -136,9 +136,6 @@ const Veramente = () => {
                   </em>
                 </SpotlightTagline>
               </p>
-              <p className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.25em] mt-5">
-                Plate I · Veramente
-              </p>
             </div>
           </div>
         </section>
