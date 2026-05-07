@@ -899,7 +899,7 @@ const Sippy = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, hsl(var(--paper) / 0.05) 0%, hsl(var(--paper) / 0.2) 70%, hsl(var(--paper) / 0.85) 100%)",
+            "linear-gradient(180deg, hsl(var(--paper) / 0.05) 0%, hsl(var(--paper) / 0.08) 100%)",
         }}
       />
       <section className="relative">
