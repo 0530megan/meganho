@@ -167,7 +167,7 @@ const Veramente = () => {
                   <span className="transition-opacity duration-500 ease-out">hover or press enter to reveal</span>
                   <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:-rotate-180 group-focus-visible:-rotate-180 group-[.is-revealed]:-rotate-180 animate-pulse">☀</span>
                 </button>
-                <p className="font-display text-base md:text-xl text-ink leading-relaxed whitespace-nowrap">
+                <p className="text-base md:text-xl text-ink leading-relaxed whitespace-nowrap" style={{ fontFamily: "'Fraunces', serif", fontWeight: 500, fontVariationSettings: "'SOFT' 100, 'WONK' 1" }}>
                   <SpotlightTagline radius={260} dimOpacity={0}>
                     A wearable SPF concept brand that reframes sunscreen as a{" "}
                     <em className="not-italic font-semibold" style={{ color: "hsl(var(--accent-red))" }}>
