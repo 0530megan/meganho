@@ -60,7 +60,7 @@ const Veramente = () => {
       />
       <div className="container py-16 md:py-24 relative grid md:grid-cols-12 gap-10 items-end">
         <div className="md:col-span-8">
-          <p className="font-mono text-[11px] small-caps text-accent-red mb-5 tracking-[0.2em]">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-5 tracking-[0.2em] px-0 mx-0 my-0 py-0">
             ✦ Case Study No. I · Beauty · Concept Brand ✦
           </p>
           <h1 className="font-display font-light leading-[0.95] tracking-[-0.02em]">
@@ -83,8 +83,7 @@ const Veramente = () => {
               style={{ color: "hsl(var(--accent-red))" }}
             >
               daily accessory people want to show off.
-            </em>{" "}
-            Built end-to-end in Figma — strategy, identity, packaging, and campaign.
+            </em>
           </p>
         </div>
         <div className="md:col-span-4">
