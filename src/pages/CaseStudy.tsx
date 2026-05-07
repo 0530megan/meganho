@@ -25,6 +25,8 @@ import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
 import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyLogo from "@/assets/sippy-logo.jpg";
+import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
+import sippyHeroBg from "@/assets/sippy-hero-bg.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 type HintPos = "top" | "bottom" | "left" | "right" | "center";
@@ -851,6 +853,338 @@ const Veramente = () => {
   );
 };
 
+const Sippy = () => {
+  const [hintPos] = useState<HintPos>("center");
+
+  const headlineClass =
+    "font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]";
+
+  return (
+  <div className="paper-grain min-h-screen text-ink">
+    <header className="border-b-2 border-ink sticky top-0 z-30 bg-paper/80 backdrop-blur">
+      <div className="container py-3 flex items-center justify-between gap-4">
+        <Link
+          to="/"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(10_80%_60%)] transition-colors"
+        >
+          <ArrowLeft className="size-3.5" /> Back to Folio
+        </Link>
+        <p className="font-mono text-[11px] small-caps text-ink-mute">
+          Case · II · Sippy
+        </p>
+        <Link
+          to="/case/megs-creami"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(10_80%_60%)] transition-colors"
+        >
+          Next Case <ArrowUpRight className="size-3" />
+        </Link>
+      </div>
+    </header>
+
+    <div
+      className="relative border-b-2 border-ink"
+      style={{
+        backgroundImage: `url(${sippyHeroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, hsl(var(--paper) / 0.05) 0%, hsl(var(--paper) / 0.2) 70%, hsl(var(--paper) / 0.85) 100%)",
+        }}
+      />
+      <section className="relative">
+        <div className="container min-h-[88vh] grid grid-rows-[auto_1fr_auto] py-8 md:py-10">
+          <div className="text-center">
+            <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.25em]">
+              ✦ Case Study No. II · Beverage · Concept Brand ✦
+            </p>
+            <h1
+              className={headlineClass}
+              style={{
+                color: "#FFF1F0",
+                fontWeight: 500,
+                textShadow:
+                  "1px 1px 0 rgba(255,255,255,0.85), 2px 2px 0 rgba(255,180,180,0.55), -1px -1px 1px rgba(180,60,60,0.35), 0 2px 4px rgba(140,40,40,0.22)",
+              }}
+            >
+              Sip the sun.
+            </h1>
+          </div>
+          <div />
+          <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
+            <div className="relative inline-block w-full">
+              <button
+                type="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    e.currentTarget.classList.toggle("is-revealed");
+                  }
+                }}
+                style={{ fontWeight: 700 }}
+                className={`group is-revealable font-mono small-caps text-accent-red text-[13px] md:text-sm tracking-[0.32em] inline-flex items-center gap-3 animate-fade-in cursor-pointer bg-transparent border-0 p-0 whitespace-nowrap transition-all duration-500 ease-out hover:-translate-y-1 hover:tracking-[0.42em] hover:text-ink focus-visible:-translate-y-1 focus-visible:tracking-[0.42em] focus-visible:text-ink focus-visible:outline-none [&.is-revealed]:-translate-y-1 [&.is-revealed]:tracking-[0.42em] [&.is-revealed]:text-ink ${hintPosClasses[hintPos]}`}
+              >
+                <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:rotate-180 group-focus-visible:rotate-180 group-[.is-revealed]:rotate-180 animate-pulse">🍊</span>
+                <span className="transition-opacity duration-500 ease-out">hover or press enter to reveal</span>
+                <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:-rotate-180 group-focus-visible:-rotate-180 group-[.is-revealed]:-rotate-180 animate-pulse">🍊</span>
+              </button>
+              <p className="text-base md:text-xl text-ink leading-relaxed whitespace-nowrap" style={{ fontFamily: "'Fraunces', serif", fontWeight: 500, fontVariationSettings: "'SOFT' 100, 'WONK' 1" }}>
+                <SpotlightTagline radius={260} dimOpacity={0}>
+                  A sparkling blood orange concept drink that turns hydration into a{" "}
+                  <em className="not-italic font-semibold" style={{ color: "hsl(10 80% 50%)" }}>
+                    cute, collectible little ritual.
+                  </em>
+                </SpotlightTagline>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative border-t border-ink/30 bg-paper/70 backdrop-blur-sm">
+        <div className="container py-8 grid md:grid-cols-3 gap-6">
+          {[
+            ["Category", "Beverage · Lifestyle"],
+            ["Tools", "Figma · Canva · AI Mockups"],
+            ["Year", "2025 — Concept"],
+          ].map(([k, v]) => (
+            <div key={k} className="border-l-2 border-ink/40 pl-4">
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">{k}</p>
+              <p className="font-display text-base leading-snug">{v}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <section className="container py-20 md:py-28 grid md:grid-cols-12 gap-10">
+      <div className="md:col-span-4">
+        <p className="font-mono text-[11px] small-caps text-accent-red mb-3">01 · The Brief</p>
+        <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+          Functional drinks feel
+          <span className="italic" style={{ color: "hsl(10 80% 60%)" }}> clinical.</span>
+        </h2>
+      </div>
+      <div className="md:col-span-8 md:pt-3">
+        <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed mb-6">
+          The wellness aisle is full of beige cans shouting electrolytes, adaptogens, and acronyms. The opportunity wasn&rsquo;t a new formula. It was a <strong className="text-ink font-semibold">softer feeling</strong>.
+        </p>
+        <p className="font-display italic text-lg md:text-xl text-ink-soft leading-relaxed">
+          Sippy turns a sparkling blood orange drink into <em className="not-italic text-ink font-semibold">a little treat</em> — a cute can you want on your desk, in your tote, on your feed.
+        </p>
+      </div>
+    </section>
+
+    <section className="border-y-2 border-ink text-paper" style={{ background: "#E89B7A" }}>
+      <div className="container py-16 md:py-24 text-center">
+        <p className="font-mono text-[11px] small-caps text-paper/70 mb-6 tracking-[0.3em]">✦ Brand Promise ✦</p>
+        <blockquote className="font-display italic font-light text-4xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl mx-auto">
+          &ldquo;Keep it cute, keep it sippy.&rdquo;
+        </blockquote>
+        <p className="font-mono text-[11px] small-caps text-paper/70 mt-8">— Hydration as a happy little habit</p>
+      </div>
+    </section>
+
+    <section className="container py-20 md:py-28">
+      <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+        <div className="md:col-span-5 lg:col-span-4 md:sticky md:top-20">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">02 · Branding</p>
+          <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-6">
+            A pink-citrus
+            <span className="italic" style={{ color: "hsl(10 80% 60%)" }}> world.</span>
+          </h2>
+          <p className="font-display text-base text-ink-soft leading-relaxed mb-8">
+            Playful, fizzy, a little flirty. A blush-and-blood-orange palette, squiggly hand-drawn marks, and a wordmark that bounces — the opposite of a sterile wellness label.
+          </p>
+          <dl className="border-t border-ink/30">
+            {[
+              ["Palette", "Blush · Blood orange · Cream"],
+              ["Type", "Bouncy display + clean sans"],
+              ["Tools", "Figma · Canva · AI"],
+              ["Deliverables", "Identity, can, campaign"],
+            ].map(([k, v]) => (
+              <div key={k} className="grid grid-cols-5 gap-3 py-2.5 border-b border-ink/30">
+                <dt className="col-span-2 font-mono text-[10px] small-caps text-ink-mute pt-0.5">{k}</dt>
+                <dd className="col-span-3 font-display text-sm text-ink">{v}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="font-display italic text-base text-ink-soft mt-6 leading-relaxed">
+            &ldquo;A drink that <span style={{ color: "hsl(10 80% 60%)" }}>giggles</span> on the shelf.&rdquo;
+          </p>
+        </div>
+
+        <div className="md:col-span-7 lg:col-span-8">
+          <div className="border-2 border-ink bg-paper shadow-[12px_14px_0_0_hsl(10_70%_75%)] overflow-hidden">
+            <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+              <p className="font-mono text-[10px] small-caps tracking-[0.25em]">Plate II · Identity Board</p>
+              <p className="font-mono text-[10px] small-caps text-ink-mute">Logo system + palette</p>
+            </div>
+            <img src={sippyBrandBoard} alt="Sippy brand board" className="block w-full h-auto" />
+            <figcaption className="px-4 py-3 border-t-2 border-ink flex items-baseline justify-between gap-3 flex-wrap">
+              <p className="font-display italic text-sm">A wordmark, a wiggle, a wink — three ways to say the same thing.</p>
+              <span className="font-mono text-[10px] small-caps text-ink-mute">Fig. 01–03</span>
+            </figcaption>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 md:mt-20 border-t-2 border-ink pt-10">
+        <div className="grid md:grid-cols-12 gap-6 items-end mb-8">
+          <div className="md:col-span-7">
+            <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.2em] mb-3">Design Notes</p>
+            <h3 className="font-display text-3xl md:text-4xl leading-[0.95] tracking-tight">
+              Four ideas behind
+              <span className="italic" style={{ color: "hsl(10 80% 60%)" }}> the can.</span>
+            </h3>
+          </div>
+          <p className="md:col-span-5 font-display italic text-base text-ink-soft leading-relaxed md:text-right">
+            The thinking that shaped every squiggle, color, and curve.
+          </p>
+        </div>
+        <ol className="grid sm:grid-cols-2 gap-5 md:gap-6">
+          {[
+            { no: "01", title: "Cute over clinical", body: "The opposite of beige wellness. Soft pinks, juicy oranges, hand-drawn squiggles — a drink that feels like a treat, not a supplement.", tag: "Tone" },
+            { no: "02", title: "A wordmark that bounces", body: "The Sippy logo wobbles a little — letterforms feel hand-drawn and joyful, like the drink itself is winking at you.", tag: "Identity" },
+            { no: "03", title: "Designed for the desk", body: "The can is built to be displayed — pretty enough to leave on a desk, photogenic enough to share without a filter.", tag: "Form" },
+            { no: "04", title: "Hydration as a happy habit", body: "Reframing a daily drink as a tiny treat. The aesthetic is the reason you reach for one — and the next.", tag: "Strategy" },
+          ].map(({ no, title, body, tag }) => (
+            <li key={no} className="relative bg-paper border-2 border-ink p-6 md:p-7 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_hsl(10_70%_75%)] transition-shadow">
+              <div className="flex items-baseline justify-between gap-4 mb-4 pb-3 border-b border-ink/20">
+                <span className="font-display text-5xl leading-none" style={{ color: "hsl(10 80% 60%)" }}>{no}</span>
+                <span className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.2em]">· {tag} ·</span>
+              </div>
+              <h4 className="font-display text-2xl leading-tight mb-3 text-ink">{title}</h4>
+              <p className="font-body text-[15px] text-ink-soft leading-relaxed">{body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div className="mt-16 md:mt-20">
+        <div className="flex items-end justify-between gap-4 border-b-2 border-ink pb-3 mb-8">
+          <div>
+            <p className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mb-1">Plate III</p>
+            <h3 className="font-display text-3xl md:text-4xl leading-tight">Can &amp; World</h3>
+          </div>
+          <p className="font-mono text-[10px] small-caps text-ink-mute hidden sm:block">Wordmark · Can · Lifestyle</p>
+        </div>
+
+        <div className="space-y-6">
+          {[
+            { n: "01", label: "Wordmark", img: sippyLogo, ratio: "16 / 10", title: "Bouncy, blushy, never serious.", body: "A bespoke wordmark with a wobble — letters that feel like they were squeezed by hand, paired with a soft pink-and-orange palette.", meta: ["Hand-drawn", "Pink + orange", "Display"] },
+            { n: "02", label: "Can", img: sippyBrandBoard, ratio: "5 / 4", title: "A can that wants to be on your desk.", body: "Sparkling blood orange in a slim 250ml can — design leads with squiggles and citrus, with the spec details whispered down the side.", meta: ["250ml · Sparkling", "Slim can", "Shelf-ready"] },
+            { n: "03", label: "World", img: sippyHeroBg, ratio: "5 / 4", title: "Squiggles everywhere.", body: "The brand world is built from a single hand-drawn motif — squiggles that wrap the can, fill the campaign, and turn every surface into a Sippy moment.", meta: ["Pattern", "Campaign", "Stickers"] },
+          ].map((c, i) => (
+            <article key={c.n} className={`grid md:grid-cols-12 gap-0 border-2 border-ink bg-paper shadow-[8px_10px_0_0_hsl(10_80%_60%)] overflow-hidden ${i % 2 === 1 ? "md:[&>figure]:order-2" : ""}`}>
+              <figure className="md:col-span-7 bg-paper-deep border-b-2 md:border-b-0 md:border-r-2 border-ink">
+                <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
+                  <img src={c.img} alt={`Sippy ${c.label.toLowerCase()}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover object-center" />
+                </div>
+              </figure>
+              <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-center">
+                <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-rule">
+                  <span className="font-display text-5xl leading-none" style={{ color: "hsl(10 80% 60%)" }}>{c.n}</span>
+                  <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">· {c.label} ·</span>
+                </div>
+                <h4 className="font-display text-2xl md:text-[26px] leading-tight mb-3 text-ink">{c.title}</h4>
+                <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-5">{c.body}</p>
+                <ul className="flex flex-wrap gap-2 mt-auto">
+                  {c.meta.map((m) => (
+                    <li key={m} className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1 bg-paper-deep/60">{m}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">Plate III — Brand World · Built in Figma</p>
+    </section>
+
+    <section className="border-y-2 border-ink bg-paper-deep/40">
+      <div className="container py-20 md:py-24">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3 tracking-[0.2em]">03 · Marketing Strategy</p>
+          <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight">
+            From insight to
+            <span className="italic" style={{ color: "hsl(10 80% 60%)" }}> object.</span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {[
+            { Icon: Lightbulb, no: "Concept", title: "A drink that feels like a treat.", body: "Reposition functional beverages away from the gym bag and onto the desk — a tiny daily indulgence that happens to hydrate.", tilt: "-rotate-1" },
+            { Icon: Eye, no: "Insight", title: "Cute is a category.", body: "Gen Z buys aesthetics first, ingredients second. The can is the marketing — every desk shot is a free billboard.", tilt: "rotate-1" },
+            { Icon: Package, no: "Solution", title: "Sparkling blood orange, in a hug-able can.", body: "A bouncy wordmark, a squiggly world, and a flavor that tastes as bright as it looks. Built to be photographed, shared, and re-bought.", tilt: "-rotate-1" },
+          ].map(({ Icon, no, title, body, tilt }) => (
+            <article key={no} className={`relative bg-paper border border-ink p-7 ${tilt} hover:rotate-0 transition-transform duration-500 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_hsl(10_80%_60%)]`}>
+              <span aria-hidden className="absolute -top-2 left-1/2 -translate-x-1/2 size-4 rounded-full border border-ink" style={{ background: "hsl(10 80% 60%)" }} />
+              <Icon className="size-6 mb-4" style={{ color: "hsl(10 80% 50%)" }} />
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">{no}</p>
+              <h3 className="font-display text-2xl leading-tight mb-3">{title}</h3>
+              <p className="font-display italic text-base text-ink-soft leading-relaxed">{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="border-y-2 border-ink text-paper" style={{ backgroundColor: "#B85C45" }}>
+      <div className="container py-20 md:py-24">
+        <p className="font-mono text-[11px] small-caps text-paper/70 mb-3 tracking-[0.2em]">04 · Why It Works</p>
+        <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight max-w-3xl mb-14">
+          A drink built to be
+          <span className="italic" style={{ color: "#FFD7B5" }}> seen, sipped, repeated.</span>
+        </h2>
+        <div className="grid md:grid-cols-3 gap-10">
+          {[
+            { Icon: Sparkles, k: "Aesthetic", v: "A can that earns a spot on the desk — and a spot on the feed without trying." },
+            { Icon: Heart, k: "Ritual", v: "Hydration reframed as a tiny treat — a soft moment in the middle of the day." },
+            { Icon: TrendingUp, k: "Repeatability", v: "Future flavor drops & limited cans give existing fans a reason to keep coming back." },
+          ].map(({ Icon, k, v }) => (
+            <div key={k} className="border-t border-paper/30 pt-6">
+              <Icon className="size-6 mb-4" style={{ color: "#FFD7B5" }} />
+              <p className="font-mono text-[10px] small-caps text-paper/70 mb-2">{k}</p>
+              <p className="font-display text-lg leading-relaxed text-paper/90">{v}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="container py-20 md:py-24 text-center">
+      <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">✦ End of Case II ✦</p>
+      <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight mb-8">
+        Want the rest of the
+        <span className="italic" style={{ color: "hsl(10 80% 60%)" }}> folio?</span>
+      </h2>
+      <div className="flex items-center justify-center gap-3 flex-wrap">
+        <Link to="/case/megs-creami" className="group font-mono text-[11px] small-caps inline-flex items-center gap-2 bg-ink text-paper pl-2 pr-5 py-2 hover:opacity-90 transition-opacity">
+          <img src={megsCreamiLogo} alt="" aria-hidden className="size-7 rounded-full object-cover ring-2 ring-paper/80 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" />
+          Next: Meg&rsquo;s Creami <ArrowUpRight className="size-3.5" />
+        </Link>
+        <Link to="/" className="font-mono text-[11px] small-caps inline-flex items-center gap-2 border border-ink px-5 py-3 hover:bg-paper-deep transition-colors">
+          <ArrowLeft className="size-3.5" /> Back to Folio
+        </Link>
+      </div>
+    </section>
+
+    <footer className="border-t-2 border-ink">
+      <div className="container py-6 flex items-center justify-between gap-4 flex-wrap">
+        <p className="font-mono text-[11px] small-caps text-ink-mute">Megan Ho · Sippy Case Study</p>
+        <p className="font-mono text-[11px] small-caps text-ink-mute">◼</p>
+      </div>
+    </footer>
+  </div>
+  );
+};
 const PLACEHOLDERS: Record<
   string,
   { no: string; name: string; tagline: string; cover: string; tint: string }
@@ -941,6 +1275,7 @@ const Placeholder = ({ slug }: { slug: string }) => {
 const CaseStudy = () => {
   const { slug = "" } = useParams();
   if (slug === "veramente") return <Veramente />;
+  if (slug === "sippy") return <Sippy />;
   return <Placeholder slug={slug} />;
 };
 
