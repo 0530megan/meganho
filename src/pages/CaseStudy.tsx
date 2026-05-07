@@ -76,11 +76,6 @@ const Veramente = () => {
               ✦ Case Study No. I · Beauty · Concept Brand ✦
             </p>
             <h1 className="font-display font-light leading-[0.95] tracking-[-0.02em]">
-              <img
-                src={veramenteWordmark}
-                alt="Veramente"
-                className="block w-full max-w-[640px] h-auto -ml-2 mix-blend-multiply"
-              />
               <span
                 className="block italic uppercase tracking-[-0.03em] leading-[0.9] mt-8 md:mt-10 text-[clamp(2.25rem,7vw,5.25rem)]"
                 style={{ color: "hsl(48 90% 70%)", fontWeight: 500 }}
