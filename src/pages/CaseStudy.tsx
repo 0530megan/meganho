@@ -29,6 +29,7 @@ import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
 import sippyHeroBg from "@/assets/sippy-hero-bg.jpg";
 import sippyCans from "@/assets/sippy-cans.png";
 import sippyCanDesk from "@/assets/sippy-can-desk.png";
+import sippyShelf from "@/assets/sippy-shelf.png";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 type HintPos = "top" | "bottom" | "left" | "right" | "center";
@@ -1081,14 +1082,25 @@ const Sippy = () => {
         <div className="space-y-6">
           {[
             { n: "01", label: "Wordmark", img: sippyLogo, ratio: "16 / 10", title: "Bouncy, blushy, never serious.", body: "A bespoke wordmark with a wobble — letters that feel like they were squeezed by hand, paired with a soft pink-and-orange palette.", meta: ["Hand-drawn", "Pink + orange", "Display"] },
-            { n: "02", label: "Can", img: sippyCanDesk, ratio: "16 / 10", title: "At home on a pink-tiled shelf.", body: "Styled against terrazzo and soft pink tile, the can holds its own next to mushroom lamps and monstera leaves — a little object of desire that quietly belongs in the scene.", meta: ["440ml · Sparkling", "Blood orange", "Still-life"] },
+            { n: "02", label: "Can", img: sippyCanDesk, img2: sippyShelf, ratio: "16 / 10", title: "At home on a pink-tiled shelf.", body: "Styled against terrazzo and soft pink tile, the can holds its own next to mushroom lamps and monstera leaves — a little object of desire that quietly belongs in the scene.", body2: "And on the shop shelf, the blush pink and juicy orange wordmark cut through a sea of beige wellness — instantly recognizable, impossible to scroll past in the cooler aisle.", meta: ["440ml · Sparkling", "Blood orange", "Still-life", "Retail"] },
             { n: "03", label: "Cans In Hand", img: sippyCans, ratio: "16 / 10", title: "Cheers, in slim pink cans.", body: "440ml of sparkling blood orange, dressed in blush pink with a juicy orange wordmark. Designed to look as good in a hand as it does on a shelf — clinking, sipping, and being held up to the light.", meta: ["440ml", "Sparkling", "Lifestyle"] },
           ].map((c, i) => (
             <article key={c.n} className={`grid md:grid-cols-12 gap-0 border-2 border-ink bg-paper shadow-[8px_10px_0_0_hsl(10_80%_60%)] overflow-hidden ${i % 2 === 1 ? "md:[&>figure]:order-2" : ""}`}>
               <figure className="md:col-span-7 bg-paper-deep border-b-2 md:border-b-0 md:border-r-2 border-ink">
-                <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
-                  <img src={c.img} alt={`Sippy ${c.label.toLowerCase()}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover object-center" />
-                </div>
+                {(c as any).img2 ? (
+                  <div className="grid grid-cols-2 h-full">
+                    <div className="relative w-full border-r-2 border-ink" style={{ aspectRatio: c.ratio }}>
+                      <img src={c.img} alt={`Sippy ${c.label.toLowerCase()}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover object-center" />
+                    </div>
+                    <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
+                      <img src={(c as any).img2} alt={`Sippy ${c.label.toLowerCase()} on shelf`} loading="lazy" className="absolute inset-0 w-full h-full object-cover object-center" />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
+                    <img src={c.img} alt={`Sippy ${c.label.toLowerCase()}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover object-center" />
+                  </div>
+                )}
               </figure>
               <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-center">
                 <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-rule">
@@ -1096,7 +1108,10 @@ const Sippy = () => {
                   <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">· {c.label} ·</span>
                 </div>
                 <h4 className="font-display text-2xl md:text-[26px] leading-tight mb-3 text-ink">{c.title}</h4>
-                <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-5">{c.body}</p>
+                <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-3">{c.body}</p>
+                {(c as any).body2 && (
+                  <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-5 pt-3 border-t border-rule">{(c as any).body2}</p>
+                )}
                 <ul className="flex flex-wrap gap-2 mt-auto">
                   {c.meta.map((m) => (
                     <li key={m} className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1 bg-paper-deep/60">{m}</li>
