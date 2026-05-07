@@ -29,6 +29,7 @@ import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
 import sippyHeroBg from "@/assets/sippy-hero-bg.jpg";
 import sippyCans from "@/assets/sippy-cans.png";
 import sippyCanDesk from "@/assets/sippy-can-desk.png";
+import sippyShelf from "@/assets/sippy-shelf.png";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
 type HintPos = "top" | "bottom" | "left" | "right" | "center";
