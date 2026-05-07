@@ -947,10 +947,11 @@ const Sippy = () => {
               ✦ Case Study No. II · Beverage · Concept Brand ✦
             </p>
             <h1
-              className={headlineClass}
+              className="uppercase tracking-[-0.01em] leading-[0.95] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]"
               style={{
                 color: "#FE2E08",
-                fontWeight: 500,
+                fontFamily: "'Caprasimo', serif",
+                fontWeight: 400,
               }}
             >
               Sip it cute, keep it sippy
