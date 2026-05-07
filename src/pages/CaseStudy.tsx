@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   ArrowLeft,
@@ -24,7 +25,9 @@ import veramenteCafe from "@/assets/veramente-cafe.png";
 import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 
-const Veramente = () => (
+const Veramente = () => {
+  const [productVariant, setProductVariant] = useState<"A" | "B" | "C">("A");
+  return (
   <div className="paper-grain min-h-screen text-ink">
     {/* Top bar */}
     <header className="border-b-2 border-ink sticky top-0 z-30 bg-paper/80 backdrop-blur">
@@ -511,18 +514,15 @@ const Veramente = () => (
 
     {/* PRODUCT WORLD — campaign as product */}
     <section className="container py-20 md:py-28">
-      {/* Section header — mirrors packaging section rhythm */}
-      <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-end mb-12 md:mb-16">
+      {/* Section header */}
+      <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-end mb-10 md:mb-12">
         <div className="md:col-span-7">
           <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">
             ✦ 04 · The Product World ✦
           </p>
           <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight">
             The product
-            <span
-              className="italic block"
-              style={{ color: "hsl(48 90% 70%)" }}
-            >
+            <span className="italic block" style={{ color: "hsl(48 90% 70%)" }}>
               is the campaign.
             </span>
           </h2>
@@ -537,86 +537,259 @@ const Veramente = () => (
         </div>
       </div>
 
-      {/* Numbered campaign articles — same bold-bordered card system as packaging */}
-      <div className="space-y-10 md:space-y-14">
-        {[
+      {/* Variant switcher */}
+      <div className="flex items-center gap-2 mb-10 md:mb-14 flex-wrap">
+        <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mr-2">
+          Layout ·
+        </span>
+        {([
+          { k: "A", label: "Annotated" },
+          { k: "B", label: "Catalog" },
+          { k: "C", label: "Spec sheet" },
+        ] as const).map((opt) => (
+          <button
+            key={opt.k}
+            onClick={() => setProductVariant(opt.k)}
+            className={`font-mono text-[11px] small-caps tracking-[0.2em] px-3 py-1.5 border-2 border-ink transition-colors ${
+              productVariant === opt.k
+                ? "bg-ink text-paper"
+                : "bg-paper text-ink hover:bg-paper-deep"
+            }`}
+          >
+            {opt.k} · {opt.label}
+          </button>
+        ))}
+      </div>
+
+      {(() => {
+        const products = [
           {
             n: "01",
             label: "In The Wild",
             img: veramenteCafe,
-            ratio: "16 / 10",
             title: "Café tables, sun-soaked moments.",
             body: "Lifestyle frames stage the charm in everyday rituals — coffee runs, market mornings, weekend wandering. The product photographs itself.",
             meta: ["Lifestyle", "Outdoor", "UGC-ready"],
-            shadow: "hsl(var(--accent-red))",
+            accent: "hsl(var(--accent-red))",
           },
           {
             n: "02",
             label: "Wear It Daily",
             img: veramenteBagCharm,
-            ratio: "4 / 5",
             title: "Bag-clipped, never buried.",
             body: "Worn on the outside of the bag, the SPF stick becomes a styling object. Every customer turns into a quiet billboard for the brand.",
             meta: ["Bag-clip", "Visibility", "Daily wear"],
-            shadow: "hsl(var(--accent-ochre))",
+            accent: "hsl(var(--accent-ochre))",
           },
           {
             n: "03",
             label: "Tiny Bites",
             img: veramenteTinyBites,
-            ratio: "21 / 9",
             title: "Blind-box collectible drops.",
-            body: "A growing system of mini food charms — apple pie, cookie, watermelon, cake — turns reapplication into a collecting ritual worth coming back for.",
+            body: "A growing system of mini food charms — apple pie, cookie, watermelon, cake — turns reapplication into a collecting ritual.",
             meta: ["Blind-box", "Collectible", "Drop-based"],
-            shadow: "hsl(48 90% 70%)",
+            accent: "hsl(48 90% 70%)",
           },
-        ].map((c, i) => (
-          <article
-            key={c.n}
-            className={`grid md:grid-cols-12 gap-0 border-2 border-ink bg-paper overflow-hidden ${
-              i % 2 === 1 ? "md:[&>figure]:order-2" : ""
-            }`}
-            style={{ boxShadow: `8px 10px 0 0 ${c.shadow}` }}
-          >
-            <figure className="md:col-span-7 bg-paper-deep border-b-2 md:border-b-0 md:border-r-2 border-ink">
-              <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
-                <img
-                  src={c.img}
-                  alt={`Veramente ${c.label.toLowerCase()}`}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                />
-              </div>
-            </figure>
-            <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-center">
-              <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-rule">
-                <span className="font-display text-5xl leading-none text-[hsl(48_90%_70%)]">
-                  {c.n}
-                </span>
-                <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">
-                  · {c.label} ·
-                </span>
-              </div>
-              <h4 className="font-display text-2xl md:text-[26px] leading-tight mb-3 text-ink">
-                {c.title}
-              </h4>
-              <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-5">
-                {c.body}
-              </p>
-              <ul className="flex flex-wrap gap-2 mt-auto">
-                {c.meta.map((m) => (
-                  <li
-                    key={m}
-                    className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1 bg-paper-deep/60"
-                  >
-                    {m}
-                  </li>
-                ))}
-              </ul>
+        ];
+
+        // ---------- VARIANT A · Annotated diagram ----------
+        if (productVariant === "A") {
+          return (
+            <div className="grid md:grid-cols-3 gap-x-10 gap-y-16 md:gap-y-20">
+              {products.map((p, i) => {
+                // Alternate annotation side: left, right, left
+                const annotateRight = i % 2 === 0;
+                return (
+                  <div key={p.n} className="relative">
+                    <div className="relative">
+                      {/* Square framed product */}
+                      <div
+                        className="relative aspect-square border-2 border-ink bg-paper-deep overflow-hidden"
+                        style={{ boxShadow: `6px 8px 0 0 ${p.accent}` }}
+                      >
+                        <img
+                          src={p.img}
+                          alt={`Veramente ${p.label.toLowerCase()}`}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <span className="absolute top-3 left-3 font-mono text-[10px] small-caps tracking-[0.25em] bg-paper border border-ink px-2 py-1">
+                          Fig · {p.n}
+                        </span>
+                      </div>
+
+                      {/* Arrow + annotation */}
+                      <div
+                        className={`hidden md:flex absolute top-6 ${
+                          annotateRight ? "left-full" : "right-full"
+                        } items-start gap-2 w-[180px] ${
+                          annotateRight ? "pl-3" : "pr-3 flex-row-reverse text-right"
+                        }`}
+                      >
+                        <svg
+                          width="60"
+                          height="40"
+                          viewBox="0 0 60 40"
+                          className="shrink-0 mt-2"
+                          style={{ transform: annotateRight ? "none" : "scaleX(-1)" }}
+                        >
+                          <path
+                            d="M2 38 Q 20 38 30 20 T 56 6"
+                            fill="none"
+                            stroke="hsl(var(--ink))"
+                            strokeWidth="1.5"
+                          />
+                          <path
+                            d="M50 2 L58 6 L52 12"
+                            fill="none"
+                            stroke="hsl(var(--ink))"
+                            strokeWidth="1.5"
+                          />
+                        </svg>
+                        <p className="font-display italic text-[13px] leading-snug text-ink">
+                          {p.body}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Caption under */}
+                    <div className="mt-5 pt-3 border-t border-ink">
+                      <div className="flex items-baseline gap-3 mb-1">
+                        <span
+                          className="font-display text-3xl leading-none"
+                          style={{ color: p.accent }}
+                        >
+                          {p.n}
+                        </span>
+                        <span className="font-mono text-[10px] small-caps tracking-[0.25em]">
+                          · {p.label} ·
+                        </span>
+                      </div>
+                      <h4 className="font-display text-lg leading-tight">
+                        {p.title}
+                      </h4>
+                      {/* Mobile annotation fallback */}
+                      <p className="md:hidden font-display italic text-sm text-ink-soft mt-2 leading-relaxed">
+                        ↳ {p.body}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          </article>
-        ))}
-      </div>
+          );
+        }
+
+        // ---------- VARIANT B · Catalog index ----------
+        if (productVariant === "B") {
+          return (
+            <div className="border-2 border-ink bg-paper">
+              <div className="grid grid-cols-12 border-b border-ink px-5 py-3 bg-paper-deep">
+                <span className="col-span-1 font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute">No.</span>
+                <span className="col-span-3 font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute">Plate</span>
+                <span className="col-span-4 font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute">Concept</span>
+                <span className="col-span-4 font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute">Tags</span>
+              </div>
+              <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x-2 divide-ink">
+                {products.map((p) => (
+                  <article key={p.n} className="p-6 flex flex-col">
+                    <div
+                      className="relative aspect-square border-2 border-ink bg-paper-deep overflow-hidden mb-5"
+                      style={{ boxShadow: `5px 6px 0 0 ${p.accent}` }}
+                    >
+                      <img
+                        src={p.img}
+                        alt={`Veramente ${p.label.toLowerCase()}`}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex items-baseline gap-3 mb-2 pb-2 border-b border-rule">
+                      <span className="font-display text-4xl leading-none" style={{ color: p.accent }}>
+                        {p.n}
+                      </span>
+                      <span className="font-mono text-[11px] small-caps tracking-[0.25em]">
+                        · {p.label} ·
+                      </span>
+                    </div>
+                    <h4 className="font-display text-xl leading-tight mb-2">
+                      {p.title}
+                    </h4>
+                    <p className="font-body text-[14px] text-ink-soft leading-relaxed mb-4">
+                      {p.body}
+                    </p>
+                    <ul className="flex flex-wrap gap-2 mt-auto">
+                      {p.meta.map((m) => (
+                        <li
+                          key={m}
+                          className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1"
+                        >
+                          {m}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </div>
+          );
+        }
+
+        // ---------- VARIANT C · Spec-sheet stack ----------
+        return (
+          <div className="border-y-2 border-ink divide-y-2 divide-ink">
+            {products.map((p) => (
+              <article
+                key={p.n}
+                className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 items-center"
+              >
+                <figure className="md:col-span-3">
+                  <div
+                    className="relative aspect-square border-2 border-ink bg-paper-deep overflow-hidden"
+                    style={{ boxShadow: `5px 6px 0 0 ${p.accent}` }}
+                  >
+                    <img
+                      src={p.img}
+                      alt={`Veramente ${p.label.toLowerCase()}`}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                </figure>
+                <div className="md:col-span-2 md:border-r md:border-ink/30 md:pr-6">
+                  <span
+                    className="font-display text-6xl leading-none block"
+                    style={{ color: p.accent }}
+                  >
+                    {p.n}
+                  </span>
+                  <span className="font-mono text-[11px] small-caps tracking-[0.25em] block mt-3">
+                    {p.label}
+                  </span>
+                </div>
+                <div className="md:col-span-7">
+                  <h4 className="font-display text-2xl md:text-3xl leading-tight mb-3">
+                    {p.title}
+                  </h4>
+                  <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-4 max-w-xl">
+                    {p.body}
+                  </p>
+                  <ul className="flex flex-wrap gap-2">
+                    {p.meta.map((m) => (
+                      <li
+                        key={m}
+                        className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1 bg-paper-deep/60"
+                      >
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        );
+      })()}
     </section>
 
     {/* OUTCOMES */}
@@ -711,7 +884,8 @@ const Veramente = () => (
       </div>
     </footer>
   </div>
-);
+  );
+};
 
 const PLACEHOLDERS: Record<
   string,
