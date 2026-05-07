@@ -10,7 +10,7 @@ import {
   Sparkles,
   TrendingUp,
   Heart,
-  RotateCcw,
+  
 } from "lucide-react";
 
 import veramenteHeroBg from "@/assets/veramente-hero-bg.png";
@@ -864,7 +864,7 @@ const Veramente = () => {
 };
 
 const SIPPY_BG_STORAGE_KEY = "sippy:hero-bg-pos";
-const SIPPY_WORKING_BG_POSITION = { x: 50, y: 30 };
+
 
 const Sippy = () => {
   const [hintPos] = useState<HintPos>("center");
@@ -913,20 +913,6 @@ const Sippy = () => {
     setTimeout(() => setSavedToast(null), 1500);
   };
 
-  const handleRevertSippyBackground = () => {
-    const { x, y } = SIPPY_WORKING_BG_POSITION;
-    setBgPosX(x);
-    setBgPosY(y);
-    setPreview169(false);
-    try {
-      localStorage.setItem(SIPPY_BG_STORAGE_KEY, JSON.stringify({ x, y }));
-      setSavedToast("Sippy background restored");
-    } catch {
-      setSavedToast("Sippy background restored");
-    }
-    setTimeout(() => setSavedToast(null), 1500);
-  };
-
   const headlineClass =
     "font-display italic uppercase tracking-[-0.03em] leading-[0.9] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both] text-6xl";
 
@@ -943,21 +929,12 @@ const Sippy = () => {
         <p className="font-mono text-[11px] small-caps text-ink-mute">
           Case · II · Sippy
         </p>
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={handleRevertSippyBackground}
-            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 bg-ink text-paper px-3 py-2 hover:opacity-90 transition-opacity"
-          >
-            <RotateCcw className="size-3.5" /> Revert Sippy background
-          </button>
-          <Link
-            to="/case/megs-creami"
-            className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(10_80%_60%)] transition-colors"
-          >
-            Next Case <ArrowUpRight className="size-3" />
-          </Link>
-        </div>
+        <Link
+          to="/case/megs-creami"
+          className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(10_80%_60%)] transition-colors"
+        >
+          Next Case <ArrowUpRight className="size-3" />
+        </Link>
       </div>
       {savedToast && (
         <p className="absolute right-4 top-full mt-2 font-mono text-[10px] small-caps bg-ink text-paper px-3 py-1 shadow-[4px_4px_0_0_hsl(var(--accent-red))]" aria-live="polite">
