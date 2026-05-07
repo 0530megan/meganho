@@ -80,48 +80,6 @@ const Veramente = () => {
       </div>
     </header>
 
-    {/* Hero layout switcher */}
-    <div className="border-b border-ink/30 bg-paper/80 backdrop-blur sticky top-[49px] z-20">
-      <div className="container py-2 flex items-center gap-2 flex-wrap">
-        <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mr-1">
-          Hero ·
-        </span>
-        {([
-          { k: "A", label: "Minimal" },
-          { k: "B", label: "Side rail" },
-          { k: "C", label: "Bottom band" },
-        ] as const).map((opt) => (
-          <button
-            key={opt.k}
-            onClick={() => setHeroLayout(opt.k)}
-            className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
-              heroLayout === opt.k
-                ? "bg-ink text-paper"
-                : "bg-paper text-ink hover:bg-paper-deep"
-            }`}
-          >
-            {opt.k} · {opt.label}
-          </button>
-        ))}
-        <span className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mx-2">
-          Hint ·
-        </span>
-        {(["top", "left", "center", "right", "bottom"] as const).map((p) => (
-          <button
-            key={p}
-            onClick={() => setHintPos(p)}
-            className={`font-mono text-[10px] small-caps tracking-[0.2em] px-2.5 py-1 border border-ink transition-colors ${
-              hintPos === p
-                ? "bg-ink text-paper"
-                : "bg-paper text-ink hover:bg-paper-deep"
-            }`}
-          >
-            {p}
-          </button>
-        ))}
-      </div>
-    </div>
-
     {/* HERO + AT A GLANCE — shared image background */}
     {heroLayout === "A" && (
       <div
