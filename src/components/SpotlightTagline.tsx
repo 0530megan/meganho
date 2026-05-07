@@ -37,8 +37,8 @@ const SpotlightTagline = ({
   const y = pos?.y ?? 0;
 
   const maskStyle: CSSProperties = {
-    WebkitMaskImage: `radial-gradient(circle ${radius}px at ${x}px ${y}px, black 0%, black 35%, transparent 78%)`,
-    maskImage: `radial-gradient(circle ${radius}px at ${x}px ${y}px, black 0%, black 35%, transparent 78%)`,
+    WebkitMaskImage: `radial-gradient(circle ${radius}px at ${x}px ${y}px, black 0%, black 55%, transparent 95%)`,
+    maskImage: `radial-gradient(circle ${radius}px at ${x}px ${y}px, black 0%, black 55%, transparent 95%)`,
   };
 
   return (
