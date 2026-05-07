@@ -123,11 +123,21 @@ const Veramente = () => {
             </div>
             <div />
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
-              <p className="font-mono text-[13px] md:text-sm small-caps text-accent-red tracking-[0.32em] mt-10 md:mt-14 mb-10 md:mb-14 inline-flex items-center gap-3 animate-fade-in">
-                <span aria-hidden className="inline-block animate-pulse">☀</span>
-                hover or press enter to reveal
-                <span aria-hidden className="inline-block animate-pulse">☀</span>
-              </p>
+              <button
+                type="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    e.currentTarget.classList.toggle("is-revealed");
+                  }
+                }}
+                className="group is-revealable font-mono text-[13px] md:text-sm small-caps text-accent-red tracking-[0.32em] mt-10 md:mt-14 mb-10 md:mb-14 inline-flex items-center gap-3 animate-fade-in cursor-pointer bg-transparent border-0 p-0 transition-all duration-500 ease-out hover:-translate-y-1 hover:tracking-[0.42em] hover:text-ink focus-visible:-translate-y-1 focus-visible:tracking-[0.42em] focus-visible:text-ink focus-visible:outline-none [&.is-revealed]:-translate-y-1 [&.is-revealed]:tracking-[0.42em] [&.is-revealed]:text-ink"
+              >
+                <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:rotate-180 group-focus-visible:rotate-180 group-[.is-revealed]:rotate-180 animate-pulse">☀</span>
+                <span className="transition-opacity duration-500 ease-out">hover or press enter to reveal</span>
+                <span aria-hidden className="inline-block transition-transform duration-500 ease-out group-hover:-rotate-180 group-focus-visible:-rotate-180 group-[.is-revealed]:-rotate-180 animate-pulse">☀</span>
+              </button>
               <p className="font-display text-base md:text-xl text-ink leading-relaxed whitespace-nowrap">
                 <SpotlightTagline radius={260} dimOpacity={0}>
                   A wearable SPF concept brand that reframes sunscreen as a{" "}
