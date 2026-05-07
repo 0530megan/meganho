@@ -910,61 +910,6 @@ const Sippy = () => {
 
   return (
   <div className="paper-grain min-h-screen text-ink">
-    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
-      <button
-        onClick={() => setPreview169((v) => !v)}
-        className="font-mono text-[10px] small-caps tracking-[0.2em] bg-ink text-paper px-3 py-2 border-2 border-ink shadow-[3px_3px_0_0_hsl(10_80%_60%)] hover:translate-y-[-1px] transition-transform"
-        aria-pressed={preview169}
-      >
-        {preview169 ? "Exit 16:9" : "Preview 16:9"}
-      </button>
-      <div className="bg-paper border-2 border-ink p-3 shadow-[3px_3px_0_0_hsl(var(--ink))] w-56 space-y-2">
-        <div className="flex items-center justify-between font-mono text-[10px] small-caps tracking-[0.2em]">
-          <span>BG Position</span>
-          <button
-            onClick={() => { setBgPosX(50); setBgPosY(30); }}
-            className="text-ink-mute hover:text-ink underline underline-offset-2"
-          >
-            reset
-          </button>
-        </div>
-        <label className="block font-mono text-[10px] text-ink-mute">
-          X: {bgPosX}%
-          <input
-            type="range" min={0} max={100} value={bgPosX}
-            onChange={(e) => setBgPosX(Number(e.target.value))}
-            className="w-full accent-[hsl(10_80%_60%)]"
-          />
-        </label>
-        <label className="block font-mono text-[10px] text-ink-mute">
-          Y: {bgPosY}%
-          <input
-            type="range" min={0} max={100} value={bgPosY}
-            onChange={(e) => setBgPosY(Number(e.target.value))}
-            className="w-full accent-[hsl(10_80%_60%)]"
-          />
-        </label>
-        <div className="flex items-center gap-2 pt-1">
-          <button
-            onClick={handleSave}
-            className="flex-1 font-mono text-[10px] small-caps tracking-[0.2em] bg-ink text-paper px-2 py-1.5 border border-ink hover:opacity-90"
-          >
-            Save
-          </button>
-          <button
-            onClick={handleLoad}
-            className="flex-1 font-mono text-[10px] small-caps tracking-[0.2em] bg-paper text-ink px-2 py-1.5 border border-ink hover:bg-ink hover:text-paper transition-colors"
-          >
-            Load
-          </button>
-        </div>
-        {savedToast && (
-          <p className="font-mono text-[10px] small-caps tracking-[0.2em] text-[hsl(10_80%_45%)]">
-            {savedToast}
-          </p>
-        )}
-      </div>
-    </div>
     <header className="border-b-2 border-ink sticky top-0 z-30 bg-paper/80 backdrop-blur">
       <div className="container py-3 flex items-center justify-between gap-4">
         <Link
