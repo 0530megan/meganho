@@ -915,7 +915,7 @@ const Sippy = () => {
                   "1px 1px 0 rgba(255,255,255,0.85), 2px 2px 0 rgba(255,180,180,0.55), -1px -1px 1px rgba(180,60,60,0.35), 0 2px 4px rgba(140,40,40,0.22)",
               }}
             >
-              Sip the sun.
+              Sip it cute, keep it sippy
             </h1>
           </div>
           <div />
