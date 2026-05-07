@@ -123,7 +123,7 @@ const Veramente = () => {
             </div>
             <div />
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
-              <p className="font-mono text-[10px] small-caps text-accent-red tracking-[0.3em] mb-3 inline-flex items-center gap-2 animate-fade-in">
+              <p className="font-mono text-[13px] md:text-sm small-caps text-accent-red tracking-[0.32em] mb-6 md:mb-8 inline-flex items-center gap-3 animate-fade-in">
                 <span aria-hidden className="inline-block animate-pulse">☀</span>
                 hover to reveal
                 <span aria-hidden className="inline-block animate-pulse">☀</span>
