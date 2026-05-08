@@ -29,6 +29,7 @@ import megsCreamiPints from "@/assets/megs-creami-pints.png";
 import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.png";
 import megsCreamiLifestyle from "@/assets/megs-creami-lifestyle.png";
 import megsCreamiShelf from "@/assets/megs-creami-shelf.png";
+import megsCreamiWordmarkCard from "@/assets/megs-creami-wordmark-card.jpg";
 
 type HintPos = "top" | "bottom" | "left" | "right" | "center";
 
