@@ -1290,6 +1290,468 @@ const Sippy = () => {
     </div>
   );
 };
+const MegsCreami = () => {
+  const [hintPos] = useState<HintPos>("center");
+  const [bgPosX] = useState(50);
+  const [bgPosY] = useState(50);
+
+  return (
+    <div className="paper-grain min-h-screen text-ink">
+      <header className="border-b-2 border-ink sticky top-0 z-30 bg-paper/80 backdrop-blur">
+        <div className="container py-3 flex items-center justify-between gap-4">
+          <Link
+            to="/"
+            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 hover:text-[hsl(10_80%_60%)] transition-colors"
+          >
+            <ArrowLeft className="size-3.5" /> Back to Folio
+          </Link>
+          <p className="font-mono text-[11px] small-caps text-ink-mute">Case · III · Meg&rsquo;s Creami</p>
+          <Link
+            to="/"
+            className="font-mono text-[11px] small-caps inline-flex items-center gap-1 hover:text-[hsl(10_80%_60%)] transition-colors"
+          >
+            Back to Folio <ArrowUpRight className="size-3" />
+          </Link>
+        </div>
+      </header>
+
+      <div
+        className="relative border-b-2 border-ink"
+        style={{
+          backgroundImage: `url(${megsCreamiHeroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: `${bgPosX}% ${bgPosY}%`,
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#EFA99B",
+        }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(180deg, hsl(var(--paper) / 0.05) 0%, hsl(var(--paper) / 0.08) 100%)",
+          }}
+        />
+        <section className="relative">
+          <div className="container min-h-[88vh] grid grid-rows-[auto_1fr_auto] py-8 md:py-10">
+            <div className="text-center">
+              <p className="font-mono text-[11px] small-caps tracking-[0.25em]" style={{ color: '#595959' }}>
+                ✦ Case Study No. III · Frozen Dessert · Concept Brand ✦
+              </p>
+              <h1
+                className="uppercase tracking-[-0.01em] leading-[0.95] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]"
+                style={{
+                  color: "#CA2200",
+                  fontFamily: "'Caprasimo', serif",
+                  fontWeight: 400,
+                }}
+              ></h1>
+            </div>
+            <div />
+            <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
+              <div className="relative inline-block w-full">
+                <p
+                  className="text-base md:text-xl text-ink leading-relaxed whitespace-nowrap"
+                  style={{
+                    fontFamily: "'Fraunces', serif",
+                    fontWeight: 500,
+                    fontVariationSettings: "'SOFT' 100, 'WONK' 1",
+                  }}
+                >
+                  <SpotlightTagline radius={260} dimOpacity={0}>
+                    A spoonful of nostalgia —{" "}
+                    <em className="not-italic font-semibold" style={{ color: "#CA2200" }}>
+                      small-batch ice cream made for slow afternoons.
+                    </em>
+                  </SpotlightTagline>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative border-t border-ink/30 bg-paper/70 backdrop-blur-sm">
+          <div className="container py-8 grid md:grid-cols-3 gap-6">
+            {[
+              ["Category", "Frozen Dessert · Lifestyle"],
+              ["Tools", "Figma · Canva · AI Mockups"],
+              ["Year", "2026 — Concept"],
+            ].map(([k, v]) => (
+              <div key={k} className="border-l-2 border-ink/40 pl-4">
+                <p className="font-mono text-[10px] small-caps text-ink-mute mb-1">{k}</p>
+                <p className="font-display text-base leading-snug">{v}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <section className="container py-20 md:py-28 grid md:grid-cols-12 gap-10">
+        <div className="md:col-span-4">
+          <p className="font-mono text-[11px] small-caps text-accent-red mb-3">01 · The Brief</p>
+          <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight">
+            Premium pints feel
+            <span className="italic" style={{ color: "#CA2200" }}>
+              {" "}
+              cold.
+            </span>
+          </h2>
+        </div>
+        <div className="md:col-span-8 md:pt-3">
+          <p className="font-display text-lg md:text-xl text-ink-soft leading-relaxed mb-6">
+            The freezer aisle is full of minimalist pints whispering &ldquo;artisan&rdquo; in monochrome serifs. The
+            opportunity wasn&rsquo;t a new flavor. It was <strong className="text-ink font-semibold">a warmer feeling</strong>.
+          </p>
+          <p className="font-display italic text-lg md:text-xl text-ink-soft leading-relaxed">
+            Meg&rsquo;s Creami turns small-batch ice cream into{" "}
+            <em className="not-italic text-ink font-semibold">a hug in a pint</em> — a pretty tub you keep on the counter,
+            pass around the couch, photograph by candlelight.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-y-2 border-ink text-paper" style={{ background: "#CA2200" }}>
+        <div className="container py-16 md:py-24 text-center">
+          <p className="font-mono text-[11px] small-caps text-paper/70 mb-6 tracking-[0.3em]">✦ Brand Promise ✦</p>
+          <blockquote className="font-display italic font-light text-4xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl mx-auto">
+            &ldquo;So creami. So dreami.&rdquo;
+          </blockquote>
+          <p className="font-mono text-[11px] small-caps text-paper/70 mt-8">— Happiness in every scoop</p>
+        </div>
+      </section>
+
+      <section className="container py-20 md:py-28">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+          <div className="md:col-span-5 lg:col-span-4 md:sticky md:top-20">
+            <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">02 · Branding</p>
+            <h2 className="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight mb-6">
+              A blush-and-cherry
+              <span className="italic" style={{ color: "#CA2200" }}>
+                {" "}
+                world.
+              </span>
+            </h2>
+            <p className="font-display text-base text-ink-soft leading-relaxed mb-8">
+              Retro, sweet, a little vintage. A creamy nude base with burnt-red script, sprinkle confetti, and a
+              wavy badge that feels like it was hand-painted on the side of a 1960s soda fountain.
+            </p>
+            <dl className="border-t border-ink/30">
+              {[
+                ["Palette", "Burnt red · Dusty peach · Creamy nude"],
+                ["Type", "Retro script + soft sans"],
+                ["Tools", "Figma · Canva · AI"],
+                ["Deliverables", "Identity, pint, campaign"],
+              ].map(([k, v]) => (
+                <div key={k} className="grid grid-cols-5 gap-3 py-2.5 border-b border-ink/30">
+                  <dt className="col-span-2 font-mono text-[10px] small-caps text-ink-mute pt-0.5">{k}</dt>
+                  <dd className="col-span-3 font-display text-sm text-ink">{v}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="font-display italic text-base text-ink-soft mt-6 leading-relaxed">
+              &ldquo;A pint that <span style={{ color: "#CA2200" }}>smiles</span> from the freezer.&rdquo;
+            </p>
+          </div>
+
+          <div className="md:col-span-7 lg:col-span-8">
+            <div className="border-2 border-ink bg-paper shadow-[12px_14px_0_0_hsl(10_70%_75%)] overflow-hidden">
+              <div className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+                <p className="font-mono text-[10px] small-caps tracking-[0.25em]">Plate III · Identity Board</p>
+                <p className="font-mono text-[10px] small-caps text-ink-mute">Logo system + palette</p>
+              </div>
+              <img src={megsCreamiBrandBoard} alt="Meg's Creami brand board" className="block w-full h-auto" />
+              <figcaption className="px-4 py-3 border-t-2 border-ink flex items-baseline justify-between gap-3 flex-wrap">
+                <p className="font-display italic text-sm">
+                  A wordmark, a wavy badge, a palette — three ways to say the same thing.
+                </p>
+                <span className="font-mono text-[10px] small-caps text-ink-mute">Fig. 01–03</span>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 md:mt-20 border-t-2 border-ink pt-10">
+          <div className="grid md:grid-cols-12 gap-6 items-end mb-8">
+            <div className="md:col-span-7">
+              <p className="font-mono text-[11px] small-caps text-accent-red tracking-[0.2em] mb-3">Design Notes</p>
+              <h3 className="font-display text-3xl md:text-4xl leading-[0.95] tracking-tight">
+                Four ideas behind
+                <span className="italic" style={{ color: "#CA2200" }}>
+                  {" "}
+                  the pint.
+                </span>
+              </h3>
+            </div>
+            <p className="md:col-span-5 font-display italic text-base text-ink-soft leading-relaxed md:text-right">
+              The thinking that shaped every swirl, sprinkle, and scoop.
+            </p>
+          </div>
+          <ol className="grid sm:grid-cols-2 gap-5 md:gap-6">
+            {[
+              {
+                no: "01",
+                title: "Warm over precious",
+                body: "The opposite of cold-storage minimalism. Burnt reds, dusty peach, hand-drawn sprinkles — a pint that feels like a hug, not a hospital.",
+                tag: "Tone",
+              },
+              {
+                no: "02",
+                title: "A wordmark with a wink",
+                body: "The Meg's script bounces and curls — letterforms feel hand-lettered and lived-in, like a sign painted by someone who loves their craft.",
+                tag: "Identity",
+              },
+              {
+                no: "03",
+                title: "Designed for the counter",
+                body: "The pint is built to be left out — pretty enough to display next to flowers and candles, photogenic enough for a Sunday flat-lay.",
+                tag: "Form",
+              },
+              {
+                no: "04",
+                title: "Ice cream as a ritual",
+                body: "Reframing dessert as a slow moment. The aesthetic is the reason you pass it around — and the reason you go back for one more spoon.",
+                tag: "Strategy",
+              },
+            ].map(({ no, title, body, tag }) => (
+              <li
+                key={no}
+                className="relative bg-paper border-2 border-ink p-6 md:p-7 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_hsl(10_70%_75%)] transition-shadow"
+              >
+                <div className="flex items-baseline justify-between gap-4 mb-4 pb-3 border-b border-ink/20">
+                  <span className="font-display text-5xl leading-none" style={{ color: "#CA2200" }}>
+                    {no}
+                  </span>
+                  <span className="font-mono text-[10px] small-caps text-ink-mute tracking-[0.2em]">· {tag} ·</span>
+                </div>
+                <h4 className="font-display text-2xl leading-tight mb-3 text-ink">{title}</h4>
+                <p className="font-body text-[15px] text-ink-soft leading-relaxed">{body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="mt-16 md:mt-20">
+          <div className="flex items-end justify-between gap-4 border-b-2 border-ink pb-3 mb-8">
+            <div>
+              <p className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mb-1">Plate IV</p>
+              <h3 className="font-display text-3xl md:text-4xl leading-tight">Pint &amp; World</h3>
+            </div>
+            <p className="font-mono text-[10px] small-caps text-ink-mute hidden sm:block">Wordmark · Pint · Lifestyle</p>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                n: "01",
+                label: "Wordmark",
+                img: megsCreamiLogo,
+                ratio: "16 / 10",
+                title: "Hand-lettered, sweet, sincere.",
+                body: "A bespoke retro script with a wavy badge — letters that feel painted by hand, framed in burnt red and confetti sprinkles.",
+                meta: ["Hand-lettered", "Burnt red + cream", "Retro"],
+              },
+              {
+                n: "02",
+                label: "Pint",
+                img: megsCreamiPints,
+                ratio: "16 / 10",
+                title: "Stacked, scooped, irresistible.",
+                body: "473 ml pints in cream and burnt red, tumbled together like a candy-store haul. A wavy badge does the heavy lifting — sprinkles do the rest.",
+                meta: ["473 ml · Pint", "Small-batch", "Still-life"],
+              },
+              {
+                n: "03",
+                label: "Lifestyle",
+                img: megsCreamiLifestyle,
+                ratio: "16 / 10",
+                title: "Good friends, sweet treats, great talks.",
+                body: "Passed around a candle-lit couch with chunky knit cardigans, popcorn, and string lights — Meg's belongs in the moments you want to remember, not the ones you scroll past.",
+                meta: ["Cozy", "Shareable", "Ritual"],
+              },
+              {
+                n: "04",
+                label: "Retail",
+                img: megsCreamiShelf,
+                ratio: "16 / 10",
+                title: "Cool & creami in the freezer aisle.",
+                body: "Lined up behind glass with retro signage and checkerboard floors, the cream-and-red pints cut clean through frosty white space — a candy-shop moment in the middle of the grocery run.",
+                meta: ["Shelf", "Retail"],
+              },
+            ].map((c, i) => (
+              <article
+                key={c.n}
+                className={`grid md:grid-cols-12 gap-0 border-2 border-ink bg-paper shadow-[8px_10px_0_0_#CA2200] overflow-hidden ${i % 2 === 1 ? "md:[&>figure]:order-2" : ""}`}
+              >
+                <figure className="md:col-span-7 bg-paper-deep border-b-2 md:border-b-0 md:border-r-2 border-ink">
+                  <div className="relative w-full" style={{ aspectRatio: c.ratio }}>
+                    <img
+                      src={c.img}
+                      alt={`Meg's Creami ${c.label.toLowerCase()}`}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover object-center"
+                    />
+                  </div>
+                </figure>
+                <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-center">
+                  <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-rule">
+                    <span className="font-display text-5xl leading-none" style={{ color: "#CA2200" }}>
+                      {c.n}
+                    </span>
+                    <span className="font-mono text-[11px] small-caps tracking-[0.25em] text-ink">· {c.label} ·</span>
+                  </div>
+                  <h4 className="font-display text-2xl md:text-[26px] leading-tight mb-3 text-ink">{c.title}</h4>
+                  <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-5">{c.body}</p>
+                  <ul className="flex flex-wrap gap-2 mt-auto">
+                    {c.meta.map((m) => (
+                      <li
+                        key={m}
+                        className="font-mono text-[10px] small-caps tracking-[0.2em] border border-ink px-2 py-1 bg-paper-deep/60"
+                      >
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
+          Plate IV — Brand World · Built in Figma
+        </p>
+      </section>
+
+      <section className="border-y-2 border-ink bg-paper-deep/40">
+        <div className="container py-20 md:py-24">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="font-mono text-[11px] small-caps text-accent-red mb-3 tracking-[0.2em]">
+              03 · Marketing Strategy
+            </p>
+            <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight">
+              From insight to
+              <span className="italic" style={{ color: "#CA2200" }}>
+                {" "}
+                ritual.
+              </span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                Icon: Lightbulb,
+                no: "Concept",
+                title: "Tastes like home, looks like a love letter.",
+                body: "Reposition premium ice cream away from minimalist aloofness and onto the kitchen counter — a small-batch treat that feels like grandma's recipe with a designer's eye.",
+                tilt: "-rotate-1",
+              },
+              {
+                Icon: Eye,
+                no: "Insight",
+                title: "Nostalgia is a category.",
+                body: "Younger buyers crave warmth and memory over clinical luxury. The pint is the message — every cozy couch shot is a free postcard.",
+                tilt: "rotate-1",
+              },
+              {
+                Icon: Package,
+                no: "Solution",
+                title: "Small-batch pints, in a hug-able tub.",
+                body: "A retro wordmark, a sprinkle world, and flavors that taste as warm as they look. Built to be passed around, photographed, and re-stocked.",
+                tilt: "-rotate-1",
+              },
+            ].map(({ Icon, no, title, body, tilt }) => (
+              <article
+                key={no}
+                className={`relative bg-paper border border-ink p-7 ${tilt} hover:rotate-0 transition-transform duration-500 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_#CA2200]`}
+              >
+                <span
+                  aria-hidden
+                  className="absolute -top-2 left-1/2 -translate-x-1/2 size-4 rounded-full border border-ink"
+                  style={{ background: "#CA2200" }}
+                />
+                <Icon className="size-6 mb-4" style={{ color: "#CA2200" }} />
+                <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">{no}</p>
+                <h3 className="font-display text-2xl leading-tight mb-3">{title}</h3>
+                <p className="font-display italic text-base text-ink-soft leading-relaxed">{body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y-2 border-ink text-paper" style={{ backgroundColor: "#CA2200" }}>
+        <div className="container py-20 md:py-24">
+          <p className="font-mono text-[11px] small-caps text-paper/70 mb-3 tracking-[0.2em]">04 · Why It Works</p>
+          <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight max-w-3xl mb-14">
+            A pint built to be
+            <span className="italic" style={{ color: "#F7E0D1" }}>
+              {" "}
+              shared, scooped, remembered.
+            </span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                Icon: Sparkles,
+                k: "Aesthetic",
+                v: "A pint that earns a spot on the counter — and a spot in the photo without trying.",
+              },
+              {
+                Icon: Heart,
+                k: "Ritual",
+                v: "Dessert reframed as a slow moment — passed around the couch, candles lit.",
+              },
+              {
+                Icon: TrendingUp,
+                k: "Repeatability",
+                v: "Seasonal flavor drops & limited pints give existing fans a reason to keep coming back.",
+              },
+            ].map(({ Icon, k, v }) => (
+              <div key={k} className="border-t border-paper/30 pt-6">
+                <Icon className="size-6 mb-4" style={{ color: "#F7E0D1" }} />
+                <p className="font-mono text-[10px] small-caps text-paper/70 mb-2">{k}</p>
+                <p className="font-display text-lg leading-relaxed text-paper/90">{v}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-20 md:py-24 text-center">
+        <p className="font-mono text-[11px] small-caps text-accent-red mb-4 tracking-[0.2em]">✦ End of Case III ✦</p>
+        <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight mb-8">
+          Want the rest of the
+          <span className="italic" style={{ color: "#CA2200" }}>
+            {" "}
+            folio?
+          </span>
+        </h2>
+        <div className="flex items-center justify-center gap-3 flex-wrap">
+          <Link
+            to="/"
+            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 border border-ink px-5 py-3 hover:bg-paper-deep transition-colors"
+          >
+            <ArrowLeft className="size-3.5" /> Back to Folio
+          </Link>
+          <Link
+            to="/#contact"
+            className="font-mono text-[11px] small-caps inline-flex items-center gap-2 border border-ink px-5 py-3 hover:bg-ink hover:text-paper transition-colors"
+          >
+            Contact <ArrowUpRight className="size-3.5" />
+          </Link>
+        </div>
+      </section>
+
+      <footer className="border-t-2 border-ink">
+        <div className="container py-6 flex items-center justify-between gap-4 flex-wrap">
+          <p className="font-mono text-[11px] small-caps text-ink-mute">Megan Ho · Meg&rsquo;s Creami Case Study</p>
+          <p className="font-mono text-[11px] small-caps text-ink-mute">◼</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
 const PLACEHOLDERS: Record<string, { no: string; name: string; tagline: string; cover: string; tint: string }> = {
   sippy: {
     no: "II",
