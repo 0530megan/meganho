@@ -270,10 +270,19 @@ const SelectedWork = () => {
               className="relative overflow-hidden aspect-video border-b border-ink flex items-center justify-center p-6"
               style={{ background: s.tint }}
             >
+              {s.name === "Veramente" && (
+                <img
+                  src={veramentePreviewBg}
+                  alt=""
+                  aria-hidden
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+              )}
               <img
                 src={s.cover}
                 alt={`${s.name} logo`}
-                className={`transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[-2deg] ${s.name === "Veramente" ? "absolute inset-0 w-full h-full object-cover scale-[1.3]" : "max-h-full max-w-full object-contain"}`}
+                className={`transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[-2deg] ${s.name === "Veramente" ? "relative z-[1] max-h-[65%] max-w-[65%] object-contain" : "max-h-full max-w-full object-contain"}`}
                 loading="lazy"
               />
               <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
