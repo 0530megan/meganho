@@ -273,7 +273,7 @@ const SelectedWork = () => {
               <img
                 src={s.name === "Veramente" ? veramentePreviewBg : s.cover}
                 alt={`${s.name} logo`}
-                className={`transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[-2deg] ${s.name === "Veramente" ? "absolute inset-0 w-full h-full object-cover" : "max-h-full max-w-full object-contain"}`}
+                className={`transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[-2deg] ${s.name === "Veramente" ? "absolute inset-0 w-full h-full object-cover scale-[1.2]" : "max-h-full max-w-full object-contain"}`}
                 loading="lazy"
               />
               <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
