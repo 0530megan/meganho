@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users, Droplets, Palette, Citrus, Heart, IceCream, Snowflake, Camera } from "lucide-react";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
-import veramenteLogo from "@/assets/veramente-wordmark.png";
+import veramenteLogo from "@/assets/veramente-preview.png";
 import veramentePreviewBg from "@/assets/veramente-preview-bg.png";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
