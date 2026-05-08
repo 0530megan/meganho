@@ -24,6 +24,11 @@ import sippyCans from "@/assets/sippy-cans.png";
 import sippyCanDesk from "@/assets/sippy-can-desk.png";
 import sippyShelf from "@/assets/sippy-shelf.png";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
+import megsCreamiHeroBg from "@/assets/megs-creami-hero-bg.png";
+import megsCreamiPints from "@/assets/megs-creami-pints.png";
+import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.png";
+import megsCreamiLifestyle from "@/assets/megs-creami-lifestyle.png";
+import megsCreamiShelf from "@/assets/megs-creami-shelf.png";
 
 type HintPos = "top" | "bottom" | "left" | "right" | "center";
 
