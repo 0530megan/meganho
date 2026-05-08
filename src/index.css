@@ -4,6 +4,8 @@
 
 /* Editorial Broadsheet — paper & ink design system */
 
+html { zoom: 0.5; }
+
 @layer base {
   :root {
     /* Paper & ink palette */
