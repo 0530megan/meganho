@@ -1545,7 +1545,7 @@ const MegsCreami = () => {
               {
                 n: "01",
                 label: "Wordmark",
-                img: megsCreamiLogo,
+                img: megsCreamiWordmarkCard,
                 ratio: "16 / 10",
                 title: "Hand-lettered, sweet, sincere.",
                 body: "A bespoke retro script with a wavy badge — letters that feel painted by hand, framed in burnt red and confetti sprinkles.",
