@@ -1589,7 +1589,8 @@ const MegsCreami = () => {
                       src={c.img}
                       alt={`Meg's Creami ${c.label.toLowerCase()}`}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover object-center"
+                      className={`absolute inset-0 w-full h-full object-center ${c.n === "01" ? "object-contain" : "object-cover"}`}
+                      style={c.n === "01" ? { background: "#5C0E0A" } : undefined}
                     />
                   </div>
                 </figure>
