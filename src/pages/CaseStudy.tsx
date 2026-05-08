@@ -1831,6 +1831,7 @@ const CaseStudy = () => {
   }, [slug]);
   if (slug === "veramente") return <Veramente />;
   if (slug === "sippy") return <Sippy />;
+  if (slug === "megs-creami") return <MegsCreami />;
   return <Placeholder slug={slug} />;
 };
 
