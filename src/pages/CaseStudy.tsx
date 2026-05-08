@@ -29,6 +29,7 @@ import megsCreamiPints from "@/assets/megs-creami-pints.png";
 import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.png";
 import megsCreamiLifestyle from "@/assets/megs-creami-lifestyle.png";
 import megsCreamiShelf from "@/assets/megs-creami-shelf.png";
+import megsCreamiWordmarkCard from "@/assets/megs-creami-wordmark-card.jpg";
 
 type HintPos = "top" | "bottom" | "left" | "right" | "center";
 
@@ -1544,7 +1545,7 @@ const MegsCreami = () => {
               {
                 n: "01",
                 label: "Wordmark",
-                img: megsCreamiLogo,
+                img: megsCreamiWordmarkCard,
                 ratio: "16 / 10",
                 title: "Hand-lettered, sweet, sincere.",
                 body: "A bespoke retro script with a wavy badge — letters that feel painted by hand, framed in burnt red and confetti sprinkles.",
@@ -1588,7 +1589,8 @@ const MegsCreami = () => {
                       src={c.img}
                       alt={`Meg's Creami ${c.label.toLowerCase()}`}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover object-center"
+                      className={`absolute inset-0 w-full h-full object-center ${c.n === "01" ? "object-contain" : "object-cover"}`}
+                      style={c.n === "01" ? { background: "#5C0E0A" } : undefined}
                     />
                   </div>
                 </figure>
