@@ -46,7 +46,7 @@ const Hero = () => (
 
     {/* Nav */}
     <nav className="relative border-b border-ink/40 bg-paper/60 backdrop-blur sticky top-0 z-30">
-      <div className="container relative flex items-center justify-between gap-6 overflow-x-auto py-3">
+      <div className="container relative flex items-center justify-between gap-6 overflow-x-auto scrollbar-hide py-3">
         <a href="#top" className="font-display text-lg shrink-0">
           M.H.
         </a>
