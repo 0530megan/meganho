@@ -108,7 +108,7 @@ const Hero = () => (
           </span>
         </h2>
         <div className="mx-auto mt-6 mb-4 h-px w-24 bg-ink/30" />
-        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft whitespace-nowrap text-center rounded-sm font-light px-px py-[12px] mx-0 my-[5px]">
+        <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft md:whitespace-nowrap text-center rounded-sm font-light px-px py-[12px] mx-0 my-[5px]">
           I&rsquo;m passionate about marketing that turns heads and leaves an impression.
         </p>
       </div>
