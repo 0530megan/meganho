@@ -879,7 +879,7 @@ const Sippy = () => {
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
               <div className="relative inline-block w-full">
                 <p
-                  className="text-base md:text-xl text-ink leading-relaxed whitespace-nowrap"
+                  className="text-base md:text-xl text-ink leading-relaxed md:whitespace-nowrap"
                   style={{
                     fontFamily: "'Fraunces', serif",
                     fontWeight: 500,
@@ -1352,7 +1352,7 @@ const MegsCreami = () => {
             <div className="text-center max-w-4xl mx-auto pb-2 mt-40 md:mt-52">
               <div className="relative inline-block w-full">
                 <p
-                  className="text-base md:text-xl text-ink leading-relaxed whitespace-nowrap"
+                  className="text-base md:text-xl text-ink leading-relaxed md:whitespace-nowrap"
                   style={{
                     fontFamily: "'Fraunces', serif",
                     fontWeight: 500,
