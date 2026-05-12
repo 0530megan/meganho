@@ -1220,6 +1220,7 @@ const Index = () => {
       <Hero />
       <main>
         <SelectedWork />
+        <CampaignsCTA />
         <Approach />
         <Skills />
         <Statement />
