@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Megaphone, Sparkles, Zap, Target, Palette, Rocket } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Plus } from "lucide-react";
 
 const TODAY = new Date().toLocaleDateString("en-GB", {
   weekday: "long",
@@ -8,133 +8,160 @@ const TODAY = new Date().toLocaleDateString("en-GB", {
   year: "numeric",
 });
 
-const SectionHeader = ({
-  kicker,
-  title,
-  no,
-}: {
-  kicker: string;
-  title: string;
-  no: string;
-}) => (
-  <div className="border-t-4 border-ink pt-4 mb-10 flex items-end justify-between gap-6 flex-wrap">
-    <div>
-      <p className="font-mono font-bold text-sm small-caps text-accent-red mb-2">{kicker}</p>
-      <h2 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none">
-        {title}
-      </h2>
-    </div>
-    <span className="font-mono text-xs small-caps text-ink-mute">Section {no}</span>
-  </div>
-);
-
-const campaigns = [
+const items = [
   {
-    no: "I",
+    no: "01",
     kind: "Campaign",
     title: "Loud & Clear",
-    blurb: "Launch campaigns built to interrupt the scroll and stick in the memory.",
-    tags: ["Concept", "Art Direction", "Rollout"],
-    stamp: "Vol · 01",
-    tilt: "-rotate-2",
-    shadow: "hsl(var(--ink))",
+    blurb:
+      "Launch campaigns built to interrupt the scroll and stick in the memory. Big idea, sharper rollout.",
+    deliverables: ["Concept", "Art Direction", "Rollout", "Social"],
+    year: "2026",
   },
   {
-    no: "II",
+    no: "02",
     kind: "Rebrand",
     title: "From Whisper to Wow",
-    blurb: "Full identity overhauls — logo, voice, world. The kind that gets re-pinned.",
-    tags: ["Identity", "Strategy", "Worldbuilding"],
-    stamp: "New · Skin",
-    tilt: "rotate-1",
-    shadow: "hsl(var(--accent-red))",
+    blurb:
+      "Full identity overhauls — logo, voice, world. The kind people screenshot and re-pin.",
+    deliverables: ["Identity", "Strategy", "Verbal", "Worldbuilding"],
+    year: "2026",
   },
   {
-    no: "III",
+    no: "03",
     kind: "Refresh",
     title: "Same Soul, Sharper Suit",
-    blurb: "Modernise without losing the magic. A glow-up for brands with history.",
-    tags: ["Refinement", "System", "Polish"],
-    stamp: "Glow · Up",
-    tilt: "-rotate-1",
-    shadow: "hsl(var(--accent-ochre))",
+    blurb:
+      "Modernise without losing the magic. A glow-up for brands that already have history.",
+    deliverables: ["System", "Refinement", "Polish"],
+    year: "2025",
+  },
+  {
+    no: "04",
+    kind: "Activation",
+    title: "Made to be Met",
+    blurb:
+      "Pop-ups, product moments, IRL surprises — turning a brand into a place people want to be.",
+    deliverables: ["Concept", "Spatial", "Press"],
+    year: "2025",
   },
 ];
 
-const services = [
-  { icon: Megaphone, label: "Campaign Strategy" },
-  { icon: Palette, label: "Visual Identity" },
-  { icon: Target, label: "Positioning" },
-  { icon: Sparkles, label: "Brand Worlds" },
-  { icon: Rocket, label: "Go-To-Market" },
-  { icon: Zap, label: "Activation" },
-];
+const RUST = "hsl(14 70% 32%)"; // shade of rust
+const CREAM = "hsl(44 35% 92%)";
 
 const Campaigns = () => {
   return (
     <div
-      className="min-h-screen text-ink overflow-hidden"
+      className="min-h-screen overflow-hidden"
       style={{
-        backgroundColor: "hsl(18 45% 86%)",
+        backgroundColor: RUST,
+        color: CREAM,
         backgroundImage:
-          "radial-gradient(hsl(var(--ink) / 0.04) 1px, transparent 1px), radial-gradient(hsl(var(--ink) / 0.03) 1px, transparent 1px)",
+          "radial-gradient(rgba(255,248,224,0.05) 1px, transparent 1px), radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px)",
         backgroundSize: "3px 3px, 7px 7px",
         backgroundPosition: "0 0, 1px 2px",
       }}
     >
       {/* Top meta bar */}
-      <div className="border-b border-ink/30">
-        <div className="container flex items-center justify-between py-2 text-[11px] small-caps text-ink-soft font-mono">
-          <Link to="/" className="inline-flex items-center gap-1.5 hover:text-accent-red transition-colors">
+      <div className="border-b" style={{ borderColor: "rgba(244,243,238,0.25)" }}>
+        <div className="container flex items-center justify-between py-3 text-[11px] small-caps font-mono opacity-80">
+          <Link to="/" className="inline-flex items-center gap-1.5 hover:opacity-100 transition-opacity">
             <ArrowLeft className="size-3" /> Back to Edition
           </Link>
           <span className="hidden sm:inline">{TODAY}</span>
-          <span>Campaigns · Vol. I</span>
+          <span>Vol. I — Campaigns</span>
         </div>
       </div>
 
-      {/* HERO — editorial broadsheet header */}
-      <header className="relative border-b-2 border-ink overflow-hidden">
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-0"
-          style={{
-            background:
-              "radial-gradient(55% 65% at 18% 35%, hsl(var(--accent-burnt) / 0.22) 0%, transparent 60%), radial-gradient(45% 55% at 85% 75%, hsl(var(--accent-red) / 0.16) 0%, transparent 65%)",
-          }}
-        />
+      {/* HERO — asymmetric magazine spread */}
+      <header className="relative">
+        <div className="container relative pt-12 md:pt-20 pb-10 md:pb-16">
+          <div className="grid grid-cols-12 gap-6 md:gap-8 items-end">
+            {/* left: vertical kicker + huge headline */}
+            <div className="col-span-12 md:col-span-9">
+              <div className="flex items-center gap-4 mb-6 md:mb-10">
+                <span
+                  className="font-mono text-[11px] small-caps tracking-[0.3em]"
+                  style={{ color: CREAM }}
+                >
+                  ✦ Issue No. 04
+                </span>
+                <span
+                  className="h-px flex-1"
+                  style={{ background: "rgba(244,243,238,0.4)" }}
+                />
+                <span className="font-mono text-[11px] small-caps tracking-[0.3em] opacity-70">
+                  {items.length} entries
+                </span>
+              </div>
 
-        <div className="container relative pt-10 md:pt-14 pb-12 md:pb-16">
-          <p className="font-mono font-bold text-xs small-caps text-accent-red mb-4 tracking-[0.25em] text-center">
-            ✦ Section IV — The Loud Pages ✦
-          </p>
+              <h1
+                className="font-display uppercase leading-[0.78] tracking-[-0.04em]"
+                style={{
+                  fontWeight: 500,
+                  fontSize: "clamp(4rem,18vw,16rem)",
+                  color: CREAM,
+                }}
+              >
+                Loud
+                <span
+                  className="block italic pl-[8vw] md:pl-[12vw]"
+                  style={{ color: "hsl(35 80% 70%)" }}
+                >
+                  by
+                </span>
+                <span className="block">design.</span>
+              </h1>
+            </div>
 
-          <h1
-            className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(3rem,11vw,9rem)] uppercase text-center"
-            style={{ fontWeight: 500 }}
-          >
-            <span className="block text-ink">Brand</span>
-            <span
-              className="block italic"
-              style={{ color: "hsl(var(--accent-burnt))" }}
-            >
-              Campaigns.
-            </span>
-          </h1>
-
-          <div className="mx-auto mt-6 mb-4 h-px w-24 bg-ink/30" />
-          <p className="font-display text-xl md:text-2xl leading-snug text-ink-soft text-center max-w-3xl mx-auto font-light px-4 py-3">
-            The work that turns brands into conversations — campaigns &amp; rebrands made to be remembered.
-          </p>
+            {/* right: blurb stacked */}
+            <div className="col-span-12 md:col-span-3 md:pb-6">
+              <p
+                className="font-display italic text-lg md:text-xl leading-snug"
+                style={{ color: "rgba(244,243,238,0.85)" }}
+              >
+                Brand campaigns &amp; rebrands made to turn heads, change minds, and stay in the group chat.
+              </p>
+              <Link
+                to="/#contact"
+                className="group mt-6 inline-flex items-center gap-2 font-mono text-xs small-caps tracking-[0.2em] border-b pb-1 transition-colors"
+                style={{ borderColor: CREAM, color: CREAM }}
+              >
+                Commission a project
+                <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
+          </div>
         </div>
 
-        {/* Marquee ribbon */}
-        <div className="relative overflow-hidden border-t border-ink bg-ink text-paper">
-          <div className="marquee flex whitespace-nowrap py-2 font-mono text-[11px] small-caps">
+        {/* Marquee */}
+        <div
+          className="relative overflow-hidden border-y"
+          style={{
+            borderColor: "rgba(244,243,238,0.3)",
+            background: "rgba(0,0,0,0.18)",
+            color: CREAM,
+          }}
+        >
+          <div className="marquee flex whitespace-nowrap py-2.5 font-mono text-[11px] small-caps">
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
-                {["Make it loud", "✺", "Make it land", "✺", "Make it last", "✺", "Rebrand · Refresh · Reignite", "✺", "Strategy with a swagger", "✺", "Now booking", "✺"].map((t, j) => (
-                  <span key={j} className="px-2">{t}</span>
+                {[
+                  "Campaigns that print themselves",
+                  "✺",
+                  "Rebrands with a backbone",
+                  "✺",
+                  "Concepts in colour",
+                  "✺",
+                  "Strategy with swagger",
+                  "✺",
+                  "Now booking",
+                  "✺",
+                ].map((t, j) => (
+                  <span key={j} className="px-2">
+                    {t}
+                  </span>
                 ))}
               </div>
             ))}
@@ -142,165 +169,157 @@ const Campaigns = () => {
         </div>
       </header>
 
-      {/* CAMPAIGN TYPES — mirrors SelectedWork card grid */}
-      <section className="container py-16 md:py-24 relative">
-        <SectionHeader kicker="What I do" title="Three Flavours of Loud" no="I" />
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 pt-4">
-          {campaigns.map((c) => (
-            <article
-              key={c.no}
-              className={`group relative block border border-ink bg-paper transition-all duration-300 hover:-translate-y-2 hover:rotate-0 ${c.tilt}`}
-              style={{ boxShadow: `8px 10px 0 0 ${c.shadow}` }}
+      {/* INDEX — table-of-contents style list */}
+      <section className="container py-16 md:py-24">
+        <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
+          <div className="col-span-12 md:col-span-8">
+            <p
+              className="font-mono text-[11px] small-caps tracking-[0.3em] mb-3 opacity-80"
             >
-              {/* washi tape */}
-              <span
-                aria-hidden
-                className="absolute -top-3 left-6 h-5 w-16 rotate-[-6deg] border border-ink/30 opacity-80 z-10"
-                style={{ background: "hsl(var(--accent-ochre) / 0.55)" }}
-              />
-              <span
-                aria-hidden
-                className="absolute -top-2 right-8 h-4 w-12 rotate-[8deg] border border-ink/30 opacity-80 z-10"
-                style={{ background: "hsl(var(--accent-red) / 0.45)" }}
-              />
-
-              <div
-                className="relative overflow-hidden aspect-video border-b border-ink flex items-center justify-center p-6"
-                style={{ background: "hsl(18 45% 92%)" }}
-              >
-                <span
-                  className="font-display italic text-7xl md:text-8xl leading-none"
-                  style={{ color: "hsl(var(--accent-burnt))" }}
-                >
-                  {c.no}
-                </span>
-                <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1">
-                  {c.kind}
-                </span>
-                <span
-                  className="absolute bottom-3 right-3 size-16 rounded-full border-2 border-ink/70 flex items-center justify-center text-center font-mono text-[9px] small-caps leading-tight rotate-[-12deg] bg-paper/80 backdrop-blur-sm"
-                >
-                  {c.stamp}
-                </span>
-              </div>
-
-              <div className="p-5">
-                <div className="flex items-baseline justify-between gap-3 mb-2">
-                  <h3 className="font-display text-2xl tracking-tight">{c.title}</h3>
-                  <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-[hsl(var(--accent-burnt))]" />
-                </div>
-                <p className="font-display italic text-sm text-ink-soft mb-4">
-                  {c.blurb}
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {c.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="font-mono text-[10px] small-caps border border-ink/40 px-2 py-0.5 group-hover:bg-ink group-hover:text-paper transition-colors"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* SERVICES STRIP — mirrors Approach pinned-card layout */}
-      <section className="relative overflow-hidden border-y-2 border-ink">
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-0"
-          style={{
-            background:
-              "radial-gradient(60% 50% at 80% 20%, hsl(var(--accent-burnt) / 0.18) 0%, transparent 65%), radial-gradient(45% 45% at 10% 85%, hsl(var(--accent-red) / 0.12) 0%, transparent 65%)",
-          }}
-        />
-
-        <div className="container py-20 md:py-28 relative">
-          <div className="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-            <p className="font-mono font-bold text-xs small-caps text-accent-red mb-4 tracking-[0.2em]">
-              ✦ The Toolkit ✦
+              ✦ The Index
             </p>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">
-              From{" "}
-              <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>
-                first spark
-              </span>{" "}
-              to full brand world.
+            <h2
+              className="font-display italic leading-[0.9] tracking-tight"
+              style={{ fontSize: "clamp(2.5rem,6vw,5rem)", color: CREAM }}
+            >
+              What lives inside.
             </h2>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-6 max-w-6xl mx-auto">
-            {services.map((s, i) => {
-              const Icon = s.icon;
-              const tilts = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "-rotate-1", "rotate-1"];
-              return (
-                <article
-                  key={s.label}
-                  className={`group relative bg-paper border border-ink p-6 md:p-7 ${tilts[i % tilts.length]} hover:rotate-0 transition-transform duration-500 shadow-[6px_8px_0_0_hsl(var(--ink))] hover:shadow-[10px_12px_0_0_hsl(var(--accent-burnt))]`}
-                >
-                  <span
-                    aria-hidden
-                    className="absolute -top-2 left-1/2 -translate-x-1/2 size-4 rounded-full border border-ink"
-                    style={{ background: "hsl(var(--accent-burnt))" }}
-                  />
-                  <div className="flex items-center gap-4">
-                    <Icon className="size-6 shrink-0 text-[hsl(var(--accent-burnt))] transition-transform group-hover:rotate-12" />
-                    <span className="font-display text-xl md:text-2xl leading-tight">
-                      {s.label}
-                    </span>
-                  </div>
-                </article>
-              );
-            })}
+          <div className="col-span-12 md:col-span-4 md:text-right">
+            <p className="font-mono text-[11px] small-caps tracking-[0.2em] opacity-70">
+              Hover a row →
+            </p>
           </div>
         </div>
+
+        <ol className="border-t" style={{ borderColor: "rgba(244,243,238,0.35)" }}>
+          {items.map((it) => (
+            <li
+              key={it.no}
+              className="group relative border-b transition-colors"
+              style={{ borderColor: "rgba(244,243,238,0.35)" }}
+            >
+              <Link
+                to="/#contact"
+                className="grid grid-cols-12 gap-4 items-center py-6 md:py-8 px-2 md:px-4 transition-colors hover:bg-[rgba(0,0,0,0.18)]"
+              >
+                <span
+                  className="col-span-2 md:col-span-1 font-mono text-sm small-caps opacity-70"
+                >
+                  {it.no}
+                </span>
+
+                <span
+                  className="col-span-10 md:col-span-2 font-mono text-[10px] small-caps tracking-[0.25em]"
+                  style={{ color: "hsl(35 80% 75%)" }}
+                >
+                  {it.kind}
+                </span>
+
+                <h3
+                  className="col-span-12 md:col-span-5 font-display tracking-tight leading-[0.95] transition-transform duration-300 group-hover:translate-x-2"
+                  style={{
+                    fontSize: "clamp(2rem,4vw,3.25rem)",
+                    fontWeight: 500,
+                    color: CREAM,
+                  }}
+                >
+                  {it.title}
+                </h3>
+
+                <p
+                  className="col-span-12 md:col-span-3 font-display italic text-sm md:text-base leading-snug"
+                  style={{ color: "rgba(244,243,238,0.75)" }}
+                >
+                  {it.blurb}
+                </p>
+
+                <span className="col-span-12 md:col-span-1 flex md:justify-end">
+                  <Plus
+                    className="size-6 transition-transform duration-500 group-hover:rotate-90"
+                    style={{ color: CREAM }}
+                  />
+                </span>
+
+                {/* expanded deliverables row */}
+                <div className="col-span-12 md:col-start-4 md:col-span-9 flex flex-wrap gap-1.5 max-h-0 overflow-hidden opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-3 transition-all duration-500">
+                  {it.deliverables.map((d) => (
+                    <span
+                      key={d}
+                      className="font-mono text-[10px] small-caps px-2 py-0.5 border"
+                      style={{ borderColor: "rgba(244,243,238,0.5)", color: CREAM }}
+                    >
+                      {d}
+                    </span>
+                  ))}
+                  <span
+                    className="ml-auto font-mono text-[10px] small-caps opacity-70"
+                    style={{ color: CREAM }}
+                  >
+                    {it.year}
+                  </span>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </section>
 
-      {/* MANIFESTO + CTA */}
-      <section className="container py-20 md:py-28 max-w-4xl text-center">
-        <p className="font-mono font-bold text-xs small-caps text-accent-red mb-6 tracking-[0.25em]">
-          ✦ The Promise ✦
-        </p>
-        <p className="font-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
-          I don&rsquo;t do <span className="italic line-through opacity-50">safe</span>.<br />
-          I do{" "}
-          <span className="italic" style={{ color: "hsl(var(--accent-burnt))" }}>
-            unforgettable
-          </span>
-          .
-        </p>
-        <div className="mx-auto my-10 h-px w-24 bg-ink/30" />
-        <p className="font-display italic text-lg md:text-xl text-ink-soft leading-relaxed">
-          Every campaign starts with a question: how do we make people <em>feel</em> something? Then we build the brand world to back it up — strategy, identity, copy, art direction, the whole opera.
-        </p>
+      {/* PULL QUOTE — full-bleed cream block */}
+      <section
+        className="relative border-y-2"
+        style={{
+          background: CREAM,
+          color: "hsl(var(--ink))",
+          borderColor: "hsl(var(--ink))",
+        }}
+      >
+        <div className="container py-20 md:py-28 max-w-5xl">
+          <p
+            className="font-mono font-bold text-xs small-caps tracking-[0.3em] mb-6"
+            style={{ color: RUST }}
+          >
+            ✦ The Promise
+          </p>
+          <p
+            className="font-display leading-[1.05] tracking-tight"
+            style={{ fontSize: "clamp(2.25rem,5.5vw,4.5rem)", fontWeight: 500 }}
+          >
+            I don&rsquo;t do{" "}
+            <span className="italic line-through opacity-50">safe</span>. I do{" "}
+            <span className="italic" style={{ color: RUST }}>
+              unforgettable
+            </span>
+            — campaigns and rebrands engineered to be talked about, screenshot, and remembered.
+          </p>
 
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            to="/#contact"
-            className="group inline-flex items-center gap-3 font-mono text-sm small-caps text-paper bg-[hsl(var(--accent-burnt))] px-7 py-4 hover:opacity-90 transition-opacity shadow-[6px_8px_0_0_hsl(var(--ink))]"
-          >
-            Let&rsquo;s make noise
-            <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
-          <Link
-            to="/work"
-            className="font-mono text-sm small-caps underline underline-offset-4 hover:text-accent-red transition-colors"
-          >
-            See more work →
-          </Link>
+          <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <Link
+              to="/#contact"
+              className="group inline-flex items-center gap-3 font-mono text-sm small-caps text-paper px-7 py-4 transition-opacity hover:opacity-90 shadow-[6px_8px_0_0_hsl(var(--ink))]"
+              style={{ background: RUST }}
+            >
+              Start a project
+              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <Link
+              to="/work"
+              className="font-mono text-sm small-caps underline underline-offset-4 hover:opacity-70 transition-opacity"
+            >
+              Browse case studies →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t-2 border-ink">
-        <div className="container py-8 flex items-center justify-between text-[11px] small-caps font-mono text-ink-mute">
+      <footer
+        className="border-t"
+        style={{ borderColor: "rgba(244,243,238,0.3)" }}
+      >
+        <div className="container py-8 flex items-center justify-between text-[11px] small-caps font-mono opacity-80">
           <span>© Megan Ho · Melbourne</span>
-          <Link to="/" className="hover:text-accent-red transition-colors">
+          <Link to="/" className="hover:opacity-100 transition-opacity">
             ← Return to Edition
           </Link>
         </div>
