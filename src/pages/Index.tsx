@@ -12,6 +12,7 @@ import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
 import sippyLogo from "@/assets/sippy-logo.jpg";
 import megsCreamiBrandBoard from "@/assets/megs-creami-brand-board.jpg";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
+import campaignsCover from "@/assets/campaigns-cover.png";
 
 const NAV = [
   { id: "about", label: "Selected Work" },
@@ -408,38 +409,15 @@ const CampaignsCTA = () => {
 
               {/* cover plate */}
               <div
-                className="relative overflow-hidden aspect-[16/9] border-b border-ink flex items-center justify-center p-8"
+                className="relative overflow-hidden aspect-[16/9] border-b border-ink"
                 style={{ background: RUST, color: CREAM }}
               >
-                {/* paper grain */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-60"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(rgba(244,243,238,0.06) 1px, transparent 1px), radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px)",
-                    backgroundSize: "3px 3px, 7px 7px",
-                    backgroundPosition: "0 0, 1px 2px",
-                  }}
+                <img
+                  src={campaignsCover}
+                  alt="Brand campaigns and rebrands cover — Laneige x Jellycat neon balloon typography"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
                 />
-                {/* big typographic headline */}
-                <h3
-                  className="relative font-display uppercase leading-[0.78] tracking-[-0.04em] text-center"
-                  style={{
-                    fontWeight: 500,
-                    fontSize: "clamp(3rem,9vw,8rem)",
-                    color: CREAM,
-                  }}
-                >
-                  Loud
-                  <span
-                    className="block italic"
-                    style={{ color: "hsl(35 80% 70%)" }}
-                  >
-                    by
-                  </span>
-                  <span className="block">design.</span>
-                </h3>
 
                 <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 z-10">
                   Vol · I
