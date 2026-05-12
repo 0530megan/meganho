@@ -326,85 +326,289 @@ const SelectedWork = () => {
   );
 };
 
-const CampaignsCTA = () => (
-  <section className="relative border-y-2 border-ink overflow-hidden bg-ink text-paper">
-    {/* Decorative wash */}
-    <div
-      aria-hidden
-      className="absolute inset-0 -z-0 opacity-90"
-      style={{
-        background:
-          "radial-gradient(60% 80% at 15% 20%, hsl(var(--accent-burnt) / 0.55) 0%, transparent 60%), radial-gradient(50% 70% at 90% 85%, hsl(var(--accent-red) / 0.45) 0%, transparent 65%)",
-      }}
-    />
-    {/* Diagonal stripe pattern */}
-    <div
-      aria-hidden
-      className="absolute inset-0 -z-0 opacity-[0.08]"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(45deg, hsl(var(--paper)) 0 2px, transparent 2px 18px)",
-      }}
-    />
+const CampaignsCTA = () => {
+  const RUST = "hsl(14 70% 32%)";
+  const CREAM = "hsl(44 35% 92%)";
+  const RULE = "rgba(244,243,238,0.35)";
 
-    {/* Floating stamps */}
-    <span
-      aria-hidden
-      className="hidden md:flex absolute top-10 right-12 size-24 rounded-full border-2 border-paper/70 items-center justify-center text-center font-mono text-[10px] small-caps leading-tight rotate-[12deg] bg-ink/60 backdrop-blur-sm z-10"
+  return (
+    <section
+      className="relative border-y-4 overflow-hidden"
+      style={{ backgroundColor: RUST, color: CREAM, borderColor: "hsl(var(--ink))" }}
     >
-      Loud<br/>&amp;<br/>Proud
-    </span>
-    <span
-      aria-hidden
-      className="hidden md:block absolute bottom-12 left-10 font-mono text-[11px] small-caps bg-paper text-ink px-3 py-1.5 rotate-[-6deg] z-10"
-    >
-      ✦ New Section
-    </span>
+      {/* Decorative wash — matches case-study sections */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-0 opacity-90"
+        style={{
+          background:
+            "radial-gradient(55% 55% at 12% 18%, hsl(var(--accent-ochre) / 0.35) 0%, transparent 60%), radial-gradient(45% 45% at 88% 82%, hsl(var(--accent-burnt-darker) / 0.55) 0%, transparent 60%)",
+        }}
+      />
+      {/* Paper grain dots */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-0 opacity-[0.5]"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(244,243,238,0.06) 1px, transparent 1px), radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px)",
+          backgroundSize: "3px 3px, 7px 7px",
+          backgroundPosition: "0 0, 1px 2px",
+        }}
+      />
 
-    <div className="container relative py-20 md:py-28 grid grid-cols-12 gap-6 items-center">
-      <div className="col-span-12 md:col-span-8">
-        <p className="font-mono font-bold text-xs small-caps mb-5 tracking-[0.25em]" style={{ color: "hsl(var(--accent-ochre))" }}>
-          ✦ Want more? ✦
-        </p>
-        <h2
-          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(2.75rem,9vw,7rem)] uppercase"
-          style={{ fontWeight: 500 }}
-        >
-          <span className="block">Brand</span>
-          <span
-            className="block italic pl-[6vw]"
-            style={{ color: "hsl(var(--accent-burnt-light))" }}
+      <div className="w-full px-4 md:px-8 py-12 md:py-16 relative">
+        <div className="container">
+          {/* Section header — same shape as SectionHeader, recolored for rust */}
+          <div
+            className="border-t-4 pt-4 mb-10 flex items-end justify-between gap-6 flex-wrap"
+            style={{ borderColor: CREAM }}
           >
-            campaigns
-          </span>
-          <span className="block">&amp; rebrands.</span>
-        </h2>
-        <p className="font-display italic text-lg md:text-2xl leading-snug text-paper/80 mt-6 max-w-2xl">
-          The loud, the bold, the unforgettable — work made to turn brands into conversations.
-        </p>
-      </div>
+            <div>
+              <p
+                className="font-mono font-bold text-sm small-caps mb-2"
+                style={{ color: "hsl(35 80% 75%)" }}
+              >
+                What's next
+              </p>
+              <h2
+                className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none"
+                style={{ color: CREAM }}
+              >
+                Brand Campaigns &amp; Rebrands
+              </h2>
+            </div>
+            <span
+              className="font-mono text-xs small-caps"
+              style={{ color: "rgba(244,243,238,0.7)" }}
+            >
+              Section V
+            </span>
+          </div>
+        </div>
 
-      <div className="col-span-12 md:col-span-4 flex md:justify-end">
-        <Link
-          to="/campaigns"
-          className="group relative inline-flex flex-col items-start gap-2 font-mono text-sm small-caps text-ink bg-paper px-8 py-6 hover:bg-[hsl(var(--accent-burnt-light))] transition-colors shadow-[8px_10px_0_0_hsl(var(--accent-burnt))] hover:shadow-[12px_14px_0_0_hsl(var(--accent-burnt))] -rotate-2 hover:rotate-0 duration-300"
+        {/* 16:9 editorial frame — same proportions as the case studies */}
+        <article
+          className="relative mx-auto aspect-video w-full max-h-[88vh] border overflow-hidden"
+          style={{
+            maxWidth: "calc(88vh * 16 / 9)",
+            borderColor: RULE,
+            background: "rgba(0,0,0,0.12)",
+          }}
         >
-          <span className="text-[10px] small-caps text-ink-mute">Enter →</span>
-          <span className="font-display not-italic text-3xl md:text-4xl normal-case tracking-tight flex items-center gap-2">
-            See campaigns
-            <ArrowUpRight className="size-7 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </span>
-          <span
-            aria-hidden
-            className="absolute -top-2 -right-2 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[8deg]"
-          >
-            Vol. I
-          </span>
-        </Link>
+          <div className="absolute inset-0 grid grid-cols-12 gap-5 md:gap-7 p-6 md:p-8">
+            {/* LEFT — copy + at-a-glance + voice */}
+            <div className="col-span-12 md:col-span-4 flex flex-col min-h-0 gap-3 overflow-hidden">
+              <div>
+                <p
+                  className="font-mono text-[11px] small-caps mb-1.5"
+                  style={{ color: "hsl(35 80% 75%)" }}
+                >
+                  Vol. I · Campaigns &amp; Rebrands · Now booking
+                </p>
+                <h3
+                  className="font-display font-light text-3xl md:text-[2.5rem] leading-[0.9] tracking-tight"
+                  style={{ color: CREAM }}
+                >
+                  LOUD BY DESIGN
+                  <span className="font-display italic" style={{ color: "hsl(35 80% 70%)" }}>.</span>
+                  <span
+                    className="block font-display italic text-lg md:text-xl mt-1.5"
+                    style={{ color: "rgba(244,243,238,0.78)" }}
+                  >
+                    Made to be talked about.
+                  </span>
+                </h3>
+                <p
+                  className="font-display text-[12px] md:text-[13px] mt-2 leading-snug"
+                  style={{ color: "rgba(244,243,238,0.78)" }}
+                >
+                  A studio practice for <strong className="font-semibold" style={{ color: CREAM }}>brand campaigns &amp; full rebrands</strong> — concept, identity, and rollout built to <em className="not-italic font-semibold" style={{ color: "hsl(35 80% 75%)" }}>interrupt the scroll and stay in the group chat</em>.
+                </p>
+              </div>
+
+              <div>
+                <p
+                  className="font-mono text-[11px] small-caps mb-1.5"
+                  style={{ color: "rgba(244,243,238,0.7)" }}
+                >
+                  At a glance
+                </p>
+                <dl className="space-y-0.5">
+                  {[
+                    ["Format", "Campaign · Rebrand · Refresh"],
+                    ["Phases", "Concept → Identity → Rollout"],
+                    ["Tools", "Figma · Type · Art Direction"],
+                    ["Deliverables", "System, voice, launch assets"],
+                    ["Role", "Lead brand & creative direction"],
+                  ].map(([k, v]) => (
+                    <div
+                      key={k}
+                      className="flex justify-between gap-3 border-b pb-0.5"
+                      style={{ borderColor: RULE }}
+                    >
+                      <dt
+                        className="font-mono text-[10px] small-caps pt-0.5"
+                        style={{ color: "rgba(244,243,238,0.65)" }}
+                      >
+                        {k}
+                      </dt>
+                      <dd
+                        className="font-display text-[13px] font-medium text-right"
+                        style={{ color: CREAM }}
+                      >
+                        {v}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+
+              <div>
+                <p
+                  className="font-mono text-[11px] small-caps mb-1.5"
+                  style={{ color: "hsl(35 80% 75%)" }}
+                >
+                  House Voice
+                </p>
+                <ol className="space-y-0.5">
+                  {[
+                    { t: "Big idea first", r: " — strategy with swagger." },
+                    { t: "Type that shouts", r: ", colour that lands." },
+                    { t: "Concepts in colour", r: ", never beige." },
+                    { t: "Built to be screenshot", r: " and re-pinned." },
+                  ].map(({ t, r }, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2 border-b pb-0.5"
+                      style={{ borderColor: RULE }}
+                    >
+                      <span
+                        className="font-display text-lg leading-none w-6 shrink-0 pt-0.5"
+                        style={{ color: "hsl(35 80% 75%)" }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <p className="font-display text-[12px] leading-snug">
+                        <strong className="font-semibold" style={{ color: CREAM }}>{t}</strong>
+                        <span style={{ color: "rgba(244,243,238,0.78)" }}>{r}</span>
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+
+            {/* MIDDLE — big typographic plate */}
+            <figure className="col-span-12 md:col-span-5 flex flex-col min-h-0">
+              <div
+                className="flex-1 min-h-0 flex flex-col justify-center items-start p-5 md:p-7 border"
+                style={{ borderColor: RULE, background: "rgba(0,0,0,0.18)" }}
+              >
+                <span
+                  className="font-mono text-[10px] small-caps mb-3"
+                  style={{ color: "hsl(35 80% 75%)" }}
+                >
+                  ✦ Issue No. 04
+                </span>
+                <h4
+                  className="font-display uppercase leading-[0.78] tracking-[-0.04em]"
+                  style={{
+                    fontWeight: 500,
+                    fontSize: "clamp(3rem,8vw,7rem)",
+                    color: CREAM,
+                  }}
+                >
+                  Loud
+                  <span
+                    className="block italic pl-[6vw]"
+                    style={{ color: "hsl(35 80% 70%)" }}
+                  >
+                    by
+                  </span>
+                  <span className="block">design.</span>
+                </h4>
+                <p
+                  className="font-display italic text-sm md:text-base mt-4 max-w-md"
+                  style={{ color: "rgba(244,243,238,0.8)" }}
+                >
+                  Brand campaigns &amp; rebrands made to turn heads, change minds, and stick in the memory.
+                </p>
+              </div>
+              <figcaption
+                className="pt-1.5 mt-1.5 border-t flex items-baseline justify-between gap-3 flex-wrap"
+                style={{ borderColor: RULE }}
+              >
+                <p
+                  className="font-mono text-[9px] small-caps"
+                  style={{ color: "rgba(244,243,238,0.7)" }}
+                >
+                  Plate I — Cover
+                </p>
+                <p
+                  className="font-display italic text-[10px]"
+                  style={{ color: "rgba(244,243,238,0.7)" }}
+                >
+                  Concept · Identity · Rollout
+                </p>
+              </figcaption>
+            </figure>
+
+            {/* RIGHT — stacked plates: campaign types + CTA */}
+            <div className="col-span-12 md:col-span-3 flex flex-col gap-2 md:gap-3 min-h-0">
+              {[
+                { no: "01", kind: "Campaign", t: "Loud & Clear" },
+                { no: "02", kind: "Rebrand", t: "Whisper to Wow" },
+                { no: "03", kind: "Refresh", t: "Same Soul, Sharper Suit" },
+              ].map((p) => (
+                <figure
+                  key={p.no}
+                  className="relative border overflow-hidden flex flex-col flex-1 min-h-0 p-3"
+                  style={{ borderColor: RULE, background: "rgba(0,0,0,0.18)" }}
+                >
+                  <span
+                    className="font-mono text-[10px] small-caps"
+                    style={{ color: "rgba(244,243,238,0.65)" }}
+                  >
+                    No. {p.no}
+                  </span>
+                  <p
+                    className="font-mono text-[10px] small-caps mt-0.5"
+                    style={{ color: "hsl(35 80% 75%)" }}
+                  >
+                    {p.kind}
+                  </p>
+                  <h5
+                    className="mt-auto font-display tracking-tight leading-[0.95]"
+                    style={{ color: CREAM, fontSize: "clamp(1.1rem,1.6vw,1.6rem)", fontWeight: 500 }}
+                  >
+                    {p.t}
+                  </h5>
+                </figure>
+              ))}
+
+              <Link
+                to="/campaigns"
+                className="group relative inline-flex flex-col items-start gap-1 font-mono text-xs small-caps px-4 py-3 transition-all"
+                style={{
+                  background: CREAM,
+                  color: "hsl(var(--ink))",
+                  boxShadow: "6px 8px 0 0 hsl(var(--ink))",
+                }}
+              >
+                <span className="text-[10px] small-caps opacity-60">Enter →</span>
+                <span className="font-display not-italic text-xl md:text-2xl normal-case tracking-tight flex items-center gap-2">
+                  See campaigns
+                  <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const Approach = () => {
   const principles = [
