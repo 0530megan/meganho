@@ -328,8 +328,8 @@ const SelectedWork = () => {
 };
 
 const CampaignsCTA = () => {
-  const RUST = "hsl(14 70% 32%)";
-  const CREAM = "hsl(44 35% 92%)";
+  const RUST = "hsl(46 76% 78%)"; // #F1DE9A warm sand
+  const CREAM = "hsl(30 6% 11%)"; // ink for contrast
   const RULE = "rgba(244,243,238,0.35)";
 
   return (
