@@ -326,7 +326,86 @@ const SelectedWork = () => {
   );
 };
 
-const Approach = () => {
+const CampaignsCTA = () => (
+  <section className="relative border-y-2 border-ink overflow-hidden bg-ink text-paper">
+    {/* Decorative wash */}
+    <div
+      aria-hidden
+      className="absolute inset-0 -z-0 opacity-90"
+      style={{
+        background:
+          "radial-gradient(60% 80% at 15% 20%, hsl(var(--accent-burnt) / 0.55) 0%, transparent 60%), radial-gradient(50% 70% at 90% 85%, hsl(var(--accent-red) / 0.45) 0%, transparent 65%)",
+      }}
+    />
+    {/* Diagonal stripe pattern */}
+    <div
+      aria-hidden
+      className="absolute inset-0 -z-0 opacity-[0.08]"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(45deg, hsl(var(--paper)) 0 2px, transparent 2px 18px)",
+      }}
+    />
+
+    {/* Floating stamps */}
+    <span
+      aria-hidden
+      className="hidden md:flex absolute top-10 right-12 size-24 rounded-full border-2 border-paper/70 items-center justify-center text-center font-mono text-[10px] small-caps leading-tight rotate-[12deg] bg-ink/60 backdrop-blur-sm z-10"
+    >
+      Loud<br/>&amp;<br/>Proud
+    </span>
+    <span
+      aria-hidden
+      className="hidden md:block absolute bottom-12 left-10 font-mono text-[11px] small-caps bg-paper text-ink px-3 py-1.5 rotate-[-6deg] z-10"
+    >
+      ✦ New Section
+    </span>
+
+    <div className="container relative py-20 md:py-28 grid grid-cols-12 gap-6 items-center">
+      <div className="col-span-12 md:col-span-8">
+        <p className="font-mono font-bold text-xs small-caps mb-5 tracking-[0.25em]" style={{ color: "hsl(var(--accent-ochre))" }}>
+          ✦ Want more? ✦
+        </p>
+        <h2
+          className="font-display leading-[0.85] tracking-[-0.03em] text-[clamp(2.75rem,9vw,7rem)] uppercase"
+          style={{ fontWeight: 500 }}
+        >
+          <span className="block">Brand</span>
+          <span
+            className="block italic pl-[6vw]"
+            style={{ color: "hsl(var(--accent-burnt-light))" }}
+          >
+            campaigns
+          </span>
+          <span className="block">&amp; rebrands.</span>
+        </h2>
+        <p className="font-display italic text-lg md:text-2xl leading-snug text-paper/80 mt-6 max-w-2xl">
+          The loud, the bold, the unforgettable — work made to turn brands into conversations.
+        </p>
+      </div>
+
+      <div className="col-span-12 md:col-span-4 flex md:justify-end">
+        <Link
+          to="/campaigns"
+          className="group relative inline-flex flex-col items-start gap-2 font-mono text-sm small-caps text-ink bg-paper px-8 py-6 hover:bg-[hsl(var(--accent-burnt-light))] transition-colors shadow-[8px_10px_0_0_hsl(var(--accent-burnt))] hover:shadow-[12px_14px_0_0_hsl(var(--accent-burnt))] -rotate-2 hover:rotate-0 duration-300"
+        >
+          <span className="text-[10px] small-caps text-ink-mute">Enter →</span>
+          <span className="font-display not-italic text-3xl md:text-4xl normal-case tracking-tight flex items-center gap-2">
+            See campaigns
+            <ArrowUpRight className="size-7 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </span>
+          <span
+            aria-hidden
+            className="absolute -top-2 -right-2 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 rotate-[8deg]"
+          >
+            Vol. I
+          </span>
+        </Link>
+      </div>
+    </div>
+  </section>
+);
+
   const principles = [
     {
       no: "01",
