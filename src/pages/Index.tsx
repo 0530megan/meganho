@@ -406,6 +406,7 @@ const CampaignsCTA = () => (
   </section>
 );
 
+const Approach = () => {
   const principles = [
     {
       no: "01",
