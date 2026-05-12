@@ -47,8 +47,8 @@ const items = [
   },
 ];
 
-const RUST = "hsl(14 70% 32%)"; // shade of rust
-const CREAM = "hsl(44 35% 92%)";
+const RUST = "hsl(46 76% 78%)"; // #F1DE9A warm sand
+const CREAM = "hsl(30 6% 11%)"; // ink for contrast on light bg
 
 const Campaigns = () => {
   return (
