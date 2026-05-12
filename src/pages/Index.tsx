@@ -501,7 +501,6 @@ const CampaignsCTA = () => {
             </p>
             <div className="h-px flex-1" style={{ background: RULE }} />
           </div>
-        </div>
       </div>
     </section>
   );
