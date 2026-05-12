@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Work from "./pages/Work.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
+import Campaigns from "./pages/Campaigns.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
