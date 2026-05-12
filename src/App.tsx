@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Work from "./pages/Work.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
+import Campaigns from "./pages/Campaigns.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/work" element={<Work />} />
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/case/:slug" element={<CaseStudy />} />
+          <Route path="/campaigns" element={<Campaigns />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
