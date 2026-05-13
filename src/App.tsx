@@ -8,6 +8,7 @@ import Work from "./pages/Work.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
 import CaseStudy from "./pages/CaseStudy.tsx";
 import Campaigns from "./pages/Campaigns.tsx";
+import LaneigeJellycat from "./pages/LaneigeJellycat.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/case/:slug" element={<CaseStudy />} />
           <Route path="/campaigns" element={<Campaigns />} />
+          <Route path="/campaigns/laneige-jellycat" element={<LaneigeJellycat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
