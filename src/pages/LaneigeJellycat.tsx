@@ -188,8 +188,8 @@ const LaneigeJellycat = () => {
         </div>
 
         {/* Hero prototype shot */}
-        <div className="border-2 overflow-hidden mb-6" style={{ borderColor: INK }}>
-          <img src={claw} alt="Laneige x Jellycat claw machine prototype filled with plush keychains" className="w-full block" />
+        <div className="border-2 overflow-hidden mb-6 aspect-video" style={{ borderColor: INK }}>
+          <img src={claw} alt="Laneige x Jellycat claw machine prototype filled with plush keychains" className="w-full h-full object-cover block" />
         </div>
         <p className="font-display italic text-base md:text-lg max-w-2xl mb-16 opacity-80">
           The hero mechanic: a pastel claw machine stocked with the full plush charm line. One pull, one prize, infinite reposts.
