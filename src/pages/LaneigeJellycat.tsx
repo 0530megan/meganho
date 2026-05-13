@@ -197,8 +197,8 @@ const LaneigeJellycat = () => {
 
         {/* In-context popup */}
         <div className="grid grid-cols-12 gap-6 md:gap-10 items-center mb-16">
-          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden order-2 md:order-1" style={{ borderColor: INK }}>
-            <img src={popup} alt="Laneige x Jellycat mall pop-up activation with claw machine, queue, and merchandising" className="w-full block" />
+          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden order-2 md:order-1 aspect-video" style={{ borderColor: INK }}>
+            <img src={popup} alt="Laneige x Jellycat mall pop-up activation with claw machine, queue, and merchandising" className="w-full h-full object-cover block" />
           </div>
           <div className="col-span-12 md:col-span-5 space-y-4 order-1 md:order-2">
             <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ In Situ</p>
