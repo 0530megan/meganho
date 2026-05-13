@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import lineup from "@/assets/laneige-jellycat-lineup.png";
 import dino from "@/assets/laneige-jellycat-dino.png";
 
