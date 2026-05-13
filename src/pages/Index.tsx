@@ -391,7 +391,7 @@ const CampaignsCTA = () => {
           {/* Featured card — same shape as Selected Case Studies */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-4">
             <Link
-              to="/campaigns"
+              to="/campaigns/laneige-jellycat"
               className="group relative block md:col-span-8 md:col-start-3 border border-ink bg-paper -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300"
               style={{ boxShadow: "10px 12px 0 0 hsl(var(--accent-burnt-darker))" }}
             >
