@@ -1,5 +1,20 @@
 import lineup from "@/assets/laneige-jellycat-lineup.png";
 import dino from "@/assets/laneige-jellycat-dino.png";
+import claw from "@/assets/laneige-jellycat-claw.png";
+import popup from "@/assets/laneige-jellycat-popup.png";
+
+const prReasons = [
+  { k: "Experience", v: "Turns a simple product purchase into an experience people want to participate in and share online." },
+  { k: "Psychology", v: "The claw machine creates excitement, scarcity, and a ‘just one more try’ mindset." },
+  { k: "Collectibility", v: "Plushie keychains make the lip balm feel collectible, emotional, and giftable — not just skincare." },
+  { k: "Social spread", v: "Highly photogenic pop-up design encourages TikTok, Reels, and UGC organically." },
+  { k: "Audience", v: "Appeals to Gen Z through kawaii culture, Jellycat aesthetics, and blind-box excitement." },
+  { k: "Spend lift", v: "The $25 add-on mechanic raises average spend while still feeling fun and rewarding." },
+  { k: "Crowd pull", v: "Long queues and crowd attraction make the campaign feel exclusive and viral." },
+  { k: "Walking ads", v: "Plushies become walking advertisements — clipped to bags and keys daily." },
+  { k: "Crossover", v: "Combines beauty, gaming, and lifestyle culture into one immersive retail experience." },
+  { k: "Impulse", v: "Drives impulse purchases through emotional connection, not traditional selling." },
+];
 
 const SAND = "hsl(46 76% 78%)"; // #F1DE9A
 const INK = "hsl(30 6% 11%)";
