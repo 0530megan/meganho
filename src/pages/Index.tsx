@@ -374,7 +374,7 @@ const CampaignsCTA = () => {
               </p>
               <h2
                 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none"
-                style={{ color: CREAM }}
+                style={{ color: "#D2807B" }}
               >
                 Brand Campaigns &amp; Rebrands
               </h2>
