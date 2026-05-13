@@ -225,6 +225,50 @@ const LaneigeJellycat = () => {
         </div>
       </section>
 
+      {/* INFLUENCER PR PACKAGE */}
+      <section className="border-t-2" style={{ borderColor: INK }}>
+        <div className="container py-20 md:py-28">
+          <div className="grid grid-cols-12 gap-6 mb-12 items-end">
+            <div className="col-span-12 md:col-span-8">
+              <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ Influencer PR Package</p>
+              <h2 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(2.25rem,5vw,4rem)" }}>
+                Built for the unboxing.
+              </h2>
+            </div>
+            <div className="col-span-12 md:col-span-4 md:text-right">
+              <p className="font-mono text-[11px] small-caps tracking-[0.2em] opacity-70">
+                Seeded · Gen Z creators · TikTok-first
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-12 gap-6 md:gap-10 items-center">
+            <div
+              className="col-span-12 md:col-span-7 border-2 overflow-hidden aspect-video flex items-center justify-center"
+              style={{ borderColor: INK, background: "#C9D2E8" }}
+            >
+              <img
+                src={prPackage}
+                alt="Influencer unboxing the Laneige x Jellycat PR package on TikTok — pastel blue box, claw machine, dino card, and balm pouch"
+                className="h-full w-auto object-contain block"
+              />
+            </div>
+            <div className="col-span-12 md:col-span-5 space-y-5">
+              <p className="font-display text-base md:text-lg leading-relaxed">
+                A pastel-blue keepsake box stamped <em>“Glow Play, Love Softly.”</em> Inside: a mini working claw machine, the Strawberry Shortcake dino card, and the textured balm pouch with its gold co-branded tag.
+              </p>
+              <ul className="font-display text-base md:text-lg space-y-3 border-t pt-5" style={{ borderColor: INK }}>
+                <li>— Hero unbox moment built for vertical video</li>
+                <li>— Functional mini claw — the prototype in their hands</li>
+                <li>— Printed card: <em>“You glow softly, you play sweetly.”</em></li>
+                <li>— Seeded to kbeauty + kawaii-lifestyle creators</li>
+                <li>— Hashtag system: <span className="font-mono text-sm">#glowplaylovesoftly</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };
