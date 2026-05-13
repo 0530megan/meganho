@@ -36,17 +36,6 @@ const LaneigeJellycat = () => {
         backgroundPosition: "0 0, 1px 2px",
       }}
     >
-      {/* Top bar */}
-      <div className="border-b" style={{ borderColor: "rgba(0,0,0,0.2)" }}>
-        <div className="container flex items-center justify-between py-3 text-[11px] small-caps font-mono">
-          <Link to="/campaigns" className="inline-flex items-center gap-1.5 hover:opacity-70 transition-opacity">
-            <ArrowLeft className="size-3" /> Campaigns
-          </Link>
-          <span className="hidden sm:inline">Case Study · 01</span>
-          <span>Laneige × Jellycat</span>
-        </div>
-      </div>
-
       {/* HERO */}
       <header className="container pt-12 md:pt-20 pb-10 md:pb-16">
         <div className="grid grid-cols-12 gap-6 md:gap-8 items-end">
@@ -207,27 +196,6 @@ const LaneigeJellycat = () => {
         </div>
       </section>
 
-      {/* CTA / FOOTER */}
-      <section className="border-t-2" style={{ borderColor: INK }}>
-        <div className="container py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <p className="font-display italic text-2xl md:text-3xl max-w-xl leading-snug">
-            A balm that became a character. A character that became a wardrobe.
-          </p>
-          <div className="flex items-center gap-5">
-            <Link
-              to="/campaigns"
-              className="group inline-flex items-center gap-3 font-mono text-sm small-caps px-7 py-4 transition-opacity hover:opacity-90 shadow-[6px_8px_0_0_hsl(30_6%_11%)]"
-              style={{ background: BLUSH, color: SAND }}
-            >
-              Back to Campaigns
-              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-            <Link to="/" className="font-mono text-sm small-caps underline underline-offset-4 hover:opacity-70 transition-opacity">
-              Home →
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
