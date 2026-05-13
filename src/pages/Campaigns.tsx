@@ -12,11 +12,12 @@ const items = [
   {
     no: "01",
     kind: "Campaign",
-    title: "Loud & Clear",
+    title: "Laneige × Jellycat",
     blurb:
-      "Launch campaigns built to interrupt the scroll and stick in the memory. Big idea, sharper rollout.",
-    deliverables: ["Concept", "Art Direction", "Rollout", "Social"],
+      "Collectible Lip Glowy Balm pouches turning a skincare staple into a Gen Z bag-charm obsession.",
+    deliverables: ["Concept", "Collab Strategy", "Product", "Social"],
     year: "2026",
+    href: "/campaigns/laneige-jellycat",
   },
   {
     no: "02",
@@ -200,7 +201,7 @@ const Campaigns = () => {
               style={{ borderColor: "rgba(244,243,238,0.35)" }}
             >
               <Link
-                to="/#contact"
+                to={(it as any).href ?? "/#contact"}
                 className="grid grid-cols-12 gap-4 items-center py-6 md:py-8 px-2 md:px-4 transition-colors hover:bg-[rgba(0,0,0,0.18)]"
               >
                 <span
