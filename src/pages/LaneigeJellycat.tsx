@@ -130,8 +130,8 @@ const LaneigeJellycat = () => {
       {/* PRODUCT DEEP DIVE */}
       <section className="container py-16 md:py-24">
         <div className="grid grid-cols-12 gap-6 md:gap-10 items-center">
-          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden" style={{ borderColor: INK }}>
-            <img src={dino} alt="Strawberry Shortcake dino pouch — front, side, and unzipped showing Laneige Lip Glowy Balm" className="w-full block" />
+          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden aspect-video" style={{ borderColor: INK }}>
+            <img src={dino} alt="Strawberry Shortcake dino pouch — front, side, and unzipped showing Laneige Lip Glowy Balm" className="w-full h-full object-cover block" />
           </div>
           <div className="col-span-12 md:col-span-5 space-y-5">
             <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ Product Anatomy</p>
