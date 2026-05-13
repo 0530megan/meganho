@@ -2,6 +2,7 @@ import lineup from "@/assets/laneige-jellycat-lineup.png";
 import dino from "@/assets/laneige-jellycat-dino.png";
 import claw from "@/assets/laneige-jellycat-claw.png";
 import popup from "@/assets/laneige-jellycat-popup.png";
+import prPackage from "@/assets/laneige-jellycat-pr-package.png";
 
 const prReasons = [
   { k: "Experience", v: "Turns a simple product purchase into an experience people want to participate in and share online." },
@@ -72,8 +73,8 @@ const LaneigeJellycat = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-2 overflow-hidden" style={{ borderColor: INK }}>
-          <img src={lineup} alt="Laneige x Jellycat collectible plush charms — lamb, dino, star, elephant, puppy" className="w-full block" />
+        <div className="mt-12 border-2 overflow-hidden aspect-video" style={{ borderColor: INK }}>
+          <img src={lineup} alt="Laneige x Jellycat collectible plush charms — lamb, dino, star, elephant, puppy" className="w-full h-full object-cover block" />
         </div>
       </header>
 
@@ -129,8 +130,8 @@ const LaneigeJellycat = () => {
       {/* PRODUCT DEEP DIVE */}
       <section className="container py-16 md:py-24">
         <div className="grid grid-cols-12 gap-6 md:gap-10 items-center">
-          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden" style={{ borderColor: INK }}>
-            <img src={dino} alt="Strawberry Shortcake dino pouch — front, side, and unzipped showing Laneige Lip Glowy Balm" className="w-full block" />
+          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden aspect-video" style={{ borderColor: INK }}>
+            <img src={dino} alt="Strawberry Shortcake dino pouch — front, side, and unzipped showing Laneige Lip Glowy Balm" className="w-full h-full object-cover block" />
           </div>
           <div className="col-span-12 md:col-span-5 space-y-5">
             <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ Product Anatomy</p>
@@ -187,8 +188,8 @@ const LaneigeJellycat = () => {
         </div>
 
         {/* Hero prototype shot */}
-        <div className="border-2 overflow-hidden mb-6" style={{ borderColor: INK }}>
-          <img src={claw} alt="Laneige x Jellycat claw machine prototype filled with plush keychains" className="w-full block" />
+        <div className="border-2 overflow-hidden mb-6 aspect-video" style={{ borderColor: INK }}>
+          <img src={claw} alt="Laneige x Jellycat claw machine prototype filled with plush keychains" className="w-full h-full object-cover block" />
         </div>
         <p className="font-display italic text-base md:text-lg max-w-2xl mb-16 opacity-80">
           The hero mechanic: a pastel claw machine stocked with the full plush charm line. One pull, one prize, infinite reposts.
@@ -196,8 +197,8 @@ const LaneigeJellycat = () => {
 
         {/* In-context popup */}
         <div className="grid grid-cols-12 gap-6 md:gap-10 items-center mb-16">
-          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden order-2 md:order-1" style={{ borderColor: INK }}>
-            <img src={popup} alt="Laneige x Jellycat mall pop-up activation with claw machine, queue, and merchandising" className="w-full block" />
+          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden order-2 md:order-1 aspect-video" style={{ borderColor: INK }}>
+            <img src={popup} alt="Laneige x Jellycat mall pop-up activation with claw machine, queue, and merchandising" className="w-full h-full object-cover block" />
           </div>
           <div className="col-span-12 md:col-span-5 space-y-4 order-1 md:order-2">
             <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ In Situ</p>
@@ -221,6 +222,50 @@ const LaneigeJellycat = () => {
               <p className="font-display text-lg md:text-xl leading-snug">{r.v}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* INFLUENCER PR PACKAGE */}
+      <section className="border-t-2" style={{ borderColor: INK }}>
+        <div className="container py-20 md:py-28">
+          <div className="grid grid-cols-12 gap-6 mb-12 items-end">
+            <div className="col-span-12 md:col-span-8">
+              <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ Influencer PR Package</p>
+              <h2 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(2.25rem,5vw,4rem)" }}>
+                Built for the unboxing.
+              </h2>
+            </div>
+            <div className="col-span-12 md:col-span-4 md:text-right">
+              <p className="font-mono text-[11px] small-caps tracking-[0.2em] opacity-70">
+                Seeded · Gen Z creators · TikTok-first
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-12 gap-6 md:gap-10 items-center">
+            <div
+              className="col-span-12 md:col-span-7 border-2 overflow-hidden aspect-video flex items-center justify-center"
+              style={{ borderColor: INK, background: "#C9D2E8" }}
+            >
+              <img
+                src={prPackage}
+                alt="Influencer unboxing the Laneige x Jellycat PR package on TikTok — pastel blue box, claw machine, dino card, and balm pouch"
+                className="h-full w-auto object-contain block"
+              />
+            </div>
+            <div className="col-span-12 md:col-span-5 space-y-5">
+              <p className="font-display text-base md:text-lg leading-relaxed">
+                A pastel-blue keepsake box stamped <em>“Glow Play, Love Softly.”</em> Inside: a mini working claw machine, the Strawberry Shortcake dino card, and the textured balm pouch with its gold co-branded tag.
+              </p>
+              <ul className="font-display text-base md:text-lg space-y-3 border-t pt-5" style={{ borderColor: INK }}>
+                <li>— Hero unbox moment built for vertical video</li>
+                <li>— Functional mini claw — the prototype in their hands</li>
+                <li>— Printed card: <em>“You glow softly, you play sweetly.”</em></li>
+                <li>— Seeded to kbeauty + kawaii-lifestyle creators</li>
+                <li>— Hashtag system: <span className="font-mono text-sm">#glowplaylovesoftly</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
