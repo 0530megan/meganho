@@ -19,33 +19,6 @@ const items = [
     year: "2026",
     href: "/campaigns/laneige-jellycat",
   },
-  {
-    no: "02",
-    kind: "Rebrand",
-    title: "From Whisper to Wow",
-    blurb:
-      "Full identity overhauls — logo, voice, world. The kind people screenshot and re-pin.",
-    deliverables: ["Identity", "Strategy", "Verbal", "Worldbuilding"],
-    year: "2026",
-  },
-  {
-    no: "03",
-    kind: "Refresh",
-    title: "Same Soul, Sharper Suit",
-    blurb:
-      "Modernise without losing the magic. A glow-up for brands that already have history.",
-    deliverables: ["System", "Refinement", "Polish"],
-    year: "2025",
-  },
-  {
-    no: "04",
-    kind: "Activation",
-    title: "Made to be Met",
-    blurb:
-      "Pop-ups, product moments, IRL surprises — turning a brand into a place people want to be.",
-    deliverables: ["Concept", "Spatial", "Press"],
-    year: "2025",
-  },
 ];
 
 const RUST = "hsl(46 76% 78%)"; // #F1DE9A warm sand
