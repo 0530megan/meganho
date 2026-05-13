@@ -73,8 +73,8 @@ const LaneigeJellycat = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-2 overflow-hidden" style={{ borderColor: INK }}>
-          <img src={lineup} alt="Laneige x Jellycat collectible plush charms — lamb, dino, star, elephant, puppy" className="w-full block" />
+        <div className="mt-12 border-2 overflow-hidden aspect-video" style={{ borderColor: INK }}>
+          <img src={lineup} alt="Laneige x Jellycat collectible plush charms — lamb, dino, star, elephant, puppy" className="w-full h-full object-cover block" />
         </div>
       </header>
 
