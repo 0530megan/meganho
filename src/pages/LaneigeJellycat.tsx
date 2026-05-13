@@ -172,40 +172,55 @@ const LaneigeJellycat = () => {
 
       {/* PR PLACEHOLDER */}
       <section className="container py-20 md:py-28">
-        <div className="grid grid-cols-12 gap-6 mb-10 items-end">
+        <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-8">
             <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ PR & Activation</p>
             <h2 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(2.25rem,5vw,4rem)" }}>
-              Coming soon — the rollout.
+              The Claw Machine Pop-Up.
             </h2>
           </div>
           <div className="col-span-12 md:col-span-4 md:text-right">
             <p className="font-mono text-[11px] small-caps tracking-[0.2em] opacity-70">
-              Reserved for press, launch & social
+              Prototype · Mall activation · UGC engine
             </p>
           </div>
         </div>
 
-        <div
-          className="relative border-2 border-dashed grid place-items-center text-center px-6"
-          style={{
-            borderColor: INK,
-            minHeight: "clamp(280px, 38vw, 460px)",
-            background:
-              "repeating-linear-gradient(135deg, rgba(0,0,0,0.04) 0 12px, transparent 12px 24px)",
-          }}
-        >
-          <div className="max-w-xl space-y-4">
-            <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>
-              ✦ Section Reserved
-            </p>
-            <p className="font-display italic text-2xl md:text-3xl leading-snug">
-              Drop your PR assets here — launch film, press kit covers, influencer unboxings, pop-up imagery, and social cuts.
-            </p>
-            <p className="font-mono text-[11px] small-caps tracking-[0.2em] opacity-70">
-              Add images, video, or quotes to populate this block.
+        {/* Hero prototype shot */}
+        <div className="border-2 overflow-hidden mb-6" style={{ borderColor: INK }}>
+          <img src={claw} alt="Laneige x Jellycat claw machine prototype filled with plush keychains" className="w-full block" />
+        </div>
+        <p className="font-display italic text-base md:text-lg max-w-2xl mb-16 opacity-80">
+          The hero mechanic: a pastel claw machine stocked with the full plush charm line. One pull, one prize, infinite reposts.
+        </p>
+
+        {/* In-context popup */}
+        <div className="grid grid-cols-12 gap-6 md:gap-10 items-center mb-16">
+          <div className="col-span-12 md:col-span-7 border-2 overflow-hidden order-2 md:order-1" style={{ borderColor: INK }}>
+            <img src={popup} alt="Laneige x Jellycat mall pop-up activation with claw machine, queue, and merchandising" className="w-full block" />
+          </div>
+          <div className="col-span-12 md:col-span-5 space-y-4 order-1 md:order-2">
+            <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ In Situ</p>
+            <h3 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(1.75rem,3.5vw,2.5rem)" }}>
+              Glow play, love softly.
+            </h3>
+            <p className="font-display text-base md:text-lg leading-relaxed">
+              Buy the Glowy Lip Balm × Jellycat keychain, add <strong>+$25 AUD</strong> for a token, and play. Every queue becomes a content set. Every win becomes a post.
             </p>
           </div>
+        </div>
+
+        {/* Why it works */}
+        <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>✦ Why It Works</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+          {prReasons.map((r) => (
+            <div key={r.k} className="border-t pt-4" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
+              <p className="font-mono text-[11px] small-caps tracking-[0.25em] mb-2" style={{ color: BLUSH }}>
+                {r.k}
+              </p>
+              <p className="font-display text-lg md:text-xl leading-snug">{r.v}</p>
+            </div>
+          ))}
         </div>
       </section>
 
