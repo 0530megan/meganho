@@ -52,8 +52,28 @@ const LaneigeJellycat = () => {
         backgroundPosition: "0 0, 1px 2px",
       }}
     >
+      {/* Back to home */}
+      <div className="container pt-6 md:pt-10">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-3 border-2 px-5 py-2.5 font-mono text-sm small-caps tracking-widest hover:bg-ink hover:text-paper transition-colors rotate-[-1deg] hover:rotate-0"
+          style={{ borderColor: INK, color: INK }}
+        >
+          <svg width="32" height="20" viewBox="0 0 32 20" fill="none" aria-hidden="true" className="block">
+            <path
+              d="M28 10 C 22 9, 16 10, 10 10 M10 10 L 16 5 M10 10 L 16 15"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Back to home
+        </Link>
+      </div>
+
       {/* HERO */}
-      <header className="container pt-12 md:pt-20 pb-10 md:pb-16">
+      <header className="container pt-8 md:pt-12 pb-10 md:pb-16">
         <div className="grid grid-cols-12 gap-6 md:gap-8 items-end">
           <div className="col-span-12 md:col-span-8">
             <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>
