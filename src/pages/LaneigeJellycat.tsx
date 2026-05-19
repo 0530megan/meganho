@@ -54,7 +54,7 @@ const LaneigeJellycat = () => {
       <header className="container pt-12 md:pt-20 pb-10 md:pb-16">
         <div className="grid grid-cols-12 gap-6 md:gap-8 items-end">
           <div className="col-span-12 md:col-span-8">
-            <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>
+            <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>
               ✦ Concept Campaign · Collectible Collab
             </p>
             <h1
@@ -82,7 +82,7 @@ const LaneigeJellycat = () => {
       <section className="container py-16 md:py-24">
         <div className="grid grid-cols-12 gap-6 md:gap-10">
           <div className="col-span-12 md:col-span-4">
-            <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ The Idea</p>
+            <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ The Idea</p>
             <h2 className="font-display italic leading-[0.9]" style={{ fontSize: "clamp(2.25rem,5vw,4rem)" }}>
               From balm to bag-charm.
             </h2>
@@ -101,7 +101,7 @@ const LaneigeJellycat = () => {
       {/* FLAVOUR INDEX */}
       <section className="border-y-2" style={{ borderColor: INK, background: "rgba(0,0,0,0.04)" }}>
         <div className="container py-16 md:py-20">
-          <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-8" style={{ color: BLUSH }}>✦ The Flavour Index</p>
+          <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-8" style={{ color: BLUSH }}>✦ The Flavour Index</p>
           <ol className="border-t" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
             {flavours.map((f, i) => (
               <li
@@ -134,7 +134,7 @@ const LaneigeJellycat = () => {
             <img src={dino} alt="Strawberry Shortcake dino pouch — front, side, and unzipped showing Laneige Lip Glowy Balm" className="w-full h-full object-cover block" />
           </div>
           <div className="col-span-12 md:col-span-5 space-y-5">
-            <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ Product Anatomy</p>
+            <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ Product Anatomy</p>
             <h2 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(2rem,4.5vw,3.25rem)" }}>
               Plush outside. <br/>Lip Glowy inside.
             </h2>
@@ -151,7 +151,7 @@ const LaneigeJellycat = () => {
       {/* WHY LANEIGE */}
       <section className="border-y-2" style={{ borderColor: INK, background: INK, color: SAND }}>
         <div className="container py-20 md:py-28">
-          <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>✦ Why Laneige · Why Now</p>
+          <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>✦ Why Laneige · Why Now</p>
           <h2 className="font-display leading-[1] tracking-tight mb-12" style={{ fontSize: "clamp(2.25rem,5.5vw,4.5rem)", fontWeight: 500 }}>
             The brand feels{" "}
             <span className="italic line-through opacity-50">safe</span>.{" "}
@@ -175,7 +175,7 @@ const LaneigeJellycat = () => {
       <section className="container py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-8">
-            <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ PR & Activation</p>
+            <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ PR & Activation</p>
             <h2 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(2.25rem,5vw,4rem)" }}>
               The Claw Machine Pop-Up.
             </h2>
@@ -201,7 +201,7 @@ const LaneigeJellycat = () => {
             <img src={popup} alt="Laneige x Jellycat mall pop-up activation with claw machine, queue, and merchandising" className="w-full h-full object-cover block" />
           </div>
           <div className="col-span-12 md:col-span-5 space-y-4 order-1 md:order-2">
-            <p className="font-mono text-[11px] small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ In Situ</p>
+            <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em]" style={{ color: BLUSH }}>✦ On Site</p>
             <h3 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(1.75rem,3.5vw,2.5rem)" }}>
               Glow play, love softly.
             </h3>
@@ -212,7 +212,7 @@ const LaneigeJellycat = () => {
         </div>
 
         {/* Why it works */}
-        <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>✦ Why It Works</p>
+        <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-6" style={{ color: BLUSH }}>✦ Why It Works</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
           {prReasons.map((r) => (
             <div key={r.k} className="border-t pt-4" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
@@ -230,7 +230,7 @@ const LaneigeJellycat = () => {
         <div className="container py-20 md:py-28">
           <div className="grid grid-cols-12 gap-6 mb-12 items-end">
             <div className="col-span-12 md:col-span-8">
-              <p className="font-mono text-[11px] small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ Influencer PR Package</p>
+              <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ Influencer PR Package</p>
               <h2 className="font-display italic leading-[0.95]" style={{ fontSize: "clamp(2.25rem,5vw,4rem)" }}>
                 Built for the unboxing.
               </h2>
