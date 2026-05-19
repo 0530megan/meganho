@@ -172,6 +172,59 @@ const LaneigeJellycat = () => {
         </div>
       </section>
 
+      {/* LONG-TERM VALUE */}
+      <section className="border-y-2" style={{ borderColor: INK, background: "rgba(0,0,0,0.04)" }}>
+        <div className="container py-20 md:py-28">
+          <p className="font-mono text-sm md:text-base font-bold small-caps tracking-[0.3em] mb-3" style={{ color: BLUSH }}>✦ Beyond the Balm</p>
+          <h2 className="font-display italic leading-[0.95] mb-14" style={{ fontSize: "clamp(2.25rem,5vw,4rem)" }}>
+            Value that outlasts the product.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+            <div className="border-t pt-5 flex gap-4" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
+              <Heart size={28} strokeWidth={1.5} style={{ color: BLUSH, flexShrink: 0 }} />
+              <div>
+                <p className="font-display text-lg md:text-xl leading-snug">
+                  The collaboration creates long-term perceived value because the plushie functions beyond skincare packaging.
+                </p>
+              </div>
+            </div>
+            <div className="border-t pt-5 flex gap-4" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
+              <Infinity size={28} strokeWidth={1.5} style={{ color: BLUSH, flexShrink: 0 }} />
+              <div>
+                <p className="font-display text-lg md:text-xl leading-snug">
+                  Even after the Lip Glowy Balm is finished, consumers can continue using the item as a standalone Jellycat plush keychain or collectible accessory.
+                </p>
+              </div>
+            </div>
+            <div className="border-t pt-5 flex gap-4" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
+              <Leaf size={28} strokeWidth={1.5} style={{ color: BLUSH, flexShrink: 0 }} />
+              <div>
+                <p className="font-display text-lg md:text-xl leading-snug">
+                  This extends the product lifecycle and reduces the feeling of disposable packaging.
+                </p>
+              </div>
+            </div>
+            <div className="border-t pt-5 flex gap-4" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
+              <Package size={28} strokeWidth={1.5} style={{ color: BLUSH, flexShrink: 0 }} />
+              <div>
+                <p className="font-display text-lg md:text-xl leading-snug">
+                  The pouch becomes both a functional beauty accessory and a collectible keepsake within existing Jellycat collections.
+                </p>
+              </div>
+            </div>
+            <div className="border-t pt-5 flex gap-4 md:col-span-2" style={{ borderColor: "rgba(0,0,0,0.3)" }}>
+              <TrendingUp size={28} strokeWidth={1.5} style={{ color: BLUSH, flexShrink: 0 }} />
+              <div>
+                <p className="font-display text-lg md:text-xl leading-snug">
+                  By combining utility with emotional collectibility, the collaboration increases attachment, display value, and repeat purchase potential.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PR PLACEHOLDER */}
       <section className="container py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
