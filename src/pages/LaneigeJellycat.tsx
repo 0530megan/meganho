@@ -9,7 +9,7 @@ const prReasons = [
   { k: "Psychology", v: "The claw machine creates excitement, scarcity, and a ‘just one more try’ mindset." },
   { k: "Collectibility", v: "Plushie keychains make the lip balm feel collectible, emotional, and giftable — not just skincare." },
   { k: "Social spread", v: "Highly photogenic pop-up design encourages TikTok, Reels, and UGC organically." },
-  { k: "Audience", v: "Appeals to Gen Z through kawaii culture, Jellycat aesthetics, and blind-box excitement." },
+  { k: "Audience", v: "Strengthens emotional branding by transforming skincare from a functional routine into a lifestyle and identity-driven experience." },
   { k: "Spend lift", v: "The $25 add-on mechanic raises average spend while still feeling fun and rewarding." },
   { k: "Crowd pull", v: "Long queues and crowd attraction make the campaign feel exclusive and viral." },
   { k: "Walking ads", v: "Plushies become walking advertisements — clipped to bags and keys daily." },
