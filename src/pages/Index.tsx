@@ -428,17 +428,6 @@ const CampaignsCTA = () => {
                   Vol · I
                 </span>
 
-                {/* stamp */}
-                <span
-                  className="absolute bottom-3 right-3 size-16 rounded-full border-2 flex items-center justify-center text-center font-mono text-[9px] small-caps leading-tight rotate-[-12deg] backdrop-blur-sm z-10"
-                  style={{
-                    borderColor: "rgba(244,243,238,0.7)",
-                    color: CREAM,
-                    background: "rgba(0,0,0,0.25)",
-                  }}
-                >
-                  Now · Booking
-                </span>
 
                 {/* hover wash */}
                 <div
