@@ -376,7 +376,12 @@ const CampaignsCTA = () => {
                 className="font-display font-light text-4xl md:text-6xl tracking-tight leading-none"
                 style={{ color: "#D2807B" }}
               >
-                Brand Campaigns &amp; Rebrands
+                <Link
+                  to="/campaigns/laneige-jellycat"
+                  className="hover:underline underline-offset-4 transition-colors"
+                >
+                  Brand Campaigns &amp; Rebrands
+                </Link>
               </h2>
             </div>
             <span
