@@ -3,6 +3,7 @@ import dino from "@/assets/laneige-jellycat-dino.png";
 import claw from "@/assets/laneige-jellycat-claw.png";
 import popup from "@/assets/laneige-jellycat-popup.png";
 import prPackage from "@/assets/laneige-jellycat-pr-package.png";
+import { Heart, Infinity, Leaf, Package, TrendingUp } from "lucide-react";
 
 const prReasons = [
   { k: "Experience", v: "Turns a simple product purchase into an experience people want to participate in and share online." },
