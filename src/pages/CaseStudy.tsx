@@ -1166,7 +1166,7 @@ const Sippy = () => {
               {
                 n: "01",
                 label: "Feed",
-                img: feedMode === "light" ? sippyLight.url : sippyDark.url,
+                img: feedMode === "light" ? sippyLight : sippyDark,
                 alt:
                   feedMode === "light"
                     ? "Sippy Instagram profile, gallery and post views in light theme"
@@ -1178,7 +1178,7 @@ const Sippy = () => {
               {
                 n: "02",
                 label: "Stories",
-                img: sippyStories.url,
+                img: sippyStories,
                 alt: "Sippy Instagram story frame",
                 caption: "A full-bleed story frame — squeeze, pour, sip.",
                 span: false,
@@ -1186,7 +1186,7 @@ const Sippy = () => {
               {
                 n: "03",
                 label: "EDM",
-                img: sippyEdm.url,
+                img: sippyEdm,
                 alt: "Sippy launch email newsletter",
                 caption: "Launch email — meet your new main squeeze.",
                 span: false,
