@@ -774,6 +774,7 @@ const Sippy = () => {
   const [bgPosX, setBgPosX] = useState(50);
   const [bgPosY, setBgPosY] = useState(70);
   const [savedToast, setSavedToast] = useState<string | null>(null);
+  const [feedMode, setFeedMode] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     try {
