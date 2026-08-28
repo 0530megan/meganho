@@ -23,6 +23,10 @@ import sippyHeroBg from "@/assets/sippy-hero-bg.jpg";
 import sippyCans from "@/assets/sippy-cans.png";
 import sippyCanDesk from "@/assets/sippy-can-desk.png";
 import sippyShelf from "@/assets/sippy-shelf.png";
+import sippyLight from "@/assets/sippy-light_theme.jpg.asset.json";
+import sippyDark from "@/assets/sippy-dark_theme.jpg.asset.json";
+import sippyStories from "@/assets/sippy-sippy_insta_stories.jpg.asset.json";
+import sippyEdm from "@/assets/sippy-sippy_edm_1.jpg.asset.json";
 import megsCreamiLogo from "@/assets/megs-creami-logo.png";
 import megsCreamiHeroBg from "@/assets/megs-creami-hero-bg.png";
 import megsCreamiPints from "@/assets/megs-creami-pints.png";
@@ -1144,6 +1148,79 @@ const Sippy = () => {
             ))}
           </div>
         </div>
+
+        <div className="mt-16 md:mt-20">
+          <div className="flex items-end justify-between gap-4 border-b-2 border-ink pb-3 mb-8">
+            <div>
+              <p className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mb-1">Plate IV</p>
+              <h3 className="font-display text-3xl md:text-4xl leading-tight">Social &amp; EDM</h3>
+            </div>
+            <p className="font-mono text-[10px] small-caps text-ink-mute hidden sm:block">
+              Feed · Stories · Email
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                n: "01",
+                label: "Feed · Light",
+                img: sippyLight.url,
+                alt: "Sippy Instagram profile, gallery and post views in light theme",
+                caption: "Profile, grid and post — light mode.",
+                span: true,
+              },
+              {
+                n: "02",
+                label: "Feed · Dark",
+                img: sippyDark.url,
+                alt: "Sippy Instagram profile, gallery and post views in dark theme",
+                caption: "The same feed, dressed for dark mode.",
+                span: true,
+              },
+              {
+                n: "03",
+                label: "Stories",
+                img: sippyStories.url,
+                alt: "Sippy Instagram story frame",
+                caption: "A full-bleed story frame — squeeze, pour, sip.",
+                span: false,
+              },
+              {
+                n: "04",
+                label: "EDM",
+                img: sippyEdm.url,
+                alt: "Sippy launch email newsletter",
+                caption: "Launch email — meet your new main squeeze.",
+                span: false,
+              },
+            ].map((s) => (
+              <figure
+                key={s.n}
+                className={`border-2 border-ink bg-paper shadow-[8px_10px_0_0_hsl(10_80%_60%)] overflow-hidden flex flex-col ${
+                  s.span ? "md:col-span-2" : ""
+                }`}
+              >
+                <figcaption className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+                  <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
+                    Fig. {s.n} · {s.label}
+                  </p>
+                  <span className="font-mono text-[10px] small-caps text-ink-mute">Sippy</span>
+                </figcaption>
+                <div className="bg-paper-deep/40 p-4 flex-1 flex items-center justify-center">
+                  <img
+                    src={s.img}
+                    alt={s.alt}
+                    loading="lazy"
+                    className={`block w-full h-auto object-contain ${s.span ? "" : "max-h-[620px] w-auto mx-auto"}`}
+                  />
+                </div>
+                <p className="font-display italic text-sm px-4 py-3 border-t-2 border-ink">{s.caption}</p>
+              </figure>
+            ))}
+          </div>
+        </div>
+
 
         <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
           Plate III — Brand World · Built in Figma
