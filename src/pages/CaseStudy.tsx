@@ -1165,22 +1165,18 @@ const Sippy = () => {
             {[
               {
                 n: "01",
-                label: "Feed · Light",
-                img: sippyLight.url,
-                alt: "Sippy Instagram profile, gallery and post views in light theme",
-                caption: "Profile, grid and post — light mode.",
+                label: "Feed",
+                img: feedMode === "light" ? sippyLight.url : sippyDark.url,
+                alt:
+                  feedMode === "light"
+                    ? "Sippy Instagram profile, gallery and post views in light theme"
+                    : "Sippy Instagram profile, gallery and post views in dark theme",
+                caption: "Profile, grid and post — tap the button to flip between light and dark.",
                 span: true,
+                toggle: true,
               },
               {
                 n: "02",
-                label: "Feed · Dark",
-                img: sippyDark.url,
-                alt: "Sippy Instagram profile, gallery and post views in dark theme",
-                caption: "The same feed, dressed for dark mode.",
-                span: true,
-              },
-              {
-                n: "03",
                 label: "Stories",
                 img: sippyStories.url,
                 alt: "Sippy Instagram story frame",
@@ -1188,7 +1184,7 @@ const Sippy = () => {
                 span: false,
               },
               {
-                n: "04",
+                n: "03",
                 label: "EDM",
                 img: sippyEdm.url,
                 alt: "Sippy launch email newsletter",
@@ -1208,13 +1204,23 @@ const Sippy = () => {
                   </p>
                   <span className="font-mono text-[10px] small-caps text-ink-mute">Sippy</span>
                 </figcaption>
-                <div className="bg-paper-deep/40 p-4 flex-1 flex items-center justify-center">
+                <div className="relative bg-paper-deep/40 p-4 flex-1 flex items-center justify-center">
                   <img
                     src={s.img}
                     alt={s.alt}
                     loading="lazy"
                     className={`block w-full h-auto object-contain ${s.span ? "" : "max-h-[620px] w-auto mx-auto"}`}
                   />
+                  {s.toggle && (
+                    <button
+                      type="button"
+                      onClick={() => setFeedMode((m) => (m === "light" ? "dark" : "light"))}
+                      className="absolute bottom-5 right-5 z-10 font-mono text-[10px] small-caps tracking-[0.2em] border-2 border-ink bg-paper px-4 py-2 shadow-[4px_4px_0_0_hsl(10_80%_60%)] hover:shadow-[6px_6px_0_0_hsl(10_80%_60%)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
+                      aria-label={`Switch to ${feedMode === "light" ? "dark" : "light"} mode`}
+                    >
+                      {feedMode === "light" ? "◐ Switch to Dark" : "◑ Switch to Light"}
+                    </button>
+                  )}
                 </div>
                 <p className="font-display italic text-sm px-4 py-3 border-t-2 border-ink">{s.caption}</p>
               </figure>
