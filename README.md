@@ -1,3 +1,26 @@
-# Welcome to your Lovable project
+# Megan Ho
 
-TODO: Document your project here
+I need to build a portfolio for myself as I am graduating for masters in marketing and im looking to find jobs, this portfolio has to showcase of my skills and some mockup marketing campaign and designs
+
+This project was built with [Lovable](https://lovable.dev).
+
+**Live app**: https://meganho.lovable.app
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/b913e538-f011-4540-9ade-06bba1a321a0).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
+npm run dev
+```
