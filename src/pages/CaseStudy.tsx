@@ -17,6 +17,10 @@ import veramenteWordmark from "@/assets/veramente-wordmark.png";
 import veramenteTinyBites from "@/assets/veramente-tiny-bites.png";
 import veramenteBagCharm from "@/assets/veramente-bag-charm.png";
 import veramenteCafe from "@/assets/veramente-cafe.png";
+import veramenteLightTheme from "@/assets/veramente-light_theme.jpg";
+import veramenteDarkTheme from "@/assets/veramente-dark_theme.jpg";
+import veramenteStories from "@/assets/veramente-insta_stories.jpg";
+import veramenteEdm from "@/assets/veramente-edm.jpg";
 import sippyLogo from "@/assets/sippy-logo.jpg";
 import sippyBrandBoard from "@/assets/sippy-brand-board.jpg";
 import sippyHeroBg from "@/assets/sippy-hero-bg.jpg";
@@ -48,6 +52,7 @@ const hintPosClasses: Record<HintPos, string> = {
 const Veramente = () => {
   const [heroLayout, setHeroLayout] = useState<"A" | "B" | "C">("A");
   const [hintPos, setHintPos] = useState<HintPos>("center");
+  const [feedMode, setFeedMode] = useState<"light" | "dark">("light");
 
   const headlineClass =
     "font-display italic uppercase tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,7vw,5.25rem)] inline-block mx-0 mt-6 md:mt-8 mb-4 animate-fade-in [animation-duration:900ms] [animation-delay:120ms] [animation-fill-mode:both]";
@@ -503,6 +508,85 @@ const Veramente = () => {
         <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
           Plate III — Packaging System · Built in Figma
         </p>
+
+        {/* SOCIAL & EDM — Plate IV */}
+        <div className="mt-16 md:mt-20">
+          <div className="flex items-end justify-between gap-4 border-b-2 border-ink pb-3 mb-8">
+            <div>
+              <p className="font-mono text-[10px] small-caps tracking-[0.25em] text-ink-mute mb-1">Plate IV</p>
+              <h3 className="font-display text-3xl md:text-4xl leading-tight">Social &amp; EDM</h3>
+            </div>
+            <p className="font-mono text-[10px] small-caps text-ink-mute hidden sm:block">
+              Feed · Stories · Email
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                n: "01",
+                label: "Feed",
+                img: feedMode === "light" ? veramenteLightTheme : veramenteDarkTheme,
+                alt:
+                  feedMode === "light"
+                    ? "Veramente Instagram profile, gallery and post views in light theme"
+                    : "Veramente Instagram profile, gallery and post views in dark theme",
+                caption: "Profile, grid and post — tap the button to flip between light and dark.",
+                span: true,
+                toggle: true,
+              },
+              {
+                n: "02",
+                label: "Stories",
+                img: veramenteStories,
+                alt: "Veramente Instagram story frame",
+                caption: "A full-bleed story frame — your SPF habits, on the go.",
+                span: false,
+              },
+              {
+                n: "03",
+                label: "EDM",
+                img: veramenteEdm,
+                alt: "Veramente launch email newsletter",
+                caption: "Launch email — wear it, don't hide it.",
+                span: false,
+              },
+            ].map((s) => (
+              <figure
+                key={s.n}
+                className={`border-2 border-ink bg-paper shadow-[8px_10px_0_0_hsl(var(--accent-ochre))] overflow-hidden flex flex-col ${
+                  s.span ? "md:col-span-2" : ""
+                }`}
+              >
+                <figcaption className="flex items-center justify-between gap-4 px-4 py-2 border-b-2 border-ink bg-paper-deep/50">
+                  <p className="font-mono text-[10px] small-caps tracking-[0.25em]">
+                    Fig. {s.n} · {s.label}
+                  </p>
+                  <span className="font-mono text-[10px] small-caps text-ink-mute">Veramente</span>
+                </figcaption>
+                <div className="relative bg-paper-deep/40 p-4 flex-1 flex items-center justify-center">
+                  <img
+                    src={s.img}
+                    alt={s.alt}
+                    loading="lazy"
+                    className={`block w-full h-auto object-contain ${s.span ? "" : "max-h-[620px] w-auto mx-auto"}`}
+                  />
+                  {s.toggle && (
+                    <button
+                      type="button"
+                      onClick={() => setFeedMode((m) => (m === "light" ? "dark" : "light"))}
+                      className="absolute bottom-5 right-5 z-10 font-mono text-[10px] small-caps tracking-[0.2em] border-2 border-ink bg-paper px-4 py-2 shadow-[4px_4px_0_0_hsl(var(--accent-ochre))] hover:shadow-[6px_6px_0_0_hsl(var(--accent-ochre))] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
+                      aria-label={`Switch to ${feedMode === "light" ? "dark" : "light"} mode`}
+                    >
+                      {feedMode === "light" ? "◐ Switch to Dark" : "◑ Switch to Light"}
+                    </button>
+                  )}
+                </div>
+                <p className="font-display italic text-sm px-4 py-3 border-t-2 border-ink">{s.caption}</p>
+              </figure>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* STRATEGY 3-UP */}
