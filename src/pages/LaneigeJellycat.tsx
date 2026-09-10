@@ -375,7 +375,7 @@ const LaneigeJellycat = () => {
             </div>
             <div className="col-span-12 md:col-span-5 md:border-l md:pl-6 space-y-6" style={{ borderColor: "rgba(241,222,154,0.3)" }}>
               <a
-                href="mailto:megan123ho@icloud.com"
+                href="mailto:hello@meganho.work"
                 className="block group border p-6 transition-colors hover:bg-sand hover:text-ink"
                 style={{ borderColor: "rgba(241,222,154,0.4)" }}
               >
@@ -384,7 +384,7 @@ const LaneigeJellycat = () => {
                   <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
                 <p className="font-mono text-[11px] small-caps mb-1 opacity-70">Email</p>
-                <p className="font-display text-2xl break-all">megan123ho@icloud.com</p>
+                <p className="font-display text-2xl break-all">hello@meganho.work</p>
               </a>
               <a
                 href="tel:+61412176909"

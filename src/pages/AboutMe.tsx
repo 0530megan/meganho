@@ -350,7 +350,7 @@ const AboutMe = () => {
           </div>
           <div className="col-span-12 md:col-span-5 space-y-5">
             <a
-              href="mailto:megan123ho@icloud.com"
+              href="mailto:hello@meganho.work"
               className="block group border border-ink p-6 hover:bg-ink hover:text-paper transition-colors"
             >
               <div className="flex items-center justify-between mb-3">
@@ -358,7 +358,7 @@ const AboutMe = () => {
                 <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </div>
               <p className="font-mono text-[11px] small-caps mb-1 opacity-70">Email</p>
-              <p className="font-display text-2xl break-all">megan123ho@icloud.com</p>
+              <p className="font-display text-2xl break-all">hello@meganho.work</p>
             </a>
             <a
               href="tel:+61412176909"
