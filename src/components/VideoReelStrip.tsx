@@ -51,19 +51,19 @@ const PhoneFrame = ({
   const tilts = ["-2deg", "1.5deg", "-1deg", "2deg"];
   const tilt = tilts[index % tilts.length];
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
+  // Autoplay on mount
+  useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(() => {});
     }
+  }, []);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
   };
 
   const openFullscreen = () => {
@@ -125,16 +125,17 @@ const PhoneFrame = ({
           <video
             ref={videoRef}
             src={reel.src}
+            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* Play overlay when not hovered */}
+          {/* Hover overlay — subtle dim on hover to hint clickability */}
           <div
-            className={`absolute inset-0 bg-ink/40 flex items-center justify-center transition-opacity duration-300 ${isHovered ? "opacity-0" : "opacity-100"}`}
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isHovered ? "opacity-100 bg-ink/20" : "opacity-0"}`}
           >
             <div className="size-12 rounded-full border-2 border-paper/60 flex items-center justify-center backdrop-blur-sm bg-ink/30">
               <Play className="size-5 text-paper/80 ml-0.5" fill="currentColor" />
@@ -149,10 +150,10 @@ const PhoneFrame = ({
 
         {/* Caption — polaroid style */}
         <div className="mt-3 flex items-baseline justify-between gap-2">
-          <p className="font-display italic text-sm text-ink-soft leading-tight">
+          <p className="font-display italic text-base font-semibold text-ink leading-tight">
             {reel.caption}
           </p>
-          <span className="font-mono text-[9px] small-caps text-ink-mute shrink-0">
+          <span className="font-mono text-[10px] font-bold small-caps text-ink-soft shrink-0">
             {reel.case}
           </span>
         </div>
@@ -210,12 +211,34 @@ const PhoneFrame = ({
               )}
             </button>
 
+            {/* Dark gradient for text legibility */}
+            <div
+              className="absolute inset-x-0 bottom-0 rounded-b-2xl pointer-events-none"
+              style={{
+                height: "40%",
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
+              }}
+            />
+
             {/* Caption overlay */}
-            <div className="absolute bottom-4 left-4 right-16">
-              <span className="font-mono text-[10px] small-caps text-paper/60">
+            <div className="absolute bottom-4 left-4 right-16 z-10">
+              <span
+                className="font-mono text-[10px] small-caps"
+                style={{
+                  color: "rgba(255,255,255,0.7)",
+                  textShadow: "0 1px 4px rgba(0,0,0,0.8)",
+                }}
+              >
                 Case · {reel.caseNo} · {reel.case}
               </span>
-              <p className="font-display italic text-lg text-paper mt-0.5">
+              <p
+                className="font-display italic text-lg mt-0.5"
+                style={{
+                  color: "#fff",
+                  textShadow: "0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.4)",
+                }}
+              >
                 {reel.caption}
               </p>
             </div>
