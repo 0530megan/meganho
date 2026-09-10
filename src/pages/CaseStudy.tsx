@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import SpotlightTagline from "@/components/SpotlightTagline";
+import CaseStudyReel from "@/components/CaseStudyReel";
 import { ArrowLeft, ArrowUpRight, Lightbulb, Eye, Package, Sparkles, TrendingUp, Heart } from "lucide-react";
 
 import veramenteHeroBg from "@/assets/veramente-hero-bg.jpg";
@@ -587,6 +588,16 @@ const Veramente = () => {
             ))}
           </div>
         </div>
+
+        {/* BRAND REEL — Plate V */}
+        <CaseStudyReel
+          videos={[
+            { src: "/videos/veramente-essentials.mp4", caption: "Everyday essentials" },
+          ]}
+          plateNo="V"
+          accentColor="hsl(48 90% 70%)"
+          shadowColor="hsl(var(--accent-ochre))"
+        />
       </section>
 
       {/* STRATEGY 3-UP */}
@@ -1316,6 +1327,17 @@ const Sippy = () => {
         <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
           Plate III — Brand World · Built in Figma
         </p>
+
+        {/* BRAND REELS — Plate V */}
+        <CaseStudyReel
+          videos={[
+            { src: "/videos/sippy-sip-it-cute.mp4", caption: "Sip it cute with Sippy" },
+            { src: "/videos/sippy-awake.mp4", caption: "Rise and sippy." },
+          ]}
+          plateNo="V"
+          accentColor="hsl(10 80% 60%)"
+          shadowColor="hsl(10 80% 60%)"
+        />
       </section>
 
       <section className="border-y-2 border-ink bg-paper-deep/40">
@@ -1790,6 +1812,16 @@ const MegsCreami = () => {
         <p className="font-mono text-[10px] small-caps text-ink-mute mt-4 text-right">
           Plate IV — Brand World · Built in Figma
         </p>
+
+        {/* BRAND REEL — Plate V */}
+        <CaseStudyReel
+          videos={[
+            { src: "/videos/creami-n-dreami.mp4", caption: "A spoonful of nostalgia." },
+          ]}
+          plateNo="V"
+          accentColor="#CA2200"
+          shadowColor="#CA2200"
+        />
       </section>
 
       <section className="border-y-2 border-ink bg-paper-deep/40">
