@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, MapPin, ArrowUpRight, Sparkles, Phone, Lightbulb, Eye, Package, Tag, Gift, Share2, TrendingUp, Repeat, Users, Droplets, Palette, Citrus, Heart, IceCream, Snowflake, Camera } from "lucide-react";
+import VideoReelStrip from "@/components/VideoReelStrip";
 import meganPortrait from "@/assets/megan-portrait.jpg";
 import veramenteBrandBoard from "@/assets/veramente-brand-board.jpg";
 import veramenteLogo from "@/assets/veramente-preview.png";
@@ -1370,6 +1371,7 @@ const Index = () => {
         style={{ width: `${progress}%` }}
       />
       <Hero />
+      <VideoReelStrip />
       <main>
         <SelectedWork />
         <CampaignsCTA />
