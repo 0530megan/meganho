@@ -36,6 +36,13 @@ const reels: Reel[] = [
     caseNo: "III",
   },
   {
+    src: "/videos/pina.mp4",
+    caption: "Matcha mornings",
+    case: "Piña · Potts Point",
+    tag: "Social",
+    caseNo: "",
+  },
+  {
     src: "/videos/sippy-awake.mp4",
     caption: "Rise and sippy.",
     case: "Sippy",
