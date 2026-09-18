@@ -6,15 +6,10 @@ interface Reel {
   caption: string;
   case: string;
   caseNo: string;
+  tag?: string;
 }
 
 const reels: Reel[] = [
-  {
-    src: "/videos/veramente-essentials.mp4",
-    caption: "Everyday essentials",
-    case: "Veramente",
-    caseNo: "I",
-  },
   {
     src: "/videos/sippy-sip-it-cute.mp4",
     caption: "Sip it cute with Sippy",
@@ -22,16 +17,29 @@ const reels: Reel[] = [
     caseNo: "II",
   },
   {
-    src: "/videos/sippy-awake.mp4",
-    caption: "Rise and sippy.",
-    case: "Sippy",
-    caseNo: "II",
+    src: "/videos/veramente-essentials.mp4",
+    caption: "Everyday essentials",
+    case: "Veramente",
+    caseNo: "I",
+  },
+  {
+    src: "/videos/bar-tottis.mp4",
+    caption: "The night we deserve",
+    case: "Bar Totti's",
+    tag: "Social",
+    caseNo: "",
   },
   {
     src: "/videos/creami-n-dreami.mp4",
     caption: "A spoonful of nostalgia.",
     case: "Meg's Creami",
     caseNo: "III",
+  },
+  {
+    src: "/videos/sippy-awake.mp4",
+    caption: "Rise and sippy.",
+    case: "Sippy",
+    caseNo: "II",
   },
 ];
 
@@ -144,7 +152,7 @@ const PhoneFrame = ({
 
           {/* Case tag */}
           <span className="absolute top-4 left-3 font-mono text-[9px] small-caps bg-ink text-paper px-2 py-0.5 z-10">
-            Case · {reel.caseNo}
+            {reel.tag ?? `Case · ${reel.caseNo}`}
           </span>
         </div>
 
@@ -230,7 +238,7 @@ const PhoneFrame = ({
                   textShadow: "0 1px 4px rgba(0,0,0,0.8)",
                 }}
               >
-                Case · {reel.caseNo} · {reel.case}
+                {reel.tag ?? `Case · ${reel.caseNo}`} · {reel.case}
               </span>
               <p
                 className="font-display italic text-lg mt-0.5"
