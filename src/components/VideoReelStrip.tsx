@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { Play, Volume2, VolumeX, X } from "lucide-react";
 
-interface Reel {
+export interface Reel {
   src: string;
   caption: string;
   case: string;
@@ -9,7 +9,7 @@ interface Reel {
   tag?: string;
 }
 
-const reels: Reel[] = [
+const DEFAULT_REELS: Reel[] = [
   {
     src: "/videos/sippy-sip-it-cute.mp4",
     caption: "Sip it cute with Sippy",
@@ -50,6 +50,47 @@ const reels: Reel[] = [
   },
 ];
 
+const DEFAULT_MARQUEE = [
+  "Now showing",
+  "✺",
+  "Brand reels",
+  "✺",
+  "Made for the feed",
+  "✺",
+  "Scroll to preview",
+  "✺",
+  "Click to play",
+  "✺",
+  "Sound on ↗",
+  "✺",
+];
+
+// Real-brand content reels — same style, shown as a second strip.
+export const CONTENT_REELS: Reel[] = [
+  { src: "/videos/five-senses-pour.mp4", caption: "The pour", case: "Five Senses", tag: "Coffee", caseNo: "" },
+  { src: "/videos/yovie-cups.mp4", caption: "Come find us", case: "yovie", tag: "Dessert", caseNo: "" },
+  { src: "/videos/five-senses-pov.mp4", caption: "POV: you're a coffee cup", case: "Five Senses", tag: "Coffee", caseNo: "" },
+  { src: "/videos/gotcha-boba.mp4", caption: "Strawberry pop", case: "Gotcha", tag: "Bubble Tea", caseNo: "" },
+  { src: "/videos/five-senses-drinking.mp4", caption: "What are you drinking?", case: "Five Senses", tag: "Coffee", caseNo: "" },
+  { src: "/videos/yovie-redflag.mp4", caption: "Might be a red flag", case: "yovie", tag: "Dessert", caseNo: "" },
+  { src: "/videos/five-senses-bts.mp4", caption: "Behind the shoot", case: "Five Senses", tag: "BTS", caseNo: "" },
+];
+
+export const CONTENT_MARQUEE = [
+  "Out in the wild",
+  "✺",
+  "Café content",
+  "✺",
+  "Shot & edited",
+  "✺",
+  "Real brands",
+  "✺",
+  "Made for the feed",
+  "✺",
+  "Sound on ↗",
+  "✺",
+];
+
 const PhoneFrame = ({
   reel,
   index,
@@ -57,6 +98,7 @@ const PhoneFrame = ({
   reel: Reel;
   index: number;
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [showFullscreen, setShowFullscreen] = useState(false);
@@ -66,11 +108,22 @@ const PhoneFrame = ({
   const tilts = ["-2deg", "1.5deg", "-1deg", "2deg"];
   const tilt = tilts[index % tilts.length];
 
-  // Autoplay on mount
+  // Play only while on screen — keeps many reels on one page performant.
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
-    }
+    const el = containerRef.current;
+    const vid = videoRef.current;
+    if (!el || !vid) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) vid.play().catch(() => {});
+          else vid.pause();
+        });
+      },
+      { threshold: 0.2 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   const handleMouseEnter = () => {
@@ -112,6 +165,7 @@ const PhoneFrame = ({
   return (
     <>
       <div
+        ref={containerRef}
         className="group shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.04] hover:rotate-0"
         style={{
           transform: `rotate(${tilt})`,
@@ -140,11 +194,10 @@ const PhoneFrame = ({
           <video
             ref={videoRef}
             src={reel.src}
-            autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
@@ -264,11 +317,29 @@ const PhoneFrame = ({
   );
 };
 
-const VideoReelStrip = () => {
+interface VideoReelStripProps {
+  eyebrow?: string;
+  title?: string;
+  instruction?: string;
+  footerNote?: string;
+  reels?: Reel[];
+  marquee?: string[];
+  id?: string;
+}
+
+const VideoReelStrip = ({
+  eyebrow = "Now playing",
+  title = "The Reel",
+  instruction = "Hover to preview · Click to watch",
+  footerNote = "swipe or hover to preview",
+  reels = DEFAULT_REELS,
+  marquee = DEFAULT_MARQUEE,
+  id,
+}: VideoReelStripProps = {}) => {
   const stripRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative border-b-2 border-ink overflow-hidden">
+    <section id={id} className="relative border-b-2 border-ink overflow-hidden">
       {/* Subtle gradient wash */}
       <div
         aria-hidden
@@ -284,14 +355,14 @@ const VideoReelStrip = () => {
         <div className="border-t-4 border-ink pt-4 mb-8 flex items-end justify-between gap-6 flex-wrap">
           <div>
             <p className="font-mono font-bold text-sm small-caps text-accent-red mb-2">
-              Now playing
+              {eyebrow}
             </p>
             <h2 className="font-display font-light text-3xl md:text-5xl tracking-tight leading-none">
-              The Reel
+              {title}
             </h2>
           </div>
           <span className="font-mono text-xs small-caps text-ink-mute">
-            Hover to preview · Click to watch
+            {instruction}
           </span>
         </div>
 
@@ -300,20 +371,7 @@ const VideoReelStrip = () => {
           <div className="marquee flex whitespace-nowrap py-1.5 font-mono text-[10px] small-caps">
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex shrink-0 items-center gap-6 pr-6">
-                {[
-                  "Now showing",
-                  "✺",
-                  "Brand reels",
-                  "✺",
-                  "Made for the feed",
-                  "✺",
-                  "Scroll to preview",
-                  "✺",
-                  "Click to play",
-                  "✺",
-                  "Sound on ↗",
-                  "✺",
-                ].map((t, j) => (
+                {marquee.map((t, j) => (
                   <span key={j} className="px-2">
                     {t}
                   </span>
@@ -340,7 +398,7 @@ const VideoReelStrip = () => {
         <div className="mt-6 flex items-center gap-4">
           <div className="h-px flex-1 bg-ink/30" />
           <p className="font-display italic text-ink-soft text-sm">
-            swipe or hover to preview
+            {footerNote}
           </p>
           <div className="h-px flex-1 bg-ink/30" />
         </div>
