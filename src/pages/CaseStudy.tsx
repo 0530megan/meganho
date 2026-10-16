@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import SpotlightTagline from "@/components/SpotlightTagline";
 import CaseStudyReel from "@/components/CaseStudyReel";
+import ContentCaseStudy, { CONTENT_PROJECTS } from "@/components/ContentCaseStudy";
 import { ArrowLeft, ArrowUpRight, Lightbulb, Eye, Package, Sparkles, TrendingUp, Heart } from "lucide-react";
 
 import veramenteHeroBg from "@/assets/veramente-hero-bg.jpg";
@@ -2034,6 +2035,7 @@ const CaseStudy = () => {
   if (slug === "veramente") return <Veramente />;
   if (slug === "sippy") return <Sippy />;
   if (slug === "megs-creami") return <MegsCreami />;
+  if (CONTENT_PROJECTS[slug]) return <ContentCaseStudy project={CONTENT_PROJECTS[slug]} />;
   return <Placeholder slug={slug} />;
 };
 

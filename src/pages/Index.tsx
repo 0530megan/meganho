@@ -329,6 +329,83 @@ const SelectedWork = () => {
   );
 };
 
+const ContentWork = () => {
+  const brands = [
+    {
+      name: "Five Senses Coffee",
+      category: "Specialty Coffee · Social",
+      tagline: "A coffee, told in five senses.",
+      poster: "/videos/posters/five-senses.jpg",
+      href: "/case/five-senses",
+      count: "4 Reels",
+      shadow: "hsl(var(--accent-burnt))",
+      tilt: "-rotate-1",
+    },
+    {
+      name: "yovie",
+      category: "Dessert · Glen Waverley",
+      tagline: "Swipe for more yums.",
+      poster: "/videos/posters/yovie.jpg",
+      href: "/case/yovie",
+      count: "2 Reels",
+      shadow: "hsl(var(--accent-ochre))",
+      tilt: "rotate-1",
+    },
+    {
+      name: "Gotcha",
+      category: "Bubble Tea · Social",
+      tagline: "Popping pink, impossible to scroll past.",
+      poster: "/videos/posters/gotcha.jpg",
+      href: "/case/gotcha",
+      count: "1 Reel",
+      shadow: "hsl(var(--accent-red))",
+      tilt: "-rotate-1",
+    },
+  ];
+  return (
+    <section className="container py-16 md:py-24 relative">
+      <SectionHeader kicker="Real brands, real content" title="Content & Collabs" no="III" />
+      <p className="font-display italic text-ink-soft text-base md:text-lg mt-2 mb-10 max-w-2xl">
+        Short-form social content shot and edited for real cafés and brands — the reels that live on the grid.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+        {brands.map((b) => (
+          <Link
+            key={b.name}
+            to={b.href}
+            className={`group relative block border border-ink bg-paper transition-all duration-300 hover:-translate-y-2 hover:rotate-0 ${b.tilt}`}
+            style={{ boxShadow: `8px 10px 0 0 ${b.shadow}` }}
+          >
+            <div className="relative overflow-hidden aspect-[4/5] border-b border-ink bg-ink">
+              <img
+                src={b.poster}
+                alt={`${b.name} content`}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <span className="absolute top-3 left-3 font-mono text-[10px] small-caps bg-ink text-paper px-2 py-1 z-10">
+                Content
+              </span>
+              <span className="absolute top-3 right-3 font-mono text-[10px] small-caps bg-paper/85 text-ink px-2 py-1 z-10">
+                {b.count}
+              </span>
+            </div>
+            <div className="p-5">
+              <div className="flex items-baseline justify-between gap-3 mb-1">
+                <h3 className="font-display text-2xl tracking-tight">{b.name}</h3>
+                <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-[hsl(var(--accent-burnt))]" />
+              </div>
+              <p className="font-mono text-[10px] small-caps text-ink-mute mb-2">{b.category}</p>
+              <p className="font-display italic text-sm text-ink-soft">{b.tagline}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const CampaignsCTA = () => {
   const RUST = "hsl(46 76% 78%)"; // #F1DE9A warm sand
   const CREAM = "hsl(30 6% 11%)"; // ink for contrast
@@ -1376,6 +1453,7 @@ const Index = () => {
       <ShowreelSection />
       <main>
         <SelectedWork />
+        <ContentWork />
         <CampaignsCTA />
         <Approach />
         <Skills />
